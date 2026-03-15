@@ -89,7 +89,7 @@ Der Workflow liegt in .github/workflows/update-motm-data.yml.
 Der Workflow:
 
 ```text
-startet den Scraper alle 4 Stunden
+startet den Scraper alle 30 Minuten
 laedt /matches und alle benoetigten /lineup-Daten
 schreibt statische JSON-Dateien nach static-data/
 committet neue Daten automatisch ins Repo
