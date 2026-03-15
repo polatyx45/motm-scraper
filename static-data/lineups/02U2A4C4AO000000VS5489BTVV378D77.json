@@ -1,0 +1,20 @@
+{
+  "ok": false,
+  "error": "lineup_not_available",
+  "message": "Waiting for selector `.player-wrapper.home, .player-wrapper.away` failed",
+  "matchId": "02U2A4C4AO000000VS5489BTVV378D77",
+  "home": "SC Hassel",
+  "away": "SV GE-Hessler",
+  "players": [],
+  "stableId": "02U2A4C4AO000000VS5489BTVV378D77",
+  "generatedAt": "2026-03-15T17:48:39.977Z",
+  "game": {
+    "home": "SC Hassel",
+    "away": "SV GE-Hessler",
+    "date": "22.03.2026",
+    "time": "09:15",
+    "competition": "Kreisliga A",
+    "ageGroup": "B-Junioren",
+    "spielId": "02U2A4C4AO000000VS5489BTVV378D77"
+  }
+}

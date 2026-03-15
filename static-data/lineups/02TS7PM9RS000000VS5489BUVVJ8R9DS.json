@@ -1,0 +1,20 @@
+{
+  "ok": false,
+  "error": "lineup_not_available",
+  "message": "Waiting for selector `.player-wrapper.home, .player-wrapper.away` failed",
+  "matchId": "02TS7PM9RS000000VS5489BUVVJ8R9DS",
+  "home": "SC Hassel II",
+  "away": "BV Rentfort III",
+  "players": [],
+  "stableId": "02TS7PM9RS000000VS5489BUVVJ8R9DS",
+  "generatedAt": "2026-03-15T17:48:39.977Z",
+  "game": {
+    "home": "SC Hassel II",
+    "away": "BV Rentfort III",
+    "date": "22.03.2026",
+    "time": "13:00",
+    "competition": "Kreisliga B",
+    "ageGroup": "Herren",
+    "spielId": "02TS7PM9RS000000VS5489BUVVJ8R9DS"
+  }
+}
