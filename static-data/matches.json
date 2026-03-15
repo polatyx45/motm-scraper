@@ -1,7 +1,7 @@
 {
   "ok": true,
-  "generatedAt": "2026-03-15T13:15:08.316Z",
-  "count": 2,
+  "generatedAt": "2026-03-15T13:24:42.717Z",
+  "count": 4,
   "games": [
     {
       "home": "SV Zweckel",
@@ -14,8 +14,10 @@
       "time": "15:00",
       "result": null,
       "status": "",
-      "stableId": "sv-zweckel-sc-hassel-15-03-2026-15-00",
-      "lineupFile": "lineups/sv-zweckel-sc-hassel-15-03-2026-15-00.json"
+      "spielId": "02TQ6E3EPS000000VS5489BTVV0LE4BT",
+      "resolvedBy": "team_matchplan",
+      "stableId": "02TQ6E3EPS000000VS5489BTVV0LE4BT",
+      "lineupFile": "lineups/02TQ6E3EPS000000VS5489BTVV0LE4BT.json"
     },
     {
       "home": "SV Hansa Buer Scholven 1919 e.V.",
@@ -28,8 +30,36 @@
       "time": "15:00",
       "result": null,
       "status": "",
-      "stableId": "sv-hansa-buer-scholven-1919-e-v-sc-hassel-iii-15-03-2026-15-00",
-      "lineupFile": "lineups/sv-hansa-buer-scholven-1919-e-v-sc-hassel-iii-15-03-2026-15-00.json"
+      "spielId": "02TS86HSJS000000VS5489BUVVJ8R9DS",
+      "resolvedBy": "team_matchplan",
+      "stableId": "02TS86HSJS000000VS5489BUVVJ8R9DS",
+      "lineupFile": "lineups/02TS86HSJS000000VS5489BUVVJ8R9DS.json"
+    },
+    {
+      "home": "JSG SV Zweckel-Wacker Gladbeck",
+      "away": "SC Hassel",
+      "competition": "Kreisliga A",
+      "date": "15.03.2026",
+      "time": "11:00",
+      "ageGroup": "A-Junioren",
+      "spielId": "0302IJ8IAS000000VS5489BUVS4DS759",
+      "resolvedBy": "team_matchplan",
+      "sourceLabel": "A-Jugend – SC Buer-Hassel 1919 e.V.",
+      "stableId": "0302IJ8IAS000000VS5489BUVS4DS759",
+      "lineupFile": "lineups/0302IJ8IAS000000VS5489BUVS4DS759.json"
+    },
+    {
+      "home": "Eintracht Erle II",
+      "away": "SC Hassel",
+      "competition": "Kreisliga A",
+      "date": "15.03.2026",
+      "time": "09:00",
+      "ageGroup": "B-Junioren",
+      "spielId": "02U2A4C4NO000000VS5489BTVV378D77",
+      "resolvedBy": "team_matchplan",
+      "sourceLabel": "B-Jugend – SC Buer-Hassel 1919 e.V.",
+      "stableId": "02U2A4C4NO000000VS5489BTVV378D77",
+      "lineupFile": "lineups/02U2A4C4NO000000VS5489BTVV378D77.json"
     }
   ]
 }
