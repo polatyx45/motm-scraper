@@ -87,6 +87,65 @@ function slugify(value) {
     .replace(/^-+|-+$/g, "");
 }
 
+function normalizeDateKey(value) {
+  const match = String(value || "").trim().match(/^(\d{2})\.(\d{2})\.(\d{4})$/);
+  if (!match) return "";
+  return `${match[3]}-${match[2]}-${match[1]}`;
+}
+
+function normalizeTimeKey(value) {
+  const match = String(value || "").trim().match(/^(\d{2}):(\d{2})/);
+  if (!match) return "";
+  return `${match[1]}:${match[2]}`;
+}
+
+function parseDateKeyToUtc(dateKey) {
+  const match = String(dateKey || "").match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!match) return null;
+  return new Date(Date.UTC(Number(match[1]), Number(match[2]) - 1, Number(match[3]), 12, 0, 0));
+}
+
+function isDateWithinNextDays(value, days = 7) {
+  const dateKey = normalizeDateKey(value);
+  const matchDate = parseDateKeyToUtc(dateKey);
+  if (!matchDate) return false;
+
+  const now = new Date();
+  const start = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() - 1, 12, 0, 0));
+  const end = new Date(start);
+  end.setUTCDate(end.getUTCDate() + days);
+
+  return matchDate >= start && matchDate <= end;
+}
+
+function buildGameMergeKey(game) {
+  const explicitId = String(game.spielId || game.matchId || "").trim();
+  if (explicitId) return explicitId;
+
+  return [
+    normalizeComparableText(game.home),
+    normalizeComparableText(game.away),
+    normalizeDateKey(game.date),
+    normalizeTimeKey(game.time)
+  ].join("|");
+}
+
+function deriveAgeGroupFromSourceLabel(label) {
+  const value = normalizeComparableText(label);
+  if (!value) return "";
+  if (value.includes("a jugend")) return "A-Junioren";
+  if (value.includes("b jugend")) return "B-Junioren";
+  if (value.includes("c jugend")) return "C-Junioren";
+  if (value.includes("d jugend")) return "D-Junioren";
+  if (value.includes("e jugend")) return "E-Junioren";
+  if (value.includes("f jugend")) return "F-Junioren";
+  if (value.includes("g jugend")) return "G-Junioren";
+  if (value.includes("damen")) return "Damen";
+  if (value.includes("alte herren") || value.includes("alten herren")) return "Alte Herren";
+  if (value.includes("walking football")) return "Walking Football";
+  return "Herren";
+}
+
 function decodeHtmlEntities(value) {
   return String(value || "")
     .replace(/&nbsp;/gi, " ")
@@ -664,6 +723,46 @@ async function enrichGamesWithResolvedMatchIds(games) {
   return enrichedGames;
 }
 
+function buildCurrentWeekTeamGames(feedGames, teamMatches) {
+  const targetDateKeys = new Set(
+    feedGames.map((game) => normalizeDateKey(game.date)).filter(Boolean)
+  );
+
+  let matches = teamMatches.filter((match) => isRelevantGame(match));
+
+  if (targetDateKeys.size) {
+    matches = matches.filter((match) => targetDateKeys.has(normalizeDateKey(match.date)));
+  } else {
+    matches = matches.filter((match) => isDateWithinNextDays(match.date, 7));
+  }
+
+  return matches.map((match) => ({
+    home: match.home,
+    away: match.away,
+    competition: match.competition,
+    date: match.date,
+    time: match.time,
+    ageGroup: deriveAgeGroupFromSourceLabel(match.sourceLabel),
+    spielId: match.matchId,
+    resolvedBy: "team_matchplan",
+    sourceLabel: match.sourceLabel
+  }));
+}
+
+function mergeGames(games) {
+  const merged = [];
+  const seen = new Set();
+
+  for (const game of games) {
+    const key = buildGameMergeKey(game);
+    if (!key || seen.has(key)) continue;
+    seen.add(key);
+    merged.push(game);
+  }
+
+  return merged;
+}
+
 async function getBrowser() {
   if (!browserPromise) {
     const launchOptions = {
@@ -765,12 +864,15 @@ async function loadWeekGames({ includeUnresolved = false } = {}) {
   }
 
   const data = await response.json();
-  const games = Array.isArray(data.games) ? data.games : [];
-  const resolvedGames = await enrichGamesWithResolvedMatchIds(
-    games.filter(isRelevantGame).map(applyKnownMatchFixes)
-  );
+  const feedGames = (Array.isArray(data.games) ? data.games : [])
+    .filter(isRelevantGame)
+    .map(applyKnownMatchFixes);
+  const resolvedFeedGames = await enrichGamesWithResolvedMatchIds(feedGames);
+  const teamIndex = await loadTeamMatchIndex();
+  const teamGames = buildCurrentWeekTeamGames(resolvedFeedGames, teamIndex.matches).map(applyKnownMatchFixes);
+  const mergedGames = mergeGames([...resolvedFeedGames, ...teamGames]);
 
-  return resolvedGames.filter((game) =>
+  return mergedGames.filter((game) =>
     includeUnresolved ? game.home && game.away : game.spielId && game.home && game.away
   );
 }
