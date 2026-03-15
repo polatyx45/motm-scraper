@@ -779,6 +779,7 @@ async function scrapeLineup({ matchId, home, away }) {
   const browser = await getBrowser();
   const page = await browser.newPage();
   const url = buildMatchUrl(matchId, home, away);
+  const lineupSelector = ".player-wrapper.home, .player-wrapper.away";
 
   try {
     await page.setUserAgent(
@@ -786,8 +787,17 @@ async function scrapeLineup({ matchId, home, away }) {
     );
     await page.setViewport({ width: 1440, height: 1600 });
     await page.goto(url, { waitUntil: "domcontentloaded", timeout: 60000 });
-
-    await page.waitForSelector("#course", { timeout: 30000 });
+    await page.waitForFunction(
+      (selector) =>
+        Boolean(
+          document.querySelector(selector) ||
+            document.querySelector("#course") ||
+            document.querySelector(".stage-body") ||
+            document.querySelector('a[href*="ajax.match.lineup"]')
+        ),
+      { timeout: 30000 },
+      lineupSelector
+    );
     await page.addStyleTag({
       content: `
         .player-wrapper .player-name {
@@ -804,12 +814,27 @@ async function scrapeLineup({ matchId, home, away }) {
 
     const lineupTab = await page.$('a[href*="ajax.match.lineup"]');
     if (lineupTab) {
+      await lineupTab.evaluate((node) => {
+        node.scrollIntoView({ block: "center", inline: "center" });
+      });
+
       await Promise.allSettled([
-        page.waitForSelector(".player-wrapper.home, .player-wrapper.away", { timeout: 30000 }),
+        page.waitForSelector(lineupSelector, { timeout: 30000 }),
         lineupTab.click()
       ]);
     } else {
-      await page.waitForSelector(".player-wrapper.home, .player-wrapper.away", { timeout: 30000 });
+      await page.waitForSelector(lineupSelector, { timeout: 30000 });
+    }
+
+    const playerWrapperExists = await page.$(lineupSelector);
+    if (!playerWrapperExists) {
+      const pageState = await page.evaluate(() => ({
+        title: document.title || "",
+        bodyText: document.body?.innerText?.slice(0, 500) || ""
+      }));
+      throw new Error(
+        `lineup_not_available: ${pageState.title || "unknown_page"} | ${pageState.bodyText}`
+      );
     }
 
     const { ownSide } = await page.evaluate((clubName) => {
