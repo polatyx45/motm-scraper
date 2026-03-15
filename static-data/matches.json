@@ -1,16 +1,31 @@
 {
   "ok": true,
-  "generatedAt": "2026-03-15T20:40:37.513Z",
+  "generatedAt": "2026-03-15T20:52:36.082Z",
   "votingWindow": {
     "timeZone": "Europe/Berlin",
     "localDate": "2026-03-15",
-    "localTime": "21:40:35",
+    "localTime": "21:52:34",
     "startDate": "2026-03-09",
     "endDate": "2026-03-15",
     "switchesAtLocal": "2026-03-16 00:00:00"
   },
   "count": 4,
   "games": [
+    {
+      "home": "SV Zweckel",
+      "away": "SC Hassel",
+      "competition": "Bezirksliga",
+      "date": "15.03.2026",
+      "time": "15:00",
+      "ageGroup": "Herren",
+      "spielId": "02TQ6E3EPS000000VS5489BTVV0LE4BT",
+      "resolvedBy": "team_matchplan",
+      "sourceLabel": "1. Mannschaft – SC Buer-Hassel 1919 e.V.",
+      "teamId": "011MIF7RS8000000VTVG0001VTR8C1K7",
+      "stableId": "02TQ6E3EPS000000VS5489BTVV0LE4BT",
+      "lineupFile": "lineups/02TQ6E3EPS000000VS5489BTVV0LE4BT.json",
+      "previousMatch": null
+    },
     {
       "home": "SV Hansa Buer Scholven 1919 e.V.",
       "away": "SC Hassel III",
@@ -20,7 +35,7 @@
       "ageGroup": "Herren",
       "spielId": "02TS86HSJS000000VS5489BUVVJ8R9DS",
       "resolvedBy": "team_matchplan",
-      "sourceLabel": "3. Mannschaft",
+      "sourceLabel": "3. Mannschaft – SC Buer-Hassel 1919 e.V.",
       "teamId": "01SB226P3S000000VS548984VTL2SVNK",
       "stableId": "02TS86HSJS000000VS5489BUVVJ8R9DS",
       "lineupFile": "lineups/02TS86HSJS000000VS5489BUVVJ8R9DS.json",
@@ -35,7 +50,7 @@
       "ageGroup": "A-Junioren",
       "spielId": "0302IJ8IAS000000VS5489BUVS4DS759",
       "resolvedBy": "team_matchplan",
-      "sourceLabel": "A-Jugend",
+      "sourceLabel": "A-Jugend – SC Buer-Hassel 1919 e.V.",
       "teamId": "02I9E7SG64000000VS5489B1VTAQ4EE6",
       "stableId": "0302IJ8IAS000000VS5489BUVS4DS759",
       "lineupFile": "lineups/0302IJ8IAS000000VS5489BUVS4DS759.json",
@@ -50,25 +65,10 @@
       "ageGroup": "B-Junioren",
       "spielId": "02U2A4C4NO000000VS5489BTVV378D77",
       "resolvedBy": "team_matchplan",
-      "sourceLabel": "B-Jugend",
+      "sourceLabel": "B-Jugend – SC Buer-Hassel 1919 e.V.",
       "teamId": "01DUBKF8TO000000VV0AG80NVSNQSIQV",
       "stableId": "02U2A4C4NO000000VS5489BTVV378D77",
       "lineupFile": "lineups/02U2A4C4NO000000VS5489BTVV378D77.json",
-      "previousMatch": null
-    },
-    {
-      "home": "SV Zweckel",
-      "away": "SC Hassel",
-      "competition": "Bezirksliga",
-      "date": "15.03.2026",
-      "time": "15:00",
-      "ageGroup": "Herren",
-      "spielId": "02TQ6E3EPS000000VS5489BTVV0LE4BT",
-      "resolvedBy": "team_matchplan",
-      "sourceLabel": "1. Mannschaft",
-      "teamId": "011MIF7RS8000000VTVG0001VTR8C1K7",
-      "stableId": "02TQ6E3EPS000000VS5489BTVV0LE4BT",
-      "lineupFile": "lineups/02TQ6E3EPS000000VS5489BTVV0LE4BT.json",
       "previousMatch": null
     }
   ]
