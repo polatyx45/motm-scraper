@@ -1,0 +1,49 @@
+{
+  "ok": true,
+  "generatedAt": "2026-03-15T12:54:33.692Z",
+  "count": 3,
+  "games": [
+    {
+      "home": "JSG SV Zweckel-Wacker Gladbeck",
+      "away": "SC Hassel",
+      "homeLogo": "https://www.fussball.de/export.media/-/action/getLogo/format/0/id/00ES8GN8OC00001OVV0AG08LVUPGND5I",
+      "awayLogo": "https://www.fussball.de/export.media/-/action/getLogo/format/0/id/00ES8GN8OC00000OVV0AG08LVUPGND5I",
+      "ageGroup": "A-Junioren",
+      "competition": "Kreisliga A",
+      "date": "15.03.2026",
+      "time": "11:00",
+      "result": null,
+      "status": "",
+      "stableId": "jsg-sv-zweckel-wacker-gladbeck-sc-hassel-15-03-2026-11-00",
+      "lineupFile": "lineups/jsg-sv-zweckel-wacker-gladbeck-sc-hassel-15-03-2026-11-00.json"
+    },
+    {
+      "home": "SV Zweckel",
+      "away": "SC Hassel",
+      "homeLogo": "https://www.fussball.de/export.media/-/action/getLogo/format/0/id/00ES8GN8OC00001OVV0AG08LVUPGND5I",
+      "awayLogo": "https://www.fussball.de/export.media/-/action/getLogo/format/0/id/00ES8GN8OC00000OVV0AG08LVUPGND5I",
+      "ageGroup": "Herren",
+      "competition": "Bezirksliga",
+      "date": "15.03.2026",
+      "time": "15:00",
+      "result": null,
+      "status": "",
+      "stableId": "sv-zweckel-sc-hassel-15-03-2026-15-00",
+      "lineupFile": "lineups/sv-zweckel-sc-hassel-15-03-2026-15-00.json"
+    },
+    {
+      "home": "SV Hansa Buer Scholven 1919 e.V.",
+      "away": "SC Hassel III",
+      "homeLogo": "https://www.fussball.de/export.media/-/action/getLogo/format/0/id/00ES8GN8OC00000PVV0AG08LVUPGND5I",
+      "awayLogo": "https://www.fussball.de/export.media/-/action/getLogo/format/0/id/00ES8GN8OC00000OVV0AG08LVUPGND5I",
+      "ageGroup": "Herren",
+      "competition": "Kreisliga C",
+      "date": "15.03.2026",
+      "time": "15:00",
+      "result": null,
+      "status": "",
+      "stableId": "sv-hansa-buer-scholven-1919-e-v-sc-hassel-iii-15-03-2026-15-00",
+      "lineupFile": "lineups/sv-hansa-buer-scholven-1919-e-v-sc-hassel-iii-15-03-2026-15-00.json"
+    }
+  ]
+}
