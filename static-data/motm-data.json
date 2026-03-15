@@ -1,6 +1,6 @@
 {
   "ok": true,
-  "generatedAt": "2026-03-15T17:48:39.977Z",
+  "generatedAt": "2026-03-15T18:18:09.823Z",
   "count": 7,
   "games": [
     {
@@ -27,7 +27,7 @@
         "away": "DJK TuS Rotthausen 9er",
         "players": [],
         "stableId": "0302IJ8I64000000VS5489BUVS4DS759",
-        "generatedAt": "2026-03-15T17:48:39.977Z",
+        "generatedAt": "2026-03-15T18:18:09.823Z",
         "game": {
           "home": "SC Hassel",
           "away": "DJK TuS Rotthausen 9er",
@@ -63,7 +63,7 @@
         "away": "SV GE-Hessler",
         "players": [],
         "stableId": "02U2A4C4AO000000VS5489BTVV378D77",
-        "generatedAt": "2026-03-15T17:48:39.977Z",
+        "generatedAt": "2026-03-15T18:18:09.823Z",
         "game": {
           "home": "SC Hassel",
           "away": "SV GE-Hessler",
@@ -99,7 +99,7 @@
         "away": "BV Rentfort III",
         "players": [],
         "stableId": "02TS7PM9RS000000VS5489BUVVJ8R9DS",
-        "generatedAt": "2026-03-15T17:48:39.977Z",
+        "generatedAt": "2026-03-15T18:18:09.823Z",
         "game": {
           "home": "SC Hassel II",
           "away": "BV Rentfort III",
@@ -135,7 +135,7 @@
         "away": "BW Westf. Langenbochum",
         "players": [],
         "stableId": "02TQ6E3E04000000VS5489BTVV0LE4BT",
-        "generatedAt": "2026-03-15T17:48:39.977Z",
+        "generatedAt": "2026-03-15T18:18:09.823Z",
         "game": {
           "home": "SC Hassel",
           "away": "BW Westf. Langenbochum",
@@ -171,7 +171,7 @@
         "away": "DJK Arminia Hassel",
         "players": [],
         "stableId": "02TS86HRQO000000VS5489BUVVJ8R9DS",
-        "generatedAt": "2026-03-15T17:48:39.977Z",
+        "generatedAt": "2026-03-15T18:18:09.823Z",
         "game": {
           "home": "SC Hassel III",
           "away": "DJK Arminia Hassel",
@@ -201,7 +201,7 @@
         "error": "HTTP 404 from http://127.0.0.1:3000/lineup?matchId=&home=SC+Hassel&away=SpVgg.+Erle+19&date=28.03.2026&time=15%3A00&competition=Kreisfreundschaftsspiele: {\"ok\":false,\"error\":\"match_id_not_found\",\"home\":\"SC Hassel\",\"away\":\"SpVgg. Erle 19\",\"players\":[]}",
         "players": [],
         "stableId": "sc-hassel-spvgg-erle-19-28-03-2026-15-00",
-        "generatedAt": "2026-03-15T17:48:39.977Z",
+        "generatedAt": "2026-03-15T18:18:09.823Z",
         "game": {
           "home": "SC Hassel",
           "away": "SpVgg. Erle 19",
@@ -234,7 +234,7 @@
         "away": "BV Rentfort II",
         "players": [],
         "stableId": "02VN5AS57G000000VS5489BTVTG66ASV",
-        "generatedAt": "2026-03-15T17:48:39.977Z",
+        "generatedAt": "2026-03-15T18:18:09.823Z",
         "game": {
           "home": "SC Hassel II",
           "away": "BV Rentfort II",
