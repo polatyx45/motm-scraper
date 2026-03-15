@@ -1,6 +1,6 @@
 {
   "ok": true,
-  "generatedAt": "2026-03-15T13:08:13.415Z",
+  "generatedAt": "2026-03-15T13:15:08.316Z",
   "count": 2,
   "games": [
     {
@@ -14,16 +14,14 @@
       "time": "15:00",
       "result": null,
       "status": "",
-      "spielId": "02TQ6E3EPS000000VS5489BTVV0LE4BT",
-      "resolvedBy": "team_matchplan",
-      "stableId": "02TQ6E3EPS000000VS5489BTVV0LE4BT",
-      "lineupFile": "lineups/02TQ6E3EPS000000VS5489BTVV0LE4BT.json",
+      "stableId": "sv-zweckel-sc-hassel-15-03-2026-15-00",
+      "lineupFile": "lineups/sv-zweckel-sc-hassel-15-03-2026-15-00.json",
       "lineup": {
         "ok": false,
-        "error": "HTTP 500 from http://127.0.0.1:3000/lineup?matchId=02TQ6E3EPS000000VS5489BTVV0LE4BT&home=SV+Zweckel&away=SC+Hassel&date=15.03.2026&time=15%3A00&competition=Bezirksliga: {\"ok\":false,\"error\":\"Waiting for selector `.player-wrapper.home, .player-wrapper.away` failed\",\"players\":[]}",
+        "error": "HTTP 404 from http://127.0.0.1:3000/lineup?matchId=&home=SV+Zweckel&away=SC+Hassel&date=15.03.2026&time=15%3A00&competition=Bezirksliga: {\"ok\":false,\"error\":\"match_id_not_found\",\"home\":\"SV Zweckel\",\"away\":\"SC Hassel\",\"players\":[]}",
         "players": [],
-        "stableId": "02TQ6E3EPS000000VS5489BTVV0LE4BT",
-        "generatedAt": "2026-03-15T13:08:13.415Z",
+        "stableId": "sv-zweckel-sc-hassel-15-03-2026-15-00",
+        "generatedAt": "2026-03-15T13:15:08.316Z",
         "game": {
           "home": "SV Zweckel",
           "away": "SC Hassel",
@@ -31,7 +29,7 @@
           "time": "15:00",
           "competition": "Bezirksliga",
           "ageGroup": "Herren",
-          "spielId": "02TQ6E3EPS000000VS5489BTVV0LE4BT"
+          "spielId": ""
         }
       }
     },
@@ -46,16 +44,14 @@
       "time": "15:00",
       "result": null,
       "status": "",
-      "spielId": "02TS86HSJS000000VS5489BUVVJ8R9DS",
-      "resolvedBy": "team_matchplan",
-      "stableId": "02TS86HSJS000000VS5489BUVVJ8R9DS",
-      "lineupFile": "lineups/02TS86HSJS000000VS5489BUVVJ8R9DS.json",
+      "stableId": "sv-hansa-buer-scholven-1919-e-v-sc-hassel-iii-15-03-2026-15-00",
+      "lineupFile": "lineups/sv-hansa-buer-scholven-1919-e-v-sc-hassel-iii-15-03-2026-15-00.json",
       "lineup": {
         "ok": false,
-        "error": "HTTP 500 from http://127.0.0.1:3000/lineup?matchId=02TS86HSJS000000VS5489BUVVJ8R9DS&home=SV+Hansa+Buer+Scholven+1919+e.V.&away=SC+Hassel+III&date=15.03.2026&time=15%3A00&competition=Kreisliga+C: {\"ok\":false,\"error\":\"Waiting for selector `.player-wrapper.home, .player-wrapper.away` failed\",\"players\":[]}",
+        "error": "HTTP 404 from http://127.0.0.1:3000/lineup?matchId=&home=SV+Hansa+Buer+Scholven+1919+e.V.&away=SC+Hassel+III&date=15.03.2026&time=15%3A00&competition=Kreisliga+C: {\"ok\":false,\"error\":\"match_id_not_found\",\"home\":\"SV Hansa Buer Scholven 1919 e.V.\",\"away\":\"SC Hassel III\",\"players\":[]}",
         "players": [],
-        "stableId": "02TS86HSJS000000VS5489BUVVJ8R9DS",
-        "generatedAt": "2026-03-15T13:08:13.415Z",
+        "stableId": "sv-hansa-buer-scholven-1919-e-v-sc-hassel-iii-15-03-2026-15-00",
+        "generatedAt": "2026-03-15T13:15:08.316Z",
         "game": {
           "home": "SV Hansa Buer Scholven 1919 e.V.",
           "away": "SC Hassel III",
@@ -63,7 +59,7 @@
           "time": "15:00",
           "competition": "Kreisliga C",
           "ageGroup": "Herren",
-          "spielId": "02TS86HSJS000000VS5489BUVVJ8R9DS"
+          "spielId": ""
         }
       }
     }
