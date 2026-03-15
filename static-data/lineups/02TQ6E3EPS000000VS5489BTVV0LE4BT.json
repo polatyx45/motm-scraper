@@ -1,9 +1,9 @@
 {
   "ok": false,
-  "error": "HTTP 500 from http://127.0.0.1:3000/lineup?matchId=02TQ6E3EPS000000VS5489BTVV0LE4BT&home=SV+Zweckel&away=SC+Hassel&date=15.03.2026&time=15%3A00&competition=Bezirksliga: {\"ok\":false,\"error\":\"Waiting for selector `#course` failed\",\"players\":[]}",
+  "error": "HTTP 500 from http://127.0.0.1:3000/lineup?matchId=02TQ6E3EPS000000VS5489BTVV0LE4BT&home=SV+Zweckel&away=SC+Hassel&date=15.03.2026&time=15%3A00&competition=Bezirksliga: {\"ok\":false,\"error\":\"Waiting for selector `.player-wrapper.home, .player-wrapper.away` failed\",\"players\":[]}",
   "players": [],
   "stableId": "02TQ6E3EPS000000VS5489BTVV0LE4BT",
-  "generatedAt": "2026-03-15T13:01:27.099Z",
+  "generatedAt": "2026-03-15T13:08:13.415Z",
   "game": {
     "home": "SV Zweckel",
     "away": "SC Hassel",
