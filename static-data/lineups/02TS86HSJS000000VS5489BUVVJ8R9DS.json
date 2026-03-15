@@ -1,0 +1,16 @@
+{
+  "ok": false,
+  "error": "HTTP 500 from http://127.0.0.1:3000/lineup?matchId=02TS86HSJS000000VS5489BUVVJ8R9DS&home=SV+Hansa+Buer+Scholven+1919+e.V.&away=SC+Hassel+III&date=15.03.2026&time=15%3A00&competition=Kreisliga+C: {\"ok\":false,\"error\":\"Waiting for selector `#course` failed\",\"players\":[]}",
+  "players": [],
+  "stableId": "02TS86HSJS000000VS5489BUVVJ8R9DS",
+  "generatedAt": "2026-03-15T13:01:27.099Z",
+  "game": {
+    "home": "SV Hansa Buer Scholven 1919 e.V.",
+    "away": "SC Hassel III",
+    "date": "15.03.2026",
+    "time": "15:00",
+    "competition": "Kreisliga C",
+    "ageGroup": "Herren",
+    "spielId": "02TS86HSJS000000VS5489BUVVJ8R9DS"
+  }
+}
