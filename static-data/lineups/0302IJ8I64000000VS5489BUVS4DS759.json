@@ -1,0 +1,20 @@
+{
+  "ok": false,
+  "error": "lineup_not_available",
+  "message": "Waiting for selector `.player-wrapper.home, .player-wrapper.away` failed",
+  "matchId": "0302IJ8I64000000VS5489BUVS4DS759",
+  "home": "SC Hassel",
+  "away": "DJK TuS Rotthausen 9er",
+  "players": [],
+  "stableId": "0302IJ8I64000000VS5489BUVS4DS759",
+  "generatedAt": "2026-03-15T23:01:41.221Z",
+  "game": {
+    "home": "SC Hassel",
+    "away": "DJK TuS Rotthausen 9er",
+    "date": "21.03.2026",
+    "time": "13:30",
+    "competition": "Kreisliga A",
+    "ageGroup": "A-Junioren",
+    "spielId": "0302IJ8I64000000VS5489BUVS4DS759"
+  }
+}
