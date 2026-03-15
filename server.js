@@ -1019,9 +1019,27 @@ app.get("/lineup", async (req, res) => {
         : result
     );
   } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    const isLineupUnavailable =
+      message.includes("Waiting for selector `.player-wrapper.home, .player-wrapper.away` failed") ||
+      message.includes("lineup_not_available");
+
+    if (isLineupUnavailable) {
+      res.json({
+        ok: false,
+        error: "lineup_not_available",
+        message,
+        matchId,
+        home,
+        away,
+        players: []
+      });
+      return;
+    }
+
     res.status(500).json({
       ok: false,
-      error: error instanceof Error ? error.message : String(error),
+      error: message,
       players: []
     });
   }
