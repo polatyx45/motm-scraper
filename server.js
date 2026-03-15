@@ -8,11 +8,36 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const PUPPETEER_EXECUTABLE_PATH = process.env.PUPPETEER_EXECUTABLE_PATH || "";
 const CLUB_NAME = "sc hassel";
+const CLUB_SITE_ORIGIN = "https://www.sc-hassel1919.de";
 const TICKER_API = "https://script.google.com/macros/s/AKfycbxPvHMRhLyOD1kwz5J2yr7KB9uubapD5QAMMB8bgUDblJaPpEUbI7E_z86YlkL9XmPLSA/exec?mode=week";
 const PROFILE_CACHE = new Map();
 const OBFUSCATION_MAPS = new Map();
 const MAP_FILE = path.join(process.cwd(), "obfuscation-map.json");
-const ALL_PAGES_DIR = path.resolve(process.cwd(), "../all-pages");
+const ALL_PAGES_DIRS = [
+  path.resolve(process.cwd(), "all-pages"),
+  path.resolve(process.cwd(), "../all-pages")
+];
+const ALL_PAGES_DIR = ALL_PAGES_DIRS.find((pagesDir) => fs.existsSync(pagesDir)) || ALL_PAGES_DIRS[0];
+const TEAM_PAGE_PATHS = [
+  "/die-erste/",
+  "/2-mannschaft/",
+  "/3-mannschaft-2/",
+  "/a-jugend/",
+  "/a-jugend-ii/",
+  "/b-jugend/",
+  "/c-jugend/",
+  "/d-jugend/",
+  "/d-jugend-ii/",
+  "/d-jugend-iii/",
+  "/e-jugend/",
+  "/e-jugend-ii/",
+  "/f-jugend/",
+  "/f-jugend-ii/",
+  "/g-jugend/",
+  "/damen/",
+  "/die-alten-herren/",
+  "/walking-football/"
+];
 const BAD_NAME_FRAGMENTS = [
   "die heimat",
   "amateurfußballs",
@@ -29,6 +54,7 @@ const REMOTE_HEADERS = {
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
   "accept-language": "de-DE,de;q=0.9,en;q=0.8"
 };
+const CLUB_PAGE_HTML_CACHE = new Map();
 const WIDGET_HTML_CACHE = new Map();
 const MATCHPLAN_HTML_CACHE = new Map();
 const TEAM_MATCH_INDEX_TTL_MS = 15 * 60 * 1000;
@@ -336,6 +362,64 @@ async function fetchText(url) {
   return response.text();
 }
 
+function extractWidgetConfigsFromHtml(html, sourceName) {
+  const widgets = [];
+  const titleMatch = String(html || "").match(/<title>([\s\S]*?)<\/title>/i);
+  const label =
+    stripTags(titleMatch?.[1] || "")
+      .replace(/\s+[â€“-]\s+SC Buer-Hassel 1919 e\.V\.\s*$/i, "")
+      .trim() || sourceName;
+
+  const matches = String(html || "").matchAll(
+    /<div[^>]+class=["'][^"']*fussballde_widget[^"']*["'][^>]+data-id=["']([^"']+)["'][^>]+data-type=["']([^"']+)["'][^>]*>/gi
+  );
+
+  for (const match of matches) {
+    widgets.push({
+      file: sourceName,
+      label,
+      widgetId: String(match[1] || "").trim(),
+      widgetType: String(match[2] || "").trim().toLowerCase()
+    });
+  }
+
+  return widgets.filter((item) => item.widgetId && item.widgetType === "table");
+}
+
+async function fetchClubPageHtml(pagePath) {
+  const normalizedPath = String(pagePath || "").trim();
+  if (!normalizedPath) return "";
+
+  if (CLUB_PAGE_HTML_CACHE.has(normalizedPath)) {
+    return CLUB_PAGE_HTML_CACHE.get(normalizedPath);
+  }
+
+  const html = await fetchText(new URL(normalizedPath, CLUB_SITE_ORIGIN).toString());
+  CLUB_PAGE_HTML_CACHE.set(normalizedPath, html);
+  return html;
+}
+
+async function loadRemoteWidgetConfigs() {
+  const widgets = [];
+
+  for (const pagePath of TEAM_PAGE_PATHS) {
+    try {
+      const html = await fetchClubPageHtml(pagePath);
+      widgets.push(...extractWidgetConfigsFromHtml(html, pagePath));
+    } catch (_error) {
+      // ignore broken team pages and continue with the remaining ones
+    }
+  }
+
+  return widgets;
+}
+
+async function loadWidgetConfigs() {
+  const localWidgets = extractWidgetConfigsFromLocalPages();
+  if (localWidgets.length) return localWidgets;
+  return loadRemoteWidgetConfigs();
+}
+
 function extractNextData(html) {
   const match = String(html || "").match(
     /<script id="__NEXT_DATA__" type="application\/json">([\s\S]*?)<\/script>/i
@@ -445,7 +529,7 @@ async function loadTeamMatchIndex({ force = false } = {}) {
   }
 
   teamMatchIndexPromise = (async () => {
-    const widgetConfigs = extractWidgetConfigsFromLocalPages();
+    const widgetConfigs = await loadWidgetConfigs();
     const widgetBundles = [];
 
     for (const config of widgetConfigs) {
