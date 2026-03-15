@@ -9,6 +9,7 @@ const PORT = process.env.PORT || 3000;
 const PUPPETEER_EXECUTABLE_PATH = process.env.PUPPETEER_EXECUTABLE_PATH || "";
 const CLUB_NAME = "sc hassel";
 const CLUB_SITE_ORIGIN = "https://www.sc-hassel1919.de";
+const LOCAL_TIME_ZONE = "Europe/Berlin";
 const TICKER_API = "https://script.google.com/macros/s/AKfycbxPvHMRhLyOD1kwz5J2yr7KB9uubapD5QAMMB8bgUDblJaPpEUbI7E_z86YlkL9XmPLSA/exec?mode=week";
 const PROFILE_CACHE = new Map();
 const OBFUSCATION_MAPS = new Map();
@@ -105,6 +106,71 @@ function parseDateKeyToUtc(dateKey) {
   return new Date(Date.UTC(Number(match[1]), Number(match[2]) - 1, Number(match[3]), 12, 0, 0));
 }
 
+function shiftDateKey(dateKey, days) {
+  const date = parseDateKeyToUtc(dateKey);
+  if (!date) return "";
+  date.setUTCDate(date.getUTCDate() + days);
+  return date.toISOString().slice(0, 10);
+}
+
+function getBerlinNowParts(date = new Date()) {
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone: LOCAL_TIME_ZONE,
+    weekday: "short",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hourCycle: "h23"
+  }).formatToParts(date);
+
+  const values = {};
+  for (const part of parts) {
+    if (part.type !== "literal") {
+      values[part.type] = part.value;
+    }
+  }
+
+  const weekdayMap = {
+    Mon: 1,
+    Tue: 2,
+    Wed: 3,
+    Thu: 4,
+    Fri: 5,
+    Sat: 6,
+    Sun: 7
+  };
+
+  return {
+    dateKey: `${values.year}-${values.month}-${values.day}`,
+    time: `${values.hour}:${values.minute}:${values.second}`,
+    weekdayIndex: weekdayMap[values.weekday] || 1
+  };
+}
+
+function getActiveVotingWindow(date = new Date()) {
+  const localNow = getBerlinNowParts(date);
+  const startDate = shiftDateKey(localNow.dateKey, -(localNow.weekdayIndex - 1));
+  const endDate = shiftDateKey(startDate, 6);
+
+  return {
+    timeZone: LOCAL_TIME_ZONE,
+    localDate: localNow.dateKey,
+    localTime: localNow.time,
+    startDate,
+    endDate,
+    switchesAtLocal: `${shiftDateKey(endDate, 1)} 00:00:00`
+  };
+}
+
+function isDateWithinVotingWindow(value, votingWindow) {
+  const dateKey = normalizeDateKey(value);
+  if (!dateKey) return false;
+  return dateKey >= votingWindow.startDate && dateKey <= votingWindow.endDate;
+}
+
 function isDateWithinNextDays(value, days = 7) {
   const dateKey = normalizeDateKey(value);
   const matchDate = parseDateKeyToUtc(dateKey);
@@ -122,6 +188,15 @@ function buildGameMergeKey(game) {
   const explicitId = String(game.spielId || game.matchId || "").trim();
   if (explicitId) return explicitId;
 
+  return [
+    normalizeComparableText(game.home),
+    normalizeComparableText(game.away),
+    normalizeDateKey(game.date),
+    normalizeTimeKey(game.time)
+  ].join("|");
+}
+
+function buildScheduleKey(game) {
   return [
     normalizeComparableText(game.home),
     normalizeComparableText(game.away),
@@ -713,7 +788,9 @@ async function enrichGamesWithResolvedMatchIds(games) {
       enrichedGames.push({
         ...game,
         spielId: resolved.matchId,
-        resolvedBy: "team_matchplan"
+        resolvedBy: "team_matchplan",
+        sourceLabel: resolved.sourceLabel,
+        teamId: resolved.teamId
       });
     } else {
       enrichedGames.push(game);
@@ -723,20 +800,8 @@ async function enrichGamesWithResolvedMatchIds(games) {
   return enrichedGames;
 }
 
-function buildCurrentWeekTeamGames(feedGames, teamMatches) {
-  const targetDateKeys = new Set(
-    feedGames.map((game) => normalizeDateKey(game.date)).filter(Boolean)
-  );
-
-  let matches = teamMatches.filter((match) => isRelevantGame(match));
-
-  if (targetDateKeys.size) {
-    matches = matches.filter((match) => targetDateKeys.has(normalizeDateKey(match.date)));
-  } else {
-    matches = matches.filter((match) => isDateWithinNextDays(match.date, 7));
-  }
-
-  return matches.map((match) => ({
+function buildVotingGameFromTeamMatch(match) {
+  return {
     home: match.home,
     away: match.away,
     competition: match.competition,
@@ -745,8 +810,108 @@ function buildCurrentWeekTeamGames(feedGames, teamMatches) {
     ageGroup: deriveAgeGroupFromSourceLabel(match.sourceLabel),
     spielId: match.matchId,
     resolvedBy: "team_matchplan",
-    sourceLabel: match.sourceLabel
-  }));
+    sourceLabel: match.sourceLabel,
+    teamId: match.teamId
+  };
+}
+
+function buildActiveVotingTeamGames(teamMatches, votingWindow) {
+  return teamMatches
+    .filter((match) => isRelevantGame(match))
+    .filter((match) => isDateWithinVotingWindow(match.date, votingWindow))
+    .map(buildVotingGameFromTeamMatch);
+}
+
+function compareScheduledGames(a, b) {
+  const dateComparison = normalizeDateKey(a.date).localeCompare(normalizeDateKey(b.date));
+  if (dateComparison !== 0) return dateComparison;
+
+  const timeComparison = normalizeTimeKey(a.time).localeCompare(normalizeTimeKey(b.time));
+  if (timeComparison !== 0) return timeComparison;
+
+  return buildScheduleKey(a).localeCompare(buildScheduleKey(b));
+}
+
+function getGameTeamKey(game) {
+  return String(game.teamId || game.sourceLabel || "").trim();
+}
+
+function getStableGameId(game) {
+  return String(game.spielId || game.matchId || "").trim() ||
+    slugify(`${game.home || ""}-${game.away || ""}-${game.date || ""}-${game.time || ""}`);
+}
+
+function summarizeMatch(match) {
+  return {
+    home: match.home,
+    away: match.away,
+    competition: match.competition,
+    date: match.date,
+    time: match.time,
+    ageGroup: match.ageGroup || deriveAgeGroupFromSourceLabel(match.sourceLabel),
+    spielId: match.spielId || match.matchId || "",
+    stableId: getStableGameId(match),
+    resolvedBy: match.resolvedBy || "team_matchplan",
+    sourceLabel: match.sourceLabel || "",
+    teamId: match.teamId || ""
+  };
+}
+
+function resolveTeamKeyForGame(game, teamMatches) {
+  const explicitTeamKey = getGameTeamKey(game);
+  if (explicitTeamKey) return explicitTeamKey;
+
+  const explicitMatchId = String(game.spielId || game.matchId || "").trim();
+  if (explicitMatchId) {
+    const byMatchId = teamMatches.find((match) => String(match.matchId || "").trim() === explicitMatchId);
+    if (byMatchId) return getGameTeamKey(byMatchId);
+  }
+
+  const scheduleKey = buildScheduleKey(game);
+  const bySchedule = teamMatches.find((match) => buildScheduleKey(match) === scheduleKey);
+  return bySchedule ? getGameTeamKey(bySchedule) : "";
+}
+
+function attachPreviousMatches(games, teamMatches) {
+  const groupedMatches = new Map();
+
+  for (const match of teamMatches.filter((item) => isRelevantGame(item))) {
+    const teamKey = getGameTeamKey(match);
+    if (!teamKey) continue;
+
+    if (!groupedMatches.has(teamKey)) {
+      groupedMatches.set(teamKey, []);
+    }
+
+    groupedMatches.get(teamKey).push(match);
+  }
+
+  for (const matches of groupedMatches.values()) {
+    matches.sort(compareScheduledGames);
+  }
+
+  return games.map((game) => {
+    const teamKey = resolveTeamKeyForGame(game, teamMatches);
+    if (!teamKey || !groupedMatches.has(teamKey)) {
+      return game;
+    }
+
+    const previousMatches = groupedMatches
+      .get(teamKey)
+      .filter((match) => compareScheduledGames(match, game) < 0);
+    const previousMatch = previousMatches[previousMatches.length - 1];
+
+    if (!previousMatch) {
+      return game;
+    }
+
+    return {
+      ...game,
+      teamId: game.teamId || previousMatch.teamId || "",
+      sourceLabel: game.sourceLabel || previousMatch.sourceLabel || "",
+      previousMatch: summarizeMatch(previousMatch)
+    };
+  });
 }
 
 function mergeGames(games) {
@@ -857,7 +1022,8 @@ async function resolveNameFromProfile(browser, href) {
   }
 }
 
-async function loadWeekGames({ includeUnresolved = false } = {}) {
+async function loadWeekGamesData({ includeUnresolved = false } = {}) {
+  const votingWindow = getActiveVotingWindow();
   const response = await fetch(TICKER_API, { cache: "no-store" });
   if (!response.ok) {
     throw new Error(`ticker_http_${response.status}`);
@@ -866,15 +1032,24 @@ async function loadWeekGames({ includeUnresolved = false } = {}) {
   const data = await response.json();
   const feedGames = (Array.isArray(data.games) ? data.games : [])
     .filter(isRelevantGame)
-    .map(applyKnownMatchFixes);
+    .map(applyKnownMatchFixes)
+    .filter((game) => isDateWithinVotingWindow(game.date, votingWindow));
   const resolvedFeedGames = await enrichGamesWithResolvedMatchIds(feedGames);
   const teamIndex = await loadTeamMatchIndex();
-  const teamGames = buildCurrentWeekTeamGames(resolvedFeedGames, teamIndex.matches).map(applyKnownMatchFixes);
-  const mergedGames = mergeGames([...resolvedFeedGames, ...teamGames]);
-
-  return mergedGames.filter((game) =>
+  const teamGames = buildActiveVotingTeamGames(teamIndex.matches, votingWindow).map(applyKnownMatchFixes);
+  const mergedGames = mergeGames([...resolvedFeedGames, ...teamGames]).filter((game) =>
     includeUnresolved ? game.home && game.away : game.spielId && game.home && game.away
   );
+
+  return {
+    votingWindow,
+    games: attachPreviousMatches(mergedGames, teamIndex.matches)
+  };
+}
+
+async function loadWeekGames(options) {
+  const data = await loadWeekGamesData(options);
+  return data.games;
 }
 
 async function scrapeLineup({ matchId, home, away }) {
@@ -1060,9 +1235,11 @@ app.get("/health", (_req, res) => {
 
 app.get("/matches", async (_req, res) => {
   try {
-    const games = await loadWeekGames({ includeUnresolved: true });
+    const { games, votingWindow } = await loadWeekGamesData({ includeUnresolved: true });
     res.json({
       ok: true,
+      generatedAt: new Date().toISOString(),
+      votingWindow,
       count: games.length,
       games
     });

@@ -95,6 +95,16 @@ schreibt statische JSON-Dateien nach static-data/
 committet neue Daten automatisch ins Repo
 ```
 
+Die Wochenlogik ist dabei jetzt bewusst an die lokale Zeit in Deutschland gekoppelt:
+
+```text
+Bis Sonntag 23:59 Uhr bleiben die Spiele der aktuellen Voting-Woche sichtbar.
+Erst ab Montag 00:00 Uhr wird automatisch auf die neue Woche gewechselt.
+```
+
+Pro aktuellem Spiel wird ausserdem das vorherige Teamspiel als `previousMatch` mit exportiert.
+Das Frontend kann damit den Gewinner des letzten Spiels weiter anzeigen, solange fuer das neue Spiel noch keine Aufstellung veroeffentlicht wurde.
+
 Lokal testen:
 
 ```bash
@@ -107,6 +117,15 @@ Danach findest du:
 static-data/matches.json
 static-data/motm-data.json
 static-data/lineups/<stableId>.json
+```
+
+In `matches.json` und `motm-data.json` steckt ausserdem:
+
+```text
+votingWindow.startDate
+votingWindow.endDate
+game.previousMatch
+game.previousMatch.lineupFile
 ```
 
 Fuer das Frontend ist spaeter meist diese Struktur am einfachsten:
@@ -124,6 +143,24 @@ async function loadLineup(game) {
   const data = await fetchJson(`${LINEUP_BASE}/${stableId}.json`);
   return Array.isArray(data.players) ? data.players : [];
 }
+```
+
+Wenn du den letzten Gewinner anzeigen willst, solange fuer das neue Spiel noch keine Aufstellung da ist:
+
+```javascript
+if ((!game.lineup || !game.lineup.ok) && game.previousMatch?.lineup?.ok) {
+  const lastPlayers = game.previousMatch.lineup.players || [];
+  const lastVotes = await loadVotes(game.previousMatch.stableId);
+  const winner = getWinner(lastPlayers, lastVotes);
+}
+```
+
+Die Idee ist:
+
+```text
+aktuelles Spiel hat noch keine Aufstellung -> previousMatch nehmen
+previousMatch.lineup liefert die Spieler des letzten Spiels
+die Firebase-Stimmen dazu laufen ueber previousMatch.stableId
 ```
 
 ## Test

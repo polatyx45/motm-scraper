@@ -37,6 +37,103 @@ function getStableGameId(game) {
   return game.spielId || game.matchId || game.id || getFallbackMatchId(game);
 }
 
+function normalizeDateKey(value) {
+  const match = String(value || "").trim().match(/^(\d{2})\.(\d{2})\.(\d{4})$/);
+  if (!match) return "";
+  return `${match[3]}-${match[2]}-${match[1]}`;
+}
+
+function normalizeTimeKey(value) {
+  const match = String(value || "").trim().match(/^(\d{2}):(\d{2})/);
+  if (!match) return "";
+  return `${match[1]}:${match[2]}`;
+}
+
+function compareScheduledGames(a, b) {
+  const dateComparison = normalizeDateKey(a.date).localeCompare(normalizeDateKey(b.date));
+  if (dateComparison !== 0) return dateComparison;
+
+  const timeComparison = normalizeTimeKey(a.time).localeCompare(normalizeTimeKey(b.time));
+  if (timeComparison !== 0) return timeComparison;
+
+  return getStableGameId(a).localeCompare(getStableGameId(b));
+}
+
+function getTeamKey(game) {
+  return String(game?.teamId || game?.sourceLabel || "").trim();
+}
+
+function summarizeMatch(game) {
+  return {
+    home: game.home || "",
+    away: game.away || "",
+    competition: game.competition || "",
+    date: game.date || "",
+    time: game.time || "",
+    ageGroup: game.ageGroup || "",
+    spielId: game.spielId || game.matchId || "",
+    stableId: getStableGameId(game),
+    resolvedBy: game.resolvedBy || "",
+    sourceLabel: game.sourceLabel || "",
+    teamId: game.teamId || ""
+  };
+}
+
+async function readPreviousExportGames() {
+  try {
+    const text = await fs.readFile(path.join(outputDir, "matches.json"), "utf8");
+    const data = JSON.parse(text);
+    return Array.isArray(data?.games) ? data.games : [];
+  } catch (_error) {
+    return [];
+  }
+}
+
+function buildPreviousGamesByTeam(previousGames) {
+  const map = new Map();
+
+  for (const game of previousGames) {
+    const teamKey = getTeamKey(game);
+    if (!teamKey) continue;
+
+    const summary = summarizeMatch(game);
+    const current = map.get(teamKey);
+    if (!current || compareScheduledGames(current, summary) < 0) {
+      map.set(teamKey, summary);
+    }
+  }
+
+  return map;
+}
+
+function pickPreviousMatch(game, previousGamesByTeam) {
+  const currentStableId = getStableGameId(game);
+  const candidates = [];
+
+  if (game.previousMatch) {
+    candidates.push(summarizeMatch(game.previousMatch));
+  }
+
+  const teamKey = getTeamKey(game);
+  if (teamKey && previousGamesByTeam.has(teamKey)) {
+    candidates.push(previousGamesByTeam.get(teamKey));
+  }
+
+  const validCandidates = candidates.filter(
+    (candidate) =>
+      candidate &&
+      candidate.stableId !== currentStableId &&
+      compareScheduledGames(candidate, game) < 0
+  );
+
+  if (!validCandidates.length) {
+    return null;
+  }
+
+  validCandidates.sort(compareScheduledGames);
+  return validCandidates[validCandidates.length - 1];
+}
+
 function buildLineupUrl(game) {
   const params = new URLSearchParams({
     matchId: String(game.spielId || game.matchId || game.id || ""),
@@ -119,20 +216,36 @@ async function stopServer(child) {
 async function collectStaticData() {
   const matchesData = await fetchJson(`${serverOrigin}/matches`);
   const games = Array.isArray(matchesData?.games) ? matchesData.games : [];
+  const previousExportGames = await readPreviousExportGames();
+  const previousGamesByTeam = buildPreviousGamesByTeam(previousExportGames);
   const generatedAt = new Date().toISOString();
   const staticGames = [];
-  const lineupSnapshots = [];
+  const lineupSnapshots = new Map();
+  const exportTargets = new Map();
 
   await fs.rm(outputDir, { recursive: true, force: true });
   await fs.mkdir(lineupsDir, { recursive: true });
 
-  for (const game of games) {
+  function registerExportTarget(game) {
+    if (!game || !game.home || !game.away) return;
+
     const stableId = getStableGameId(game);
-    log(`Loading lineup for ${stableId} (${game.home} - ${game.away})`);
+    if (!exportTargets.has(stableId)) {
+      exportTargets.set(stableId, { ...game, stableId });
+    }
+  }
+
+  for (const game of games) {
+    registerExportTarget(game);
+    registerExportTarget(game.previousMatch);
+  }
+
+  for (const target of exportTargets.values()) {
+    log(`Loading lineup for ${target.stableId} (${target.home} - ${target.away})`);
 
     let lineupData;
     try {
-      lineupData = await fetchJson(buildLineupUrl(game));
+      lineupData = await fetchJson(buildLineupUrl(target));
     } catch (error) {
       lineupData = {
         ok: false,
@@ -143,40 +256,51 @@ async function collectStaticData() {
 
     const lineupPayload = {
       ...lineupData,
-      stableId,
+      stableId: target.stableId,
       generatedAt,
       game: {
-        home: game.home || "",
-        away: game.away || "",
-        date: game.date || "",
-        time: game.time || "",
-        competition: game.competition || "",
-        ageGroup: game.ageGroup || "",
-        spielId: game.spielId || ""
+        home: target.home || "",
+        away: target.away || "",
+        date: target.date || "",
+        time: target.time || "",
+        competition: target.competition || "",
+        ageGroup: target.ageGroup || "",
+        spielId: target.spielId || ""
       }
     };
 
     await fs.writeFile(
-      path.join(lineupsDir, `${stableId}.json`),
+      path.join(lineupsDir, `${target.stableId}.json`),
       JSON.stringify(lineupPayload, null, 2),
       "utf8"
     );
 
-    lineupSnapshots.push({
-      stableId,
-      lineup: lineupPayload
-    });
+    lineupSnapshots.set(target.stableId, lineupPayload);
+  }
+
+  for (const game of games) {
+    const stableId = getStableGameId(game);
+    const previousMatch = pickPreviousMatch(game, previousGamesByTeam);
+    const previousStableId = previousMatch ? getStableGameId(previousMatch) : "";
 
     staticGames.push({
       ...game,
       stableId,
-      lineupFile: `lineups/${stableId}.json`
+      lineupFile: `lineups/${stableId}.json`,
+      previousMatch: previousMatch
+        ? {
+            ...previousMatch,
+            stableId: previousStableId,
+            lineupFile: `lineups/${previousStableId}.json`
+          }
+        : null
     });
   }
 
   const matchesPayload = {
     ok: true,
     generatedAt,
+    votingWindow: matchesData?.votingWindow || null,
     count: staticGames.length,
     games: staticGames
   };
@@ -184,9 +308,15 @@ async function collectStaticData() {
   const combinedPayload = {
     ...matchesPayload,
     games: staticGames.map((game) => ({
-        ...game,
-        lineup: lineupSnapshots.find((entry) => entry.stableId === game.stableId)?.lineup || null
-      }))
+      ...game,
+      lineup: lineupSnapshots.get(game.stableId) || null,
+      previousMatch: game.previousMatch
+        ? {
+            ...game.previousMatch,
+            lineup: lineupSnapshots.get(game.previousMatch.stableId) || null
+          }
+        : null
+    }))
   };
 
   await fs.writeFile(path.join(outputDir, "matches.json"), JSON.stringify(matchesPayload, null, 2), "utf8");
