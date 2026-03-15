@@ -1,0 +1,15 @@
+{
+  "name": "motm-scraper",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "build:static": "node scripts/build-static-data.mjs"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "puppeteer": "^24.7.1",
+    "tesseract.js": "^6.0.1"
+  }
+}
