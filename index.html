@@ -712,7 +712,6 @@
     let currentMatchId = "";
     let cachedGames = [];
     let currentPanelState = null;
-    let cachedVotingWindow = null;
     let countdownTimerId = null;
     const voteLocks = new Set();
     const previousWinnerCache = new Map();
@@ -902,7 +901,6 @@
 
     async function loadWeekGames() {
       const data = await fetchJson(TICKER_API);
-      cachedVotingWindow = data?.votingWindow || null;
       const games = Array.isArray(data?.games) ? data.games : [];
       return sortGames(dedupeGames(games));
     }
@@ -962,11 +960,17 @@
       return candidate;
     }
 
-    function getVotingSwitchTarget() {
-      const switchString = cachedVotingWindow?.switchesAtLocal;
-      const timeZone = cachedVotingWindow?.timeZone || "Europe/Berlin";
-      if (!switchString) return null;
-      return zonedDateTimeToUtc(switchString, timeZone);
+    function getGameKickoffTarget(game) {
+      if (!game?.date || !game?.time) return null;
+
+      const parts = String(game.date).trim().match(/^(\d{2})\.(\d{2})\.(\d{4})$/);
+      if (!parts) return null;
+
+      const timeMatch = String(game.time).trim().match(/^(\d{2}):(\d{2})/);
+      if (!timeMatch) return null;
+
+      const isoLocal = `${parts[3]}-${parts[2]}-${parts[1]} ${timeMatch[1]}:${timeMatch[2]}:00`;
+      return zonedDateTimeToUtc(isoLocal, "Europe/Berlin");
     }
 
     function getCountdownParts(targetDate) {
@@ -988,18 +992,18 @@
       return { expired: false, days, hours, minutes, seconds };
     }
 
-    function renderCountdownMarkup() {
-      const targetDate = getVotingSwitchTarget();
+    function renderCountdownMarkup(game) {
+      const targetDate = getGameKickoffTarget(game);
       const parts = getCountdownParts(targetDate);
       if (!parts) return "";
 
-      const switchLabel = escapeHtml(cachedVotingWindow?.switchesAtLocal || "");
+      const kickoffLabel = escapeHtml(`${game?.date || ""}${game?.time ? ` | ${game.time} Uhr` : ""}`);
 
       if (parts.expired) {
         return `
           <div class="countdown-panel">
             <p class="countdown-label">
-              Das nächste Voting startet jetzt. Umschaltzeit: <strong>${switchLabel}</strong>.
+              Das Spiel hat begonnen. Anstoß war <strong>${kickoffLabel}</strong>.
             </p>
           </div>
         `;
@@ -1008,7 +1012,7 @@
       return `
         <div class="countdown-panel">
           <p class="countdown-label">
-            Nächstes Voting startet in <strong>${switchLabel}</strong>.
+            Anstoß in <strong>${kickoffLabel}</strong>.
           </p>
           <div class="countdown-grid">
             <div class="countdown-box"><span class="countdown-value">${String(parts.days).padStart(2, "0")}</span><span class="countdown-unit">Tage</span></div>
@@ -1028,7 +1032,7 @@
       const updateCountdown = () => {
         const host = document.getElementById("countdownHost");
         if (!host) return;
-        host.innerHTML = renderCountdownMarkup();
+        host.innerHTML = renderCountdownMarkup(currentPanelState?.game);
       };
 
       updateCountdown();
@@ -1308,8 +1312,8 @@
         </div>
 
         ${renderPreviousWinner(previousWinner)}
+        <div id="countdownHost">${renderCountdownMarkup(game)}</div>
         ${contentHtml}
-        <div id="countdownHost">${renderCountdownMarkup()}</div>
       `;
 
       bindVoteButtons();
