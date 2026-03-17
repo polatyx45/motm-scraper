@@ -3,7 +3,7 @@ name: Update MOTM Data
 on:
   workflow_dispatch:
   schedule:
-    - cron: "17,47 * * * *"
+    - cron: "*/15 * * * *"
 
 permissions:
   contents: write
