@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-17T18:58:51.561Z",
+  "generatedAt": "2026-03-17T20:00:00.000Z",
   "count": 10,
   "games": [
     {
@@ -29,19 +29,6 @@
       "teamId": "02I9E7SG64000000VS5489B1VTAQ4EE6"
     },
     {
-      "home": "SV Zweckel",
-      "away": "SC Hassel",
-      "competition": "Bezirksliga",
-      "date": "15.03.2026",
-      "time": "15:00",
-      "ageGroup": "Herren",
-      "spielId": "02TQ6E3EPS000000VS5489BTVV0LE4BT",
-      "stableId": "02TQ6E3EPS000000VS5489BTVV0LE4BT",
-      "resolvedBy": "team_matchplan",
-      "sourceLabel": "1. Mannschaft",
-      "teamId": "011MIF7RS8000000VTVG0001VTR8C1K7"
-    },
-    {
       "home": "SV Hansa Buer Scholven 1919 e.V.",
       "away": "SC Hassel III",
       "competition": "Kreisliga C",
@@ -53,6 +40,19 @@
       "resolvedBy": "team_matchplan",
       "sourceLabel": "3. Mannschaft",
       "teamId": "01SB226P3S000000VS548984VTL2SVNK"
+    },
+    {
+      "home": "SV Zweckel",
+      "away": "SC Hassel",
+      "competition": "Bezirksliga",
+      "date": "15.03.2026",
+      "time": "15:00",
+      "ageGroup": "Herren",
+      "spielId": "02TQ6E3EPS000000VS5489BTVV0LE4BT",
+      "stableId": "02TQ6E3EPS000000VS5489BTVV0LE4BT",
+      "resolvedBy": "team_matchplan",
+      "sourceLabel": "1. Mannschaft",
+      "teamId": "011MIF7RS8000000VTVG0001VTR8C1K7"
     },
     {
       "home": "SC Hassel II",
