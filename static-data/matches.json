@@ -1,10 +1,10 @@
 {
   "ok": true,
-  "generatedAt": "2026-03-17T19:48:11.675Z",
+  "generatedAt": "2026-03-17T19:57:13.043Z",
   "votingWindow": {
     "timeZone": "Europe/Berlin",
     "localDate": "2026-03-17",
-    "localTime": "20:48:06",
+    "localTime": "20:57:08",
     "startDate": "2026-03-16",
     "endDate": "2026-03-22",
     "switchesAtLocal": "2026-03-23 00:00:00"
@@ -24,7 +24,7 @@
       "status": "",
       "spielId": "0302IJ8I64000000VS5489BUVS4DS759",
       "resolvedBy": "team_matchplan",
-      "sourceLabel": "A-Jugend",
+      "sourceLabel": "A-Jugend – SC Buer-Hassel 1919 e.V.",
       "teamId": "02I9E7SG64000000VS5489B1VTAQ4EE6",
       "stableId": "0302IJ8I64000000VS5489BUVS4DS759",
       "lineupFile": "lineups/0302IJ8I64000000VS5489BUVS4DS759.json",
@@ -39,7 +39,8 @@
         "stableId": "0302IJ8IAS000000VS5489BUVS4DS759",
         "resolvedBy": "team_matchplan",
         "sourceLabel": "A-Jugend",
-        "teamId": "02I9E7SG64000000VS5489B1VTAQ4EE6"
+        "teamId": "02I9E7SG64000000VS5489B1VTAQ4EE6",
+        "lineupFile": "lineups/0302IJ8IAS000000VS5489BUVS4DS759.json"
       }
     },
     {
@@ -55,7 +56,7 @@
       "status": "",
       "spielId": "02U2A4C4AO000000VS5489BTVV378D77",
       "resolvedBy": "team_matchplan",
-      "sourceLabel": "B-Jugend",
+      "sourceLabel": "B-Jugend – SC Buer-Hassel 1919 e.V.",
       "teamId": "01DUBKF8TO000000VV0AG80NVSNQSIQV",
       "stableId": "02U2A4C4AO000000VS5489BTVV378D77",
       "lineupFile": "lineups/02U2A4C4AO000000VS5489BTVV378D77.json",
@@ -70,7 +71,8 @@
         "stableId": "02U2A4C4NO000000VS5489BTVV378D77",
         "resolvedBy": "team_matchplan",
         "sourceLabel": "B-Jugend",
-        "teamId": "01DUBKF8TO000000VV0AG80NVSNQSIQV"
+        "teamId": "01DUBKF8TO000000VV0AG80NVSNQSIQV",
+        "lineupFile": "lineups/02U2A4C4NO000000VS5489BTVV378D77.json"
       }
     },
     {
@@ -86,7 +88,7 @@
       "status": "",
       "spielId": "02TS7PM9RS000000VS5489BUVVJ8R9DS",
       "resolvedBy": "team_matchplan",
-      "sourceLabel": "2. Mannschaft",
+      "sourceLabel": "2. Mannschaft – SC Buer-Hassel 1919 e.V.",
       "teamId": "011MIASBJ8000000VTVG0001VTR8C1K7",
       "stableId": "02TS7PM9RS000000VS5489BUVVJ8R9DS",
       "lineupFile": "lineups/02TS7PM9RS000000VS5489BUVVJ8R9DS.json",
@@ -105,7 +107,7 @@
       "status": "",
       "spielId": "02TQ6E3E04000000VS5489BTVV0LE4BT",
       "resolvedBy": "team_matchplan",
-      "sourceLabel": "1. Mannschaft",
+      "sourceLabel": "1. Mannschaft – SC Buer-Hassel 1919 e.V.",
       "teamId": "011MIF7RS8000000VTVG0001VTR8C1K7",
       "stableId": "02TQ6E3E04000000VS5489BTVV0LE4BT",
       "lineupFile": "lineups/02TQ6E3E04000000VS5489BTVV0LE4BT.json",
@@ -120,7 +122,8 @@
         "stableId": "02TQ6E3EPS000000VS5489BTVV0LE4BT",
         "resolvedBy": "team_matchplan",
         "sourceLabel": "1. Mannschaft",
-        "teamId": "011MIF7RS8000000VTVG0001VTR8C1K7"
+        "teamId": "011MIF7RS8000000VTVG0001VTR8C1K7",
+        "lineupFile": "lineups/02TQ6E3EPS000000VS5489BTVV0LE4BT.json"
       }
     },
     {
@@ -136,7 +139,7 @@
       "status": "",
       "spielId": "02TS86HRQO000000VS5489BUVVJ8R9DS",
       "resolvedBy": "team_matchplan",
-      "sourceLabel": "3. Mannschaft",
+      "sourceLabel": "3. Mannschaft – SC Buer-Hassel 1919 e.V.",
       "teamId": "01SB226P3S000000VS548984VTL2SVNK",
       "stableId": "02TS86HRQO000000VS5489BUVVJ8R9DS",
       "lineupFile": "lineups/02TS86HRQO000000VS5489BUVVJ8R9DS.json",
@@ -151,7 +154,8 @@
         "stableId": "02TS86HSJS000000VS5489BUVVJ8R9DS",
         "resolvedBy": "team_matchplan",
         "sourceLabel": "3. Mannschaft",
-        "teamId": "01SB226P3S000000VS548984VTL2SVNK"
+        "teamId": "01SB226P3S000000VS548984VTL2SVNK",
+        "lineupFile": "lineups/02TS86HSJS000000VS5489BUVVJ8R9DS.json"
       }
     },
     {
@@ -163,7 +167,7 @@
       "ageGroup": "D-Junioren",
       "spielId": "02VN5AS57G000000VS5489BTVTG66ASV",
       "resolvedBy": "team_matchplan",
-      "sourceLabel": "D-Jugend II",
+      "sourceLabel": "D-Jugend II – SC Buer-Hassel 1919 e.V.",
       "teamId": "02R20U2DD8000000VS5489B2VVGRHBSC",
       "stableId": "02VN5AS57G000000VS5489BTVTG66ASV",
       "lineupFile": "lineups/02VN5AS57G000000VS5489BTVTG66ASV.json",
