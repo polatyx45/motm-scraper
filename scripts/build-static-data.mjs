@@ -8,6 +8,7 @@ const __dirname = path.dirname(__filename);
 const projectRoot = path.resolve(__dirname, "..");
 const outputDir = path.join(projectRoot, "static-data");
 const lineupsDir = path.join(outputDir, "lineups");
+const historyFile = path.join(outputDir, "history.json");
 const serverPort = process.env.PORT || "3000";
 const serverOrigin = process.env.SCRAPER_BASE_URL || `http://127.0.0.1:${serverPort}`;
 
@@ -89,40 +90,103 @@ async function readPreviousExportGames() {
   }
 }
 
+async function readHistoricalGames() {
+  try {
+    const text = await fs.readFile(historyFile, "utf8");
+    const data = JSON.parse(text);
+    return Array.isArray(data?.games) ? data.games : [];
+  } catch (_error) {
+    return [];
+  }
+}
+
+async function readCommittedExportGames() {
+  return new Promise((resolve) => {
+    let output = "";
+    const child = spawn("git", ["show", "HEAD:static-data/matches.json"], {
+      cwd: projectRoot,
+      stdio: ["ignore", "pipe", "ignore"]
+    });
+
+    child.stdout.on("data", (chunk) => {
+      output += String(chunk);
+    });
+
+    child.on("error", () => resolve([]));
+    child.on("close", () => {
+      try {
+        const data = JSON.parse(output);
+        resolve(Array.isArray(data?.games) ? data.games : []);
+      } catch (_error) {
+        resolve([]);
+      }
+    });
+  });
+}
+
 function buildPreviousGamesByTeam(previousGames) {
   const map = new Map();
 
-  for (const game of previousGames) {
-    const teamKey = getTeamKey(game);
-    if (!teamKey) continue;
+  function register(game) {
+    if (!game) return;
 
-    const summary = summarizeMatch(game);
-    const current = map.get(teamKey);
-    if (!current || compareScheduledGames(current, summary) < 0) {
-      map.set(teamKey, summary);
+    const teamKey = getTeamKey(game);
+    const stableId = getStableGameId(game);
+    if (!teamKey || !stableId) return;
+
+    if (!map.has(teamKey)) {
+      map.set(teamKey, new Map());
+    }
+
+    const matchesById = map.get(teamKey);
+    if (!matchesById.has(stableId)) {
+      matchesById.set(stableId, summarizeMatch(game));
     }
   }
 
-  return map;
+  for (const game of previousGames) {
+    register(game);
+    register(game.previousMatch);
+  }
+
+  const normalized = new Map();
+
+  for (const [teamKey, matchesById] of map.entries()) {
+    normalized.set(
+      teamKey,
+      [...matchesById.values()].sort(compareScheduledGames)
+    );
+  }
+
+  return normalized;
 }
 
 function pickPreviousMatch(game, previousGamesByTeam) {
   const currentStableId = getStableGameId(game);
   const candidates = [];
+  const seen = new Set();
 
-  if (game.previousMatch) {
-    candidates.push(summarizeMatch(game.previousMatch));
+  function addCandidate(candidate) {
+    if (!candidate) return;
+
+    const summary = summarizeMatch(candidate);
+    const stableId = getStableGameId(summary);
+    if (!stableId || seen.has(stableId)) return;
+
+    seen.add(stableId);
+    candidates.push(summary);
   }
+
+  addCandidate(game.previousMatch);
 
   const teamKey = getTeamKey(game);
-  if (teamKey && previousGamesByTeam.has(teamKey)) {
-    candidates.push(previousGamesByTeam.get(teamKey));
-  }
+  const previousTeamGames = teamKey ? previousGamesByTeam.get(teamKey) || [] : [];
+  previousTeamGames.forEach(addCandidate);
 
   const validCandidates = candidates.filter(
     (candidate) =>
       candidate &&
-      candidate.stableId !== currentStableId &&
+      getStableGameId(candidate) !== currentStableId &&
       compareScheduledGames(candidate, game) < 0
   );
 
@@ -132,6 +196,30 @@ function pickPreviousMatch(game, previousGamesByTeam) {
 
   validCandidates.sort(compareScheduledGames);
   return validCandidates[validCandidates.length - 1];
+}
+
+function buildHistoryGames(...gameLists) {
+  const byId = new Map();
+
+  function register(game) {
+    if (!game) return;
+
+    const stableId = getStableGameId(game);
+    if (!stableId) return;
+
+    if (!byId.has(stableId)) {
+      byId.set(stableId, summarizeMatch(game));
+    }
+  }
+
+  for (const gameList of gameLists) {
+    for (const game of gameList || []) {
+      register(game);
+      register(game.previousMatch);
+    }
+  }
+
+  return [...byId.values()].sort(compareScheduledGames);
 }
 
 function buildLineupUrl(game) {
@@ -216,8 +304,14 @@ async function stopServer(child) {
 async function collectStaticData() {
   const matchesData = await fetchJson(`${serverOrigin}/matches`);
   const games = Array.isArray(matchesData?.games) ? matchesData.games : [];
+  const committedExportGames = await readCommittedExportGames();
   const previousExportGames = await readPreviousExportGames();
-  const previousGamesByTeam = buildPreviousGamesByTeam(previousExportGames);
+  const historicalGames = await readHistoricalGames();
+  const previousGamesByTeam = buildPreviousGamesByTeam([
+    ...committedExportGames,
+    ...historicalGames,
+    ...previousExportGames
+  ]);
   const generatedAt = new Date().toISOString();
   const staticGames = [];
   const lineupSnapshots = new Map();
@@ -233,6 +327,10 @@ async function collectStaticData() {
     if (!exportTargets.has(stableId)) {
       exportTargets.set(stableId, { ...game, stableId });
     }
+  }
+
+  for (const teamGames of previousGamesByTeam.values()) {
+    teamGames.forEach((game) => registerExportTarget(game));
   }
 
   for (const game of games) {
@@ -319,8 +417,15 @@ async function collectStaticData() {
     }))
   };
 
+  const historyPayload = {
+    generatedAt,
+    count: buildHistoryGames(committedExportGames, historicalGames, previousExportGames, staticGames).length,
+    games: buildHistoryGames(committedExportGames, historicalGames, previousExportGames, staticGames)
+  };
+
   await fs.writeFile(path.join(outputDir, "matches.json"), JSON.stringify(matchesPayload, null, 2), "utf8");
   await fs.writeFile(path.join(outputDir, "motm-data.json"), JSON.stringify(combinedPayload, null, 2), "utf8");
+  await fs.writeFile(historyFile, JSON.stringify(historyPayload, null, 2), "utf8");
 }
 
 async function main() {

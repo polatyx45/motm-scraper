@@ -3,43 +3,1337 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MOTM Static Data</title>
+  <title>Man of the Match - SC Buer-Hassel 1919 e.V.</title>
+  <meta name="description" content="Stimme für den Man of the Match beim SC Buer-Hassel 1919 e.V. ab." />
+  <link href="https://fonts.cdnfonts.com/css/gagalin" rel="stylesheet" />
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0d1a10;
-      color: #eef5ee;
+    :root{
+      --menu-green:#34a839;
+      --menu-green-2:#12d647;
+      --menu-dark:#0a0000;
+      --menu-bg:#0000000f;
+      --menu-bg-hover:#ffffff;
+      --line:rgba(255,255,255,.18);
+      --text:#f3f7f3;
+      --muted:#bfd0bf;
+      --radius:16px;
+      --gold:#d7b44a;
     }
 
-    main {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 40px 20px;
+    *{box-sizing:border-box}
+
+    html,body{
+      margin:0;
+      width:100%;
+      height:100%;
+      overflow:hidden;
+      font-family:'Gagalin',Segoe UI,Arial,sans-serif;
+      background:#020402;
+      color:var(--text);
     }
 
-    h1 {
-      margin-top: 0;
-      color: #34d760;
+    .page{
+      position:fixed;
+      inset:0;
+      overflow:auto;
+      padding:14px;
+      background:
+        radial-gradient(1000px 560px at 15% -12%, #1f5d2e 0%, transparent 60%),
+        radial-gradient(700px 500px at 100% 0%, #14381b 0%, transparent 62%),
+        linear-gradient(165deg,#08150b,#030503 70%,#010201);
     }
 
-    a {
-      color: #9ef0b4;
+    .top{
+      display:flex;
+      justify-content:flex-end;
+      margin-bottom:8px;
+      position:sticky;
+      top:8px;
+      z-index:20;
     }
 
-    code {
-      background: rgba(255, 255, 255, 0.08);
-      padding: 2px 6px;
-      border-radius: 6px;
+    .menu-btn{
+      text-decoration:none;
+      color:var(--menu-green);
+      background:rgba(8,14,9,.88);
+      border:1px solid rgba(255,255,255,.24);
+      border-radius:12px;
+      padding:10px 14px;
+      font-size:15px;
+      transition:.2s;
+      backdrop-filter:blur(5px);
+    }
+
+    .menu-btn:hover{
+      color:var(--menu-dark);
+      background:var(--menu-bg-hover);
+    }
+
+    .hero{
+      text-align:center;
+      margin:4px 0 10px;
+    }
+
+    .club{
+      color:var(--menu-green-2);
+      font-size:13px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    h1{
+      margin:8px 0 6px;
+      font-size:clamp(34px,8vw,82px);
+      line-height:1;
+      color:var(--menu-green-2);
+      text-transform:uppercase;
+    }
+
+    .line{
+      width:240px;
+      max-width:76%;
+      height:2px;
+      margin:0 auto;
+      background:linear-gradient(90deg,transparent,var(--menu-green),transparent);
+    }
+
+    .sub{
+      margin:14px auto 0;
+      max-width:980px;
+      color:var(--muted);
+      font-family:Segoe UI,Arial,sans-serif;
+      font-size:17px;
+      line-height:1.6;
+      text-align:center;
+    }
+
+    .layout{
+      display:grid;
+      grid-template-columns:320px 1fr;
+      gap:12px;
+      align-items:start;
+    }
+
+    .nav{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:linear-gradient(180deg,#101a12,#0b130d);
+      padding:10px;
+      display:grid;
+      gap:10px;
+      position:sticky;
+      top:60px;
+    }
+
+    .nav-head{
+      border:1px solid rgba(255,255,255,.16);
+      border-radius:12px;
+      background:rgba(255,255,255,.04);
+      padding:12px;
+    }
+
+    .nav-head-title{
+      color:var(--menu-green-2);
+      font-size:20px;
+      line-height:1;
+      margin:0 0 6px;
+      text-transform:uppercase;
+    }
+
+    .nav-head-text{
+      margin:0;
+      color:var(--muted);
+      font-family:Segoe UI,Arial,sans-serif;
+      font-size:14px;
+      line-height:1.45;
+    }
+
+    .reload-btn,.vote-btn{
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:12px;
+      background:var(--menu-bg);
+      color:var(--menu-green);
+      padding:11px 12px;
+      font-family:'Gagalin',Segoe UI,Arial,sans-serif;
+      font-size:15px;
+      cursor:pointer;
+      transition:.18s;
+      text-transform:uppercase;
+    }
+
+    .reload-btn:hover,.vote-btn:hover:not(:disabled){
+      background:var(--menu-bg-hover);
+      color:var(--menu-dark);
+    }
+
+    .vote-btn:disabled{
+      opacity:.6;
+      cursor:default;
+    }
+
+    .nav-group{
+      display:grid;
+      gap:8px;
+    }
+
+    .nav-group-title{
+      padding:10px 12px 2px;
+      color:var(--gold);
+      font-size:18px;
+      text-transform:uppercase;
+    }
+
+    .nav-btn{
+      width:100%;
+      border:1px solid rgba(255,255,255,.16);
+      border-radius:12px;
+      background:var(--menu-bg);
+      color:var(--menu-green);
+      text-transform:uppercase;
+      text-align:left;
+      padding:12px;
+      line-height:1.2;
+      font-size:17px;
+      cursor:pointer;
+      transition:.18s;
+    }
+
+    .nav-btn:hover{
+      background:var(--menu-bg-hover);
+      color:var(--menu-dark);
+    }
+
+    .nav-btn.active{
+      color:#fff;
+      border-color:rgba(18,214,71,.45);
+      background:linear-gradient(180deg,rgba(52,168,57,.24),rgba(18,214,71,.1));
+    }
+
+    .nav-btn small{
+      display:block;
+      margin-top:7px;
+      color:var(--muted);
+      font-family:Segoe UI,Arial,sans-serif;
+      font-size:12px;
+      line-height:1.35;
+      text-transform:none;
+    }
+
+    .content{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:linear-gradient(180deg,#101b12,#0f1811);
+      padding:14px;
+      min-height:460px;
+    }
+
+    .empty{
+      text-align:center;
+      color:var(--muted);
+      font-family:Segoe UI,Arial,sans-serif;
+      font-size:18px;
+      border:1px dashed rgba(255,255,255,.2);
+      border-radius:14px;
+      padding:42px 18px;
+      line-height:1.7;
+    }
+
+    .status{
+      margin-bottom:12px;
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:12px;
+      padding:12px 14px;
+      background:rgba(255,255,255,.04);
+      color:var(--muted);
+      font-family:Segoe UI,Arial,sans-serif;
+      font-size:14px;
+      line-height:1.5;
+    }
+
+    .status strong{
+      color:#fff;
+    }
+
+    .game-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:12px;
+      margin-bottom:12px;
+      padding-bottom:12px;
+      border-bottom:1px solid rgba(255,255,255,.12);
+    }
+
+    .game-title{
+      margin:0;
+      color:var(--menu-green-2);
+      font-size:34px;
+      line-height:.98;
+      text-transform:uppercase;
+    }
+
+    .game-meta{
+      margin:8px 0 0;
+      color:var(--muted);
+      font-family:Segoe UI,Arial,sans-serif;
+      font-size:15px;
+      line-height:1.55;
+    }
+
+    .game-badge{
+      white-space:nowrap;
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:12px;
+      background:rgba(255,255,255,.06);
+      color:var(--gold);
+      padding:10px 12px;
+      font-size:14px;
+    }
+
+    .winner-panel{
+      display:grid;
+      grid-template-columns:120px 1fr;
+      gap:14px;
+      align-items:center;
+      margin:0 0 12px;
+      padding:12px;
+      border:1px solid rgba(215,180,74,.75);
+      border-radius:14px;
+      background:linear-gradient(180deg,rgba(215,180,74,.12),rgba(255,255,255,.04));
+      box-shadow:0 0 0 1px rgba(215,180,74,.18) inset, 0 0 24px rgba(215,180,74,.12);
+    }
+
+    .winner-thumb{
+      aspect-ratio:1/1;
+      border-radius:14px;
+      overflow:hidden;
+      background:#0b120d;
+      border:1px solid rgba(215,180,74,.35);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .winner-thumb img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      object-position:center;
+      padding:20px;
+      background:linear-gradient(180deg,#13361c,#1f5d2e);
+      display:block;
+    }
+
+    .winner-tag{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      margin-bottom:8px;
+      padding:7px 11px;
+      border-radius:999px;
+      border:1px solid rgba(215,180,74,.42);
+      background:rgba(10,10,10,.4);
+      color:var(--gold);
+      font-size:14px;
+    }
+
+    .winner-title{
+      margin:0 0 8px;
+      color:#fff4cb;
+      font-size:28px;
+      line-height:1;
+      text-transform:uppercase;
+    }
+
+    .winner-sub{
+      margin:0;
+      color:var(--muted);
+      font-family:Segoe UI,Arial,sans-serif;
+      font-size:14px;
+      line-height:1.6;
+    }
+
+    .winner-stats{
+      margin-top:10px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      font-family:Segoe UI,Arial,sans-serif;
+    }
+
+    .winner-stat{
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:999px;
+      background:rgba(255,255,255,.04);
+      color:#fff;
+      padding:7px 10px;
+      font-size:13px;
+      line-height:1;
+    }
+
+    .toolbar{
+      margin-bottom:12px;
+      color:var(--muted);
+      font-family:Segoe UI,Arial,sans-serif;
+      font-size:14px;
+      line-height:1.5;
+    }
+
+    .players{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:12px;
+    }
+
+    .player{
+      border:1px solid rgba(255,255,255,.16);
+      border-radius:14px;
+      overflow:hidden;
+      background:rgba(255,255,255,.04);
+      display:flex;
+      flex-direction:column;
+      min-height:100%;
+      transition:.18s ease;
+    }
+
+    .player.leader{
+      border-color:rgba(215,180,74,.85);
+      box-shadow:0 0 0 1px rgba(215,180,74,.28) inset, 0 0 24px rgba(215,180,74,.18);
+    }
+
+    .img-wrap{
+      position:relative;
+      aspect-ratio:1/1;
+      background:#0b120d;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .img-wrap img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      object-position:center;
+      padding:34px;
+      background:linear-gradient(180deg,#13361c,#1f5d2e);
+      display:block;
+    }
+
+    .leader-badge{
+      position:absolute;
+      top:10px;
+      left:10px;
+      display:flex;
+      align-items:center;
+      gap:6px;
+      padding:7px 10px;
+      border-radius:999px;
+      background:rgba(10,10,10,.78);
+      border:1px solid rgba(215,180,74,.5);
+      color:var(--gold);
+      backdrop-filter:blur(5px);
+      z-index:2;
+    }
+
+    .leader-badge .star{
+      font-size:16px;
+      line-height:1;
+    }
+
+    .leader-badge .text{
+      font-family:Segoe UI,Arial,sans-serif;
+      font-size:11px;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:.04em;
+      line-height:1;
+    }
+
+    .vote-chip{
+      position:absolute;
+      top:10px;
+      right:10px;
+      min-width:78px;
+      text-align:center;
+      border-radius:14px;
+      padding:8px 10px;
+      background:rgba(10,10,10,.72);
+      border:1px solid rgba(255,255,255,.16);
+      backdrop-filter:blur(5px);
+      z-index:2;
+    }
+
+    .vote-chip strong{
+      display:block;
+      color:#fff;
+      font-family:Segoe UI,Arial,sans-serif;
+      font-size:14px;
+      line-height:1.1;
+      font-weight:700;
+    }
+
+    .vote-chip span{
+      display:block;
+      margin-top:2px;
+      color:var(--gold);
+      font-family:Segoe UI,Arial,sans-serif;
+      font-size:12px;
+      font-weight:700;
+      line-height:1.1;
+    }
+
+    .body{
+      padding:12px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      flex:1;
+    }
+
+    .player-name{
+      margin:0;
+      color:#fff;
+      font-size:24px;
+      line-height:1.05;
+      text-transform:uppercase;
+      min-height:54px;
+      display:flex;
+      align-items:flex-end;
+    }
+
+    .vote-bar{
+      width:100%;
+      height:10px;
+      border-radius:999px;
+      overflow:hidden;
+      background:rgba(255,255,255,.09);
+      border:1px solid rgba(255,255,255,.08);
+    }
+
+    .vote-bar-fill{
+      height:100%;
+      width:0%;
+      background:linear-gradient(90deg,var(--gold),#f0d98c);
+      transition:width .25s ease;
+    }
+
+    .mobile-switch{
+      display:none;
+    }
+
+    .mobile-menu-btn{
+      display:none;
+    }
+
+    @media (max-width:900px){
+      .layout{grid-template-columns:1fr}
+      .nav{display:none}
+      .top{display:none}
+      .mobile-switch{
+        display:flex;
+        gap:8px;
+        position:sticky;
+        top:8px;
+        z-index:19;
+        margin:0 0 12px;
+      }
+      .mobile-switch select{
+        width:100%;
+        min-height:58px;
+        padding:14px 16px;
+        border:1px solid rgba(255,255,255,.24);
+        border-radius:12px;
+        background:rgba(8,14,9,.95);
+        color:var(--menu-green-2);
+        font-family:Segoe UI,Arial,sans-serif;
+        font-size:16px;
+        font-weight:600;
+        appearance:none;
+        padding-right:44px;
+      }
+      .content{min-height:260px;padding:12px}
+      .page{padding:10px 10px 78px}
+      .mobile-menu-btn{
+        display:block;
+        position:fixed;
+        left:10px;
+        right:10px;
+        bottom:10px;
+        z-index:30;
+      }
+      .mobile-menu-btn a{
+        display:block;
+        text-align:center;
+        text-decoration:none;
+        color:var(--menu-green);
+        background:rgba(8,14,9,.94);
+        border:1px solid rgba(255,255,255,.24);
+        border-radius:12px;
+        padding:12px 14px;
+        font-size:15px;
+      }
+      .winner-panel{grid-template-columns:1fr}
+      .winner-thumb{max-width:220px}
+    }
+
+    @media (max-width:640px){
+      .game-head{flex-direction:column}
+      .players{grid-template-columns:1fr}
+      .game-title{font-size:28px}
+      .player-name{font-size:21px}
+      .sub{font-size:15px}
+      .winner-title{font-size:22px}
     }
   </style>
 </head>
 <body>
-  <main>
-    <h1>MOTM Static Data</h1>
-    <p>Dieses Repo stellt die statischen JSON-Daten fuer das SC-Hassel-MOTM-Voting bereit.</p>
-    <p><a href="./static-data/matches.json">matches.json</a></p>
-    <p><a href="./static-data/motm-data.json">motm-data.json</a></p>
-  </main>
+  <div class="page">
+    <div class="top">
+      <a class="menu-btn" href="https://www.sc-hassel1919.de/">&larr; Zurück zur Startseite</a>
+    </div>
+
+    <header class="hero">
+      <div class="club">SC Buer-Hassel 1919 e.V.</div>
+      <h1>Man of the Match</h1>
+      <div class="line"></div>
+      <p class="sub">
+        Jede Woche neu abstimmen. Sonntag um 23:59 Uhr endet das Voting, ab Montag startet die nächste Runde.
+      </p>
+    </header>
+
+    <div class="mobile-switch">
+      <select id="mobileSelect">
+        <option value="">Spiel auswählen...</option>
+      </select>
+    </div>
+
+    <div class="layout">
+      <aside class="nav">
+        <div class="nav-head">
+          <div class="nav-head-title">Spielauswahl</div>
+          <p class="nav-head-text" id="authStatus">Verbinde Voting-System...</p>
+        </div>
+        <button class="reload-btn" id="reloadBtn" type="button">Spiele neu laden</button>
+        <div id="matchNav"></div>
+      </aside>
+
+      <section class="content">
+        <div id="panelHost">
+          <div class="empty">Spiele werden geladen...</div>
+        </div>
+      </section>
+    </div>
+
+    <div class="mobile-menu-btn">
+      <a href="https://www.sc-hassel1919.de/">&larr; Zurück zur Startseite</a>
+    </div>
+  </div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
+    import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
+    import { getFirestore, doc, getDoc, setDoc, collection, getDocs, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBR8BPXT3U2Ip0vnZ4csQLBVZvnipLMIDI",
+      authDomain: "schassel1.firebaseapp.com",
+      projectId: "schassel1",
+      storageBucket: "schassel1.firebasestorage.app",
+      messagingSenderId: "826830852235",
+      appId: "1:826830852235:web:80e0bd93c5e35c2d48448e",
+      measurementId: "G-MTDMCSETP1"
+    };
+
+    const TICKER_API = "https://polatyx45.github.io/motm-scraper/static-data/motm-data.json";
+    const LINEUP_BASE = "https://polatyx45.github.io/motm-scraper/static-data/lineups";
+    const LOGO_FALLBACK = "https://upload.wikimedia.org/wikipedia/commons/7/7d/SC_Hassel_Logo.svg";
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+    const matchNav = document.getElementById("matchNav");
+    const panelHost = document.getElementById("panelHost");
+    const mobileSelect = document.getElementById("mobileSelect");
+    const reloadBtn = document.getElementById("reloadBtn");
+    const authStatus = document.getElementById("authStatus");
+
+    let currentUser = null;
+    let currentMatchId = "";
+    let cachedGames = [];
+    let currentPanelState = null;
+    const voteLocks = new Set();
+    const previousWinnerCache = new Map();
+
+    function escapeHtml(value) {
+      return String(value || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    function slugify(value) {
+      return String(value || "")
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/\u00df/g, "ss")
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "");
+    }
+
+    function normalizeComparableText(value) {
+      return String(value || "")
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/\u00df/g, "ss")
+        .replace(/[^a-z0-9]+/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+    }
+
+    function getFallbackMatchId(game) {
+      return slugify([game.home, game.away, game.date, game.time].join("-"));
+    }
+
+    function getStableGameId(game) {
+      return game?.stableId || game?.spielId || game?.matchId || game?.id || getFallbackMatchId(game || {});
+    }
+
+    function normalizeDisplayLabel(value) {
+      const text = normalizeComparableText(value);
+      if (!text) return "";
+      if (text.includes("walking football")) return "Walking Football";
+      if (text.includes("alte herren") || text.includes("alten herren")) return "Alte Herren";
+      if (text.includes("damen")) return "Damen";
+      if (text.includes("a jugend iii")) return "A-Junioren III";
+      if (text.includes("a jugend ii")) return "A-Junioren II";
+      if (text.includes("a jugend")) return "A-Junioren";
+      if (text.includes("b jugend")) return "B-Junioren";
+      if (text.includes("c jugend")) return "C-Junioren";
+      if (text.includes("d jugend iii")) return "D-Junioren III";
+      if (text.includes("d jugend ii")) return "D-Junioren II";
+      if (text.includes("d jugend")) return "D-Junioren";
+      if (text.includes("e mädchen") || text.includes("e maedchen")) return "E-Mädchen";
+      if (text.includes("e jugend ii")) return "E-Junioren II";
+      if (text.includes("e jugend")) return "E-Junioren";
+      if (text.includes("f jugend ii")) return "F-Junioren II";
+      if (text.includes("f jugend")) return "F-Junioren";
+      if (text.includes("g jugend")) return "G-Junioren";
+      if (text.includes("3 mannschaft")) return "3. Mannschaft";
+      if (text.includes("2 mannschaft")) return "2. Mannschaft";
+      if (text.includes("1 mannschaft")) return "1. Mannschaft";
+      return String(value || "").trim();
+    }
+
+    function isYouthGame(game) {
+      const text = normalizeComparableText(`${game?.ageGroup || ""} ${game?.sourceLabel || ""} ${game?.navLabel || ""}`);
+      return /(junior|jugend|mädchen|madchen|maedchen)/.test(text);
+    }
+
+    function inferSection(game) {
+      if (game?.section) return game.section;
+      return isYouthGame(game) ? "Jugend" : "Senioren";
+    }
+
+    function getClubSideText(game) {
+      const sides = [game?.home, game?.away].map((value) => String(value || "").trim()).filter(Boolean);
+      const match = sides.find((value) => normalizeComparableText(value).includes("sc hassel"));
+      return match || sides[0] || "";
+    }
+
+    function inferSeniorTeamName(game) {
+      const fromSource = normalizeDisplayLabel(game?.sourceLabel || "");
+      if (fromSource && !/junior|jugend|mädchen|madchen|maedchen/i.test(fromSource)) {
+        return fromSource;
+      }
+
+      const clubSide = normalizeComparableText(getClubSideText(game));
+      if (clubSide.includes("walking football")) return "Walking Football";
+      if (clubSide.includes("alte herren") || clubSide.includes("alten herren")) return "Alte Herren";
+      if (clubSide.includes("damen")) return "Damen";
+      if (/\biii\b/.test(clubSide)) return "3. Mannschaft";
+      if (/\bii\b/.test(clubSide)) return "2. Mannschaft";
+      return "1. Mannschaft";
+    }
+
+    function getYouthLabel(game) {
+      return (
+        normalizeDisplayLabel(game?.ageGroup) ||
+        normalizeDisplayLabel(game?.sourceLabel) ||
+        normalizeDisplayLabel(game?.navLabel) ||
+        "Jugend"
+      );
+    }
+
+    function getNavLabel(game) {
+      if (game?.navLabel) {
+        return normalizeDisplayLabel(game.navLabel) || String(game.navLabel).trim();
+      }
+      return inferSection(game) === "Jugend" ? getYouthLabel(game) : inferSeniorTeamName(game);
+    }
+
+    function dedupeGames(games) {
+      const seen = new Set();
+      const unique = [];
+
+      for (const game of games) {
+        if (!game || !game.home || !game.away) continue;
+        const stableId = getStableGameId(game);
+        if (!stableId || seen.has(stableId)) continue;
+        seen.add(stableId);
+        unique.push({ ...game, stableId });
+      }
+
+      return unique;
+    }
+
+    function sortGames(games) {
+      const seniorOrder = {
+        "1. Mannschaft": 1,
+        "2. Mannschaft": 2,
+        "3. Mannschaft": 3,
+        "Damen": 4,
+        "Alte Herren": 5,
+        "Walking Football": 6
+      };
+
+      const youthOrder = {
+        "A-Junioren": 1,
+        "A-Junioren II": 2,
+        "A-Junioren III": 3,
+        "B-Junioren": 4,
+        "C-Junioren": 5,
+        "D-Junioren": 6,
+        "D-Junioren II": 7,
+        "D-Junioren III": 8,
+        "E-Junioren": 9,
+        "E-Junioren II": 10,
+        "E-Mädchen": 11,
+        "F-Junioren": 12,
+        "F-Junioren II": 13,
+        "G-Junioren": 14
+      };
+
+      return [...games].sort((a, b) => {
+        const aSection = inferSection(a);
+        const bSection = inferSection(b);
+
+        if (aSection !== bSection) return aSection === "Senioren" ? -1 : 1;
+
+        const aLabel = getNavLabel(a);
+        const bLabel = getNavLabel(b);
+        const orderMap = aSection === "Senioren" ? seniorOrder : youthOrder;
+        const aOrder = orderMap[aLabel] || 999;
+        const bOrder = orderMap[bLabel] || 999;
+
+        if (aOrder !== bOrder) return aOrder - bOrder;
+
+        const aDate = `${a.date || ""} ${a.time || ""}`;
+        const bDate = `${b.date || ""} ${b.time || ""}`;
+        return aLabel.localeCompare(bLabel, "de") || aDate.localeCompare(bDate, "de");
+      });
+    }
+
+    async function fetchJson(url) {
+      const response = await fetch(url, { cache: "no-store" });
+      if (!response.ok) {
+        const error = new Error(`HTTP ${response.status}`);
+        error.status = response.status;
+        throw error;
+      }
+      return response.json();
+    }
+
+    async function loadWeekGames() {
+      const data = await fetchJson(TICKER_API);
+      const games = Array.isArray(data?.games) ? data.games : [];
+      return sortGames(dedupeGames(games));
+    }
+
+    function getLineupUrl(game) {
+      if (game?.lineupFile) {
+        return new URL(game.lineupFile, TICKER_API).toString();
+      }
+      return `${LINEUP_BASE}/${encodeURIComponent(getStableGameId(game))}.json`;
+    }
+
+    async function loadLineup(game) {
+      if (game?.lineup && typeof game.lineup === "object") {
+        return game.lineup;
+      }
+
+      try {
+        const data = await fetchJson(getLineupUrl(game));
+        return data && typeof data === "object"
+          ? data
+          : { ok: false, error: "lineup_not_available", players: [] };
+      } catch (error) {
+        if (error && error.status === 404) {
+          return { ok: false, error: "lineup_not_available", players: [] };
+        }
+        throw error;
+      }
+    }
+
+    async function loadVotes(matchId) {
+      const snap = await getDocs(collection(db, "motm_matches", matchId, "votes"));
+      const totals = {};
+      let totalVotes = 0;
+      let selectedIds = [];
+
+      snap.forEach((docSnap) => {
+        const data = docSnap.data() || {};
+        const ids = Array.isArray(data.playerIds) ? data.playerIds : [];
+
+        ids.forEach((id) => {
+          totals[id] = (totals[id] || 0) + 1;
+          totalVotes += 1;
+        });
+
+        if (currentUser && docSnap.id === currentUser.uid) {
+          selectedIds = ids;
+        }
+      });
+
+      return {
+        totals,
+        totalVotes,
+        selectedIds,
+        userVoteCount: selectedIds.length
+      };
+    }
+
+    function toDisplayPlayer(player) {
+      const displayName =
+        String(player?.name || "").trim() === "Spieler" && player?.number
+          ? `Spieler Nr. ${player.number}`
+          : String(player?.name || "").trim() || (player?.number ? `Spieler Nr. ${player.number}` : "Spieler");
+
+      return {
+        ...player,
+        displayImg: LOGO_FALLBACK,
+        displayName
+      };
+    }
+
+    function extractPlayers(lineupData) {
+      if (!lineupData?.ok || !Array.isArray(lineupData.players)) {
+        return { players: [], reason: "lineup_not_available" };
+      }
+
+      const players = lineupData.players
+        .filter((player) => {
+          const name = String(player?.name || "").trim().toLowerCase();
+          const number = String(player?.number || "").trim();
+          if (!name && !number) return false;
+          if (name === "k.a.") return false;
+          if (name === "spieler" && !number) return false;
+          return true;
+        })
+        .map((player) => toDisplayPlayer(player));
+
+      if (!players.length) {
+        return { players: [], reason: "unsafe_side" };
+      }
+
+      return { players, reason: "" };
+    }
+
+    function getTopPlayer(players, voteState) {
+      let leader = null;
+      let leaderVotes = 0;
+
+      for (const player of players) {
+        const votes = voteState?.totals?.[player.id] || 0;
+        if (votes > leaderVotes) {
+          leaderVotes = votes;
+          leader = player;
+        }
+      }
+
+      return leaderVotes > 0 ? leader : null;
+    }
+
+    async function loadPreviousWinner(game) {
+      const previousGame = game?.previousMatch || null;
+      if (!previousGame) return null;
+
+      const previousId = getStableGameId(previousGame);
+      if (!previousId) return null;
+      if (previousWinnerCache.has(previousId)) return previousWinnerCache.get(previousId);
+
+      try {
+        const previousLineup = await loadLineup(previousGame);
+        const { players } = extractPlayers(previousLineup);
+        if (!players.length) {
+          previousWinnerCache.set(previousId, null);
+          return null;
+        }
+
+        const voteState = await loadVotes(previousId);
+        const winner = getTopPlayer(players, voteState);
+        if (!winner) {
+          previousWinnerCache.set(previousId, null);
+          return null;
+        }
+
+        const votes = voteState.totals[winner.id] || 0;
+        const percent = voteState.totalVotes > 0 ? Math.round((votes / voteState.totalVotes) * 100) : 0;
+
+        const payload = {
+          game: previousGame,
+          player: winner,
+          votes,
+          percent,
+          totalVotes: voteState.totalVotes
+        };
+
+        previousWinnerCache.set(previousId, payload);
+        return payload;
+      } catch (error) {
+        console.error(error);
+        previousWinnerCache.set(previousId, null);
+        return null;
+      }
+    }
+
+    function renderPlayerCard(player, voteState, matchId, leaderId) {
+      const votes = voteState.totals[player.id] || 0;
+      const percent = voteState.totalVotes > 0 ? Math.round((votes / voteState.totalVotes) * 100) : 0;
+      const isLeader = player.id === leaderId;
+      const alreadyVotedForPlayer = voteState.selectedIds.includes(player.id);
+      const maxReached = voteState.userVoteCount >= 3;
+      const disabled = alreadyVotedForPlayer || maxReached ? "disabled" : "";
+
+      let buttonText = "Jetzt abstimmen";
+      if (alreadyVotedForPlayer) buttonText = "Schon gewählt";
+      if (!alreadyVotedForPlayer && maxReached) buttonText = "Maximal abgestimmt";
+
+      return `
+        <article class="player${isLeader ? " leader" : ""}">
+          <div class="img-wrap">
+            ${isLeader ? `<div class="leader-badge"><span class="star">&#11088;</span><span class="text">In Führung</span></div>` : ""}
+            <img
+              src="${escapeHtml(player.displayImg)}"
+              alt="${escapeHtml(player.displayName)}"
+              loading="lazy"
+              onerror="this.onerror=null;this.src='${escapeHtml(LOGO_FALLBACK)}'"
+            >
+            <div class="vote-chip">
+              <strong>${votes} Stimme${votes === 1 ? "" : "n"}</strong>
+              <span>${percent}%</span>
+            </div>
+          </div>
+          <div class="body">
+            <h3 class="player-name">${escapeHtml(player.displayName)}</h3>
+            <div class="vote-bar"><div class="vote-bar-fill" style="width:${percent}%"></div></div>
+            <button
+              class="vote-btn"
+              type="button"
+              data-match-id="${escapeHtml(matchId)}"
+              data-player-id="${escapeHtml(player.id)}"
+              ${disabled}
+            >
+              ${buttonText}
+            </button>
+          </div>
+        </article>
+      `;
+    }
+
+    function renderPreviousWinner(previousWinner) {
+      if (!previousWinner?.player || !previousWinner?.game) return "";
+
+      return `
+        <section class="winner-panel">
+          <div class="winner-thumb">
+            <img
+              src="${escapeHtml(LOGO_FALLBACK)}"
+              alt="${escapeHtml(previousWinner.player.displayName)}"
+              loading="lazy"
+              onerror="this.onerror=null;this.src='${escapeHtml(LOGO_FALLBACK)}'"
+            >
+          </div>
+          <div>
+            <div class="winner-tag">&#11088; Sieger vom letzten Spiel</div>
+            <h3 class="winner-title">${escapeHtml(previousWinner.player.displayName)}</h3>
+            <p class="winner-sub">
+              ${escapeHtml(previousWinner.game.home)} - ${escapeHtml(previousWinner.game.away)}<br>
+              ${escapeHtml(previousWinner.game.date || "")}${previousWinner.game.time ? " | " + escapeHtml(previousWinner.game.time) + " Uhr" : ""}${previousWinner.game.competition ? " | " + escapeHtml(previousWinner.game.competition) : ""}
+            </p>
+            <div class="winner-stats">
+              <div class="winner-stat">${previousWinner.votes} Stimme${previousWinner.votes === 1 ? "" : "n"}</div>
+              <div class="winner-stat">${previousWinner.percent}% Anteil</div>
+              <div class="winner-stat">${previousWinner.totalVotes} Gesamtstimmen</div>
+            </div>
+          </div>
+        </section>
+      `;
+    }
+
+    function renderPanel(game, players, voteState, reason, previousWinner) {
+      currentPanelState = { game, players, voteState, reason, previousWinner };
+      const remainingVotes = Math.max(0, 3 - voteState.userVoteCount);
+      const leader = getTopPlayer(players, voteState);
+      const leaderId = leader?.id || "";
+
+      let contentHtml = "";
+
+      if (reason === "lineup_not_available") {
+        contentHtml = `
+          <div class="empty">
+            Die Aufstellung ist für dieses Spiel aktuell noch nicht verfügbar.<br>
+            Sobald die Aufstellung bei Fußball.de veröffentlicht wird, erscheint sie hier automatisch.
+          </div>
+        `;
+      } else if (reason === "unsafe_side") {
+        contentHtml = `
+          <div class="empty">
+            Für dieses Spiel konnten die SC-Hassel-Spieler noch nicht eindeutig geladen werden.
+          </div>
+        `;
+      } else if (!players.length) {
+        contentHtml = `<div class="empty">Für dieses Spiel konnten aktuell keine SC-Hassel-Spieler geladen werden.</div>`;
+      } else {
+        contentHtml = `
+          <div class="toolbar">
+            Du hast bereits <strong>${voteState.userVoteCount}</strong> von <strong>3</strong> Stimmen vergeben.
+            Noch offen: <strong>${remainingVotes}</strong>.
+          </div>
+          <div class="players">${players.map((player) => renderPlayerCard(player, voteState, getStableGameId(game), leaderId)).join("")}</div>
+        `;
+      }
+
+      panelHost.innerHTML = `
+        <div class="status">
+          <strong>Status:</strong>
+          ${voteState.userVoteCount >= 3 ? "Du hast für dieses Spiel bereits alle 3 Stimmen vergeben." : "Jeder Klick zählt sofort. Pro Spieler ist nur eine Stimme möglich."}
+        </div>
+
+        <div class="game-head">
+          <div>
+            <h2 class="game-title">${escapeHtml(game.home)} - ${escapeHtml(game.away)}</h2>
+            <p class="game-meta">
+              ${escapeHtml(game.date || "")}${game.time ? " | " + escapeHtml(game.time) + " Uhr" : ""}
+              ${game.competition ? " | " + escapeHtml(game.competition) : ""}
+              ${game.ageGroup ? " | " + escapeHtml(normalizeDisplayLabel(game.ageGroup) || game.ageGroup) : ""}
+            </p>
+          </div>
+          <div class="game-badge">${escapeHtml(getNavLabel(game))}</div>
+        </div>
+
+        ${renderPreviousWinner(previousWinner)}
+        ${contentHtml}
+      `;
+
+      bindVoteButtons();
+    }
+
+    function bindVoteButtons() {
+      document.querySelectorAll(".vote-btn").forEach((btn) => {
+        btn.addEventListener("click", () => submitVote(btn.dataset.matchId, btn.dataset.playerId));
+      });
+    }
+
+    async function submitVote(matchId, playerId) {
+      if (!currentUser) {
+        alert("Bitte kurz warten. Die Anmeldung läuft noch.");
+        return;
+      }
+
+      const lockKey = `${matchId}:vote`;
+      if (voteLocks.has(lockKey)) return;
+      voteLocks.add(lockKey);
+
+      try {
+        const voteRef = doc(db, "motm_matches", matchId, "votes", currentUser.uid);
+        const snap = await getDoc(voteRef);
+        const data = snap.exists() ? snap.data() : null;
+        const currentIds = Array.isArray(data?.playerIds) ? data.playerIds : [];
+
+        if (currentIds.includes(playerId)) {
+          alert("Für diesen Spieler hast du bereits abgestimmt.");
+          return;
+        }
+
+        if (currentIds.length >= 3) {
+          alert("Du hast für dieses Spiel bereits 3 Stimmen abgegeben.");
+          return;
+        }
+
+        await setDoc(voteRef, {
+          uid: currentUser.uid,
+          playerIds: [...currentIds, playerId],
+          createdAt: data?.createdAt || serverTimestamp(),
+          updatedAt: serverTimestamp()
+        });
+
+        currentPanelState.voteState.selectedIds = [...currentPanelState.voteState.selectedIds, playerId];
+        currentPanelState.voteState.userVoteCount += 1;
+        currentPanelState.voteState.totalVotes += 1;
+        currentPanelState.voteState.totals[playerId] = (currentPanelState.voteState.totals[playerId] || 0) + 1;
+
+        renderPanel(
+          currentPanelState.game,
+          currentPanelState.players,
+          currentPanelState.voteState,
+          currentPanelState.reason,
+          currentPanelState.previousWinner
+        );
+      } catch (error) {
+        console.error(error);
+        alert("Die Stimme konnte nicht gespeichert werden.");
+      } finally {
+        voteLocks.delete(lockKey);
+      }
+    }
+
+    function renderNav(games) {
+      const grouped = {
+        Senioren: games.filter((game) => inferSection(game) === "Senioren"),
+        Jugend: games.filter((game) => inferSection(game) === "Jugend")
+      };
+
+      matchNav.innerHTML = "";
+      mobileSelect.innerHTML = `<option value="">Spiel auswählen...</option>`;
+
+      ["Senioren", "Jugend"].forEach((section) => {
+        const list = grouped[section];
+        if (!list.length) return;
+
+        const wrap = document.createElement("div");
+        wrap.className = "nav-group";
+
+        const title = document.createElement("div");
+        title.className = "nav-group-title";
+        title.textContent = section;
+        wrap.appendChild(title);
+
+        list.forEach((game) => {
+          const matchId = getStableGameId(game);
+          const label = getNavLabel(game);
+
+          const button = document.createElement("button");
+          button.className = "nav-btn";
+          button.type = "button";
+          button.dataset.matchId = matchId;
+          button.innerHTML = `
+            ${escapeHtml(label)}
+            <small>${escapeHtml(game.home)} - ${escapeHtml(game.away)}<br>${escapeHtml(game.date || "")}${game.time ? " | " + escapeHtml(game.time) + " Uhr" : ""}</small>
+          `;
+          button.addEventListener("click", () => showMatch(matchId));
+          wrap.appendChild(button);
+
+          const option = document.createElement("option");
+          option.value = matchId;
+          option.textContent = `${label} | ${game.home} - ${game.away}`;
+          mobileSelect.appendChild(option);
+
+          if (!currentMatchId && section === "Senioren") {
+            currentMatchId = matchId;
+          }
+        });
+
+        matchNav.appendChild(wrap);
+      });
+
+      if (!currentMatchId && games.length) {
+        currentMatchId = getStableGameId(games[0]);
+      }
+    }
+
+    function markActiveNav(matchId) {
+      document.querySelectorAll(".nav-btn").forEach((btn) => {
+        btn.classList.toggle("active", btn.dataset.matchId === matchId);
+      });
+      mobileSelect.value = matchId;
+    }
+
+    async function showMatch(matchId) {
+      const game = cachedGames.find((item) => getStableGameId(item) === matchId);
+      if (!game) return;
+
+      currentMatchId = matchId;
+      markActiveNav(matchId);
+      panelHost.innerHTML = `<div class="empty">Aufstellung, Stimmen und letzter Sieger werden geladen...</div>`;
+
+      try {
+        const [lineupData, voteState, previousWinner] = await Promise.all([
+          loadLineup(game),
+          loadVotes(matchId),
+          loadPreviousWinner(game)
+        ]);
+
+        const { players, reason } = extractPlayers(lineupData);
+        renderPanel(game, players, voteState, reason, previousWinner);
+      } catch (error) {
+        console.error(error);
+        const voteState = await loadVotes(matchId).catch(() => ({
+          totals: {},
+          totalVotes: 0,
+          selectedIds: [],
+          userVoteCount: 0
+        }));
+        const previousWinner = await loadPreviousWinner(game).catch(() => null);
+        renderPanel(game, [], voteState, "lineup_not_available", previousWinner);
+      }
+    }
+
+    async function loadPage() {
+      panelHost.innerHTML = `<div class="empty">Spiele werden geladen...</div>`;
+
+      try {
+        cachedGames = await loadWeekGames();
+        currentMatchId = "";
+
+        if (!cachedGames.length) {
+          panelHost.innerHTML = `<div class="empty">Aktuell wurden keine relevanten Spiele gefunden.</div>`;
+          matchNav.innerHTML = "";
+          mobileSelect.innerHTML = `<option value="">Keine Spiele gefunden</option>`;
+          return;
+        }
+
+        renderNav(cachedGames);
+        await showMatch(currentMatchId);
+      } catch (error) {
+        console.error(error);
+        panelHost.innerHTML = `<div class="empty">Beim Laden der Spiele ist ein Fehler aufgetreten.</div>`;
+      }
+    }
+
+    mobileSelect.addEventListener("change", () => {
+      if (mobileSelect.value) {
+        showMatch(mobileSelect.value);
+      }
+    });
+
+    reloadBtn.addEventListener("click", loadPage);
+
+    onAuthStateChanged(auth, async (user) => {
+      currentUser = user || null;
+      if (currentUser) {
+        authStatus.textContent = "Voting verbunden. Wähle links ein Spiel aus.";
+        await loadPage();
+      }
+    });
+
+    async function init() {
+      try {
+        authStatus.textContent = "Anmeldung wird vorbereitet...";
+        await signInAnonymously(auth);
+      } catch (error) {
+        console.error(error);
+        authStatus.textContent = "Anmeldung fehlgeschlagen. Bitte Firebase prüfen.";
+        panelHost.innerHTML = `<div class="empty">Die Firebase-Anmeldung ist fehlgeschlagen.</div>`;
+      }
+    }
+
+    init();
+  </script>
 </body>
 </html>
