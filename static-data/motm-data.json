@@ -1,10 +1,10 @@
 {
   "ok": true,
-  "generatedAt": "2026-03-17T05:14:15.439Z",
+  "generatedAt": "2026-03-17T08:03:47.816Z",
   "votingWindow": {
     "timeZone": "Europe/Berlin",
     "localDate": "2026-03-17",
-    "localTime": "06:14:12",
+    "localTime": "09:03:45",
     "startDate": "2026-03-16",
     "endDate": "2026-03-22",
     "switchesAtLocal": "2026-03-23 00:00:00"
@@ -38,7 +38,7 @@
         "away": "DJK TuS Rotthausen 9er",
         "players": [],
         "stableId": "0302IJ8I64000000VS5489BUVS4DS759",
-        "generatedAt": "2026-03-17T05:14:15.439Z",
+        "generatedAt": "2026-03-17T08:03:47.816Z",
         "game": {
           "home": "SC Hassel",
           "away": "DJK TuS Rotthausen 9er",
@@ -77,7 +77,7 @@
         "away": "SV GE-Hessler",
         "players": [],
         "stableId": "02U2A4C4AO000000VS5489BTVV378D77",
-        "generatedAt": "2026-03-17T05:14:15.439Z",
+        "generatedAt": "2026-03-17T08:03:47.816Z",
         "game": {
           "home": "SC Hassel",
           "away": "SV GE-Hessler",
@@ -116,7 +116,7 @@
         "away": "BV Rentfort III",
         "players": [],
         "stableId": "02TS7PM9RS000000VS5489BUVVJ8R9DS",
-        "generatedAt": "2026-03-17T05:14:15.439Z",
+        "generatedAt": "2026-03-17T08:03:47.816Z",
         "game": {
           "home": "SC Hassel II",
           "away": "BV Rentfort III",
@@ -155,7 +155,7 @@
         "away": "BW Westf. Langenbochum",
         "players": [],
         "stableId": "02TQ6E3E04000000VS5489BTVV0LE4BT",
-        "generatedAt": "2026-03-17T05:14:15.439Z",
+        "generatedAt": "2026-03-17T08:03:47.816Z",
         "game": {
           "home": "SC Hassel",
           "away": "BW Westf. Langenbochum",
@@ -194,7 +194,7 @@
         "away": "DJK Arminia Hassel",
         "players": [],
         "stableId": "02TS86HRQO000000VS5489BUVVJ8R9DS",
-        "generatedAt": "2026-03-17T05:14:15.439Z",
+        "generatedAt": "2026-03-17T08:03:47.816Z",
         "game": {
           "home": "SC Hassel III",
           "away": "DJK Arminia Hassel",
@@ -229,7 +229,7 @@
         "away": "BV Rentfort II",
         "players": [],
         "stableId": "02VN5AS57G000000VS5489BTVTG66ASV",
-        "generatedAt": "2026-03-17T05:14:15.439Z",
+        "generatedAt": "2026-03-17T08:03:47.816Z",
         "game": {
           "home": "SC Hassel II",
           "away": "BV Rentfort II",
