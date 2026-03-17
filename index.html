@@ -379,6 +379,54 @@
       line-height:1.5;
     }
 
+    .countdown-panel{
+      margin-top:14px;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:14px;
+      background:rgba(255,255,255,.04);
+      padding:14px;
+    }
+
+    .countdown-label{
+      margin:0 0 10px;
+      color:var(--muted);
+      font-family:Segoe UI,Arial,sans-serif;
+      font-size:14px;
+      line-height:1.5;
+    }
+
+    .countdown-grid{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:10px;
+    }
+
+    .countdown-box{
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:12px;
+      background:rgba(10,10,10,.28);
+      padding:12px 10px;
+      text-align:center;
+    }
+
+    .countdown-value{
+      display:block;
+      color:var(--gold);
+      font-size:28px;
+      line-height:1;
+    }
+
+    .countdown-unit{
+      display:block;
+      margin-top:6px;
+      color:var(--muted);
+      font-family:Segoe UI,Arial,sans-serif;
+      font-size:12px;
+      line-height:1.2;
+      text-transform:uppercase;
+      letter-spacing:.05em;
+    }
+
     .players{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -584,6 +632,7 @@
       .player-name{font-size:21px}
       .sub{font-size:15px}
       .winner-title{font-size:22px}
+      .countdown-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
     }
   </style>
 </head>
@@ -663,6 +712,8 @@
     let currentMatchId = "";
     let cachedGames = [];
     let currentPanelState = null;
+    let cachedVotingWindow = null;
+    let countdownTimerId = null;
     const voteLocks = new Set();
     const previousWinnerCache = new Map();
 
@@ -851,8 +902,137 @@
 
     async function loadWeekGames() {
       const data = await fetchJson(TICKER_API);
+      cachedVotingWindow = data?.votingWindow || null;
       const games = Array.isArray(data?.games) ? data.games : [];
       return sortGames(dedupeGames(games));
+    }
+
+    function getTimeZoneOffsetMinutes(date, timeZone) {
+      const formatter = new Intl.DateTimeFormat("en-US", {
+        timeZone,
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: false
+      });
+
+      const parts = Object.fromEntries(
+        formatter
+          .formatToParts(date)
+          .filter((part) => part.type !== "literal")
+          .map((part) => [part.type, part.value])
+      );
+
+      const asUtc = Date.UTC(
+        Number(parts.year),
+        Number(parts.month) - 1,
+        Number(parts.day),
+        Number(parts.hour),
+        Number(parts.minute),
+        Number(parts.second)
+      );
+
+      return Math.round((asUtc - date.getTime()) / 60000);
+    }
+
+    function zonedDateTimeToUtc(dateTimeString, timeZone) {
+      const normalized = String(dateTimeString || "").trim().replace(" ", "T");
+      const [datePart, timePart] = normalized.split("T");
+      if (!datePart || !timePart) return null;
+
+      const [year, month, day] = datePart.split("-").map(Number);
+      const [hour, minute, second = 0] = timePart.split(":").map(Number);
+      if ([year, month, day, hour, minute].some((value) => Number.isNaN(value))) {
+        return null;
+      }
+
+      let candidate = new Date(Date.UTC(year, month - 1, day, hour, minute, second));
+      for (let index = 0; index < 4; index += 1) {
+        const offset = getTimeZoneOffsetMinutes(candidate, timeZone);
+        const adjusted = new Date(Date.UTC(year, month - 1, day, hour, minute, second) - offset * 60000);
+        if (adjusted.getTime() === candidate.getTime()) {
+          return adjusted;
+        }
+        candidate = adjusted;
+      }
+
+      return candidate;
+    }
+
+    function getVotingSwitchTarget() {
+      const switchString = cachedVotingWindow?.switchesAtLocal;
+      const timeZone = cachedVotingWindow?.timeZone || "Europe/Berlin";
+      if (!switchString) return null;
+      return zonedDateTimeToUtc(switchString, timeZone);
+    }
+
+    function getCountdownParts(targetDate) {
+      if (!(targetDate instanceof Date) || Number.isNaN(targetDate.getTime())) {
+        return null;
+      }
+
+      const diffMs = targetDate.getTime() - Date.now();
+      if (diffMs <= 0) {
+        return { expired: true, days: 0, hours: 0, minutes: 0, seconds: 0 };
+      }
+
+      const totalSeconds = Math.floor(diffMs / 1000);
+      const days = Math.floor(totalSeconds / 86400);
+      const hours = Math.floor((totalSeconds % 86400) / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+
+      return { expired: false, days, hours, minutes, seconds };
+    }
+
+    function renderCountdownMarkup() {
+      const targetDate = getVotingSwitchTarget();
+      const parts = getCountdownParts(targetDate);
+      if (!parts) return "";
+
+      const switchLabel = escapeHtml(cachedVotingWindow?.switchesAtLocal || "");
+
+      if (parts.expired) {
+        return `
+          <div class="countdown-panel">
+            <p class="countdown-label">
+              Das nächste Voting startet jetzt. Umschaltzeit: <strong>${switchLabel}</strong>.
+            </p>
+          </div>
+        `;
+      }
+
+      return `
+        <div class="countdown-panel">
+          <p class="countdown-label">
+            Nächstes Voting startet in <strong>${switchLabel}</strong>.
+          </p>
+          <div class="countdown-grid">
+            <div class="countdown-box"><span class="countdown-value">${String(parts.days).padStart(2, "0")}</span><span class="countdown-unit">Tage</span></div>
+            <div class="countdown-box"><span class="countdown-value">${String(parts.hours).padStart(2, "0")}</span><span class="countdown-unit">Stunden</span></div>
+            <div class="countdown-box"><span class="countdown-value">${String(parts.minutes).padStart(2, "0")}</span><span class="countdown-unit">Minuten</span></div>
+            <div class="countdown-box"><span class="countdown-value">${String(parts.seconds).padStart(2, "0")}</span><span class="countdown-unit">Sekunden</span></div>
+          </div>
+        </div>
+      `;
+    }
+
+    function startCountdown() {
+      if (countdownTimerId) {
+        clearInterval(countdownTimerId);
+      }
+
+      const updateCountdown = () => {
+        const host = document.getElementById("countdownHost");
+        if (!host) return;
+        host.innerHTML = renderCountdownMarkup();
+      };
+
+      updateCountdown();
+      countdownTimerId = window.setInterval(updateCountdown, 1000);
     }
 
     function getLineupUrl(game) {
@@ -1129,9 +1309,11 @@
 
         ${renderPreviousWinner(previousWinner)}
         ${contentHtml}
+        <div id="countdownHost">${renderCountdownMarkup()}</div>
       `;
 
       bindVoteButtons();
+      startCountdown();
     }
 
     function bindVoteButtons() {
