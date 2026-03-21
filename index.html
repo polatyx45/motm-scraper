@@ -713,6 +713,7 @@
     let cachedGames = [];
     let currentPanelState = null;
     let countdownTimerId = null;
+    let resizeObserver = null;
     const voteLocks = new Set();
     const previousWinnerCache = new Map();
 
@@ -723,6 +724,36 @@
         .replace(/>/g, "&gt;")
         .replace(/"/g, "&quot;")
         .replace(/'/g, "&#39;");
+    }
+
+    function reportEmbedHeight() {
+      if (window.parent === window) return;
+
+      const bodyHeight = document.body ? document.body.scrollHeight : 0;
+      const docHeight = document.documentElement ? document.documentElement.scrollHeight : 0;
+      const height = Math.max(bodyHeight, docHeight, 1200);
+
+      window.parent.postMessage(
+        {
+          type: "motm-height",
+          height
+        },
+        "*"
+      );
+    }
+
+    function setupEmbedHeightReporting() {
+      reportEmbedHeight();
+
+      if (typeof ResizeObserver === "function" && document.body) {
+        resizeObserver?.disconnect();
+        resizeObserver = new ResizeObserver(() => reportEmbedHeight());
+        resizeObserver.observe(document.body);
+      }
+
+      window.addEventListener("load", reportEmbedHeight);
+      window.addEventListener("resize", reportEmbedHeight);
+      window.setInterval(reportEmbedHeight, 1000);
     }
 
     function slugify(value) {
@@ -1318,6 +1349,7 @@
 
       bindVoteButtons();
       startCountdown();
+      reportEmbedHeight();
     }
 
     function bindVoteButtons() {
@@ -1481,6 +1513,7 @@
           panelHost.innerHTML = `<div class="empty">Aktuell wurden keine relevanten Spiele gefunden.</div>`;
           matchNav.innerHTML = "";
           mobileSelect.innerHTML = `<option value="">Keine Spiele gefunden</option>`;
+          reportEmbedHeight();
           return;
         }
 
@@ -1489,6 +1522,7 @@
       } catch (error) {
         console.error(error);
         panelHost.innerHTML = `<div class="empty">Beim Laden der Spiele ist ein Fehler aufgetreten.</div>`;
+        reportEmbedHeight();
       }
     }
 
@@ -1510,12 +1544,14 @@
 
     async function init() {
       try {
+        setupEmbedHeightReporting();
         authStatus.textContent = "Anmeldung wird vorbereitet...";
         await signInAnonymously(auth);
       } catch (error) {
         console.error(error);
         authStatus.textContent = "Anmeldung fehlgeschlagen. Bitte Firebase prüfen.";
         panelHost.innerHTML = `<div class="empty">Die Firebase-Anmeldung ist fehlgeschlagen.</div>`;
+        reportEmbedHeight();
       }
     }
 
