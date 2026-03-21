@@ -1,10 +1,10 @@
 {
   "ok": true,
-  "generatedAt": "2026-03-21T09:58:09.603Z",
+  "generatedAt": "2026-03-21T10:56:22.917Z",
   "votingWindow": {
     "timeZone": "Europe/Berlin",
     "localDate": "2026-03-21",
-    "localTime": "10:58:07",
+    "localTime": "11:56:20",
     "startDate": "2026-03-16",
     "endDate": "2026-03-22",
     "switchesAtLocal": "2026-03-23 00:00:00"
@@ -21,7 +21,7 @@
       "date": "21.03.2026",
       "time": "13:30",
       "result": null,
-      "status": "",
+      "status": "Absetzung",
       "spielId": "0302IJ8I64000000VS5489BUVS4DS759",
       "resolvedBy": "team_matchplan",
       "sourceLabel": "A-Jugend – SC Buer-Hassel 1919 e.V.",
