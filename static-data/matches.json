@@ -1,15 +1,15 @@
 {
   "ok": true,
-  "generatedAt": "2026-03-21T22:54:35.152Z",
+  "generatedAt": "2026-03-21T23:48:46.832Z",
   "votingWindow": {
     "timeZone": "Europe/Berlin",
-    "localDate": "2026-03-21",
-    "localTime": "23:54:33",
+    "localDate": "2026-03-22",
+    "localTime": "00:48:45",
     "startDate": "2026-03-16",
     "endDate": "2026-03-22",
     "switchesAtLocal": "2026-03-23 00:00:00"
   },
-  "count": 6,
+  "count": 5,
   "games": [
     {
       "home": "SC Hassel",
@@ -130,8 +130,8 @@
       "home": "SC Hassel",
       "away": "DJK TuS Rotthausen 9er",
       "competition": "Kreisliga A",
-      "date": "21.03.2026",
-      "time": "13:30",
+      "date": "22.03.2026",
+      "time": "11:00",
       "ageGroup": "A-Junioren",
       "spielId": "0302IJ8I64000000VS5489BUVS4DS759",
       "resolvedBy": "team_matchplan",
@@ -153,21 +153,6 @@
         "teamId": "02I9E7SG64000000VS5489B1VTAQ4EE6",
         "lineupFile": "lineups/0302IJ8IAS000000VS5489BUVS4DS759.json"
       }
-    },
-    {
-      "home": "SC Hassel II",
-      "away": "BV Rentfort II",
-      "competition": "Kreisliga A",
-      "date": "21.03.2026",
-      "time": "12:00",
-      "ageGroup": "D-Junioren",
-      "spielId": "02VN5AS57G000000VS5489BTVTG66ASV",
-      "resolvedBy": "team_matchplan",
-      "sourceLabel": "D-Jugend II – SC Buer-Hassel 1919 e.V.",
-      "teamId": "02R20U2DD8000000VS5489B2VVGRHBSC",
-      "stableId": "02VN5AS57G000000VS5489BTVTG66ASV",
-      "lineupFile": "lineups/02VN5AS57G000000VS5489BTVTG66ASV.json",
-      "previousMatch": null
     }
   ]
 }
