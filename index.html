@@ -200,6 +200,14 @@
       transition:.18s;
     }
 
+    .nav-btn-label{
+      display:block;
+      font-family:'Gagalin',Segoe UI,Arial,sans-serif;
+      font-size:17px;
+      line-height:1.05;
+      letter-spacing:.01em;
+    }
+
     .nav-btn:hover{
       background:var(--menu-bg-hover);
       color:var(--menu-dark);
@@ -1444,7 +1452,7 @@
           button.type = "button";
           button.dataset.matchId = matchId;
           button.innerHTML = `
-            ${escapeHtml(label)}
+            <span class="nav-btn-label">${escapeHtml(label)}</span>
             <small>${escapeHtml(game.home)} - ${escapeHtml(game.away)}<br>${escapeHtml(game.date || "")}${game.time ? " | " + escapeHtml(game.time) + " Uhr" : ""}</small>
           `;
           button.addEventListener("click", () => showMatch(matchId));
