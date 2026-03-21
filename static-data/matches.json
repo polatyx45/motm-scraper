@@ -1,48 +1,16 @@
 {
   "ok": true,
-  "generatedAt": "2026-03-21T14:56:26.749Z",
+  "generatedAt": "2026-03-21T15:50:07.715Z",
   "votingWindow": {
     "timeZone": "Europe/Berlin",
     "localDate": "2026-03-21",
-    "localTime": "15:56:24",
+    "localTime": "16:50:05",
     "startDate": "2026-03-16",
     "endDate": "2026-03-22",
     "switchesAtLocal": "2026-03-23 00:00:00"
   },
   "count": 6,
   "games": [
-    {
-      "home": "SC Hassel",
-      "away": "DJK TuS Rotthausen 9er",
-      "homeLogo": "https://www.fussball.de/export.media/-/action/getLogo/format/0/id/00ES8GN8OC00000OVV0AG08LVUPGND5I",
-      "awayLogo": "https://www.fussball.de/export.media/-/action/getLogo/format/0/id/00ES8GN8OC00002PVV0AG08LVUPGND5I",
-      "ageGroup": "A-Junioren",
-      "competition": "Kreisliga A",
-      "date": "21.03.2026",
-      "time": "13:30",
-      "result": null,
-      "status": "Absetzung",
-      "spielId": "0302IJ8I64000000VS5489BUVS4DS759",
-      "resolvedBy": "team_matchplan",
-      "sourceLabel": "A-Jugend – SC Buer-Hassel 1919 e.V.",
-      "teamId": "02I9E7SG64000000VS5489B1VTAQ4EE6",
-      "stableId": "0302IJ8I64000000VS5489BUVS4DS759",
-      "lineupFile": "lineups/0302IJ8I64000000VS5489BUVS4DS759.json",
-      "previousMatch": {
-        "home": "JSG SV Zweckel-Wacker Gladbeck",
-        "away": "SC Hassel",
-        "competition": "Kreisliga A",
-        "date": "15.03.2026",
-        "time": "11:00",
-        "ageGroup": "A-Junioren",
-        "spielId": "0302IJ8IAS000000VS5489BUVS4DS759",
-        "stableId": "0302IJ8IAS000000VS5489BUVS4DS759",
-        "resolvedBy": "team_matchplan",
-        "sourceLabel": "A-Jugend",
-        "teamId": "02I9E7SG64000000VS5489B1VTAQ4EE6",
-        "lineupFile": "lineups/0302IJ8IAS000000VS5489BUVS4DS759.json"
-      }
-    },
     {
       "home": "SC Hassel",
       "away": "SV GE-Hessler",
@@ -156,6 +124,34 @@
         "sourceLabel": "3. Mannschaft",
         "teamId": "01SB226P3S000000VS548984VTL2SVNK",
         "lineupFile": "lineups/02TS86HSJS000000VS5489BUVVJ8R9DS.json"
+      }
+    },
+    {
+      "home": "SC Hassel",
+      "away": "DJK TuS Rotthausen 9er",
+      "competition": "Kreisliga A",
+      "date": "21.03.2026",
+      "time": "13:30",
+      "ageGroup": "A-Junioren",
+      "spielId": "0302IJ8I64000000VS5489BUVS4DS759",
+      "resolvedBy": "team_matchplan",
+      "sourceLabel": "A-Jugend – SC Buer-Hassel 1919 e.V.",
+      "teamId": "02I9E7SG64000000VS5489B1VTAQ4EE6",
+      "stableId": "0302IJ8I64000000VS5489BUVS4DS759",
+      "lineupFile": "lineups/0302IJ8I64000000VS5489BUVS4DS759.json",
+      "previousMatch": {
+        "home": "JSG SV Zweckel-Wacker Gladbeck",
+        "away": "SC Hassel",
+        "competition": "Kreisliga A",
+        "date": "15.03.2026",
+        "time": "11:00",
+        "ageGroup": "A-Junioren",
+        "spielId": "0302IJ8IAS000000VS5489BUVS4DS759",
+        "stableId": "0302IJ8IAS000000VS5489BUVS4DS759",
+        "resolvedBy": "team_matchplan",
+        "sourceLabel": "A-Jugend",
+        "teamId": "02I9E7SG64000000VS5489B1VTAQ4EE6",
+        "lineupFile": "lineups/0302IJ8IAS000000VS5489BUVS4DS759.json"
       }
     },
     {
