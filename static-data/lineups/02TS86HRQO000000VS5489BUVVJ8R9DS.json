@@ -1,13 +1,9 @@
 {
   "ok": false,
-  "error": "lineup_not_available",
-  "message": "Waiting for selector `.player-wrapper.home, .player-wrapper.away` failed",
-  "matchId": "02TS86HRQO000000VS5489BUVVJ8R9DS",
-  "home": "SC Hassel III",
-  "away": "DJK Arminia Hassel",
+  "error": "HTTP 500 from http://127.0.0.1:3000/lineup?matchId=02TS86HRQO000000VS5489BUVVJ8R9DS&home=SC+Hassel+III&away=DJK+Arminia+Hassel&date=22.03.2026&time=17%3A00&competition=Kreisliga+C: {\"ok\":false,\"error\":\"Node is detached from document\",\"players\":[]}",
   "players": [],
   "stableId": "02TS86HRQO000000VS5489BUVVJ8R9DS",
-  "generatedAt": "2026-03-22T14:57:17.421Z",
+  "generatedAt": "2026-03-22T15:50:25.063Z",
   "game": {
     "home": "SC Hassel III",
     "away": "DJK Arminia Hassel",

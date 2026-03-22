@@ -1,35 +1,16 @@
 {
   "ok": true,
-  "generatedAt": "2026-03-22T14:57:17.421Z",
+  "generatedAt": "2026-03-22T15:50:25.063Z",
   "votingWindow": {
     "timeZone": "Europe/Berlin",
     "localDate": "2026-03-22",
-    "localTime": "15:57:15",
+    "localTime": "16:50:22",
     "startDate": "2026-03-16",
     "endDate": "2026-03-22",
     "switchesAtLocal": "2026-03-23 00:00:00"
   },
   "count": 5,
   "games": [
-    {
-      "home": "SC Hassel II",
-      "away": "BV Rentfort III",
-      "homeLogo": "https://www.fussball.de/export.media/-/action/getLogo/format/0/id/00ES8GN8OC00000OVV0AG08LVUPGND5I",
-      "awayLogo": "https://www.fussball.de/export.media/-/action/getLogo/format/0/id/00ES8GN8OC00001CVV0AG08LVUPGND5I",
-      "ageGroup": "Herren",
-      "competition": "Kreisliga B",
-      "date": "22.03.2026",
-      "time": "13:00",
-      "result": null,
-      "status": "",
-      "spielId": "02TS7PM9RS000000VS5489BUVVJ8R9DS",
-      "resolvedBy": "team_matchplan",
-      "sourceLabel": "2. Mannschaft – SC Buer-Hassel 1919 e.V.",
-      "teamId": "011MIASBJ8000000VTVG0001VTR8C1K7",
-      "stableId": "02TS7PM9RS000000VS5489BUVVJ8R9DS",
-      "lineupFile": "lineups/02TS7PM9RS000000VS5489BUVVJ8R9DS.json",
-      "previousMatch": null
-    },
     {
       "home": "SC Hassel",
       "away": "BW Westf. Langenbochum",
@@ -93,6 +74,21 @@
         "teamId": "01SB226P3S000000VS548984VTL2SVNK",
         "lineupFile": "lineups/02TS86HSJS000000VS5489BUVVJ8R9DS.json"
       }
+    },
+    {
+      "home": "SC Hassel II",
+      "away": "BV Rentfort III",
+      "competition": "Kreisliga B",
+      "date": "22.03.2026",
+      "time": "13:00",
+      "ageGroup": "Herren",
+      "spielId": "02TS7PM9RS000000VS5489BUVVJ8R9DS",
+      "resolvedBy": "team_matchplan",
+      "sourceLabel": "2. Mannschaft – SC Buer-Hassel 1919 e.V.",
+      "teamId": "011MIASBJ8000000VTVG0001VTR8C1K7",
+      "stableId": "02TS7PM9RS000000VS5489BUVVJ8R9DS",
+      "lineupFile": "lineups/02TS7PM9RS000000VS5489BUVVJ8R9DS.json",
+      "previousMatch": null
     },
     {
       "home": "SC Hassel",
