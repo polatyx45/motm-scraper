@@ -3,7 +3,7 @@
   "error": "HTTP 500 from http://127.0.0.1:3000/lineup?matchId=02TS86HRQO000000VS5489BUVVJ8R9DS&home=SC+Hassel+III&away=DJK+Arminia+Hassel&date=22.03.2026&time=17%3A00&competition=Kreisliga+C: {\"ok\":false,\"error\":\"Node is detached from document\",\"players\":[]}",
   "players": [],
   "stableId": "02TS86HRQO000000VS5489BUVVJ8R9DS",
-  "generatedAt": "2026-03-22T15:50:25.063Z",
+  "generatedAt": "2026-03-22T16:13:37.572Z",
   "game": {
     "home": "SC Hassel III",
     "away": "DJK Arminia Hassel",
