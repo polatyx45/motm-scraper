@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-03-22T22:56:29.727Z",
-  "count": 10,
+  "generatedAt": "2026-03-22T23:27:53.975Z",
+  "count": 15,
   "games": [
     {
       "home": "Eintracht Erle II",
@@ -128,6 +128,71 @@
       "ageGroup": "Herren",
       "spielId": "02TS86HRQO000000VS5489BUVVJ8R9DS",
       "stableId": "02TS86HRQO000000VS5489BUVVJ8R9DS",
+      "resolvedBy": "team_matchplan",
+      "sourceLabel": "3. Mannschaft – SC Buer-Hassel 1919 e.V.",
+      "teamId": "01SB226P3S000000VS548984VTL2SVNK"
+    },
+    {
+      "home": "SC Hassel",
+      "away": "SpVgg. Erle 19",
+      "competition": "Kreisfreundschaftsspiele",
+      "date": "28.03.2026",
+      "time": "15:00",
+      "ageGroup": "Herren Ü32",
+      "spielId": "",
+      "stableId": "sc-hassel-spvgg-erle-19-28-03-2026-15-00",
+      "resolvedBy": "",
+      "sourceLabel": "",
+      "teamId": ""
+    },
+    {
+      "home": "Genclerbirligi Resse",
+      "away": "SC Hassel",
+      "competition": "Kreisliga A",
+      "date": "29.03.2026",
+      "time": "13:00",
+      "ageGroup": "A-Junioren",
+      "spielId": "0302IJ8I40000000VS5489BUVS4DS759",
+      "stableId": "0302IJ8I40000000VS5489BUVS4DS759",
+      "resolvedBy": "team_matchplan",
+      "sourceLabel": "A-Jugend – SC Buer-Hassel 1919 e.V.",
+      "teamId": "02I9E7SG64000000VS5489B1VTAQ4EE6"
+    },
+    {
+      "home": "SC Hassel",
+      "away": "SV Hochlar 28",
+      "competition": "Bezirksliga",
+      "date": "29.03.2026",
+      "time": "15:00",
+      "ageGroup": "Herren",
+      "spielId": "02TQ6E3CIO000000VS5489BTVV0LE4BT",
+      "stableId": "02TQ6E3CIO000000VS5489BTVV0LE4BT",
+      "resolvedBy": "team_matchplan",
+      "sourceLabel": "1. Mannschaft – SC Buer-Hassel 1919 e.V.",
+      "teamId": "011MIF7RS8000000VTVG0001VTR8C1K7"
+    },
+    {
+      "home": "F.S.M. Gladbeck",
+      "away": "SC Hassel II",
+      "competition": "Kreisliga B",
+      "date": "29.03.2026",
+      "time": "15:00",
+      "ageGroup": "Herren",
+      "spielId": "02TS7PM8LG000000VS5489BUVVJ8R9DS",
+      "stableId": "02TS7PM8LG000000VS5489BUVVJ8R9DS",
+      "resolvedBy": "team_matchplan",
+      "sourceLabel": "2. Mannschaft – SC Buer-Hassel 1919 e.V.",
+      "teamId": "011MIASBJ8000000VTVG0001VTR8C1K7"
+    },
+    {
+      "home": "Wacker Gladbeck",
+      "away": "SC Hassel III",
+      "competition": "Kreisliga C",
+      "date": "29.03.2026",
+      "time": "15:00",
+      "ageGroup": "Herren",
+      "spielId": "02TS86HQ78000000VS5489BUVVJ8R9DS",
+      "stableId": "02TS86HQ78000000VS5489BUVVJ8R9DS",
       "resolvedBy": "team_matchplan",
       "sourceLabel": "3. Mannschaft – SC Buer-Hassel 1919 e.V.",
       "teamId": "01SB226P3S000000VS548984VTL2SVNK"

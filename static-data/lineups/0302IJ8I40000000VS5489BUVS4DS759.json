@@ -1,0 +1,20 @@
+{
+  "ok": false,
+  "error": "lineup_not_available",
+  "message": "Waiting for selector `.player-wrapper.home, .player-wrapper.away` failed",
+  "matchId": "0302IJ8I40000000VS5489BUVS4DS759",
+  "home": "Genclerbirligi Resse",
+  "away": "SC Hassel",
+  "players": [],
+  "stableId": "0302IJ8I40000000VS5489BUVS4DS759",
+  "generatedAt": "2026-03-22T23:27:53.975Z",
+  "game": {
+    "home": "Genclerbirligi Resse",
+    "away": "SC Hassel",
+    "date": "29.03.2026",
+    "time": "13:00",
+    "competition": "Kreisliga A",
+    "ageGroup": "A-Junioren",
+    "spielId": "0302IJ8I40000000VS5489BUVS4DS759"
+  }
+}
