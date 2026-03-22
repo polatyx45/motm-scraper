@@ -1,48 +1,16 @@
 {
   "ok": true,
-  "generatedAt": "2026-03-22T17:54:32.626Z",
+  "generatedAt": "2026-03-22T19:06:10.616Z",
   "votingWindow": {
     "timeZone": "Europe/Berlin",
     "localDate": "2026-03-22",
-    "localTime": "18:54:30",
+    "localTime": "20:06:08",
     "startDate": "2026-03-16",
     "endDate": "2026-03-22",
     "switchesAtLocal": "2026-03-23 00:00:00"
   },
   "count": 5,
   "games": [
-    {
-      "home": "SC Hassel III",
-      "away": "DJK Arminia Hassel",
-      "homeLogo": "https://www.fussball.de/export.media/-/action/getLogo/format/0/id/00ES8GN8OC00000OVV0AG08LVUPGND5I",
-      "awayLogo": "https://www.fussball.de/export.media/-/action/getLogo/format/0/id/00ES8GN8OC00000HVV0AG08LVUPGND5I",
-      "ageGroup": "Herren",
-      "competition": "Kreisliga C",
-      "date": "22.03.2026",
-      "time": "17:00",
-      "result": null,
-      "status": "",
-      "spielId": "02TS86HRQO000000VS5489BUVVJ8R9DS",
-      "resolvedBy": "team_matchplan",
-      "sourceLabel": "3. Mannschaft – SC Buer-Hassel 1919 e.V.",
-      "teamId": "01SB226P3S000000VS548984VTL2SVNK",
-      "stableId": "02TS86HRQO000000VS5489BUVVJ8R9DS",
-      "lineupFile": "lineups/02TS86HRQO000000VS5489BUVVJ8R9DS.json",
-      "previousMatch": {
-        "home": "SV Hansa Buer Scholven 1919 e.V.",
-        "away": "SC Hassel III",
-        "competition": "Kreisliga C",
-        "date": "15.03.2026",
-        "time": "15:00",
-        "ageGroup": "Herren",
-        "spielId": "02TS86HSJS000000VS5489BUVVJ8R9DS",
-        "stableId": "02TS86HSJS000000VS5489BUVVJ8R9DS",
-        "resolvedBy": "team_matchplan",
-        "sourceLabel": "3. Mannschaft",
-        "teamId": "01SB226P3S000000VS548984VTL2SVNK",
-        "lineupFile": "lineups/02TS86HSJS000000VS5489BUVVJ8R9DS.json"
-      }
-    },
     {
       "home": "SC Hassel",
       "away": "BW Westf. Langenbochum",
@@ -85,6 +53,34 @@
       "stableId": "02TS7PM9RS000000VS5489BUVVJ8R9DS",
       "lineupFile": "lineups/02TS7PM9RS000000VS5489BUVVJ8R9DS.json",
       "previousMatch": null
+    },
+    {
+      "home": "SC Hassel III",
+      "away": "DJK Arminia Hassel",
+      "competition": "Kreisliga C",
+      "date": "22.03.2026",
+      "time": "17:00",
+      "ageGroup": "Herren",
+      "spielId": "02TS86HRQO000000VS5489BUVVJ8R9DS",
+      "resolvedBy": "team_matchplan",
+      "sourceLabel": "3. Mannschaft – SC Buer-Hassel 1919 e.V.",
+      "teamId": "01SB226P3S000000VS548984VTL2SVNK",
+      "stableId": "02TS86HRQO000000VS5489BUVVJ8R9DS",
+      "lineupFile": "lineups/02TS86HRQO000000VS5489BUVVJ8R9DS.json",
+      "previousMatch": {
+        "home": "SV Hansa Buer Scholven 1919 e.V.",
+        "away": "SC Hassel III",
+        "competition": "Kreisliga C",
+        "date": "15.03.2026",
+        "time": "15:00",
+        "ageGroup": "Herren",
+        "spielId": "02TS86HSJS000000VS5489BUVVJ8R9DS",
+        "stableId": "02TS86HSJS000000VS5489BUVVJ8R9DS",
+        "resolvedBy": "team_matchplan",
+        "sourceLabel": "3. Mannschaft",
+        "teamId": "01SB226P3S000000VS548984VTL2SVNK",
+        "lineupFile": "lineups/02TS86HSJS000000VS5489BUVVJ8R9DS.json"
+      }
     },
     {
       "home": "SC Hassel",
