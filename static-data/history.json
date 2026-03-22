@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-21T23:48:46.832Z",
+  "generatedAt": "2026-03-22T05:12:22.189Z",
   "count": 10,
   "games": [
     {
@@ -69,19 +69,6 @@
     },
     {
       "home": "SC Hassel",
-      "away": "DJK TuS Rotthausen 9er",
-      "competition": "Kreisliga A",
-      "date": "21.03.2026",
-      "time": "13:30",
-      "ageGroup": "A-Junioren",
-      "spielId": "0302IJ8I64000000VS5489BUVS4DS759",
-      "stableId": "0302IJ8I64000000VS5489BUVS4DS759",
-      "resolvedBy": "team_matchplan",
-      "sourceLabel": "A-Jugend – SC Buer-Hassel 1919 e.V.",
-      "teamId": "02I9E7SG64000000VS5489B1VTAQ4EE6"
-    },
-    {
-      "home": "SC Hassel",
       "away": "SV GE-Hessler",
       "competition": "Kreisliga A",
       "date": "22.03.2026",
@@ -92,6 +79,19 @@
       "resolvedBy": "team_matchplan",
       "sourceLabel": "B-Jugend – SC Buer-Hassel 1919 e.V.",
       "teamId": "01DUBKF8TO000000VV0AG80NVSNQSIQV"
+    },
+    {
+      "home": "SC Hassel",
+      "away": "DJK TuS Rotthausen 9er",
+      "competition": "Kreisliga A",
+      "date": "22.03.2026",
+      "time": "11:00",
+      "ageGroup": "A-Junioren",
+      "spielId": "0302IJ8I64000000VS5489BUVS4DS759",
+      "stableId": "0302IJ8I64000000VS5489BUVS4DS759",
+      "resolvedBy": "team_matchplan",
+      "sourceLabel": "A-Jugend – SC Buer-Hassel 1919 e.V.",
+      "teamId": "02I9E7SG64000000VS5489B1VTAQ4EE6"
     },
     {
       "home": "SC Hassel II",
