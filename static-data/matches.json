@@ -1,48 +1,16 @@
 {
   "ok": true,
-  "generatedAt": "2026-03-22T16:59:23.484Z",
+  "generatedAt": "2026-03-22T17:54:32.626Z",
   "votingWindow": {
     "timeZone": "Europe/Berlin",
     "localDate": "2026-03-22",
-    "localTime": "17:59:21",
+    "localTime": "18:54:30",
     "startDate": "2026-03-16",
     "endDate": "2026-03-22",
     "switchesAtLocal": "2026-03-23 00:00:00"
   },
   "count": 5,
   "games": [
-    {
-      "home": "SC Hassel",
-      "away": "BW Westf. Langenbochum",
-      "homeLogo": "https://www.fussball.de/export.media/-/action/getLogo/format/0/id/00ES8GN8OC00000OVV0AG08LVUPGND5I",
-      "awayLogo": "https://www.fussball.de/export.media/-/action/getLogo/format/0/id/019PG4ONG8000000VV0AG80NVVSQNTSG",
-      "ageGroup": "Herren",
-      "competition": "Bezirksliga",
-      "date": "22.03.2026",
-      "time": "15:00",
-      "result": null,
-      "status": "",
-      "spielId": "02TQ6E3E04000000VS5489BTVV0LE4BT",
-      "resolvedBy": "team_matchplan",
-      "sourceLabel": "1. Mannschaft – SC Buer-Hassel 1919 e.V.",
-      "teamId": "011MIF7RS8000000VTVG0001VTR8C1K7",
-      "stableId": "02TQ6E3E04000000VS5489BTVV0LE4BT",
-      "lineupFile": "lineups/02TQ6E3E04000000VS5489BTVV0LE4BT.json",
-      "previousMatch": {
-        "home": "SV Zweckel",
-        "away": "SC Hassel",
-        "competition": "Bezirksliga",
-        "date": "15.03.2026",
-        "time": "15:00",
-        "ageGroup": "Herren",
-        "spielId": "02TQ6E3EPS000000VS5489BTVV0LE4BT",
-        "stableId": "02TQ6E3EPS000000VS5489BTVV0LE4BT",
-        "resolvedBy": "team_matchplan",
-        "sourceLabel": "1. Mannschaft",
-        "teamId": "011MIF7RS8000000VTVG0001VTR8C1K7",
-        "lineupFile": "lineups/02TQ6E3EPS000000VS5489BTVV0LE4BT.json"
-      }
-    },
     {
       "home": "SC Hassel III",
       "away": "DJK Arminia Hassel",
@@ -73,6 +41,34 @@
         "sourceLabel": "3. Mannschaft",
         "teamId": "01SB226P3S000000VS548984VTL2SVNK",
         "lineupFile": "lineups/02TS86HSJS000000VS5489BUVVJ8R9DS.json"
+      }
+    },
+    {
+      "home": "SC Hassel",
+      "away": "BW Westf. Langenbochum",
+      "competition": "Bezirksliga",
+      "date": "22.03.2026",
+      "time": "15:00",
+      "ageGroup": "Herren",
+      "spielId": "02TQ6E3E04000000VS5489BTVV0LE4BT",
+      "resolvedBy": "team_matchplan",
+      "sourceLabel": "1. Mannschaft – SC Buer-Hassel 1919 e.V.",
+      "teamId": "011MIF7RS8000000VTVG0001VTR8C1K7",
+      "stableId": "02TQ6E3E04000000VS5489BTVV0LE4BT",
+      "lineupFile": "lineups/02TQ6E3E04000000VS5489BTVV0LE4BT.json",
+      "previousMatch": {
+        "home": "SV Zweckel",
+        "away": "SC Hassel",
+        "competition": "Bezirksliga",
+        "date": "15.03.2026",
+        "time": "15:00",
+        "ageGroup": "Herren",
+        "spielId": "02TQ6E3EPS000000VS5489BTVV0LE4BT",
+        "stableId": "02TQ6E3EPS000000VS5489BTVV0LE4BT",
+        "resolvedBy": "team_matchplan",
+        "sourceLabel": "1. Mannschaft",
+        "teamId": "011MIF7RS8000000VTVG0001VTR8C1K7",
+        "lineupFile": "lineups/02TQ6E3EPS000000VS5489BTVV0LE4BT.json"
       }
     },
     {
