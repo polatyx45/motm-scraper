@@ -1,0 +1,16 @@
+{
+  "ok": false,
+  "error": "HTTP 404 from http://127.0.0.1:3000/lineup?matchId=&home=Wacker+Gladbeck&away=SC+Hassel+III&date=29.03.2026&time=15%3A00&competition=Kreisliga+C: {\"ok\":false,\"error\":\"match_id_not_found\",\"home\":\"Wacker Gladbeck\",\"away\":\"SC Hassel III\",\"players\":[]}",
+  "players": [],
+  "stableId": "wacker-gladbeck-sc-hassel-iii-29-03-2026-15-00",
+  "generatedAt": "2026-03-23T08:41:13.854Z",
+  "game": {
+    "home": "Wacker Gladbeck",
+    "away": "SC Hassel III",
+    "date": "29.03.2026",
+    "time": "15:00",
+    "competition": "Kreisliga C",
+    "ageGroup": "Herren",
+    "spielId": ""
+  }
+}

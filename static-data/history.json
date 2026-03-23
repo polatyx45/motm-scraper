@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-03-23T05:47:47.150Z",
-  "count": 15,
+  "generatedAt": "2026-03-23T08:41:13.854Z",
+  "count": 19,
   "games": [
     {
       "home": "Eintracht Erle II",
@@ -159,6 +159,19 @@
       "teamId": "02I9E7SG64000000VS5489B1VTAQ4EE6"
     },
     {
+      "home": "Genclerbirligi Resse",
+      "away": "SC Hassel",
+      "competition": "Kreisliga A",
+      "date": "29.03.2026",
+      "time": "13:00",
+      "ageGroup": "A-Junioren",
+      "spielId": "",
+      "stableId": "genclerbirligi-resse-sc-hassel-29-03-2026-13-00",
+      "resolvedBy": "",
+      "sourceLabel": "",
+      "teamId": ""
+    },
+    {
       "home": "SC Hassel",
       "away": "SV Hochlar 28",
       "competition": "Bezirksliga",
@@ -196,6 +209,45 @@
       "resolvedBy": "team_matchplan",
       "sourceLabel": "3. Mannschaft – SC Buer-Hassel 1919 e.V.",
       "teamId": "01SB226P3S000000VS548984VTL2SVNK"
+    },
+    {
+      "home": "F.S.M. Gladbeck",
+      "away": "SC Hassel II",
+      "competition": "Kreisliga B",
+      "date": "29.03.2026",
+      "time": "15:00",
+      "ageGroup": "Herren",
+      "spielId": "",
+      "stableId": "f-s-m-gladbeck-sc-hassel-ii-29-03-2026-15-00",
+      "resolvedBy": "",
+      "sourceLabel": "",
+      "teamId": ""
+    },
+    {
+      "home": "SC Hassel",
+      "away": "SV Hochlar 28",
+      "competition": "Bezirksliga",
+      "date": "29.03.2026",
+      "time": "15:00",
+      "ageGroup": "Herren",
+      "spielId": "",
+      "stableId": "sc-hassel-sv-hochlar-28-29-03-2026-15-00",
+      "resolvedBy": "",
+      "sourceLabel": "",
+      "teamId": ""
+    },
+    {
+      "home": "Wacker Gladbeck",
+      "away": "SC Hassel III",
+      "competition": "Kreisliga C",
+      "date": "29.03.2026",
+      "time": "15:00",
+      "ageGroup": "Herren",
+      "spielId": "",
+      "stableId": "wacker-gladbeck-sc-hassel-iii-29-03-2026-15-00",
+      "resolvedBy": "",
+      "sourceLabel": "",
+      "teamId": ""
     }
   ]
 }

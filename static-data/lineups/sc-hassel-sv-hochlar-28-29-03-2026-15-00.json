@@ -1,0 +1,16 @@
+{
+  "ok": false,
+  "error": "HTTP 404 from http://127.0.0.1:3000/lineup?matchId=&home=SC+Hassel&away=SV+Hochlar+28&date=29.03.2026&time=15%3A00&competition=Bezirksliga: {\"ok\":false,\"error\":\"match_id_not_found\",\"home\":\"SC Hassel\",\"away\":\"SV Hochlar 28\",\"players\":[]}",
+  "players": [],
+  "stableId": "sc-hassel-sv-hochlar-28-29-03-2026-15-00",
+  "generatedAt": "2026-03-23T08:41:13.854Z",
+  "game": {
+    "home": "SC Hassel",
+    "away": "SV Hochlar 28",
+    "date": "29.03.2026",
+    "time": "15:00",
+    "competition": "Bezirksliga",
+    "ageGroup": "Herren",
+    "spielId": ""
+  }
+}
