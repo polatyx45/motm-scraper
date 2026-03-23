@@ -1,10 +1,10 @@
 {
   "ok": true,
-  "generatedAt": "2026-03-23T14:45:23.053Z",
+  "generatedAt": "2026-03-23T17:40:32.714Z",
   "votingWindow": {
     "timeZone": "Europe/Berlin",
     "localDate": "2026-03-23",
-    "localTime": "15:45:18",
+    "localTime": "18:40:30",
     "startDate": "2026-03-23",
     "endDate": "2026-03-29",
     "switchesAtLocal": "2026-03-30 00:00:00"
