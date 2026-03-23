@@ -1,10 +1,10 @@
 {
   "ok": true,
-  "generatedAt": "2026-03-23T08:41:13.854Z",
+  "generatedAt": "2026-03-23T11:30:06.535Z",
   "votingWindow": {
     "timeZone": "Europe/Berlin",
     "localDate": "2026-03-23",
-    "localTime": "09:41:11",
+    "localTime": "12:30:02",
     "startDate": "2026-03-23",
     "endDate": "2026-03-29",
     "switchesAtLocal": "2026-03-30 00:00:00"
@@ -37,9 +37,26 @@
       "time": "13:00",
       "result": null,
       "status": "",
-      "stableId": "genclerbirligi-resse-sc-hassel-29-03-2026-13-00",
-      "lineupFile": "lineups/genclerbirligi-resse-sc-hassel-29-03-2026-13-00.json",
-      "previousMatch": null
+      "spielId": "0302IJ8I40000000VS5489BUVS4DS759",
+      "resolvedBy": "team_matchplan",
+      "sourceLabel": "A-Jugend – SC Buer-Hassel 1919 e.V.",
+      "teamId": "02I9E7SG64000000VS5489B1VTAQ4EE6",
+      "stableId": "0302IJ8I40000000VS5489BUVS4DS759",
+      "lineupFile": "lineups/0302IJ8I40000000VS5489BUVS4DS759.json",
+      "previousMatch": {
+        "home": "SC Hassel",
+        "away": "DJK TuS Rotthausen 9er",
+        "competition": "Kreisliga A",
+        "date": "22.03.2026",
+        "time": "11:00",
+        "ageGroup": "A-Junioren",
+        "spielId": "0302IJ8I64000000VS5489BUVS4DS759",
+        "stableId": "0302IJ8I64000000VS5489BUVS4DS759",
+        "resolvedBy": "team_matchplan",
+        "sourceLabel": "A-Jugend – SC Buer-Hassel 1919 e.V.",
+        "teamId": "02I9E7SG64000000VS5489B1VTAQ4EE6",
+        "lineupFile": "lineups/0302IJ8I64000000VS5489BUVS4DS759.json"
+      }
     },
     {
       "home": "SC Hassel",
@@ -52,9 +69,26 @@
       "time": "15:00",
       "result": null,
       "status": "",
-      "stableId": "sc-hassel-sv-hochlar-28-29-03-2026-15-00",
-      "lineupFile": "lineups/sc-hassel-sv-hochlar-28-29-03-2026-15-00.json",
-      "previousMatch": null
+      "spielId": "02TQ6E3CIO000000VS5489BTVV0LE4BT",
+      "resolvedBy": "team_matchplan",
+      "sourceLabel": "1. Mannschaft – SC Buer-Hassel 1919 e.V.",
+      "teamId": "011MIF7RS8000000VTVG0001VTR8C1K7",
+      "stableId": "02TQ6E3CIO000000VS5489BTVV0LE4BT",
+      "lineupFile": "lineups/02TQ6E3CIO000000VS5489BTVV0LE4BT.json",
+      "previousMatch": {
+        "home": "SC Hassel",
+        "away": "BW Westf. Langenbochum",
+        "competition": "Bezirksliga",
+        "date": "22.03.2026",
+        "time": "15:00",
+        "ageGroup": "Herren",
+        "spielId": "02TQ6E3E04000000VS5489BTVV0LE4BT",
+        "stableId": "02TQ6E3E04000000VS5489BTVV0LE4BT",
+        "resolvedBy": "team_matchplan",
+        "sourceLabel": "1. Mannschaft – SC Buer-Hassel 1919 e.V.",
+        "teamId": "011MIF7RS8000000VTVG0001VTR8C1K7",
+        "lineupFile": "lineups/02TQ6E3E04000000VS5489BTVV0LE4BT.json"
+      }
     },
     {
       "home": "F.S.M. Gladbeck",
@@ -67,9 +101,26 @@
       "time": "15:00",
       "result": null,
       "status": "",
-      "stableId": "f-s-m-gladbeck-sc-hassel-ii-29-03-2026-15-00",
-      "lineupFile": "lineups/f-s-m-gladbeck-sc-hassel-ii-29-03-2026-15-00.json",
-      "previousMatch": null
+      "spielId": "02TS7PM8LG000000VS5489BUVVJ8R9DS",
+      "resolvedBy": "team_matchplan",
+      "sourceLabel": "2. Mannschaft – SC Buer-Hassel 1919 e.V.",
+      "teamId": "011MIASBJ8000000VTVG0001VTR8C1K7",
+      "stableId": "02TS7PM8LG000000VS5489BUVVJ8R9DS",
+      "lineupFile": "lineups/02TS7PM8LG000000VS5489BUVVJ8R9DS.json",
+      "previousMatch": {
+        "home": "SC Hassel II",
+        "away": "BV Rentfort III",
+        "competition": "Kreisliga B",
+        "date": "22.03.2026",
+        "time": "13:00",
+        "ageGroup": "Herren",
+        "spielId": "02TS7PM9RS000000VS5489BUVVJ8R9DS",
+        "stableId": "02TS7PM9RS000000VS5489BUVVJ8R9DS",
+        "resolvedBy": "team_matchplan",
+        "sourceLabel": "2. Mannschaft – SC Buer-Hassel 1919 e.V.",
+        "teamId": "011MIASBJ8000000VTVG0001VTR8C1K7",
+        "lineupFile": "lineups/02TS7PM9RS000000VS5489BUVVJ8R9DS.json"
+      }
     },
     {
       "home": "Wacker Gladbeck",
@@ -82,9 +133,26 @@
       "time": "15:00",
       "result": null,
       "status": "",
-      "stableId": "wacker-gladbeck-sc-hassel-iii-29-03-2026-15-00",
-      "lineupFile": "lineups/wacker-gladbeck-sc-hassel-iii-29-03-2026-15-00.json",
-      "previousMatch": null
+      "spielId": "02TS86HQ78000000VS5489BUVVJ8R9DS",
+      "resolvedBy": "team_matchplan",
+      "sourceLabel": "3. Mannschaft – SC Buer-Hassel 1919 e.V.",
+      "teamId": "01SB226P3S000000VS548984VTL2SVNK",
+      "stableId": "02TS86HQ78000000VS5489BUVVJ8R9DS",
+      "lineupFile": "lineups/02TS86HQ78000000VS5489BUVVJ8R9DS.json",
+      "previousMatch": {
+        "home": "SC Hassel III",
+        "away": "DJK Arminia Hassel",
+        "competition": "Kreisliga C",
+        "date": "22.03.2026",
+        "time": "17:00",
+        "ageGroup": "Herren",
+        "spielId": "02TS86HRQO000000VS5489BUVVJ8R9DS",
+        "stableId": "02TS86HRQO000000VS5489BUVVJ8R9DS",
+        "resolvedBy": "team_matchplan",
+        "sourceLabel": "3. Mannschaft – SC Buer-Hassel 1919 e.V.",
+        "teamId": "01SB226P3S000000VS548984VTL2SVNK",
+        "lineupFile": "lineups/02TS86HRQO000000VS5489BUVVJ8R9DS.json"
+      }
     }
   ]
 }
