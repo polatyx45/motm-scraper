@@ -3,7 +3,7 @@
   "error": "HTTP 404 from http://127.0.0.1:3000/lineup?matchId=&home=SC+Hassel&away=SpVgg.+Erle+19&date=28.03.2026&time=15%3A00&competition=Kreisfreundschaftsspiele: {\"ok\":false,\"error\":\"match_id_not_found\",\"home\":\"SC Hassel\",\"away\":\"SpVgg. Erle 19\",\"players\":[]}",
   "players": [],
   "stableId": "sc-hassel-spvgg-erle-19-28-03-2026-15-00",
-  "generatedAt": "2026-03-28T05:15:03.417Z",
+  "generatedAt": "2026-03-28T07:51:34.655Z",
   "game": {
     "home": "SC Hassel",
     "away": "SpVgg. Erle 19",
