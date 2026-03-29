@@ -1,48 +1,16 @@
 {
   "ok": true,
-  "generatedAt": "2026-03-29T11:58:12.221Z",
+  "generatedAt": "2026-03-29T14:04:32.506Z",
   "votingWindow": {
     "timeZone": "Europe/Berlin",
     "localDate": "2026-03-29",
-    "localTime": "13:58:10",
+    "localTime": "16:04:29",
     "startDate": "2026-03-23",
     "endDate": "2026-03-29",
     "switchesAtLocal": "2026-03-30 00:00:00"
   },
   "count": 4,
   "games": [
-    {
-      "home": "Genclerbirligi Resse",
-      "away": "SC Hassel",
-      "homeLogo": "https://www.fussball.de/export.media/-/action/getLogo/format/0/id/00ES8GN8OC00002GVV0AG08LVUPGND5I",
-      "awayLogo": "https://www.fussball.de/export.media/-/action/getLogo/format/0/id/00ES8GN8OC00000OVV0AG08LVUPGND5I",
-      "ageGroup": "A-Junioren",
-      "competition": "Kreisliga A",
-      "date": "29.03.2026",
-      "time": "13:00",
-      "result": null,
-      "status": "",
-      "spielId": "0302IJ8I40000000VS5489BUVS4DS759",
-      "resolvedBy": "team_matchplan",
-      "sourceLabel": "A-Jugend – SC Buer-Hassel 1919 e.V.",
-      "teamId": "02I9E7SG64000000VS5489B1VTAQ4EE6",
-      "stableId": "0302IJ8I40000000VS5489BUVS4DS759",
-      "lineupFile": "lineups/0302IJ8I40000000VS5489BUVS4DS759.json",
-      "previousMatch": {
-        "home": "SC Hassel",
-        "away": "DJK TuS Rotthausen 9er",
-        "competition": "Kreisliga A",
-        "date": "22.03.2026",
-        "time": "11:00",
-        "ageGroup": "A-Junioren",
-        "spielId": "0302IJ8I64000000VS5489BUVS4DS759",
-        "stableId": "0302IJ8I64000000VS5489BUVS4DS759",
-        "resolvedBy": "team_matchplan",
-        "sourceLabel": "A-Jugend – SC Buer-Hassel 1919 e.V.",
-        "teamId": "02I9E7SG64000000VS5489B1VTAQ4EE6",
-        "lineupFile": "lineups/0302IJ8I64000000VS5489BUVS4DS759.json"
-      }
-    },
     {
       "home": "SC Hassel",
       "away": "SV Hochlar 28",
@@ -137,6 +105,34 @@
         "sourceLabel": "3. Mannschaft – SC Buer-Hassel 1919 e.V.",
         "teamId": "01SB226P3S000000VS548984VTL2SVNK",
         "lineupFile": "lineups/02TS86HRQO000000VS5489BUVVJ8R9DS.json"
+      }
+    },
+    {
+      "home": "Genclerbirligi Resse",
+      "away": "SC Hassel",
+      "competition": "Kreisliga A",
+      "date": "29.03.2026",
+      "time": "13:00",
+      "ageGroup": "A-Junioren",
+      "spielId": "0302IJ8I40000000VS5489BUVS4DS759",
+      "resolvedBy": "team_matchplan",
+      "sourceLabel": "A-Jugend – SC Buer-Hassel 1919 e.V.",
+      "teamId": "02I9E7SG64000000VS5489B1VTAQ4EE6",
+      "stableId": "0302IJ8I40000000VS5489BUVS4DS759",
+      "lineupFile": "lineups/0302IJ8I40000000VS5489BUVS4DS759.json",
+      "previousMatch": {
+        "home": "SC Hassel",
+        "away": "DJK TuS Rotthausen 9er",
+        "competition": "Kreisliga A",
+        "date": "22.03.2026",
+        "time": "11:00",
+        "ageGroup": "A-Junioren",
+        "spielId": "0302IJ8I64000000VS5489BUVS4DS759",
+        "stableId": "0302IJ8I64000000VS5489BUVS4DS759",
+        "resolvedBy": "team_matchplan",
+        "sourceLabel": "A-Jugend – SC Buer-Hassel 1919 e.V.",
+        "teamId": "02I9E7SG64000000VS5489B1VTAQ4EE6",
+        "lineupFile": "lineups/0302IJ8I64000000VS5489BUVS4DS759.json"
       }
     }
   ]
