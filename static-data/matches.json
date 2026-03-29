@@ -1,10 +1,10 @@
 {
   "ok": true,
-  "generatedAt": "2026-03-29T22:04:09.164Z",
+  "generatedAt": "2026-03-29T23:51:06.343Z",
   "votingWindow": {
     "timeZone": "Europe/Berlin",
     "localDate": "2026-03-30",
-    "localTime": "00:04:06",
+    "localTime": "01:51:01",
     "startDate": "2026-03-30",
     "endDate": "2026-04-05",
     "switchesAtLocal": "2026-04-06 00:00:00"
@@ -26,6 +26,8 @@
       "resolvedBy": "team_matchplan",
       "sourceLabel": "3. Mannschaft – SC Buer-Hassel 1919 e.V.",
       "teamId": "01SB226P3S000000VS548984VTL2SVNK",
+      "stableId": "02TS86HP74000000VS5489BUVVJ8R9DS",
+      "lineupFile": "lineups/02TS86HP74000000VS5489BUVVJ8R9DS.json",
       "previousMatch": {
         "home": "Wacker Gladbeck",
         "away": "SC Hassel III",
@@ -39,9 +41,7 @@
         "sourceLabel": "3. Mannschaft – SC Buer-Hassel 1919 e.V.",
         "teamId": "01SB226P3S000000VS548984VTL2SVNK",
         "lineupFile": "lineups/02TS86HQ78000000VS5489BUVVJ8R9DS.json"
-      },
-      "stableId": "02TS86HP74000000VS5489BUVVJ8R9DS",
-      "lineupFile": "lineups/02TS86HP74000000VS5489BUVVJ8R9DS.json"
+      }
     },
     {
       "home": "DJK SV GW Erkenschwick",
