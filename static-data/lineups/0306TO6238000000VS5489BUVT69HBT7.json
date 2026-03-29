@@ -1,0 +1,20 @@
+{
+  "ok": false,
+  "error": "lineup_not_available",
+  "message": "Waiting for selector `.player-wrapper.home, .player-wrapper.away` failed",
+  "matchId": "0306TO6238000000VS5489BUVT69HBT7",
+  "home": "DJK SV GW Erkenschwick",
+  "away": "SC Hassel",
+  "players": [],
+  "stableId": "0306TO6238000000VS5489BUVT69HBT7",
+  "generatedAt": "2026-03-29T22:04:09.164Z",
+  "game": {
+    "home": "DJK SV GW Erkenschwick",
+    "away": "SC Hassel",
+    "date": "04.04.2026",
+    "time": "13:00",
+    "competition": "Kreisfreundschaftsspiele",
+    "ageGroup": "B-Junioren",
+    "spielId": "0306TO6238000000VS5489BUVT69HBT7"
+  }
+}

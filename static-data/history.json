@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-03-29T21:02:49.594Z",
-  "count": 19,
+  "generatedAt": "2026-03-29T22:04:09.164Z",
+  "count": 21,
   "games": [
     {
       "home": "Eintracht Erle II",
@@ -248,6 +248,32 @@
       "resolvedBy": "",
       "sourceLabel": "",
       "teamId": ""
+    },
+    {
+      "home": "SC Hassel III",
+      "away": "SC Schaffrath 1959 e.V.",
+      "competition": "Kreisliga C",
+      "date": "02.04.2026",
+      "time": "19:30",
+      "ageGroup": "Herren",
+      "spielId": "02TS86HP74000000VS5489BUVVJ8R9DS",
+      "stableId": "02TS86HP74000000VS5489BUVVJ8R9DS",
+      "resolvedBy": "team_matchplan",
+      "sourceLabel": "3. Mannschaft – SC Buer-Hassel 1919 e.V.",
+      "teamId": "01SB226P3S000000VS548984VTL2SVNK"
+    },
+    {
+      "home": "DJK SV GW Erkenschwick",
+      "away": "SC Hassel",
+      "competition": "Kreisfreundschaftsspiele",
+      "date": "04.04.2026",
+      "time": "13:00",
+      "ageGroup": "B-Junioren",
+      "spielId": "0306TO6238000000VS5489BUVT69HBT7",
+      "stableId": "0306TO6238000000VS5489BUVT69HBT7",
+      "resolvedBy": "team_matchplan",
+      "sourceLabel": "B-Jugend – SC Buer-Hassel 1919 e.V.",
+      "teamId": "01DUBKF8TO000000VV0AG80NVSNQSIQV"
     }
   ]
 }
