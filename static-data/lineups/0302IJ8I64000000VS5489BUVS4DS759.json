@@ -1,9 +1,165 @@
 {
-  "ok": false,
-  "error": "HTTP 500 from http://127.0.0.1:3000/lineup?matchId=0302IJ8I64000000VS5489BUVS4DS759&home=SC+Hassel&away=DJK+TuS+Rotthausen+9er&date=22.03.2026&time=11%3A00&competition=Kreisliga+A: {\"ok\":false,\"error\":\"Node is detached from document\",\"players\":[]}",
-  "players": [],
+  "ok": true,
+  "matchId": "0302IJ8I64000000VS5489BUVS4DS759",
+  "url": "https://www.fussball.de/spiel/sc-hassel-djk-tus-rotthausen-9er/-/spiel/0302IJ8I64000000VS5489BUVS4DS759",
+  "home": "SC Hassel",
+  "away": "DJK TuS Rotthausen 9er",
+  "ownSide": "home",
+  "count": 15,
+  "players": [
+    {
+      "id": "02IOE26G8S000000VS5489B5VT8KI14O",
+      "matchId": "0302IJ8I64000000VS5489BUVS4DS759",
+      "side": "home",
+      "name": "Denizhan Fahri Yaman",
+      "rawName": "  ",
+      "number": "01",
+      "img": "https://cdn.fussball.de/public/02UDK1V6A8000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "vmy9u1nv"
+    },
+    {
+      "id": "02R7PUG0FO000000VUM1D55MVV2P8RIT",
+      "matchId": "0302IJ8I64000000VS5489BUVS4DS759",
+      "side": "home",
+      "name": "Eymen Günes",
+      "rawName": " ",
+      "number": "07",
+      "img": "https://cdn.fussball.de/public/02UDJUP3H4000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "vmy9u1nv"
+    },
+    {
+      "id": "020C1K9L7C000000VS54898GVTHALE2V",
+      "matchId": "0302IJ8I64000000VS5489BUVS4DS759",
+      "side": "home",
+      "name": "Niklas Paul Brzoza",
+      "rawName": "  ",
+      "number": "08",
+      "img": "https://cdn.fussball.de/public/02UDJT9I2O000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "vmy9u1nv"
+    },
+    {
+      "id": "02MJHOSL2O000000VUM1DNOIVS7F3QJB",
+      "matchId": "0302IJ8I64000000VS5489BUVS4DS759",
+      "side": "home",
+      "name": "Jonas Marcel Schumacher",
+      "rawName": "  ",
+      "number": "09",
+      "img": "https://images.media.fussball.de/userfiles/J/o/i/UPtaewaR5xZX6ctjYyp0iz_p3.jpg",
+      "obfuscationKey": "vmy9u1nv"
+    },
+    {
+      "id": "02MOVD3C50000000VUM1DNO8VUS6Q1B8",
+      "matchId": "0302IJ8I64000000VS5489BUVS4DS759",
+      "side": "home",
+      "name": "Ibrahim Furkan Kuru",
+      "rawName": "  ",
+      "number": "10",
+      "img": "https://cdn.fussball.de/public/02UIBB442K000000VS5489C1VSAG571E.stamp",
+      "obfuscationKey": "vmy9u1nv"
+    },
+    {
+      "id": "024UQ74RBG000000VS54898GVUHV18I1",
+      "matchId": "0302IJ8I64000000VS5489BUVS4DS759",
+      "side": "home",
+      "name": "Selame Hamsa",
+      "rawName": " ",
+      "number": "11",
+      "img": "https://cdn.fussball.de/public/02VD1NJDSC000000VS5489BVVSF4J3TK.stamp",
+      "obfuscationKey": "vmy9u1nv"
+    },
+    {
+      "id": "028B09L09C000000VS5489B5VUCDA5G6",
+      "matchId": "0302IJ8I64000000VS5489BUVS4DS759",
+      "side": "home",
+      "name": "Poyraz Metin Aydogan",
+      "rawName": "  ",
+      "number": "12",
+      "img": "https://cdn.fussball.de/public/02UG1DALDO000000VS5489BVVUQ9GB57.stamp",
+      "obfuscationKey": "vmy9u1nv"
+    },
+    {
+      "id": "02QN5J0RR0000000VUM1D53HVTL9MO41",
+      "matchId": "0302IJ8I64000000VS5489BUVS4DS759",
+      "side": "home",
+      "name": "Bekir Veselji",
+      "rawName": " ",
+      "number": "17",
+      "img": "https://cdn.fussball.de/public/02UDK1M3NK000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "vmy9u1nv"
+    },
+    {
+      "id": "02NID6MO00000000VUM1DNP7VU6DA5CP",
+      "matchId": "0302IJ8I64000000VS5489BUVS4DS759",
+      "side": "home",
+      "name": "Mhd Nour Rabah",
+      "rawName": "  ",
+      "number": "19",
+      "img": "https://cdn.fussball.de/public/02UDJVTPQ8000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "vmy9u1nv"
+    },
+    {
+      "id": "020K4AESCK000000VS54898FVSH29C7M",
+      "matchId": "0302IJ8I64000000VS5489BUVS4DS759",
+      "side": "home",
+      "name": "Mohammad Almajareesh",
+      "rawName": " ",
+      "number": "02",
+      "img": "https://cdn.fussball.de/public/02VQLL08CG000000VS5489C1VU8CK9NF.stamp",
+      "obfuscationKey": "vmy9u1nv"
+    },
+    {
+      "id": "01GFH3DUIG000000VV0AG80NVVVJNO1A",
+      "matchId": "0302IJ8I64000000VS5489BUVS4DS759",
+      "side": "home",
+      "name": "Jeremy Komossa",
+      "rawName": " ",
+      "number": "03",
+      "img": "https://cdn.fussball.de/public/02UDJVA1D4000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "vmy9u1nv"
+    },
+    {
+      "id": "01LVKGSK48000000VV0AG80NVTMPTR0P",
+      "matchId": "0302IJ8I64000000VS5489BUVS4DS759",
+      "side": "home",
+      "name": "Marcin Szydlowski",
+      "rawName": " ",
+      "number": "05",
+      "img": "https://cdn.fussball.de/public/02UDK0P084000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "vmy9u1nv"
+    },
+    {
+      "id": "02HGG3CN18000000VS5489B5VU6EO7PC",
+      "matchId": "0302IJ8I64000000VS5489BUVS4DS759",
+      "side": "home",
+      "name": "Haitham Terkmani",
+      "rawName": " ",
+      "number": "06",
+      "img": "https://cdn.fussball.de/public/02UDK1GUCC000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "vmy9u1nv"
+    },
+    {
+      "id": "02S427FA18000000VS5489B7VV1RMA4H",
+      "matchId": "0302IJ8I64000000VS5489BUVS4DS759",
+      "side": "home",
+      "name": "Naser Almoussaalanezi",
+      "rawName": " ",
+      "number": "20",
+      "img": "https://cdn.fussball.de/public/02UDJSI208000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "vmy9u1nv"
+    },
+    {
+      "id": "home___",
+      "matchId": "0302IJ8I64000000VS5489BUVS4DS759",
+      "side": "home",
+      "name": "Holger Fabricius",
+      "rawName": " ",
+      "number": "",
+      "img": "",
+      "obfuscationKey": "vmy9u1nv"
+    }
+  ],
   "stableId": "0302IJ8I64000000VS5489BUVS4DS759",
-  "generatedAt": "2026-03-31T19:36:13.950Z",
+  "generatedAt": "2026-03-31T21:25:17.072Z",
   "game": {
     "home": "SC Hassel",
     "away": "DJK TuS Rotthausen 9er",
