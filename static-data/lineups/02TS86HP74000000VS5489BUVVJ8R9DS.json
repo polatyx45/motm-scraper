@@ -1,13 +1,185 @@
 {
-  "ok": false,
-  "error": "lineup_not_available",
-  "message": "Waiting for selector `.player-wrapper.home, .player-wrapper.away` failed",
+  "ok": true,
   "matchId": "02TS86HP74000000VS5489BUVVJ8R9DS",
+  "url": "https://www.fussball.de/spiel/sc-hassel-iii-sc-schaffrath-1959-e-v/-/spiel/02TS86HP74000000VS5489BUVVJ8R9DS",
   "home": "SC Hassel III",
   "away": "SC Schaffrath 1959 e.V.",
-  "players": [],
+  "ownSide": "home",
+  "count": 17,
+  "players": [
+    {
+      "id": "00MC9CGO38000000VV0AG85VVSMHI0R7",
+      "matchId": "02TS86HP74000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Kevin Ring",
+      "rawName": " ",
+      "number": "01",
+      "img": "https://cdn.fussball.de/public/02SIVG138K000000VS5489B8VU6NFVI1.stamp",
+      "obfuscationKey": "f8loucoa"
+    },
+    {
+      "id": "00UEDDSR18000000VV0AG811VT16I3CR",
+      "matchId": "02TS86HP74000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Fatih Karagöz",
+      "rawName": " ",
+      "number": "03",
+      "img": "https://cdn.fussball.de/public/02UOFET21O000000VS5489C0VU5BRBVL.stamp",
+      "obfuscationKey": "f8loucoa"
+    },
+    {
+      "id": "02S7PJQUNS000000VUM1D597VV8AJ6VI",
+      "matchId": "02TS86HP74000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Ahmad Taan",
+      "rawName": " ",
+      "number": "11",
+      "img": "https://cdn.fussball.de/public/02T2NBNQT8000000VS5489C0VUU5TGQ9.stamp",
+      "obfuscationKey": "f8loucoa"
+    },
+    {
+      "id": "00MC74UGKK000000VV0AG85VVSMHI0R7",
+      "matchId": "02TS86HP74000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Dennis Jansen",
+      "rawName": " ",
+      "number": "17",
+      "img": "https://cdn.fussball.de/public/0260KOB1MC000000VS54898RVSU7K75R.stamp",
+      "obfuscationKey": "f8loucoa"
+    },
+    {
+      "id": "02IBA10HA0000000VUM1DNPAVSE01ML4",
+      "matchId": "02TS86HP74000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Leon Jerome Kurt",
+      "rawName": "  ",
+      "number": "27",
+      "img": "https://images.media.fussball.de/userfiles/m/9/p/QD3V4Bmu12nkt3b7EEfM2a_p3.jpg",
+      "obfuscationKey": "f8loucoa"
+    },
+    {
+      "id": "02SHDTS3T4000000VUM1D50QVSUREU2L",
+      "matchId": "02TS86HP74000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Yusif Mahir Oglu Bayramov",
+      "rawName": "   ",
+      "number": "31",
+      "img": "https://cdn.fussball.de/public/02T2NBEUC8000000VS5489C2VURGIJAT.stamp",
+      "obfuscationKey": "f8loucoa"
+    },
+    {
+      "id": "02NNFD05NS000000VUM1DNR0VSRQSHEH",
+      "matchId": "02TS86HP74000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Hasan Akbulut",
+      "rawName": " ",
+      "number": "67",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "f8loucoa"
+    },
+    {
+      "id": "029SSTF328000000VS5489B5VVEC1CNQ",
+      "matchId": "02TS86HP74000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Fabian Neuschl",
+      "rawName": " ",
+      "number": "69",
+      "img": "https://cdn.fussball.de/public/02UMQQ1600000000VS5489BTVSE04V5I.stamp",
+      "obfuscationKey": "f8loucoa"
+    },
+    {
+      "id": "01SP6BG9NS000000VS548984VUFJ8459",
+      "matchId": "02TS86HP74000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Mohammad Qweder",
+      "rawName": " ",
+      "number": "80",
+      "img": "https://cdn.fussball.de/public/0301M85VT8000000VS5489C2VUQHFANL.stamp",
+      "obfuscationKey": "f8loucoa"
+    },
+    {
+      "id": "02UCGGV9OO000000VUM1D5AAVTLBSBD5",
+      "matchId": "02TS86HP74000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Tim Sokolowski",
+      "rawName": " ",
+      "number": "82",
+      "img": "https://cdn.fussball.de/public/02UIAM8INC000000VS5489BTVT5EO5B1.stamp",
+      "obfuscationKey": "f8loucoa"
+    },
+    {
+      "id": "01P895T43C000000VS541L4FVUE0IEIK",
+      "matchId": "02TS86HP74000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Nico Mühlpfordt",
+      "rawName": " ",
+      "number": "95",
+      "img": "https://cdn.fussball.de/public/02OJTUVI84000000VS5489B6VVPB8G6Q.stamp",
+      "obfuscationKey": "f8loucoa"
+    },
+    {
+      "id": "02SC944QVO000000VUM1D5A0VURGFM1G",
+      "matchId": "02TS86HP74000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Ben Louis Momma",
+      "rawName": "  ",
+      "number": "14",
+      "img": "https://cdn.fussball.de/public/02TTH2A5I8000000VS5489C1VSPL3397.stamp",
+      "obfuscationKey": "f8loucoa"
+    },
+    {
+      "id": "02PFDHBRA8000000VS5489B8VVHQI6RK",
+      "matchId": "02TS86HP74000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Luca Joshua Schmidt",
+      "rawName": "  ",
+      "number": "24",
+      "img": "https://cdn.fussball.de/public/02PFJPU3PO000000VS5489B1VUEKQ1B7.stamp",
+      "obfuscationKey": "f8loucoa"
+    },
+    {
+      "id": "02OGC8UAQ8000000VUM1DNO6VSU8RSKC",
+      "matchId": "02TS86HP74000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Marvin Buchmann",
+      "rawName": " ",
+      "number": "25",
+      "img": "https://cdn.fussball.de/public/02UDJTH13O000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "f8loucoa"
+    },
+    {
+      "id": "02STRVURH8000000VUM1D59MVSJE50KM",
+      "matchId": "02TS86HP74000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Nick Andre Klink",
+      "rawName": "  ",
+      "number": "26",
+      "img": "https://images.media.fussball.de/userfiles/a/v/x/tT6uMaeYcPbQRDz5UtODW1_p3.jpg",
+      "obfuscationKey": "f8loucoa"
+    },
+    {
+      "id": "01P05HOIPS000000VV0AG80NVSHO9FVA",
+      "matchId": "02TS86HP74000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Emran Jeseti",
+      "rawName": " ",
+      "number": "93",
+      "img": "https://cdn.fussball.de/public/02UIALV0Q4000000VS5489C1VS747N46.stamp",
+      "obfuscationKey": "f8loucoa"
+    },
+    {
+      "id": "home___",
+      "matchId": "02TS86HP74000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Justin Klengel",
+      "rawName": " ",
+      "number": "",
+      "img": "",
+      "obfuscationKey": "f8loucoa"
+    }
+  ],
   "stableId": "02TS86HP74000000VS5489BUVVJ8R9DS",
-  "generatedAt": "2026-04-02T15:42:05.585Z",
+  "generatedAt": "2026-04-02T18:05:26.065Z",
   "game": {
     "home": "SC Hassel III",
     "away": "SC Schaffrath 1959 e.V.",
