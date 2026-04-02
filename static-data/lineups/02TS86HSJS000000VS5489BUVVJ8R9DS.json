@@ -12,104 +12,104 @@
       "matchId": "02TS86HSJS000000VS5489BUVVJ8R9DS",
       "side": "away",
       "name": "Hasan Akbulut",
-      "rawName": " ",
+      "rawName": " ",
       "number": "67",
       "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
-      "obfuscationKey": "vi63ibkv"
+      "obfuscationKey": "vtkcrntf"
     },
     {
       "id": "029SSTF328000000VS5489B5VVEC1CNQ",
       "matchId": "02TS86HSJS000000VS5489BUVVJ8R9DS",
       "side": "away",
       "name": "Fabian Neuschl",
-      "rawName": " ",
+      "rawName": " ",
       "number": "69",
       "img": "https://cdn.fussball.de/public/02UMQQ1600000000VS5489BTVSE04V5I.stamp",
-      "obfuscationKey": "vi63ibkv"
+      "obfuscationKey": "vtkcrntf"
     },
     {
       "id": "02UCGGV9OO000000VUM1D5AAVTLBSBD5",
       "matchId": "02TS86HSJS000000VS5489BUVVJ8R9DS",
       "side": "away",
       "name": "Tim Sokolowski",
-      "rawName": " ",
+      "rawName": " ",
       "number": "82",
       "img": "https://cdn.fussball.de/public/02UIAM8INC000000VS5489BTVT5EO5B1.stamp",
-      "obfuscationKey": "vi63ibkv"
+      "obfuscationKey": "vtkcrntf"
     },
     {
       "id": "01P895T43C000000VS541L4FVUE0IEIK",
       "matchId": "02TS86HSJS000000VS5489BUVVJ8R9DS",
       "side": "away",
       "name": "Nico Mühlpfordt",
-      "rawName": " ",
+      "rawName": " ",
       "number": "95",
       "img": "https://cdn.fussball.de/public/02OJTUVI84000000VS5489B6VVPB8G6Q.stamp",
-      "obfuscationKey": "vi63ibkv"
+      "obfuscationKey": "vtkcrntf"
     },
     {
       "id": "01Q909N5FO000000VV0AG80NVVSKMM61",
       "matchId": "02TS86HSJS000000VS5489BUVVJ8R9DS",
       "side": "away",
       "name": "Fabrice Makulla",
-      "rawName": " ",
+      "rawName": " ",
       "number": "01",
       "img": "https://cdn.fussball.de/public/02TTH20JR4000000VS5489C1VSPL3397.stamp",
-      "obfuscationKey": "vi63ibkv"
+      "obfuscationKey": "vtkcrntf"
     },
     {
       "id": "02S7PJQUNS000000VUM1D597VV8AJ6VI",
       "matchId": "02TS86HSJS000000VS5489BUVVJ8R9DS",
       "side": "away",
       "name": "Ahmad Taan",
-      "rawName": " ",
+      "rawName": " ",
       "number": "11",
       "img": "https://cdn.fussball.de/public/02T2NBNQT8000000VS5489C0VUU5TGQ9.stamp",
-      "obfuscationKey": "vi63ibkv"
+      "obfuscationKey": "vtkcrntf"
     },
     {
       "id": "02STRVURH8000000VUM1D59MVSJE50KM",
       "matchId": "02TS86HSJS000000VS5489BUVVJ8R9DS",
       "side": "away",
       "name": "Nick Andre Klink",
-      "rawName": "  ",
+      "rawName": "  ",
       "number": "26",
       "img": "https://images.media.fussball.de/userfiles/a/v/x/tT6uMaeYcPbQRDz5UtODW1_p3.jpg",
-      "obfuscationKey": "vi63ibkv"
+      "obfuscationKey": "vtkcrntf"
     },
     {
       "id": "02IBA10HA0000000VUM1DNPAVSE01ML4",
       "matchId": "02TS86HSJS000000VS5489BUVVJ8R9DS",
       "side": "away",
       "name": "Leon Jerome Kurt",
-      "rawName": "  ",
+      "rawName": "  ",
       "number": "27",
       "img": "https://images.media.fussball.de/userfiles/m/9/p/QD3V4Bmu12nkt3b7EEfM2a_p3.jpg",
-      "obfuscationKey": "vi63ibkv"
+      "obfuscationKey": "vtkcrntf"
     },
     {
       "id": "02SHDTS3T4000000VUM1D50QVSUREU2L",
       "matchId": "02TS86HSJS000000VS5489BUVVJ8R9DS",
       "side": "away",
       "name": "Yusif Mahir Oglu Bayramov",
-      "rawName": "   ",
+      "rawName": "   ",
       "number": "31",
       "img": "https://cdn.fussball.de/public/02T2NBEUC8000000VS5489C2VURGIJAT.stamp",
-      "obfuscationKey": "vi63ibkv"
+      "obfuscationKey": "vtkcrntf"
     },
     {
       "id": "02FCERNQU8000000VUM1DNOTVSIG8NIT",
       "matchId": "02TS86HSJS000000VS5489BUVVJ8R9DS",
       "side": "away",
       "name": "Jan Lucas Engwer",
-      "rawName": "  ",
+      "rawName": "  ",
       "number": "45",
       "img": "https://cdn.fussball.de/public/02OJTT9EMC000000VS5489B6VVPB8G6Q.stamp",
-      "obfuscationKey": "vi63ibkv"
+      "obfuscationKey": "vtkcrntf"
     }
   ],
   "stableId": "02TS86HSJS000000VS5489BUVVJ8R9DS",
-  "generatedAt": "2026-04-01T23:52:46.289Z",
+  "generatedAt": "2026-04-02T05:50:54.180Z",
   "game": {
     "home": "SV Hansa Buer Scholven 1919 e.V.",
     "away": "SC Hassel III",
