@@ -1,43 +1,14 @@
 {
   "ok": true,
-  "generatedAt": "2026-04-04T21:59:17.231Z",
+  "generatedAt": "2026-04-04T23:02:48.286Z",
   "votingWindow": {
     "timeZone": "Europe/Berlin",
-    "localDate": "2026-04-04",
-    "localTime": "23:59:15",
+    "localDate": "2026-04-05",
+    "localTime": "01:02:46",
     "startDate": "2026-03-30",
     "endDate": "2026-04-05",
     "switchesAtLocal": "2026-04-06 00:00:00"
   },
-  "count": 1,
-  "games": [
-    {
-      "home": "DJK SV GW Erkenschwick",
-      "away": "SC Hassel",
-      "competition": "Kreisfreundschaftsspiele",
-      "date": "04.04.2026",
-      "time": "13:00",
-      "ageGroup": "B-Junioren",
-      "spielId": "0306TO6238000000VS5489BUVT69HBT7",
-      "resolvedBy": "team_matchplan",
-      "sourceLabel": "B-Jugend – SC Buer-Hassel 1919 e.V.",
-      "teamId": "01DUBKF8TO000000VV0AG80NVSNQSIQV",
-      "stableId": "0306TO6238000000VS5489BUVT69HBT7",
-      "lineupFile": "lineups/0306TO6238000000VS5489BUVT69HBT7.json",
-      "previousMatch": {
-        "home": "SC Hassel",
-        "away": "SV GE-Hessler",
-        "competition": "Kreisliga A",
-        "date": "22.03.2026",
-        "time": "09:15",
-        "ageGroup": "B-Junioren",
-        "spielId": "02U2A4C4AO000000VS5489BTVV378D77",
-        "stableId": "02U2A4C4AO000000VS5489BTVV378D77",
-        "resolvedBy": "team_matchplan",
-        "sourceLabel": "B-Jugend – SC Buer-Hassel 1919 e.V.",
-        "teamId": "01DUBKF8TO000000VV0AG80NVSNQSIQV",
-        "lineupFile": "lineups/02U2A4C4AO000000VS5489BTVV378D77.json"
-      }
-    }
-  ]
+  "count": 0,
+  "games": []
 }
