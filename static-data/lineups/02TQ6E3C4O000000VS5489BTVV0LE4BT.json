@@ -1,0 +1,20 @@
+{
+  "ok": false,
+  "error": "lineup_not_available",
+  "message": "Waiting for selector `.player-wrapper.home, .player-wrapper.away` failed",
+  "matchId": "02TQ6E3C4O000000VS5489BTVV0LE4BT",
+  "home": "SV Horst-Emscher",
+  "away": "SC Hassel",
+  "players": [],
+  "stableId": "02TQ6E3C4O000000VS5489BTVV0LE4BT",
+  "generatedAt": "2026-04-05T22:01:02.215Z",
+  "game": {
+    "home": "SV Horst-Emscher",
+    "away": "SC Hassel",
+    "date": "12.04.2026",
+    "time": "15:15",
+    "competition": "Bezirksliga",
+    "ageGroup": "Herren",
+    "spielId": "02TQ6E3C4O000000VS5489BTVV0LE4BT"
+  }
+}

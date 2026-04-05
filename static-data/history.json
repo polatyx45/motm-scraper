@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-04-05T21:03:28.802Z",
-  "count": 21,
+  "generatedAt": "2026-04-05T22:01:02.215Z",
+  "count": 25,
   "games": [
     {
       "home": "Eintracht Erle II",
@@ -274,6 +274,58 @@
       "resolvedBy": "team_matchplan",
       "sourceLabel": "B-Jugend – SC Buer-Hassel 1919 e.V.",
       "teamId": "01DUBKF8TO000000VV0AG80NVSNQSIQV"
+    },
+    {
+      "home": "SC Hassel II",
+      "away": "SuS Beckhausen 05",
+      "competition": "Kreisliga B",
+      "date": "06.04.2026",
+      "time": "13:00",
+      "ageGroup": "Herren",
+      "spielId": "02TS7PM6G0000000VS5489BUVVJ8R9DS",
+      "stableId": "02TS7PM6G0000000VS5489BUVVJ8R9DS",
+      "resolvedBy": "team_matchplan",
+      "sourceLabel": "2. Mannschaft – SC Buer-Hassel 1919 e.V.",
+      "teamId": "011MIASBJ8000000VTVG0001VTR8C1K7"
+    },
+    {
+      "home": "SC Hassel III",
+      "away": "SuS Beckhausen 05 II",
+      "competition": "Kreisliga C",
+      "date": "06.04.2026",
+      "time": "17:00",
+      "ageGroup": "Herren",
+      "spielId": "02TS86HNI8000000VS5489BUVVJ8R9DS",
+      "stableId": "02TS86HNI8000000VS5489BUVVJ8R9DS",
+      "resolvedBy": "team_matchplan",
+      "sourceLabel": "3. Mannschaft – SC Buer-Hassel 1919 e.V.",
+      "teamId": "01SB226P3S000000VS548984VTL2SVNK"
+    },
+    {
+      "home": "FC Horst 59 e.V",
+      "away": "SC Hassel III",
+      "competition": "Kreisliga C",
+      "date": "12.04.2026",
+      "time": "13:00",
+      "ageGroup": "Herren",
+      "spielId": "02TS86HMUG000000VS5489BUVVJ8R9DS",
+      "stableId": "02TS86HMUG000000VS5489BUVVJ8R9DS",
+      "resolvedBy": "team_matchplan",
+      "sourceLabel": "3. Mannschaft – SC Buer-Hassel 1919 e.V.",
+      "teamId": "01SB226P3S000000VS548984VTL2SVNK"
+    },
+    {
+      "home": "SV Horst-Emscher",
+      "away": "SC Hassel",
+      "competition": "Bezirksliga",
+      "date": "12.04.2026",
+      "time": "15:15",
+      "ageGroup": "Herren",
+      "spielId": "02TQ6E3C4O000000VS5489BTVV0LE4BT",
+      "stableId": "02TQ6E3C4O000000VS5489BTVV0LE4BT",
+      "resolvedBy": "team_matchplan",
+      "sourceLabel": "1. Mannschaft – SC Buer-Hassel 1919 e.V.",
+      "teamId": "011MIF7RS8000000VTVG0001VTR8C1K7"
     }
   ]
 }
