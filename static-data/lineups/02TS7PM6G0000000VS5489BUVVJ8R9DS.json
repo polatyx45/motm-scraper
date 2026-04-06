@@ -1,13 +1,9 @@
 {
   "ok": false,
-  "error": "lineup_not_available",
-  "message": "Waiting for selector `.player-wrapper.home, .player-wrapper.away` failed",
-  "matchId": "02TS7PM6G0000000VS5489BUVVJ8R9DS",
-  "home": "SC Hassel II",
-  "away": "SuS Beckhausen 05",
+  "error": "HTTP 500 from http://127.0.0.1:3000/lineup?matchId=02TS7PM6G0000000VS5489BUVVJ8R9DS&home=SC+Hassel+II&away=SuS+Beckhausen+05&date=06.04.2026&time=13%3A00&competition=Kreisliga+B: {\"ok\":false,\"error\":\"Node is detached from document\",\"players\":[]}",
   "players": [],
   "stableId": "02TS7PM6G0000000VS5489BUVVJ8R9DS",
-  "generatedAt": "2026-04-06T06:18:33.771Z",
+  "generatedAt": "2026-04-06T10:37:20.928Z",
   "game": {
     "home": "SC Hassel II",
     "away": "SuS Beckhausen 05",
