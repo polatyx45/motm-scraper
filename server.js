@@ -66,6 +66,7 @@ const TEAM_SCHEDULE_CACHE = new Map();
 const SCORE_TEXT_CACHE = new Map();
 const TEAM_MATCH_INDEX_TTL_MS = 15 * 60 * 1000;
 const TEAM_SCHEDULE_TTL_MS = 5 * 60 * 1000;
+const REMOTE_FETCH_TIMEOUT_MS = 15 * 60 * 1000;
 
 let browserPromise = null;
 let ocrWorkerPromise = null;
@@ -494,7 +495,8 @@ function extractWidgetConfigsFromLocalPages() {
 async function fetchText(url) {
   const response = await fetch(url, {
     cache: "no-store",
-    headers: REMOTE_HEADERS
+    headers: REMOTE_HEADERS,
+    signal: AbortSignal.timeout(REMOTE_FETCH_TIMEOUT_MS)
   });
 
   if (!response.ok) {
@@ -1501,7 +1503,10 @@ async function resolveNameFromProfile(browser, href) {
 
 async function loadWeekGamesData({ includeUnresolved = false } = {}) {
   const votingWindow = getActiveVotingWindow();
-  const response = await fetch(TICKER_API, { cache: "no-store" });
+  const response = await fetch(TICKER_API, {
+    cache: "no-store",
+    signal: AbortSignal.timeout(REMOTE_FETCH_TIMEOUT_MS)
+  });
   if (!response.ok) {
     throw new Error(`ticker_http_${response.status}`);
   }
@@ -1526,7 +1531,10 @@ async function loadWeekGamesData({ includeUnresolved = false } = {}) {
 
 async function loadHistoryWeekGamesData() {
   const votingWindow = getActiveVotingWindow();
-  const response = await fetch(HISTORY_STATIC_API, { cache: "no-store" });
+  const response = await fetch(HISTORY_STATIC_API, {
+    cache: "no-store",
+    signal: AbortSignal.timeout(REMOTE_FETCH_TIMEOUT_MS)
+  });
   if (!response.ok) {
     throw new Error(`history_http_${response.status}`);
   }
