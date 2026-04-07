@@ -11,6 +11,7 @@ const CLUB_NAME = "sc hassel";
 const CLUB_SITE_ORIGIN = "https://www.sc-hassel1919.de";
 const LOCAL_TIME_ZONE = "Europe/Berlin";
 const TICKER_API = "https://script.google.com/macros/s/AKfycbxPvHMRhLyOD1kwz5J2yr7KB9uubapD5QAMMB8bgUDblJaPpEUbI7E_z86YlkL9XmPLSA/exec?mode=week";
+const HISTORY_STATIC_API = "https://polatyx45.github.io/motm-scraper/static-data/history.json";
 const PROFILE_CACHE = new Map();
 const OBFUSCATION_MAPS = new Map();
 const MAP_FILE = path.join(process.cwd(), "obfuscation-map.json");
@@ -58,10 +59,17 @@ const REMOTE_HEADERS = {
 const CLUB_PAGE_HTML_CACHE = new Map();
 const WIDGET_HTML_CACHE = new Map();
 const MATCHPLAN_HTML_CACHE = new Map();
+const NEXT_GAMES_HTML_CACHE = new Map();
+const FULL_SEASON_MATCHPLAN_HTML_CACHE = new Map();
+const OBFUSCATION_CSS_CACHE = new Map();
+const TEAM_SCHEDULE_CACHE = new Map();
+const SCORE_TEXT_CACHE = new Map();
 const TEAM_MATCH_INDEX_TTL_MS = 15 * 60 * 1000;
+const TEAM_SCHEDULE_TTL_MS = 5 * 60 * 1000;
 
 let browserPromise = null;
 let ocrWorkerPromise = null;
+let scoreOcrWorkerPromise = null;
 let teamMatchIndexCache = null;
 let teamMatchIndexLoadedAt = 0;
 let teamMatchIndexPromise = null;
@@ -590,6 +598,419 @@ async function fetchTeamMatchplanHtml(teamId) {
   return html;
 }
 
+function getCurrentSeasonDateRange() {
+  const dateKey = getBerlinNowParts().dateKey;
+  const year = Number(dateKey.slice(0, 4));
+  const month = Number(dateKey.slice(5, 7));
+  const seasonStartYear = month >= 7 ? year : year - 1;
+
+  return {
+    dateFrom: `01.07.${seasonStartYear}`,
+    dateTo: `30.06.${seasonStartYear + 1}`
+  };
+}
+
+async function fetchFullSeasonTeamMatchplanHtml(teamId, { force = false } = {}) {
+  const { dateFrom, dateTo } = getCurrentSeasonDateRange();
+  const cacheKey = `${teamId}|${dateFrom}|${dateTo}`;
+
+  if (!force && FULL_SEASON_MATCHPLAN_HTML_CACHE.has(cacheKey)) {
+    return FULL_SEASON_MATCHPLAN_HTML_CACHE.get(cacheKey);
+  }
+
+  const url =
+    `https://www.fussball.de/ajax.team.matchplan/-/mime-type/JSON/mode/PAGE/prev-season-allowed/false/show-filter/false/team-id/${encodeURIComponent(teamId)}` +
+    `?datum-von=${encodeURIComponent(dateFrom)}&datum-bis=${encodeURIComponent(dateTo)}&max=200&offset=0`;
+  const raw = await fetchText(url);
+  let html = raw;
+
+  try {
+    const parsed = JSON.parse(raw);
+    html = String(parsed?.html || "");
+  } catch (_error) {
+    html = raw;
+  }
+
+  FULL_SEASON_MATCHPLAN_HTML_CACHE.set(cacheKey, html);
+  return html;
+}
+
+async function fetchTeamNextGamesHtml(teamId, { force = false } = {}) {
+  const cacheEntry = NEXT_GAMES_HTML_CACHE.get(teamId);
+  const isFresh = cacheEntry && Date.now() - cacheEntry.loadedAt < TEAM_SCHEDULE_TTL_MS;
+  if (!force && isFresh) {
+    return cacheEntry.html;
+  }
+
+  const html = await fetchText(
+    `https://www.fussball.de/ajax.team.next.games/-/mode/PAGE/team-id/${encodeURIComponent(teamId)}`
+  );
+  NEXT_GAMES_HTML_CACHE.set(teamId, { html, loadedAt: Date.now() });
+  return html;
+}
+
+async function fetchObfuscationStylesheet(obfuscationKey) {
+  const cacheKey = String(obfuscationKey || "").trim();
+  if (!cacheKey) return "";
+
+  if (OBFUSCATION_CSS_CACHE.has(cacheKey)) {
+    return OBFUSCATION_CSS_CACHE.get(cacheKey);
+  }
+
+  const css = (await fetchText(`https://www.fussball.de/export.fontface/-/id/${encodeURIComponent(cacheKey)}/type/css`))
+    .replace(/url\('\/\//g, "url('https://")
+    .replace(/url\(\"\/\//g, 'url("https://');
+
+  OBFUSCATION_CSS_CACHE.set(cacheKey, css);
+  return css;
+}
+
+function formatGermanDateLabel(dateValue) {
+  const dateKey = normalizeDateKey(dateValue);
+  const date = parseDateKeyToUtc(dateKey);
+  if (!date) return String(dateValue || "").trim();
+
+  return new Intl.DateTimeFormat("de-DE", {
+    timeZone: LOCAL_TIME_ZONE,
+    weekday: "long",
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric"
+  }).format(date);
+}
+
+function buildHideAfterValue(dateValue) {
+  const dateKey = normalizeDateKey(dateValue);
+  const nextDateKey = shiftDateKey(dateKey, 1);
+  return nextDateKey ? `${nextDateKey}T00:00:00` : "";
+}
+
+function normalizeScoreOcrText(value) {
+  const normalized = String(value || "")
+    .trim()
+    .replace(/\s+/g, "")
+    .replace(/[OoQD]/g, "0")
+    .replace(/[Il|!]/g, "1")
+    .replace(/S/g, "5")
+    .replace(/Z/g, "2")
+    .replace(/[：;]/g, ":");
+  const scoreMatch = normalized.match(/\d{1,2}:\d{1,2}/);
+  return scoreMatch ? scoreMatch[0] : "";
+}
+
+function encodeCharsForHtml(value) {
+  return [...String(value || "")]
+    .map((char) => `&#x${char.codePointAt(0).toString(16)};`)
+    .join("");
+}
+
+function buildScoreCacheKey(obfuscationKey, leftValue, rightValue) {
+  return [
+    String(obfuscationKey || "").trim(),
+    [...String(leftValue || "")].map((char) => char.codePointAt(0).toString(16)).join(","),
+    [...String(rightValue || "")].map((char) => char.codePointAt(0).toString(16)).join(",")
+  ].join("|");
+}
+
+function extractScheduleHeadline(segment) {
+  const headlineMatch = String(segment || "").match(
+    /<td colspan="6">([^,]+,\s*[0-9]{2}\.[0-9]{2}\.[0-9]{4})\s*-\s*([0-9]{2}:[0-9]{2})?\s*Uhr\s*\|\s*([^<]+)<\/td>/i
+  );
+
+  if (!headlineMatch) return null;
+
+  return {
+    date: headlineMatch[1].match(/([0-9]{2}\.[0-9]{2}\.[0-9]{4})/)?.[1] || "",
+    time: String(headlineMatch[2] || "").trim(),
+    competition: stripTags(headlineMatch[3])
+  };
+}
+
+function extractScorePayload(scoreCellHtml) {
+  const scoreCell = String(scoreCellHtml || "");
+  const infoText = stripTags(scoreCell.match(/<span class="info-text">([\s\S]*?)<\/span>/i)?.[1] || "");
+  const leftMatch = scoreCell.match(/<span([^>]*class="score-left"[^>]*)>([\s\S]*?)<\/span>/i);
+  const rightMatch = scoreCell.match(
+    /<span([^>]*class="score-right"[^>]*)>([\s\S]*?)(?:<span class="icon-verified"><\/span>)?<\/span>/i
+  );
+  const leftAttrs = leftMatch?.[1] || "";
+  const rightAttrs = rightMatch?.[1] || "";
+  const obfuscationKey =
+    leftAttrs.match(/data-obfuscation="([^"]+)"/i)?.[1] ||
+    rightAttrs.match(/data-obfuscation="([^"]+)"/i)?.[1] ||
+    "";
+
+  return {
+    infoText,
+    verified: /icon-verified/.test(scoreCell),
+    obfuscationKey,
+    leftValue: decodeHtmlEntities(stripTags(leftMatch?.[2] || "")),
+    rightValue: decodeHtmlEntities(stripTags(rightMatch?.[2] || ""))
+  };
+}
+
+function compareScheduleMatchesAscending(a, b) {
+  const dateCompare = normalizeDateKey(a.date).localeCompare(normalizeDateKey(b.date));
+  if (dateCompare !== 0) return dateCompare;
+  return normalizeTimeKey(a.time).localeCompare(normalizeTimeKey(b.time));
+}
+
+function compareScheduleMatchesForDisplay(a, b) {
+  if (a.isPast && b.isPast) {
+    return compareScheduleMatchesAscending(b, a);
+  }
+
+  if (!a.isPast && !b.isPast) {
+    return compareScheduleMatchesAscending(a, b);
+  }
+
+  return a.isPast ? -1 : 1;
+}
+
+function extractScheduleMatchesFromHtml(
+  html,
+  { teamId = "", label = "", clubName = CLUB_NAME, includePast = false } = {}
+) {
+  const segments = String(html || "").split('<tr class="row-headline visible-small">').slice(1);
+  const matches = [];
+  const normalizedClubName = normalizeComparableText(clubName);
+  const todayKey = getBerlinNowParts().dateKey;
+
+  for (const segment of segments) {
+    const headline = extractScheduleHeadline(segment);
+    const teamNames = [...segment.matchAll(/<div class="club-name">\s*([\s\S]*?)\s*<\/div>/gi)]
+      .map((match) => stripTags(match[1]))
+      .filter(Boolean);
+    const logoUrls = [...segment.matchAll(/data-responsive-image="([^"]+)"/gi)]
+      .map((match) => normalizeProfileUrl(match[1]))
+      .filter(Boolean);
+    const scoreCell = segment.match(/<td class="column-score">([\s\S]*?)<\/td>/i)?.[1] || "";
+    const scorePayload = extractScorePayload(scoreCell);
+    const matchUrlRaw =
+      segment.match(/<a href="([^"]*\/spiel\/[^"]+)"/i)?.[1] ||
+      segment.match(/<a href="([^"]+)"><span class="icon-angle-right hidden-full"/i)?.[1] ||
+      "";
+    const matchUrl = normalizeProfileUrl(matchUrlRaw);
+    const matchId = matchUrl.match(/\/spiel\/([A-Z0-9]+)(?:$|[/?#"])/i)?.[1] || "";
+
+    if (!headline || teamNames.length < 2 || !matchUrl) continue;
+
+    const date = headline.date;
+    const dateKey = normalizeDateKey(date);
+    if (!dateKey) continue;
+    const isPast = dateKey < todayKey;
+    if (isPast && !includePast) continue;
+    const time = headline.time;
+    const competition = headline.competition;
+    const home = teamNames[0];
+    const away = teamNames[1];
+    const isHomeTeam = normalizedClubName
+      ? normalizeComparableText(home).includes(normalizedClubName)
+      : false;
+    const isAwayTeam = normalizedClubName
+      ? normalizeComparableText(away).includes(normalizedClubName)
+      : false;
+    const venueType = isHomeTeam ? "home" : isAwayTeam ? "away" : "";
+
+    matches.push({
+      matchId,
+      matchUrl,
+      date,
+      dateLabel: formatGermanDateLabel(date),
+      time,
+      competition,
+      home,
+      away,
+      homeLogo: logoUrls[0] || "",
+      awayLogo: logoUrls[1] || "",
+      venueType,
+      teamId,
+      sourceLabel: label,
+      hideAfter: buildHideAfterValue(date),
+      isPast,
+      status: isPast ? "past" : "upcoming",
+      resultDisplay: scorePayload.infoText || "",
+      resultType: scorePayload.infoText ? "info" : "",
+      resultVerified: scorePayload.verified,
+      resultObfuscationKey: scorePayload.obfuscationKey,
+      resultLeftValue: scorePayload.leftValue,
+      resultRightValue: scorePayload.rightValue
+    });
+  }
+
+  return matches.sort(compareScheduleMatchesForDisplay);
+}
+
+function extractUpcomingMatchesFromNextGamesHtml(html, options = {}) {
+  return extractScheduleMatchesFromHtml(html, options);
+}
+
+function extractUpcomingMatchesFromMatchplanHtml(html, options = {}) {
+  return extractScheduleMatchesFromHtml(html, options);
+}
+
+async function getScoreOcrWorker() {
+  if (!scoreOcrWorkerPromise) {
+    scoreOcrWorkerPromise = (async () => {
+      const worker = await createWorker("eng");
+      await worker.setParameters({
+        tessedit_pageseg_mode: PSM.SINGLE_LINE,
+        tessedit_char_whitelist: "0123456789:"
+      });
+      return worker;
+    })();
+  }
+
+  return scoreOcrWorkerPromise;
+}
+
+async function decodeObfuscatedScore(obfuscationKey, leftValue, rightValue) {
+  const cacheKey = buildScoreCacheKey(obfuscationKey, leftValue, rightValue);
+  if (SCORE_TEXT_CACHE.has(cacheKey)) {
+    return SCORE_TEXT_CACHE.get(cacheKey);
+  }
+
+  const css = await fetchObfuscationStylesheet(obfuscationKey);
+  if (!css) return "";
+
+  const browser = await getBrowser();
+  const page = await browser.newPage();
+
+  try {
+    await page.setViewport({ width: 900, height: 340, deviceScaleFactor: 2 });
+    await page.setContent(
+      `<!doctype html>
+      <html lang="de">
+        <head>
+          <meta charset="utf-8" />
+          <style>
+            ${css}
+            html, body {
+              margin: 0;
+              background: #ffffff;
+            }
+            #score {
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              gap: 18px;
+              padding: 36px 48px;
+              color: #000000;
+              font-family: font-${obfuscationKey}, Arial, sans-serif;
+              font-size: 180px;
+              font-weight: 700;
+              line-height: 1;
+            }
+          </style>
+        </head>
+        <body>
+          <div id="score">${encodeCharsForHtml(leftValue)}:${encodeCharsForHtml(rightValue)}</div>
+        </body>
+      </html>`,
+      { waitUntil: "networkidle0" }
+    );
+    await page.evaluate(() => document.fonts.ready);
+
+    const scoreHandle = await page.$("#score");
+    if (!scoreHandle) return "";
+
+    const image = await scoreHandle.screenshot({ type: "png" });
+    const worker = await getScoreOcrWorker();
+    const result = await worker.recognize(image);
+    const decoded = normalizeScoreOcrText(result?.data?.text || "");
+
+    if (decoded) {
+      SCORE_TEXT_CACHE.set(cacheKey, decoded);
+    }
+
+    return decoded;
+  } finally {
+    await page.close();
+  }
+}
+
+function normalizeRenderedScore(value) {
+  const bracketMatch = String(value || "").match(/\[(\d{1,2})\s*:\s*(\d{1,2})\]/);
+  if (bracketMatch) {
+    return `${bracketMatch[1]}:${bracketMatch[2]}`;
+  }
+
+  const scoreMatch = normalizeScoreOcrText(value);
+  return scoreMatch || "";
+}
+
+async function extractRenderedMatchScore(match) {
+  const matchId = String(match?.matchId || match?.spielId || "").trim();
+  const home = String(match?.home || "").trim();
+  const away = String(match?.away || "").trim();
+  if (!matchId || !home || !away) return "";
+
+  const browser = await getBrowser();
+  const page = await browser.newPage();
+  const url = buildMatchUrl(matchId, home, away);
+
+  try {
+    await page.setUserAgent(
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36"
+    );
+    await page.setViewport({ width: 1440, height: 1400 });
+    await page.goto(url, { waitUntil: "domcontentloaded", timeout: 60000 });
+    await page.waitForFunction(() => {
+      const text = document.body?.innerText || "";
+      return /\[\d{1,2}\s*:\s*\d{1,2}\]/.test(text) || /\d{1,2}\s*:\s*\d{1,2}/.test(text);
+    }, { timeout: 15000 });
+
+    const bodyText = await page.evaluate(() => document.body?.innerText || "");
+    return normalizeRenderedScore(bodyText);
+  } catch (_error) {
+    return "";
+  } finally {
+    await page.close();
+  }
+}
+
+async function hydratePastMatchResults(matches) {
+  const hydrated = [];
+
+  for (const match of matches) {
+    if (!match.isPast) {
+      hydrated.push(match);
+      continue;
+    }
+
+    if (match.resultDisplay && !/ergebnis\s+offen/i.test(String(match.resultDisplay))) {
+      hydrated.push(match);
+      continue;
+    }
+
+    if (!match.resultObfuscationKey || (!match.resultLeftValue && !match.resultRightValue)) {
+      const renderedScore = await extractRenderedMatchScore(match);
+      hydrated.push({
+        ...match,
+        resultDisplay: renderedScore || "Ergebnis offen",
+        resultType: renderedScore ? "score" : "info"
+      });
+      continue;
+    }
+
+    const decodedScore = await decodeObfuscatedScore(
+      match.resultObfuscationKey,
+      match.resultLeftValue,
+      match.resultRightValue
+    );
+    const renderedScore = decodedScore ? "" : await extractRenderedMatchScore(match);
+    const finalScore = decodedScore || renderedScore;
+
+    hydrated.push({
+      ...match,
+      resultDisplay: finalScore || "Ergebnis offen",
+      resultType: finalScore ? "score" : "info"
+    });
+  }
+
+  return hydrated;
+}
+
 function extractWidgetEntries(html) {
   const data = extractNextData(html);
   const entries = data?.props?.pageProps?.table?.entries;
@@ -631,6 +1052,9 @@ function extractMatchesFromMatchplanHtml(html, teamMeta) {
     const teamNames = [...segment.matchAll(/<div class="club-name">\s*([\s\S]*?)\s*<\/div>/gi)]
       .map((match) => stripTags(match[1]))
       .filter(Boolean);
+    const logoUrls = [...segment.matchAll(/data-responsive-image="([^"]+)"/gi)]
+      .map((match) => normalizeProfileUrl(match[1]))
+      .filter(Boolean);
     const matchId =
       segment.match(/href="https:\/\/www\.fussball\.de\/spiel\/[^"]*\/spiel\/([A-Z0-9]+)"/i)?.[1] || "";
 
@@ -643,6 +1067,8 @@ function extractMatchesFromMatchplanHtml(html, teamMeta) {
       competition: stripTags(headlineMatch[3]),
       home: teamNames[0],
       away: teamNames[1],
+      homeLogo: logoUrls[0] || "",
+      awayLogo: logoUrls[1] || "",
       teamId: teamMeta.teamId,
       widgetId: teamMeta.widgetId,
       sourceLabel: teamMeta.label
@@ -705,7 +1131,7 @@ async function loadTeamMatchIndex({ force = false } = {}) {
 
     for (const teamMeta of teamEntries) {
       try {
-        const html = await fetchTeamMatchplanHtml(teamMeta.teamId);
+        const html = await fetchFullSeasonTeamMatchplanHtml(teamMeta.teamId);
         matches.push(...extractMatchesFromMatchplanHtml(html, teamMeta));
       } catch (_error) {
         // ignore broken team pages and continue with the remaining ones
@@ -730,6 +1156,12 @@ async function loadTeamMatchIndex({ force = false } = {}) {
 }
 
 function pickBestResolvedMatch(query, matches) {
+  const explicitMatchId = String(query.spielId || query.matchId || "").trim();
+  if (explicitMatchId) {
+    const byMatchId = matches.find((match) => String(match.matchId || "").trim() === explicitMatchId);
+    if (byMatchId) return byMatchId;
+  }
+
   const normalizedHome = normalizeComparableText(query.home);
   const normalizedAway = normalizeComparableText(query.away);
   if (!normalizedHome || !normalizedAway) return null;
@@ -778,7 +1210,15 @@ async function enrichGamesWithResolvedMatchIds(games) {
   const enrichedGames = [];
 
   for (const game of games) {
-    if (game.spielId || !game.home || !game.away) {
+    const alreadyEnriched = Boolean(
+      (game.spielId || game.matchId) &&
+      game.teamId &&
+      game.sourceLabel &&
+      game.homeLogo &&
+      game.awayLogo
+    );
+
+    if (alreadyEnriched || !game.home || !game.away) {
       enrichedGames.push(game);
       continue;
     }
@@ -787,10 +1227,12 @@ async function enrichGamesWithResolvedMatchIds(games) {
     if (resolved?.matchId) {
       enrichedGames.push({
         ...game,
-        spielId: resolved.matchId,
-        resolvedBy: "team_matchplan",
-        sourceLabel: resolved.sourceLabel,
-        teamId: resolved.teamId
+        spielId: game.spielId || resolved.matchId,
+        resolvedBy: game.resolvedBy || "team_matchplan",
+        sourceLabel: game.sourceLabel || resolved.sourceLabel,
+        teamId: game.teamId || resolved.teamId,
+        homeLogo: game.homeLogo || resolved.homeLogo || "",
+        awayLogo: game.awayLogo || resolved.awayLogo || ""
       });
     } else {
       enrichedGames.push(game);
@@ -804,22 +1246,49 @@ function buildVotingGameFromTeamMatch(match) {
   return {
     home: match.home,
     away: match.away,
+    homeLogo: match.homeLogo || "",
+    awayLogo: match.awayLogo || "",
     competition: match.competition,
     date: match.date,
     time: match.time,
     ageGroup: deriveAgeGroupFromSourceLabel(match.sourceLabel),
     spielId: match.matchId,
+    status: match.status || "",
+    result: match.result || "",
+    resultDisplay: match.resultDisplay || "",
+    resultType: match.resultType || "",
     resolvedBy: "team_matchplan",
     sourceLabel: match.sourceLabel,
     teamId: match.teamId
   };
 }
 
-function buildActiveVotingTeamGames(teamMatches, votingWindow) {
-  return teamMatches
-    .filter((match) => isRelevantGame(match))
-    .filter((match) => isDateWithinVotingWindow(match.date, votingWindow))
-    .map(buildVotingGameFromTeamMatch);
+async function loadActiveVotingTeamGames(teamEntries, votingWindow) {
+  const games = [];
+
+  for (const teamMeta of teamEntries) {
+    try {
+      const matchplanHtml = await fetchFullSeasonTeamMatchplanHtml(teamMeta.teamId);
+      const matches = extractUpcomingMatchesFromMatchplanHtml(matchplanHtml, {
+        teamId: teamMeta.teamId,
+        label: teamMeta.label,
+        clubName: CLUB_NAME,
+        includePast: true
+      });
+      const hydratedMatches = await hydratePastMatchResults(matches);
+
+      games.push(
+        ...hydratedMatches
+          .filter((match) => isRelevantGame(match))
+          .filter((match) => isDateWithinVotingWindow(match.date, votingWindow))
+          .map(buildVotingGameFromTeamMatch)
+      );
+    } catch (_error) {
+      // ignore broken team matchplans and continue with the remaining ones
+    }
+  }
+
+  return games;
 }
 
 function compareScheduledGames(a, b) {
@@ -845,11 +1314,19 @@ function summarizeMatch(match) {
   return {
     home: match.home,
     away: match.away,
+    homeLogo: match.homeLogo || "",
+    awayLogo: match.awayLogo || "",
     competition: match.competition,
     date: match.date,
     time: match.time,
     ageGroup: match.ageGroup || deriveAgeGroupFromSourceLabel(match.sourceLabel),
     spielId: match.spielId || match.matchId || "",
+    status: match.status || "",
+    result: match.result || "",
+    resultDisplay: match.resultDisplay || "",
+    resultType: match.resultType || "",
+    resultVerified: Boolean(match.resultVerified),
+    venueType: match.venueType || "",
     stableId: getStableGameId(match),
     resolvedBy: match.resolvedBy || "team_matchplan",
     sourceLabel: match.sourceLabel || "",
@@ -1036,14 +1513,34 @@ async function loadWeekGamesData({ includeUnresolved = false } = {}) {
     .filter((game) => isDateWithinVotingWindow(game.date, votingWindow));
   const resolvedFeedGames = await enrichGamesWithResolvedMatchIds(feedGames);
   const teamIndex = await loadTeamMatchIndex();
-  const teamGames = buildActiveVotingTeamGames(teamIndex.matches, votingWindow).map(applyKnownMatchFixes);
-  const mergedGames = mergeGames([...resolvedFeedGames, ...teamGames]).filter((game) =>
+  const teamGames = (await loadActiveVotingTeamGames(teamIndex.teams, votingWindow)).map(applyKnownMatchFixes);
+  const mergedGames = mergeGames([...teamGames, ...resolvedFeedGames]).filter((game) =>
     includeUnresolved ? game.home && game.away : game.spielId && game.home && game.away
   );
 
   return {
     votingWindow,
     games: attachPreviousMatches(mergedGames, teamIndex.matches)
+  };
+}
+
+async function loadHistoryWeekGamesData() {
+  const votingWindow = getActiveVotingWindow();
+  const response = await fetch(HISTORY_STATIC_API, { cache: "no-store" });
+  if (!response.ok) {
+    throw new Error(`history_http_${response.status}`);
+  }
+
+  const data = await response.json();
+  const historyGames = (Array.isArray(data.games) ? data.games : [])
+    .filter(isRelevantGame)
+    .map(applyKnownMatchFixes)
+    .filter((game) => isDateWithinVotingWindow(game.date, votingWindow));
+  const resolvedHistoryGames = await enrichGamesWithResolvedMatchIds(historyGames);
+
+  return {
+    votingWindow,
+    games: resolvedHistoryGames
   };
 }
 
@@ -1235,7 +1732,11 @@ app.get("/health", (_req, res) => {
 
 app.get("/matches", async (_req, res) => {
   try {
-    const { games, votingWindow } = await loadWeekGamesData({ includeUnresolved: true });
+    const [{ games: currentGames, votingWindow }, { games: historyWeekGames }] = await Promise.all([
+      loadWeekGamesData({ includeUnresolved: true }),
+      loadHistoryWeekGamesData().catch(() => ({ games: [] }))
+    ]);
+    const games = mergeGames([...historyWeekGames, ...currentGames]);
     res.json({
       ok: true,
       generatedAt: new Date().toISOString(),
@@ -1248,6 +1749,80 @@ app.get("/matches", async (_req, res) => {
       ok: false,
       error: error instanceof Error ? error.message : String(error),
       games: []
+    });
+  }
+});
+
+app.get("/team-schedule", async (req, res) => {
+  const teamId = String(req.query.teamId || "").trim();
+  const label = String(req.query.label || "").trim();
+  const clubName = String(req.query.club || CLUB_NAME).trim() || CLUB_NAME;
+  const force = String(req.query.force || "").trim() === "1";
+  const includePast = String(req.query.includePast || "").trim() === "1";
+  const cacheKey = `${teamId}|${label}|${clubName}|${includePast ? "past" : "upcoming"}`;
+
+  if (!teamId) {
+    res.status(400).json({
+      ok: false,
+      error: "missing_team_id",
+      matches: []
+    });
+    return;
+  }
+
+  try {
+    const cacheEntry = TEAM_SCHEDULE_CACHE.get(cacheKey);
+    const isFresh = cacheEntry && Date.now() - cacheEntry.loadedAt < TEAM_SCHEDULE_TTL_MS;
+    if (!force && isFresh) {
+      res.json(cacheEntry.payload);
+      return;
+    }
+
+    let matches = [];
+
+    if (includePast) {
+      const matchplanHtml = await fetchFullSeasonTeamMatchplanHtml(teamId, { force });
+      matches = extractUpcomingMatchesFromMatchplanHtml(matchplanHtml, {
+        teamId,
+        label,
+        clubName,
+        includePast: true
+      });
+      matches = await hydratePastMatchResults(matches);
+    } else {
+      const html = await fetchTeamNextGamesHtml(teamId, { force });
+      matches = extractUpcomingMatchesFromNextGamesHtml(html, { teamId, label, clubName });
+
+      if (!matches.length) {
+        const matchplanHtml = await fetchTeamMatchplanHtml(teamId);
+        matches = extractUpcomingMatchesFromMatchplanHtml(matchplanHtml, { teamId, label, clubName });
+      }
+    }
+
+    const payload = {
+      ok: true,
+      generatedAt: new Date().toISOString(),
+      teamId,
+      label,
+      clubName,
+      includePast,
+      count: matches.length,
+      matches
+    };
+
+    TEAM_SCHEDULE_CACHE.set(cacheKey, {
+      loadedAt: Date.now(),
+      payload
+    });
+
+    res.json(payload);
+  } catch (error) {
+    res.status(500).json({
+      ok: false,
+      error: error instanceof Error ? error.message : String(error),
+      teamId,
+      label,
+      matches: []
     });
   }
 });

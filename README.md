@@ -135,6 +135,14 @@ const TICKER_API = "https://DEINE-URL/static-data/matches.json";
 const LINEUP_BASE = "https://DEINE-URL/static-data/lineups";
 ```
 
+Optional kannst du im Frontend zusaetzlich einen laufenden Scraper-Server hinterlegen.
+Dann laedt der Live-Ticker fuer die aktuelle Woche bevorzugt `/matches` und faellt nur bei Bedarf auf die statischen JSON-Dateien zurueck.
+
+```javascript
+window.SC_HASSEL_STATIC_BASE = "https://DEINE-URL/static-data";
+window.SC_HASSEL_LIVE_BASE = "https://DEINE-DOMAIN";
+```
+
 Die Lineup-Datei pro Spiel kannst du dann ueber `stableId` laden:
 
 ```javascript
