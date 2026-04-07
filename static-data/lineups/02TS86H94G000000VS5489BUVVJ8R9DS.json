@@ -1,0 +1,162 @@
+{
+  "ok": true,
+  "matchId": "02TS86H94G000000VS5489BUVVJ8R9DS",
+  "url": "https://www.fussball.de/spiel/sc-hassel-iii-wacker-gladbeck/-/spiel/02TS86H94G000000VS5489BUVVJ8R9DS",
+  "home": "SC Hassel III",
+  "away": "Wacker Gladbeck",
+  "ownSide": "home",
+  "count": 14,
+  "players": [
+    {
+      "id": "01Q909N5FO000000VV0AG80NVVSKMM61",
+      "matchId": "02TS86H94G000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Fabrice Makulla",
+      "rawName": " ",
+      "number": "01",
+      "img": "https://cdn.fussball.de/public/02TTH20JR4000000VS5489C1VSPL3397.stamp",
+      "obfuscationKey": "k13pqkj0"
+    },
+    {
+      "id": "00UEDDSR18000000VV0AG811VT16I3CR",
+      "matchId": "02TS86H94G000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Fatih Karagöz",
+      "rawName": " ",
+      "number": "03",
+      "img": "https://cdn.fussball.de/public/02UOFET21O000000VS5489C0VU5BRBVL.stamp",
+      "obfuscationKey": "k13pqkj0"
+    },
+    {
+      "id": "010HNIQ6MO000000VV0AG80NVSV2TEGB",
+      "matchId": "02TS86H94G000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Fynn Peterek",
+      "rawName": " ",
+      "number": "05",
+      "img": "https://cdn.fussball.de/public/02TTH2H0HO000000VS5489C1VSPL3397.stamp",
+      "obfuscationKey": "k13pqkj0"
+    },
+    {
+      "id": "01V6HD2OJ8000000VS541L4GVTBC5RB5",
+      "matchId": "02TS86H94G000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Jerome Przystav",
+      "rawName": " ",
+      "number": "08",
+      "img": "https://cdn.fussball.de/public/029L96540O000000VS5489B5VVG2UF8C.stamp",
+      "obfuscationKey": "k13pqkj0"
+    },
+    {
+      "id": "02SC944QVO000000VUM1D5A0VURGFM1G",
+      "matchId": "02TS86H94G000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Ben Louis Momma",
+      "rawName": "  ",
+      "number": "14",
+      "img": "https://cdn.fussball.de/public/02TTH2A5I8000000VS5489C1VSPL3397.stamp",
+      "obfuscationKey": "k13pqkj0"
+    },
+    {
+      "id": "026S5K34FK000000VS541L4FVU6BU3ED",
+      "matchId": "02TS86H94G000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Hidoyet Yilmaz",
+      "rawName": " ",
+      "number": "15",
+      "img": "https://images.media.fussball.de/userfiles/c/N/M/v3FlbHcyUevjq9AZlkywpz_p3.jpg",
+      "obfuscationKey": "k13pqkj0"
+    },
+    {
+      "id": "017M8VHQ18000000VV0AG80NVTCBOR0A",
+      "matchId": "02TS86H94G000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Oliver Paul Kmiecik",
+      "rawName": "  ",
+      "number": "29",
+      "img": "https://cdn.fussball.de/public/02TN9H0P6S000000VS5489C1VSTUJ3K2.stamp",
+      "obfuscationKey": "k13pqkj0"
+    },
+    {
+      "id": "02SHDTS3T4000000VUM1D50QVSUREU2L",
+      "matchId": "02TS86H94G000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Yusif Mahir Oglu Bayramov",
+      "rawName": "   ",
+      "number": "31",
+      "img": "https://cdn.fussball.de/public/02T2NBEUC8000000VS5489C2VURGIJAT.stamp",
+      "obfuscationKey": "k13pqkj0"
+    },
+    {
+      "id": "02UCGGV9OO000000VUM1D5AAVTLBSBD5",
+      "matchId": "02TS86H94G000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Tim Sokolowski",
+      "rawName": " ",
+      "number": "82",
+      "img": "https://cdn.fussball.de/public/02UIAM8INC000000VS5489BTVT5EO5B1.stamp",
+      "obfuscationKey": "k13pqkj0"
+    },
+    {
+      "id": "01P05HOIPS000000VV0AG80NVSHO9FVA",
+      "matchId": "02TS86H94G000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Emran Jeseti",
+      "rawName": " ",
+      "number": "98",
+      "img": "https://cdn.fussball.de/public/02UIALV0Q4000000VS5489C1VS747N46.stamp",
+      "obfuscationKey": "k13pqkj0"
+    },
+    {
+      "id": "00OVIVRNK8000000VV0AG83KVT283J6L",
+      "matchId": "02TS86H94G000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Burak Ünal",
+      "rawName": " ",
+      "number": "99",
+      "img": "https://cdn.fussball.de/public/02URL42G2K000000VS5489C4VT4B9A51.stamp",
+      "obfuscationKey": "k13pqkj0"
+    },
+    {
+      "id": "02STRVURH8000000VUM1D59MVSJE50KM",
+      "matchId": "02TS86H94G000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Nick Andre Klink",
+      "rawName": "  ",
+      "number": "26",
+      "img": "https://images.media.fussball.de/userfiles/a/v/x/tT6uMaeYcPbQRDz5UtODW1_p3.jpg",
+      "obfuscationKey": "k13pqkj0"
+    },
+    {
+      "id": "02FCERNQU8000000VUM1DNOTVSIG8NIT",
+      "matchId": "02TS86H94G000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Jan Lucas Engwer",
+      "rawName": "  ",
+      "number": "45",
+      "img": "https://cdn.fussball.de/public/02OJTT9EMC000000VS5489B6VVPB8G6Q.stamp",
+      "obfuscationKey": "k13pqkj0"
+    },
+    {
+      "id": "home___",
+      "matchId": "02TS86H94G000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Marco Zenker",
+      "rawName": " ",
+      "number": "",
+      "img": "",
+      "obfuscationKey": "k13pqkj0"
+    }
+  ],
+  "stableId": "02TS86H94G000000VS5489BUVVJ8R9DS",
+  "generatedAt": "2026-04-07T02:33:32.559Z",
+  "game": {
+    "home": "SC Hassel III",
+    "away": "Wacker Gladbeck",
+    "date": "05.10.2025",
+    "time": "17:00",
+    "competition": "Kreisliga C",
+    "ageGroup": "",
+    "spielId": "02TS86H94G000000VS5489BUVVJ8R9DS"
+  }
+}

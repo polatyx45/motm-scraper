@@ -1,0 +1,182 @@
+{
+  "ok": true,
+  "matchId": "02TS86HBV0000000VS5489BUVVJ8R9DS",
+  "url": "https://www.fussball.de/spiel/sc-hassel-iii-adler-ellinghorst-1961-ii/-/spiel/02TS86HBV0000000VS5489BUVVJ8R9DS",
+  "home": "SC Hassel III",
+  "away": "Adler Ellinghorst 1961 II",
+  "ownSide": "home",
+  "count": 17,
+  "players": [
+    {
+      "id": "01Q909N5FO000000VV0AG80NVVSKMM61",
+      "matchId": "02TS86HBV0000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Fabrice Makulla",
+      "rawName": " ",
+      "number": "01",
+      "img": "https://cdn.fussball.de/public/02TTH20JR4000000VS5489C1VSPL3397.stamp",
+      "obfuscationKey": "xxzelm89"
+    },
+    {
+      "id": "010HNIQ6MO000000VV0AG80NVSV2TEGB",
+      "matchId": "02TS86HBV0000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Fynn Peterek",
+      "rawName": " ",
+      "number": "05",
+      "img": "https://cdn.fussball.de/public/02TTH2H0HO000000VS5489C1VSPL3397.stamp",
+      "obfuscationKey": "xxzelm89"
+    },
+    {
+      "id": "01V6HD2OJ8000000VS541L4GVTBC5RB5",
+      "matchId": "02TS86HBV0000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Jerome Przystav",
+      "rawName": " ",
+      "number": "08",
+      "img": "https://cdn.fussball.de/public/029L96540O000000VS5489B5VVG2UF8C.stamp",
+      "obfuscationKey": "xxzelm89"
+    },
+    {
+      "id": "02S7PJQUNS000000VUM1D597VV8AJ6VI",
+      "matchId": "02TS86HBV0000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Ahmad Taan",
+      "rawName": " ",
+      "number": "11",
+      "img": "https://cdn.fussball.de/public/02T2NBNQT8000000VS5489C0VUU5TGQ9.stamp",
+      "obfuscationKey": "xxzelm89"
+    },
+    {
+      "id": "00UEDDSR18000000VV0AG811VT16I3CR",
+      "matchId": "02TS86HBV0000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Fatih Karagöz",
+      "rawName": " ",
+      "number": "15",
+      "img": "https://cdn.fussball.de/public/02UOFET21O000000VS5489C0VU5BRBVL.stamp",
+      "obfuscationKey": "xxzelm89"
+    },
+    {
+      "id": "017M8VHQ18000000VV0AG80NVTCBOR0A",
+      "matchId": "02TS86HBV0000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Oliver Paul Kmiecik",
+      "rawName": "  ",
+      "number": "29",
+      "img": "https://cdn.fussball.de/public/02TN9H0P6S000000VS5489C1VSTUJ3K2.stamp",
+      "obfuscationKey": "xxzelm89"
+    },
+    {
+      "id": "02SHDTS3T4000000VUM1D50QVSUREU2L",
+      "matchId": "02TS86HBV0000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Yusif Mahir Oglu Bayramov",
+      "rawName": "   ",
+      "number": "31",
+      "img": "https://cdn.fussball.de/public/02T2NBEUC8000000VS5489C2VURGIJAT.stamp",
+      "obfuscationKey": "xxzelm89"
+    },
+    {
+      "id": "028CLTQR5K000000VS541L4KVT4E998U",
+      "matchId": "02TS86HBV0000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Sinan Bice",
+      "rawName": " ",
+      "number": "35",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "xxzelm89"
+    },
+    {
+      "id": "02FCERNQU8000000VUM1DNOTVSIG8NIT",
+      "matchId": "02TS86HBV0000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Jan Lucas Engwer",
+      "rawName": "  ",
+      "number": "45",
+      "img": "https://cdn.fussball.de/public/02OJTT9EMC000000VS5489B6VVPB8G6Q.stamp",
+      "obfuscationKey": "xxzelm89"
+    },
+    {
+      "id": "02JL6EVDSC000000VUM1DNR2VSGV0H12",
+      "matchId": "02TS86HBV0000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Ibrahim Yesilkir",
+      "rawName": " ",
+      "number": "77",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "xxzelm89"
+    },
+    {
+      "id": "00OVIVRNK8000000VV0AG83KVT283J6L",
+      "matchId": "02TS86HBV0000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Burak Ünal",
+      "rawName": " ",
+      "number": "99",
+      "img": "https://cdn.fussball.de/public/02URL42G2K000000VS5489C4VT4B9A51.stamp",
+      "obfuscationKey": "xxzelm89"
+    },
+    {
+      "id": "02SC944QVO000000VUM1D5A0VURGFM1G",
+      "matchId": "02TS86HBV0000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Ben Louis Momma",
+      "rawName": "  ",
+      "number": "14",
+      "img": "https://cdn.fussball.de/public/02TTH2A5I8000000VS5489C1VSPL3397.stamp",
+      "obfuscationKey": "xxzelm89"
+    },
+    {
+      "id": "00MC77BNH0000000VV0AG85VVSMHI0R7",
+      "matchId": "02TS86HBV0000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Elvir Jeseti",
+      "rawName": " ",
+      "number": "18",
+      "img": "https://cdn.fussball.de/public/02UMQMN1A4000000VS5489BSVS0H23B8.stamp",
+      "obfuscationKey": "xxzelm89"
+    },
+    {
+      "id": "02PFDHBRA8000000VS5489B8VVHQI6RK",
+      "matchId": "02TS86HBV0000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Luca Joshua Schmidt",
+      "rawName": "  ",
+      "number": "24",
+      "img": "https://cdn.fussball.de/public/02PFJPU3PO000000VS5489B1VUEKQ1B7.stamp",
+      "obfuscationKey": "xxzelm89"
+    },
+    {
+      "id": "02STRVURH8000000VUM1D59MVSJE50KM",
+      "matchId": "02TS86HBV0000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Nick Andre Klink",
+      "rawName": "  ",
+      "number": "26",
+      "img": "https://images.media.fussball.de/userfiles/a/v/x/tT6uMaeYcPbQRDz5UtODW1_p3.jpg",
+      "obfuscationKey": "xxzelm89"
+    },
+    {
+      "id": "011THCVAJ4000000VV0AG80NVSANCC3E",
+      "matchId": "02TS86HBV0000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Kubilay Yesilöz",
+      "rawName": " ",
+      "number": "34",
+      "img": "https://cdn.fussball.de/public/02P04SGVF0000000VS5489B7VUKV5UIG.stamp",
+      "obfuscationKey": "xxzelm89"
+    }
+  ],
+  "stableId": "02TS86HBV0000000VS5489BUVVJ8R9DS",
+  "generatedAt": "2026-04-07T02:33:32.559Z",
+  "game": {
+    "home": "SC Hassel III",
+    "away": "Adler Ellinghorst 1961 II",
+    "date": "07.09.2025",
+    "time": "17:00",
+    "competition": "Kreisliga C",
+    "ageGroup": "",
+    "spielId": "02TS86HBV0000000VS5489BUVVJ8R9DS"
+  }
+}

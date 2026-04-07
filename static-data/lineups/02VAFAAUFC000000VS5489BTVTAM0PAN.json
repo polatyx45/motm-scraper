@@ -1,0 +1,132 @@
+{
+  "ok": true,
+  "matchId": "02VAFAAUFC000000VS5489BTVTAM0PAN",
+  "url": "https://www.fussball.de/spiel/vfb-huls-ii-sc-hassel-iii/-/spiel/02VAFAAUFC000000VS5489BTVTAM0PAN",
+  "home": "VfB Hüls II",
+  "away": "SC Hassel III",
+  "ownSide": "away",
+  "count": 12,
+  "players": [
+    {
+      "id": "02FCERNQU8000000VUM1DNOTVSIG8NIT",
+      "matchId": "02VAFAAUFC000000VS5489BTVTAM0PAN",
+      "side": "away",
+      "name": "Jan Lucas Engwer",
+      "rawName": "  ",
+      "number": "45",
+      "img": "https://cdn.fussball.de/public/02OJTT9EMC000000VS5489B6VVPB8G6Q.stamp",
+      "obfuscationKey": "mc5kztnu"
+    },
+    {
+      "id": "029SSTF328000000VS5489B5VVEC1CNQ",
+      "matchId": "02VAFAAUFC000000VS5489BTVTAM0PAN",
+      "side": "away",
+      "name": "Fabian Neuschl",
+      "rawName": " ",
+      "number": "69",
+      "img": "https://cdn.fussball.de/public/02UMQQ1600000000VS5489BTVSE04V5I.stamp",
+      "obfuscationKey": "mc5kztnu"
+    },
+    {
+      "id": "02UCGGV9OO000000VUM1D5AAVTLBSBD5",
+      "matchId": "02VAFAAUFC000000VS5489BTVTAM0PAN",
+      "side": "away",
+      "name": "Tim Sokolowski",
+      "rawName": " ",
+      "number": "82",
+      "img": "https://cdn.fussball.de/public/02UIAM8INC000000VS5489BTVT5EO5B1.stamp",
+      "obfuscationKey": "mc5kztnu"
+    },
+    {
+      "id": "01ODFD79O0000000VS541L4IVV9AC5IL",
+      "matchId": "02VAFAAUFC000000VS5489BTVTAM0PAN",
+      "side": "away",
+      "name": "Justin Klengel",
+      "rawName": " ",
+      "number": "92",
+      "img": "//images.media.fussball.de/userfiles/S/a/F/rohzHx4Hp88NloFDahhQIz_p3.jpg",
+      "obfuscationKey": "mc5kztnu"
+    },
+    {
+      "id": "00UEDDSR18000000VV0AG811VT16I3CR",
+      "matchId": "02VAFAAUFC000000VS5489BTVTAM0PAN",
+      "side": "away",
+      "name": "Fatih Karagöz",
+      "rawName": " ",
+      "number": "96",
+      "img": "https://cdn.fussball.de/public/02UOFET21O000000VS5489C0VU5BRBVL.stamp",
+      "obfuscationKey": "mc5kztnu"
+    },
+    {
+      "id": "02SHDTS3T4000000VUM1D50QVSUREU2L",
+      "matchId": "02VAFAAUFC000000VS5489BTVTAM0PAN",
+      "side": "away",
+      "name": "Yusif Mahir Oglu Bayramov",
+      "rawName": "   ",
+      "number": "01",
+      "img": "https://cdn.fussball.de/public/02T2NBEUC8000000VS5489C2VURGIJAT.stamp",
+      "obfuscationKey": "mc5kztnu"
+    },
+    {
+      "id": "02S7PJQUNS000000VUM1D597VV8AJ6VI",
+      "matchId": "02VAFAAUFC000000VS5489BTVTAM0PAN",
+      "side": "away",
+      "name": "Ahmad Taan",
+      "rawName": " ",
+      "number": "11",
+      "img": "https://cdn.fussball.de/public/02T2NBNQT8000000VS5489C0VUU5TGQ9.stamp",
+      "obfuscationKey": "mc5kztnu"
+    },
+    {
+      "id": "00MC6AFGOG000000VV0AG85VVSMHI0R7",
+      "matchId": "02VAFAAUFC000000VS5489BTVTAM0PAN",
+      "side": "away",
+      "name": "Patrick Zettl",
+      "rawName": " ",
+      "number": "13",
+      "img": "https://cdn.fussball.de/public/02VA82D20S000000VS5489BTVT7Q4NCS.stamp",
+      "obfuscationKey": "mc5kztnu"
+    },
+    {
+      "id": "02SC944QVO000000VUM1D5A0VURGFM1G",
+      "matchId": "02VAFAAUFC000000VS5489BTVTAM0PAN",
+      "side": "away",
+      "name": "Ben Louis Momma",
+      "rawName": "  ",
+      "number": "14",
+      "img": "https://cdn.fussball.de/public/02TTH2A5I8000000VS5489C1VSPL3397.stamp",
+      "obfuscationKey": "mc5kztnu"
+    },
+    {
+      "id": "02IBA10HA0000000VUM1DNPAVSE01ML4",
+      "matchId": "02VAFAAUFC000000VS5489BTVTAM0PAN",
+      "side": "away",
+      "name": "Leon Jerome Kurt",
+      "rawName": "  ",
+      "number": "27",
+      "img": "https://images.media.fussball.de/userfiles/m/9/p/QD3V4Bmu12nkt3b7EEfM2a_p3.jpg",
+      "obfuscationKey": "mc5kztnu"
+    },
+    {
+      "id": "017M8VHQ18000000VV0AG80NVTCBOR0A",
+      "matchId": "02VAFAAUFC000000VS5489BTVTAM0PAN",
+      "side": "away",
+      "name": "Oliver Paul Kmiecik",
+      "rawName": "  ",
+      "number": "29",
+      "img": "https://cdn.fussball.de/public/02TN9H0P6S000000VS5489C1VSTUJ3K2.stamp",
+      "obfuscationKey": "mc5kztnu"
+    }
+  ],
+  "stableId": "02VAFAAUFC000000VS5489BTVTAM0PAN",
+  "generatedAt": "2026-04-07T02:33:32.559Z",
+  "game": {
+    "home": "VfB Hüls II",
+    "away": "SC Hassel III",
+    "date": "03.01.2026",
+    "time": "14:05",
+    "competition": "Vereinsturnier",
+    "ageGroup": "",
+    "spielId": "02VAFAAUFC000000VS5489BTVTAM0PAN"
+  }
+}

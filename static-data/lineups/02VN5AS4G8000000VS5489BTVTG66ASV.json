@@ -1,0 +1,20 @@
+{
+  "ok": false,
+  "error": "lineup_not_available",
+  "message": "Waiting for selector `.player-wrapper.home, .player-wrapper.away` failed",
+  "matchId": "02VN5AS4G8000000VS5489BTVTG66ASV",
+  "home": "SC Hassel II",
+  "away": "SG Eintracht Gelsenkirchen 07/​12 III",
+  "players": [],
+  "stableId": "02VN5AS4G8000000VS5489BTVTG66ASV",
+  "generatedAt": "2026-04-07T02:33:32.559Z",
+  "game": {
+    "home": "SC Hassel II",
+    "away": "SG Eintracht Gelsenkirchen 07/​12 III",
+    "date": "09.05.2026",
+    "time": "12:00",
+    "competition": "Kreisliga A",
+    "ageGroup": "",
+    "spielId": "02VN5AS4G8000000VS5489BTVTG66ASV"
+  }
+}

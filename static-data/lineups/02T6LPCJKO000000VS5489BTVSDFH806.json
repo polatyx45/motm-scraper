@@ -1,0 +1,21 @@
+{
+  "ok": true,
+  "matchId": "02T6LPCJKO000000VS5489BTVSDFH806",
+  "url": "https://www.fussball.de/spiel/sg-borken-sc-hassel-ii/-/spiel/02T6LPCJKO000000VS5489BTVSDFH806",
+  "home": "SG Borken",
+  "away": "SC Hassel II",
+  "ownSide": "away",
+  "count": 0,
+  "players": [],
+  "stableId": "02T6LPCJKO000000VS5489BTVSDFH806",
+  "generatedAt": "2026-04-07T02:33:32.559Z",
+  "game": {
+    "home": "SG Borken",
+    "away": "SC Hassel II",
+    "date": "06.07.2025",
+    "time": "10:30",
+    "competition": "Vereinsturnier",
+    "ageGroup": "",
+    "spielId": "02T6LPCJKO000000VS5489BTVSDFH806"
+  }
+}

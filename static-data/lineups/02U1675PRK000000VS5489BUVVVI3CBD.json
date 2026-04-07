@@ -1,0 +1,182 @@
+{
+  "ok": true,
+  "matchId": "02U1675PRK000000VS5489BUVVVI3CBD",
+  "url": "https://www.fussball.de/spiel/sc-hassel-ssv-buer-07-28/-/spiel/02U1675PRK000000VS5489BUVVVI3CBD",
+  "home": "SC Hassel",
+  "away": "SSV Buer 07/​28",
+  "ownSide": "home",
+  "count": 18,
+  "players": [
+    {
+      "id": "023O7P4234000000VS54898FVSRFR5IV",
+      "matchId": "02U1675PRK000000VS5489BUVVVI3CBD",
+      "side": "home",
+      "name": "Enes Malik Alan",
+      "rawName": "  ",
+      "number": "12",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "nwmww6gd"
+    },
+    {
+      "id": "02KTD2JMH8000000VUM1DNR3VSVM7DLD",
+      "matchId": "02U1675PRK000000VS5489BUVVVI3CBD",
+      "side": "home",
+      "name": "Ceyhun Alp Badur",
+      "rawName": "  ",
+      "number": "06",
+      "img": "https://cdn.fussball.de/public/02UDJT13A8000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "nwmww6gd"
+    },
+    {
+      "id": "02C5M1AIVS000000VS5489B5VVQASLMA",
+      "matchId": "02U1675PRK000000VS5489BUVVVI3CBD",
+      "side": "home",
+      "name": "Mert Cihangir",
+      "rawName": " ",
+      "number": "07",
+      "img": "https://cdn.fussball.de/public/02U99F0NJG000000VS5489C4VTI8BDHE.stamp",
+      "obfuscationKey": "nwmww6gd"
+    },
+    {
+      "id": "02FNCAJJJ0000000VUM1DNOMVV3IHK8V",
+      "matchId": "02U1675PRK000000VS5489BUVVVI3CBD",
+      "side": "home",
+      "name": "Taha Mehdi Demirel",
+      "rawName": "  ",
+      "number": "08",
+      "img": "https://cdn.fussball.de/public/02S5PQETDO000000VS5489BAVVMDJ9M6.stamp",
+      "obfuscationKey": "nwmww6gd"
+    },
+    {
+      "id": "02JDLIICDG000000VS5489B6VUDBER6I",
+      "matchId": "02U1675PRK000000VS5489BUVVVI3CBD",
+      "side": "home",
+      "name": "Umut Aydogan",
+      "rawName": " ",
+      "number": "09",
+      "img": "https://cdn.fussball.de/public/02S9KRER7C000000VS5489BAVS6CUPS2.stamp",
+      "obfuscationKey": "nwmww6gd"
+    },
+    {
+      "id": "02G6D9K328000000VUM1DNQEVUU9RNE9",
+      "matchId": "02U1675PRK000000VS5489BUVVVI3CBD",
+      "side": "home",
+      "name": "Mustafa Enhar Coban",
+      "rawName": "  ",
+      "number": "10",
+      "img": "https://images.media.fussball.de/userfiles/z/A/G/c0Eh9qloxjlOyUSdAzfSXz_p3.jpg",
+      "obfuscationKey": "nwmww6gd"
+    },
+    {
+      "id": "02N0KOC0M0000000VUM1DNOVVV24E9BO",
+      "matchId": "02U1675PRK000000VS5489BUVVVI3CBD",
+      "side": "home",
+      "name": "Necdet Efe Develi",
+      "rawName": "  ",
+      "number": "11",
+      "img": "https://images.media.fussball.de/userfiles/1/G/B/cvyAP0VAVd9Up2NWUfhHmz_p3.jpg",
+      "obfuscationKey": "nwmww6gd"
+    },
+    {
+      "id": "02181B3B3O000000VS54898FVTMHPA60",
+      "matchId": "02U1675PRK000000VS5489BUVVVI3CBD",
+      "side": "home",
+      "name": "Mehmet Efe Özgen",
+      "rawName": "  ",
+      "number": "19",
+      "img": "https://cdn.fussball.de/public/02UI905T0O000000VS5489C2VS6FSBDL.stamp",
+      "obfuscationKey": "nwmww6gd"
+    },
+    {
+      "id": "02FO0CTR70000000VUM1DNPGVVD57QHV",
+      "matchId": "02U1675PRK000000VS5489BUVVVI3CBD",
+      "side": "home",
+      "name": "Egemen Tekin",
+      "rawName": " ",
+      "number": "20",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "nwmww6gd"
+    },
+    {
+      "id": "02QHNS4TFK000000VUM1D56AVSRS6QTA",
+      "matchId": "02U1675PRK000000VS5489BUVVVI3CBD",
+      "side": "home",
+      "name": "Fabio Gaetano Mirto",
+      "rawName": "  ",
+      "number": "25",
+      "img": "https://images.media.fussball.de/userfiles/e/5/Z/2aUEKeGF9OAANkmcsGmzG1_p3.jpg",
+      "obfuscationKey": "nwmww6gd"
+    },
+    {
+      "id": "02OCQUGU6C000000VUM1DNP8VS6I5J85",
+      "matchId": "02U1675PRK000000VS5489BUVVVI3CBD",
+      "side": "home",
+      "name": "Ender Öcal",
+      "rawName": " ",
+      "number": "27",
+      "img": "https://cdn.fussball.de/public/02UI90BNS4000000VS5489C0VSQRN5KI.stamp",
+      "obfuscationKey": "nwmww6gd"
+    },
+    {
+      "id": "02SL922RM8000000VUM1D57FVSS0UOGB",
+      "matchId": "02U1675PRK000000VS5489BUVVVI3CBD",
+      "side": "home",
+      "name": "Yunus Ensar Yigit",
+      "rawName": "  ",
+      "number": "14",
+      "img": "https://cdn.fussball.de/public/02U9AF1GFC000000VS5489C4VTI8BDHE.stamp",
+      "obfuscationKey": "nwmww6gd"
+    },
+    {
+      "id": "02J909TK48000000VUM1DNOOVUNNS1VK",
+      "matchId": "02U1675PRK000000VS5489BUVVVI3CBD",
+      "side": "home",
+      "name": "Musab Cetinkaya",
+      "rawName": " ",
+      "number": "16",
+      "img": "https://images.media.fussball.de/userfiles/h/d/E/rY4erzajS6sezR678S3rD0_p3.jpg",
+      "obfuscationKey": "nwmww6gd"
+    },
+    {
+      "id": "02MMVN4IKS000000VUM1DNORVU3OHSTF",
+      "matchId": "02U1675PRK000000VS5489BUVVVI3CBD",
+      "side": "home",
+      "name": "Umeyr Yildiz",
+      "rawName": " ",
+      "number": "17",
+      "img": "https://cdn.fussball.de/public/02S80GUHQ0000000VS5489B2VSKOF6OB.stamp",
+      "obfuscationKey": "nwmww6gd"
+    },
+    {
+      "id": "02TB0C8VDO000000VUM1D561VT2AA10I",
+      "matchId": "02U1675PRK000000VS5489BUVVVI3CBD",
+      "side": "home",
+      "name": "Amin Al Abbozi",
+      "rawName": "  ",
+      "number": "18",
+      "img": "https://cdn.fussball.de/public/02UB81ENLC000000VS5489C1VUDJB9US.stamp",
+      "obfuscationKey": "nwmww6gd"
+    },
+    {
+      "id": "home___",
+      "matchId": "02U1675PRK000000VS5489BUVVVI3CBD",
+      "side": "home",
+      "name": "Melih Ayyildiz",
+      "rawName": " ",
+      "number": "",
+      "img": "",
+      "obfuscationKey": "nwmww6gd"
+    }
+  ],
+  "stableId": "02U1675PRK000000VS5489BUVVVI3CBD",
+  "generatedAt": "2026-04-07T02:33:32.559Z",
+  "game": {
+    "home": "SC Hassel",
+    "away": "SSV Buer 07/​28",
+    "date": "25.09.2025",
+    "time": "18:00",
+    "competition": "Kreispokal",
+    "ageGroup": "",
+    "spielId": "02U1675PRK000000VS5489BUVVVI3CBD"
+  }
+}

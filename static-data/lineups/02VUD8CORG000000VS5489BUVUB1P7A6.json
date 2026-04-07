@@ -1,0 +1,21 @@
+{
+  "ok": true,
+  "matchId": "02VUD8CORG000000VS5489BUVUB1P7A6",
+  "url": "https://www.fussball.de/spiel/sus-gw-barkenberg-sc-hassel/-/spiel/02VUD8CORG000000VS5489BUVUB1P7A6",
+  "home": "SuS GW Barkenberg",
+  "away": "SC Hassel",
+  "ownSide": "away",
+  "count": 21,
+  "players": [],
+  "stableId": "02VUD8CORG000000VS5489BUVUB1P7A6",
+  "generatedAt": "2026-04-07T02:33:32.559Z",
+  "game": {
+    "home": "SuS GW Barkenberg",
+    "away": "SC Hassel",
+    "date": "12.02.2026",
+    "time": "19:00",
+    "competition": "Kreisfreundschaftsspiele",
+    "ageGroup": "",
+    "spielId": "02VUD8CORG000000VS5489BUVUB1P7A6"
+  }
+}

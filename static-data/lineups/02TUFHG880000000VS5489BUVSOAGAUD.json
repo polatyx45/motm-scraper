@@ -1,0 +1,112 @@
+{
+  "ok": true,
+  "matchId": "02TUFHG880000000VS5489BUVSOAGAUD",
+  "url": "https://www.fussball.de/spiel/sc-hassel-vfb-huls/-/spiel/02TUFHG880000000VS5489BUVSOAGAUD",
+  "home": "SC Hassel",
+  "away": "VfB Hüls",
+  "ownSide": "home",
+  "count": 13,
+  "players": [
+    {
+      "id": "02391OBJB0000000VS54898GVU72CGVN",
+      "matchId": "02TUFHG880000000VS5489BUVSOAGAUD",
+      "side": "home",
+      "name": "Devincan Bach",
+      "rawName": " ",
+      "number": "01",
+      "img": "https://cdn.fussball.de/public/02S6G6NME0000000VS5489B1VVVAF4P8.stamp",
+      "obfuscationKey": "8peccshi"
+    },
+    {
+      "id": "02TTE3LRTG000000VUM1D52BVT71KTSR",
+      "matchId": "02TUFHG880000000VS5489BUVSOAGAUD",
+      "side": "home",
+      "name": "Halil Yüksel",
+      "rawName": " ",
+      "number": "03",
+      "img": "https://cdn.fussball.de/public/02S9KSGP30000000VS5489BAVS6CUPS2.stamp",
+      "obfuscationKey": "8peccshi"
+    },
+    {
+      "id": "02FJMM9UHO000000VS5489B6VVVEC9F9",
+      "matchId": "02TUFHG880000000VS5489BUVSOAGAUD",
+      "side": "home",
+      "name": "Mete Cihangir",
+      "rawName": " ",
+      "number": "06",
+      "img": "https://cdn.fussball.de/public/02S6G55LNK000000VS5489B1VVVAF4P8.stamp",
+      "obfuscationKey": "8peccshi"
+    },
+    {
+      "id": "02G6DS6SEO000000VUM1DNQVVSOUBCL2",
+      "matchId": "02TUFHG880000000VS5489BUVSOAGAUD",
+      "side": "home",
+      "name": "Arda Saracoglu",
+      "rawName": " ",
+      "number": "07",
+      "img": "https://cdn.fussball.de/public/02VQLLBKG0000000VS5489C1VU8CK9NF.stamp",
+      "obfuscationKey": "8peccshi"
+    },
+    {
+      "id": "02J909TK48000000VUM1DNOOVUNNS1VK",
+      "matchId": "02TUFHG880000000VS5489BUVSOAGAUD",
+      "side": "home",
+      "name": "Musab Cetinkaya",
+      "rawName": " ",
+      "number": "10",
+      "img": "https://images.media.fussball.de/userfiles/h/d/E/rY4erzajS6sezR678S3rD0_p3.jpg",
+      "obfuscationKey": "8peccshi"
+    },
+    {
+      "id": "02JDLIICDG000000VS5489B6VUDBER6I",
+      "matchId": "02TUFHG880000000VS5489BUVSOAGAUD",
+      "side": "home",
+      "name": "Umut Aydogan",
+      "rawName": " ",
+      "number": "11",
+      "img": "https://cdn.fussball.de/public/02S9KRER7C000000VS5489BAVS6CUPS2.stamp",
+      "obfuscationKey": "8peccshi"
+    },
+    {
+      "id": "02TB0C8VDO000000VUM1D561VT2AA10I",
+      "matchId": "02TUFHG880000000VS5489BUVSOAGAUD",
+      "side": "home",
+      "name": "Amin Al Abbozi",
+      "rawName": "  ",
+      "number": "14",
+      "img": "https://cdn.fussball.de/public/02UB81ENLC000000VS5489C1VUDJB9US.stamp",
+      "obfuscationKey": "8peccshi"
+    },
+    {
+      "id": "02G6PE6C94000000VUM1DNPOVVLDSVQ8",
+      "matchId": "02TUFHG880000000VS5489BUVSOAGAUD",
+      "side": "home",
+      "name": "Saner Erkan Erdem",
+      "rawName": "  ",
+      "number": "15",
+      "img": "https://images.media.fussball.de/userfiles/c/a/b/ONzQhWDIeADlOibW8MDgFz_p3.jpg",
+      "obfuscationKey": "8peccshi"
+    },
+    {
+      "id": "home___",
+      "matchId": "02TUFHG880000000VS5489BUVSOAGAUD",
+      "side": "home",
+      "name": "Holger Fabricius",
+      "rawName": " ",
+      "number": "",
+      "img": "",
+      "obfuscationKey": "8peccshi"
+    }
+  ],
+  "stableId": "02TUFHG880000000VS5489BUVSOAGAUD",
+  "generatedAt": "2026-04-07T02:33:32.559Z",
+  "game": {
+    "home": "SC Hassel",
+    "away": "VfB Hüls",
+    "date": "10.08.2025",
+    "time": "10:30",
+    "competition": "Kreisfreundschaftsspiele",
+    "ageGroup": "",
+    "spielId": "02TUFHG880000000VS5489BUVSOAGAUD"
+  }
+}

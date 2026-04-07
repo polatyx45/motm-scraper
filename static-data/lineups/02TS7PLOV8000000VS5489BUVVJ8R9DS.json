@@ -1,0 +1,202 @@
+{
+  "ok": true,
+  "matchId": "02TS7PLOV8000000VS5489BUVVJ8R9DS",
+  "url": "https://www.fussball.de/spiel/yeg-hassel-ii-sc-hassel-ii/-/spiel/02TS7PLOV8000000VS5489BUVVJ8R9DS",
+  "home": "YEG Hassel II",
+  "away": "SC Hassel II",
+  "ownSide": "away",
+  "count": 18,
+  "players": [
+    {
+      "id": "0189SV0L6S000000VV0AG811VTD2DA4K",
+      "matchId": "02TS7PLOV8000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Henry Ben Wallbaum",
+      "rawName": "  ",
+      "number": "22",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "fzjuldb3"
+    },
+    {
+      "id": "02FVTI2EUO000000VUM1DNP7VU4DVJ6N",
+      "matchId": "02TS7PLOV8000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Ahmet Saracoglu",
+      "rawName": " ",
+      "number": "42",
+      "img": "https://images.media.fussball.de/userfiles/y/r/n/dStyZO5XrUqMjgHHyisozz_p3.jpg",
+      "obfuscationKey": "fzjuldb3"
+    },
+    {
+      "id": "028SGN2SHC000000VS541L4GVTTMK5F4",
+      "matchId": "02TS7PLOV8000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Oguzhan Duygun",
+      "rawName": " ",
+      "number": "74",
+      "img": "https://images.media.fussball.de/userfiles/u/L/4/nZo1upXCDlIfCygRCBpee1_p3.jpg",
+      "obfuscationKey": "fzjuldb3"
+    },
+    {
+      "id": "02F7AB1JU0000000VUM1DNOKVU1MPAAC",
+      "matchId": "02TS7PLOV8000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Björn Weichert",
+      "rawName": " ",
+      "number": "89",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "fzjuldb3"
+    },
+    {
+      "id": "02F9CH7HO8000000VUM1DNPMVTA46ILC",
+      "matchId": "02TS7PLOV8000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Finn Noah Pasch",
+      "rawName": "  ",
+      "number": "92",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "fzjuldb3"
+    },
+    {
+      "id": "01H5OCSTMC000000VV0AG811VT4ABG6C",
+      "matchId": "02TS7PLOV8000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Tim Miksraitis",
+      "rawName": " ",
+      "number": "01",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "fzjuldb3"
+    },
+    {
+      "id": "02JU54VUP0000000VUM1DNQ5VUP6DJ3S",
+      "matchId": "02TS7PLOV8000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Nils Kuhnert",
+      "rawName": " ",
+      "number": "04",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "fzjuldb3"
+    },
+    {
+      "id": "02K2OPH840000000VUM1DNQ2VU54F1S2",
+      "matchId": "02TS7PLOV8000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Fabian Schemme",
+      "rawName": " ",
+      "number": "14",
+      "img": "https://images.media.fussball.de/userfiles/p/B/a/5PqJFFh0ub3iajakNf7zi1_p3.jpg",
+      "obfuscationKey": "fzjuldb3"
+    },
+    {
+      "id": "029H4RIQG8000000VS541L4FVT877CAB",
+      "matchId": "02TS7PLOV8000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Enrico Fromm",
+      "rawName": " ",
+      "number": "17",
+      "img": "https://images.media.fussball.de/userfiles/U/1/O/1ymUOPn311ULnJlcvynAxz_p3.jpg",
+      "obfuscationKey": "fzjuldb3"
+    },
+    {
+      "id": "01CLSGHV30000000VV0AG80NVV3VDBGT",
+      "matchId": "02TS7PLOV8000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Nils Döring",
+      "rawName": " ",
+      "number": "18",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "fzjuldb3"
+    },
+    {
+      "id": "0250HO92O8000000VS541L4JVV3SM5SM",
+      "matchId": "02TS7PLOV8000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Louis Beyer",
+      "rawName": " ",
+      "number": "19",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "fzjuldb3"
+    },
+    {
+      "id": "02G7KG4BV4000000VUM1DNPEVVG00SEM",
+      "matchId": "02TS7PLOV8000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Fynn Becker",
+      "rawName": " ",
+      "number": "33",
+      "img": "https://images.media.fussball.de/userfiles/a/a/b/y81WJIKYc63E9zveK7ARS0_p3.jpg",
+      "obfuscationKey": "fzjuldb3"
+    },
+    {
+      "id": "02JQCSFSN4000000VUM1DNOOVURNBV95",
+      "matchId": "02TS7PLOV8000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Moritz Breuer",
+      "rawName": " ",
+      "number": "08",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "fzjuldb3"
+    },
+    {
+      "id": "02FMUC583O000000VUM1DNPKVVGBK61D",
+      "matchId": "02TS7PLOV8000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Luca Faltin",
+      "rawName": " ",
+      "number": "11",
+      "img": "https://images.media.fussball.de/userfiles/A/D/t/bkquvtN6EBl6BqjvjW8K71_p3.jpg",
+      "obfuscationKey": "fzjuldb3"
+    },
+    {
+      "id": "02K2D36PH8000000VUM1DNQAVUFP28UO",
+      "matchId": "02TS7PLOV8000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Fabius Pakula",
+      "rawName": " ",
+      "number": "15",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "fzjuldb3"
+    },
+    {
+      "id": "0292PPA4SK000000VS541L4GVUSMD48I",
+      "matchId": "02TS7PLOV8000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Stipe Dudic",
+      "rawName": " ",
+      "number": "16",
+      "img": "https://images.media.fussball.de/userfiles/m/W/0/zzE4C1ZmW6lOs55KaKk2g1_p3.jpg",
+      "obfuscationKey": "fzjuldb3"
+    },
+    {
+      "id": "013HUNBCOS000000VV0AG811VVF2J2HV",
+      "matchId": "02TS7PLOV8000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Tim Gerrit Kruse",
+      "rawName": "  ",
+      "number": "67",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "fzjuldb3"
+    },
+    {
+      "id": "away___",
+      "matchId": "02TS7PLOV8000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Michael Breuer",
+      "rawName": " ",
+      "number": "",
+      "img": "",
+      "obfuscationKey": "fzjuldb3"
+    }
+  ],
+  "stableId": "02TS7PLOV8000000VS5489BUVVJ8R9DS",
+  "generatedAt": "2026-04-07T02:33:32.559Z",
+  "game": {
+    "home": "YEG Hassel II",
+    "away": "SC Hassel II",
+    "date": "07.12.2025",
+    "time": "12:30",
+    "competition": "Kreisliga B",
+    "ageGroup": "",
+    "spielId": "02TS7PLOV8000000VS5489BUVVJ8R9DS"
+  }
+}

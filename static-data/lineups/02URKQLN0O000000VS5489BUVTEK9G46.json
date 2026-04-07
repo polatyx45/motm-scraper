@@ -1,0 +1,172 @@
+{
+  "ok": true,
+  "matchId": "02URKQLN0O000000VS5489BUVTEK9G46",
+  "url": "https://www.fussball.de/spiel/sc-hassel-ii-sv-horst-emscher-08-ii/-/spiel/02URKQLN0O000000VS5489BUVTEK9G46",
+  "home": "SC Hassel II",
+  "away": "SV HORST-EMSCHER 08 II",
+  "ownSide": "home",
+  "count": 15,
+  "players": [
+    {
+      "id": "02G7KG4BV4000000VUM1DNPEVVG00SEM",
+      "matchId": "02URKQLN0O000000VS5489BUVTEK9G46",
+      "side": "home",
+      "name": "Fynn Becker",
+      "rawName": " ",
+      "number": "33",
+      "img": "https://images.media.fussball.de/userfiles/a/a/b/y81WJIKYc63E9zveK7ARS0_p3.jpg",
+      "obfuscationKey": "xzxta42b"
+    },
+    {
+      "id": "02F7AB1JU0000000VUM1DNOKVU1MPAAC",
+      "matchId": "02URKQLN0O000000VS5489BUVTEK9G46",
+      "side": "home",
+      "name": "Björn Weichert",
+      "rawName": " ",
+      "number": "04",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "xzxta42b"
+    },
+    {
+      "id": "029H4RIQG8000000VS541L4FVT877CAB",
+      "matchId": "02URKQLN0O000000VS5489BUVTEK9G46",
+      "side": "home",
+      "name": "Enrico Fromm",
+      "rawName": " ",
+      "number": "08",
+      "img": "https://images.media.fussball.de/userfiles/U/1/O/1ymUOPn311ULnJlcvynAxz_p3.jpg",
+      "obfuscationKey": "xzxta42b"
+    },
+    {
+      "id": "02K2OPH840000000VUM1DNQ2VU54F1S2",
+      "matchId": "02URKQLN0O000000VS5489BUVTEK9G46",
+      "side": "home",
+      "name": "Fabian Schemme",
+      "rawName": " ",
+      "number": "09",
+      "img": "https://images.media.fussball.de/userfiles/p/B/a/5PqJFFh0ub3iajakNf7zi1_p3.jpg",
+      "obfuscationKey": "xzxta42b"
+    },
+    {
+      "id": "02F9CH7HO8000000VUM1DNPMVTA46ILC",
+      "matchId": "02URKQLN0O000000VS5489BUVTEK9G46",
+      "side": "home",
+      "name": "Finn Noah Pasch",
+      "rawName": "  ",
+      "number": "10",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "xzxta42b"
+    },
+    {
+      "id": "013HUNBCOS000000VV0AG811VVF2J2HV",
+      "matchId": "02URKQLN0O000000VS5489BUVTEK9G46",
+      "side": "home",
+      "name": "Tim Gerrit Kruse",
+      "rawName": "  ",
+      "number": "13",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "xzxta42b"
+    },
+    {
+      "id": "02GPI2OI4S000000VUM1DNOIVUJOUORV",
+      "matchId": "02URKQLN0O000000VS5489BUVTEK9G46",
+      "side": "home",
+      "name": "Paul Markus Schaffner",
+      "rawName": "  ",
+      "number": "15",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "xzxta42b"
+    },
+    {
+      "id": "02FUVJI09O000000VUM1DNOSVU169VS9",
+      "matchId": "02URKQLN0O000000VS5489BUVTEK9G46",
+      "side": "home",
+      "name": "Lenny Paul Wallbaum",
+      "rawName": "  ",
+      "number": "17",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "xzxta42b"
+    },
+    {
+      "id": "02FVTI2EUO000000VUM1DNP7VU4DVJ6N",
+      "matchId": "02URKQLN0O000000VS5489BUVTEK9G46",
+      "side": "home",
+      "name": "Ahmet Saracoglu",
+      "rawName": " ",
+      "number": "18",
+      "img": "https://images.media.fussball.de/userfiles/y/r/n/dStyZO5XrUqMjgHHyisozz_p3.jpg",
+      "obfuscationKey": "xzxta42b"
+    },
+    {
+      "id": "02FMM6OEF8000000VUM1DNQOVTISKNRO",
+      "matchId": "02URKQLN0O000000VS5489BUVTEK9G46",
+      "side": "home",
+      "name": "Marc Niklas Laukamp",
+      "rawName": "  ",
+      "number": "20",
+      "img": "https://images.media.fussball.de/userfiles/O/p/E/kOwhZwqymfmU16G11UXPaz_p3.jpg",
+      "obfuscationKey": "xzxta42b"
+    },
+    {
+      "id": "0189SV0L6S000000VV0AG811VTD2DA4K",
+      "matchId": "02URKQLN0O000000VS5489BUVTEK9G46",
+      "side": "home",
+      "name": "Henry Ben Wallbaum",
+      "rawName": "  ",
+      "number": "21",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "xzxta42b"
+    },
+    {
+      "id": "02MD22OJG4000000VUM1DNQ5VT55M53P",
+      "matchId": "02URKQLN0O000000VS5489BUVTEK9G46",
+      "side": "home",
+      "name": "Kaan Türkmen",
+      "rawName": " ",
+      "number": "03",
+      "img": "https://images.media.fussball.de/userfiles/n/f/f/FcVKAiFKaQ8EvKOASXxBcz_p3.jpg",
+      "obfuscationKey": "xzxta42b"
+    },
+    {
+      "id": "02JQCSFSN4000000VUM1DNOOVURNBV95",
+      "matchId": "02URKQLN0O000000VS5489BUVTEK9G46",
+      "side": "home",
+      "name": "Moritz Breuer",
+      "rawName": " ",
+      "number": "16",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "xzxta42b"
+    },
+    {
+      "id": "01CLSGHV30000000VV0AG80NVV3VDBGT",
+      "matchId": "02URKQLN0O000000VS5489BUVTEK9G46",
+      "side": "home",
+      "name": "Nils Döring",
+      "rawName": " ",
+      "number": "19",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "xzxta42b"
+    },
+    {
+      "id": "home___",
+      "matchId": "02URKQLN0O000000VS5489BUVTEK9G46",
+      "side": "home",
+      "name": "Michael Breuer",
+      "rawName": " ",
+      "number": "",
+      "img": "",
+      "obfuscationKey": "xzxta42b"
+    }
+  ],
+  "stableId": "02URKQLN0O000000VS5489BUVTEK9G46",
+  "generatedAt": "2026-04-07T02:33:32.559Z",
+  "game": {
+    "home": "SC Hassel II",
+    "away": "SV HORST-EMSCHER 08 II",
+    "date": "08.02.2026",
+    "time": "13:00",
+    "competition": "Kreisfreundschaftsspiele",
+    "ageGroup": "",
+    "spielId": "02URKQLN0O000000VS5489BUVTEK9G46"
+  }
+}

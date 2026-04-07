@@ -1,0 +1,20 @@
+{
+  "ok": false,
+  "error": "lineup_not_available",
+  "message": "Waiting for selector `.player-wrapper.home, .player-wrapper.away` failed",
+  "matchId": "02USSRUGQS000000VS5489BUVTVL2A6N",
+  "home": "SC Hassel",
+  "away": "TSV Marl-Hüls U16",
+  "players": [],
+  "stableId": "02USSRUGQS000000VS5489BUVTVL2A6N",
+  "generatedAt": "2026-04-07T02:33:32.559Z",
+  "game": {
+    "home": "SC Hassel",
+    "away": "TSV Marl-Hüls U16",
+    "date": "16.11.2025",
+    "time": "11:00",
+    "competition": "Kreisfreundschaftsspiele",
+    "ageGroup": "",
+    "spielId": "02USSRUGQS000000VS5489BUVTVL2A6N"
+  }
+}

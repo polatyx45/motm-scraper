@@ -1,0 +1,20 @@
+{
+  "ok": false,
+  "error": "lineup_not_available",
+  "message": "Waiting for selector `.player-wrapper.home, .player-wrapper.away` failed",
+  "matchId": "0302IJ8IS0000000VS5489BUVS4DS759",
+  "home": "SC Hassel",
+  "away": "Genclerbirligi Resse",
+  "players": [],
+  "stableId": "0302IJ8IS0000000VS5489BUVS4DS759",
+  "generatedAt": "2026-04-07T02:33:32.559Z",
+  "game": {
+    "home": "SC Hassel",
+    "away": "Genclerbirligi Resse",
+    "date": "07.06.2026",
+    "time": "11:00",
+    "competition": "Kreisliga A",
+    "ageGroup": "",
+    "spielId": "0302IJ8IS0000000VS5489BUVS4DS759"
+  }
+}

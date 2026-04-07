@@ -1,0 +1,172 @@
+{
+  "ok": true,
+  "matchId": "02URKPJMAS000000VS5489BUVTEK9G46",
+  "url": "https://www.fussball.de/spiel/sc-hassel-ii-etus-34-gelsenkirchen/-/spiel/02URKPJMAS000000VS5489BUVTEK9G46",
+  "home": "SC Hassel II",
+  "away": "ETuS 34 Gelsenkirchen",
+  "ownSide": "home",
+  "count": 15,
+  "players": [
+    {
+      "id": "02G7KG4BV4000000VUM1DNPEVVG00SEM",
+      "matchId": "02URKPJMAS000000VS5489BUVTEK9G46",
+      "side": "home",
+      "name": "Fynn Becker",
+      "rawName": " ",
+      "number": "33",
+      "img": "https://images.media.fussball.de/userfiles/a/a/b/y81WJIKYc63E9zveK7ARS0_p3.jpg",
+      "obfuscationKey": "k4wy8npy"
+    },
+    {
+      "id": "028SGN2SHC000000VS541L4GVTTMK5F4",
+      "matchId": "02URKPJMAS000000VS5489BUVTEK9G46",
+      "side": "home",
+      "name": "Oguzhan Duygun",
+      "rawName": " ",
+      "number": "02",
+      "img": "https://images.media.fussball.de/userfiles/u/L/4/nZo1upXCDlIfCygRCBpee1_p3.jpg",
+      "obfuscationKey": "k4wy8npy"
+    },
+    {
+      "id": "02MD22OJG4000000VUM1DNQ5VT55M53P",
+      "matchId": "02URKPJMAS000000VS5489BUVTEK9G46",
+      "side": "home",
+      "name": "Kaan Türkmen",
+      "rawName": " ",
+      "number": "03",
+      "img": "https://images.media.fussball.de/userfiles/n/f/f/FcVKAiFKaQ8EvKOASXxBcz_p3.jpg",
+      "obfuscationKey": "k4wy8npy"
+    },
+    {
+      "id": "00MC7AKLP4000000VV0AG85VVSMHI0R7",
+      "matchId": "02URKPJMAS000000VS5489BUVTEK9G46",
+      "side": "home",
+      "name": "Ilhan Yilmaz",
+      "rawName": " ",
+      "number": "05",
+      "img": "https://cdn.fussball.de/public/02IMJ93U00000000VS5489B6VU42I5TQ.stamp",
+      "obfuscationKey": "k4wy8npy"
+    },
+    {
+      "id": "02FVTI2EUO000000VUM1DNP7VU4DVJ6N",
+      "matchId": "02URKPJMAS000000VS5489BUVTEK9G46",
+      "side": "home",
+      "name": "Ahmet Saracoglu",
+      "rawName": " ",
+      "number": "09",
+      "img": "https://images.media.fussball.de/userfiles/y/r/n/dStyZO5XrUqMjgHHyisozz_p3.jpg",
+      "obfuscationKey": "k4wy8npy"
+    },
+    {
+      "id": "02UTMGNR74000000VUM1D535VTI1E54I",
+      "matchId": "02URKPJMAS000000VS5489BUVTEK9G46",
+      "side": "home",
+      "name": "John Bannuscher",
+      "rawName": " ",
+      "number": "12",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "k4wy8npy"
+    },
+    {
+      "id": "0189SV0L6S000000VV0AG811VTD2DA4K",
+      "matchId": "02URKPJMAS000000VS5489BUVTEK9G46",
+      "side": "home",
+      "name": "Henry Ben Wallbaum",
+      "rawName": "  ",
+      "number": "13",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "k4wy8npy"
+    },
+    {
+      "id": "02K2OPH840000000VUM1DNQ2VU54F1S2",
+      "matchId": "02URKPJMAS000000VS5489BUVTEK9G46",
+      "side": "home",
+      "name": "Fabian Schemme",
+      "rawName": " ",
+      "number": "15",
+      "img": "https://images.media.fussball.de/userfiles/p/B/a/5PqJFFh0ub3iajakNf7zi1_p3.jpg",
+      "obfuscationKey": "k4wy8npy"
+    },
+    {
+      "id": "02HJIBCS2G000000VUM1DNPPVT82S1QT",
+      "matchId": "02URKPJMAS000000VS5489BUVTEK9G46",
+      "side": "home",
+      "name": "Taha Hidayet Keklik",
+      "rawName": "  ",
+      "number": "16",
+      "img": "https://cdn.fussball.de/public/02S7PGIK68000000VS5489B1VVVAF4P8.stamp",
+      "obfuscationKey": "k4wy8npy"
+    },
+    {
+      "id": "02JU54VUP0000000VUM1DNQ5VUP6DJ3S",
+      "matchId": "02URKPJMAS000000VS5489BUVTEK9G46",
+      "side": "home",
+      "name": "Nils Kuhnert",
+      "rawName": " ",
+      "number": "19",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "k4wy8npy"
+    },
+    {
+      "id": "02FTBBDBQO000000VUM1DNQAVS4AKOUN",
+      "matchId": "02URKPJMAS000000VS5489BUVTEK9G46",
+      "side": "home",
+      "name": "Henry Jozek",
+      "rawName": " ",
+      "number": "20",
+      "img": "https://cdn.fussball.de/public/02VKRTPB7C000000VS5489BRVU9AR9BR.stamp",
+      "obfuscationKey": "k4wy8npy"
+    },
+    {
+      "id": "029H4RIQG8000000VS541L4FVT877CAB",
+      "matchId": "02URKPJMAS000000VS5489BUVTEK9G46",
+      "side": "home",
+      "name": "Enrico Fromm",
+      "rawName": " ",
+      "number": "08",
+      "img": "https://images.media.fussball.de/userfiles/U/1/O/1ymUOPn311ULnJlcvynAxz_p3.jpg",
+      "obfuscationKey": "k4wy8npy"
+    },
+    {
+      "id": "026S5K34FK000000VS541L4FVU6BU3ED",
+      "matchId": "02URKPJMAS000000VS5489BUVTEK9G46",
+      "side": "home",
+      "name": "Hidoyet Yilmaz",
+      "rawName": " ",
+      "number": "17",
+      "img": "https://images.media.fussball.de/userfiles/c/N/M/v3FlbHcyUevjq9AZlkywpz_p3.jpg",
+      "obfuscationKey": "k4wy8npy"
+    },
+    {
+      "id": "02GPI2OI4S000000VUM1DNOIVUJOUORV",
+      "matchId": "02URKPJMAS000000VS5489BUVTEK9G46",
+      "side": "home",
+      "name": "Paul Markus Schaffner",
+      "rawName": "  ",
+      "number": "21",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "k4wy8npy"
+    },
+    {
+      "id": "home___",
+      "matchId": "02URKPJMAS000000VS5489BUVTEK9G46",
+      "side": "home",
+      "name": "Michael Breuer",
+      "rawName": " ",
+      "number": "",
+      "img": "",
+      "obfuscationKey": "k4wy8npy"
+    }
+  ],
+  "stableId": "02URKPJMAS000000VS5489BUVTEK9G46",
+  "generatedAt": "2026-04-07T02:33:32.559Z",
+  "game": {
+    "home": "SC Hassel II",
+    "away": "ETuS 34 Gelsenkirchen",
+    "date": "01.02.2026",
+    "time": "13:00",
+    "competition": "Kreisfreundschaftsspiele",
+    "ageGroup": "",
+    "spielId": "02URKPJMAS000000VS5489BUVTEK9G46"
+  }
+}

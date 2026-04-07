@@ -1,0 +1,162 @@
+{
+  "ok": true,
+  "matchId": "02U2A45NHC000000VS5489BTVV378D77",
+  "url": "https://www.fussball.de/spiel/sc-hassel-eintracht-erle/-/spiel/02U2A45NHC000000VS5489BTVV378D77",
+  "home": "SC Hassel",
+  "away": "Eintracht Erle",
+  "ownSide": "home",
+  "count": 16,
+  "players": [
+    {
+      "id": "02IOE26G8S000000VS5489B5VT8KI14O",
+      "matchId": "02U2A45NHC000000VS5489BTVV378D77",
+      "side": "home",
+      "name": "Denizhan Fahri Yaman",
+      "rawName": "  ",
+      "number": "31",
+      "img": "https://cdn.fussball.de/public/02UDK1V6A8000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "dd6me9oe"
+    },
+    {
+      "id": "01GFH3DUIG000000VV0AG80NVVVJNO1A",
+      "matchId": "02U2A45NHC000000VS5489BTVV378D77",
+      "side": "home",
+      "name": "Jeremy Komossa",
+      "rawName": " ",
+      "number": "03",
+      "img": "https://cdn.fussball.de/public/02UDJVA1D4000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "dd6me9oe"
+    },
+    {
+      "id": "02N79Q3QSS000000VUM1DNO8VU1CNQ4J",
+      "matchId": "02U2A45NHC000000VS5489BTVV378D77",
+      "side": "home",
+      "name": "Hamza Yusuf Caliskan",
+      "rawName": "  ",
+      "number": "05",
+      "img": "https://cdn.fussball.de/public/02UDJTOS9O000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "dd6me9oe"
+    },
+    {
+      "id": "02MJHOSL2O000000VUM1DNOIVS7F3QJB",
+      "matchId": "02U2A45NHC000000VS5489BTVV378D77",
+      "side": "home",
+      "name": "Jonas Marcel Schumacher",
+      "rawName": "  ",
+      "number": "09",
+      "img": "https://images.media.fussball.de/userfiles/J/o/i/UPtaewaR5xZX6ctjYyp0iz_p3.jpg",
+      "obfuscationKey": "dd6me9oe"
+    },
+    {
+      "id": "02S427FA18000000VS5489B7VV1RMA4H",
+      "matchId": "02U2A45NHC000000VS5489BTVV378D77",
+      "side": "home",
+      "name": "Naser Almoussaalanezi",
+      "rawName": " ",
+      "number": "10",
+      "img": "https://cdn.fussball.de/public/02UDJSI208000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "dd6me9oe"
+    },
+    {
+      "id": "02G6DS6SEO000000VUM1DNQVVSOUBCL2",
+      "matchId": "02U2A45NHC000000VS5489BTVV378D77",
+      "side": "home",
+      "name": "Arda Saracoglu",
+      "rawName": " ",
+      "number": "11",
+      "img": "https://cdn.fussball.de/public/02VQLLBKG0000000VS5489C1VU8CK9NF.stamp",
+      "obfuscationKey": "dd6me9oe"
+    },
+    {
+      "id": "01GQQ24JQS000000VV0AG80NVVDQRLBA",
+      "matchId": "02U2A45NHC000000VS5489BTVV378D77",
+      "side": "home",
+      "name": "Walid El Harras",
+      "rawName": "  ",
+      "number": "12",
+      "img": "https://cdn.fussball.de/public/02UDJUEKO4000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "dd6me9oe"
+    },
+    {
+      "id": "026HCDFQVO000000VS5489B6VU1J6RLI",
+      "matchId": "02U2A45NHC000000VS5489BTVV378D77",
+      "side": "home",
+      "name": "Mikail Zinxhiria",
+      "rawName": " ",
+      "number": "13",
+      "img": "https://cdn.fussball.de/public/02UDK28C8S000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "dd6me9oe"
+    },
+    {
+      "id": "02NID6MO00000000VUM1DNP7VU6DA5CP",
+      "matchId": "02U2A45NHC000000VS5489BTVV378D77",
+      "side": "home",
+      "name": "Mhd Nour Rabah",
+      "rawName": "  ",
+      "number": "19",
+      "img": "https://cdn.fussball.de/public/02UDJVTPQ8000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "dd6me9oe"
+    },
+    {
+      "id": "02MOVD3C50000000VUM1DNO8VUS6Q1B8",
+      "matchId": "02U2A45NHC000000VS5489BTVV378D77",
+      "side": "home",
+      "name": "Ibrahim Furkan Kuru",
+      "rawName": "  ",
+      "number": "20",
+      "img": "https://cdn.fussball.de/public/02UIBB442K000000VS5489C1VSAG571E.stamp",
+      "obfuscationKey": "dd6me9oe"
+    },
+    {
+      "id": "02KSLESHK8000000VS5489B5VU0LQOOJ",
+      "matchId": "02U2A45NHC000000VS5489BTVV378D77",
+      "side": "home",
+      "name": "Yanislav Miklash",
+      "rawName": " ",
+      "number": "08",
+      "img": "https://cdn.fussball.de/public/02TDDU2A64000000VS5489BSVTA87VEB.stamp",
+      "obfuscationKey": "dd6me9oe"
+    },
+    {
+      "id": "02G6H0OCJ8000000VUM1DNPOVVLDSVQ8",
+      "matchId": "02U2A45NHC000000VS5489BTVV378D77",
+      "side": "home",
+      "name": "Ahmet Ersahin",
+      "rawName": " ",
+      "number": "15",
+      "img": "https://images.media.fussball.de/userfiles/O/W/c/zu3rnnML7SccpmQaq7PBx0_p3.jpg",
+      "obfuscationKey": "dd6me9oe"
+    },
+    {
+      "id": "02OGC8UAQ8000000VUM1DNO6VSU8RSKC",
+      "matchId": "02U2A45NHC000000VS5489BTVV378D77",
+      "side": "home",
+      "name": "Marvin Buchmann",
+      "rawName": " ",
+      "number": "18",
+      "img": "https://cdn.fussball.de/public/02UDJTH13O000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "dd6me9oe"
+    },
+    {
+      "id": "home___",
+      "matchId": "02U2A45NHC000000VS5489BTVV378D77",
+      "side": "home",
+      "name": "Holger Fabricius",
+      "rawName": " ",
+      "number": "",
+      "img": "",
+      "obfuscationKey": "dd6me9oe"
+    }
+  ],
+  "stableId": "02U2A45NHC000000VS5489BTVV378D77",
+  "generatedAt": "2026-04-07T02:33:32.559Z",
+  "game": {
+    "home": "SC Hassel",
+    "away": "Eintracht Erle",
+    "date": "05.10.2025",
+    "time": "10:45",
+    "competition": "Kreisliga A",
+    "ageGroup": "",
+    "spielId": "02U2A45NHC000000VS5489BTVV378D77"
+  }
+}

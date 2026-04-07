@@ -1,0 +1,182 @@
+{
+  "ok": true,
+  "matchId": "02TS86HUUG000000VS5489BUVVJ8R9DS",
+  "url": "https://www.fussball.de/spiel/adler-ellinghorst-1961-ii-sc-hassel-iii/-/spiel/02TS86HUUG000000VS5489BUVVJ8R9DS",
+  "home": "Adler Ellinghorst 1961 II",
+  "away": "SC Hassel III",
+  "ownSide": "away",
+  "count": 16,
+  "players": [
+    {
+      "id": "02IBA10HA0000000VUM1DNPAVSE01ML4",
+      "matchId": "02TS86HUUG000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Leon Jerome Kurt",
+      "rawName": "  ",
+      "number": "27",
+      "img": "https://images.media.fussball.de/userfiles/m/9/p/QD3V4Bmu12nkt3b7EEfM2a_p3.jpg",
+      "obfuscationKey": "7qr75ct4"
+    },
+    {
+      "id": "02SHDTS3T4000000VUM1D50QVSUREU2L",
+      "matchId": "02TS86HUUG000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Yusif Mahir Oglu Bayramov",
+      "rawName": "   ",
+      "number": "31",
+      "img": "https://cdn.fussball.de/public/02T2NBEUC8000000VS5489C2VURGIJAT.stamp",
+      "obfuscationKey": "7qr75ct4"
+    },
+    {
+      "id": "029SSTF328000000VS5489B5VVEC1CNQ",
+      "matchId": "02TS86HUUG000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Fabian Neuschl",
+      "rawName": " ",
+      "number": "69",
+      "img": "https://cdn.fussball.de/public/02UMQQ1600000000VS5489BTVSE04V5I.stamp",
+      "obfuscationKey": "7qr75ct4"
+    },
+    {
+      "id": "02UCGGV9OO000000VUM1D5AAVTLBSBD5",
+      "matchId": "02TS86HUUG000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Tim Sokolowski",
+      "rawName": " ",
+      "number": "82",
+      "img": "https://cdn.fussball.de/public/02UIAM8INC000000VS5489BTVT5EO5B1.stamp",
+      "obfuscationKey": "7qr75ct4"
+    },
+    {
+      "id": "01ODFD79O0000000VS541L4IVV9AC5IL",
+      "matchId": "02TS86HUUG000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Justin Klengel",
+      "rawName": " ",
+      "number": "92",
+      "img": "//images.media.fussball.de/userfiles/S/a/F/rohzHx4Hp88NloFDahhQIz_p3.jpg",
+      "obfuscationKey": "7qr75ct4"
+    },
+    {
+      "id": "01Q909N5FO000000VV0AG80NVVSKMM61",
+      "matchId": "02TS86HUUG000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Fabrice Makulla",
+      "rawName": " ",
+      "number": "01",
+      "img": "https://cdn.fussball.de/public/02TTH20JR4000000VS5489C1VSPL3397.stamp",
+      "obfuscationKey": "7qr75ct4"
+    },
+    {
+      "id": "00MC6P9S5K000000VV0AG85VVSMHI0R7",
+      "matchId": "02TS86HUUG000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Michel Lange",
+      "rawName": " ",
+      "number": "06",
+      "img": "https://cdn.fussball.de/public/02TTN28JRO000000VS5489BUVT8709TK.stamp",
+      "obfuscationKey": "7qr75ct4"
+    },
+    {
+      "id": "01V6HD2OJ8000000VS541L4GVTBC5RB5",
+      "matchId": "02TS86HUUG000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Jerome Przystav",
+      "rawName": " ",
+      "number": "08",
+      "img": "https://cdn.fussball.de/public/029L96540O000000VS5489B5VVG2UF8C.stamp",
+      "obfuscationKey": "7qr75ct4"
+    },
+    {
+      "id": "02S7PJQUNS000000VUM1D597VV8AJ6VI",
+      "matchId": "02TS86HUUG000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Ahmad Taan",
+      "rawName": " ",
+      "number": "11",
+      "img": "https://cdn.fussball.de/public/02T2NBNQT8000000VS5489C0VUU5TGQ9.stamp",
+      "obfuscationKey": "7qr75ct4"
+    },
+    {
+      "id": "00MC6AFGOG000000VV0AG85VVSMHI0R7",
+      "matchId": "02TS86HUUG000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Patrick Zettl",
+      "rawName": " ",
+      "number": "13",
+      "img": "https://cdn.fussball.de/public/02VA82D20S000000VS5489BTVT7Q4NCS.stamp",
+      "obfuscationKey": "7qr75ct4"
+    },
+    {
+      "id": "02SC944QVO000000VUM1D5A0VURGFM1G",
+      "matchId": "02TS86HUUG000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Ben Louis Momma",
+      "rawName": "  ",
+      "number": "14",
+      "img": "https://cdn.fussball.de/public/02TTH2A5I8000000VS5489C1VSPL3397.stamp",
+      "obfuscationKey": "7qr75ct4"
+    },
+    {
+      "id": "02STRVURH8000000VUM1D59MVSJE50KM",
+      "matchId": "02TS86HUUG000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Nick Andre Klink",
+      "rawName": "  ",
+      "number": "26",
+      "img": "https://images.media.fussball.de/userfiles/a/v/x/tT6uMaeYcPbQRDz5UtODW1_p3.jpg",
+      "obfuscationKey": "7qr75ct4"
+    },
+    {
+      "id": "02BKLEFRUC000000VUM1DNPLVSC6BC44",
+      "matchId": "02TS86HUUG000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Tugay Ates",
+      "rawName": " ",
+      "number": "44",
+      "img": "//images.media.fussball.de/userfiles/a/a/y/eOkXngQKp2XiRgLL5lwCNz_p3.jpg",
+      "obfuscationKey": "7qr75ct4"
+    },
+    {
+      "id": "01P895T43C000000VS541L4FVUE0IEIK",
+      "matchId": "02TS86HUUG000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Nico Mühlpfordt",
+      "rawName": " ",
+      "number": "95",
+      "img": "https://cdn.fussball.de/public/02OJTUVI84000000VS5489B6VVPB8G6Q.stamp",
+      "obfuscationKey": "7qr75ct4"
+    },
+    {
+      "id": "00UEDDSR18000000VV0AG811VT16I3CR",
+      "matchId": "02TS86HUUG000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Fatih Karagöz",
+      "rawName": " ",
+      "number": "96",
+      "img": "https://cdn.fussball.de/public/02UOFET21O000000VS5489C0VU5BRBVL.stamp",
+      "obfuscationKey": "7qr75ct4"
+    },
+    {
+      "id": "away___",
+      "matchId": "02TS86HUUG000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Marco Zenker",
+      "rawName": " ",
+      "number": "",
+      "img": "",
+      "obfuscationKey": "7qr75ct4"
+    }
+  ],
+  "stableId": "02TS86HUUG000000VS5489BUVVJ8R9DS",
+  "generatedAt": "2026-04-07T02:33:32.559Z",
+  "game": {
+    "home": "Adler Ellinghorst 1961 II",
+    "away": "SC Hassel III",
+    "date": "01.03.2026",
+    "time": "13:00",
+    "competition": "Kreisliga C",
+    "ageGroup": "",
+    "spielId": "02TS86HUUG000000VS5489BUVVJ8R9DS"
+  }
+}

@@ -1,0 +1,202 @@
+{
+  "ok": true,
+  "matchId": "02VMNRI96K000000VS5489BUVUJA8J1O",
+  "url": "https://www.fussball.de/spiel/sc-hassel-ssv-buer-07-28/-/spiel/02VMNRI96K000000VS5489BUVUJA8J1O",
+  "home": "SC Hassel",
+  "away": "SSV Buer 07/​28",
+  "ownSide": "home",
+  "count": 18,
+  "players": [
+    {
+      "id": "02BCVRM5OS000000VUM1DNONVTB3KMHT",
+      "matchId": "02VMNRI96K000000VS5489BUVUJA8J1O",
+      "side": "home",
+      "name": "Luca Joshua Klein",
+      "rawName": "  ",
+      "number": "29",
+      "img": "https://cdn.fussball.de/public/02VKINL2BS000000VS5489C2VU4VO0A5.stamp",
+      "obfuscationKey": "kmezjkwq"
+    },
+    {
+      "id": "024NE5U1KK000000VS541L4KVVQMCS8E",
+      "matchId": "02VMNRI96K000000VS5489BUVUJA8J1O",
+      "side": "home",
+      "name": "Justin Hennemann",
+      "rawName": " ",
+      "number": "06",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "kmezjkwq"
+    },
+    {
+      "id": "017JE5J99O000000VV0AG80NVUI4JP8D",
+      "matchId": "02VMNRI96K000000VS5489BUVUJA8J1O",
+      "side": "home",
+      "name": "Miles Colin Kappler",
+      "rawName": "  ",
+      "number": "10",
+      "img": "https://cdn.fussball.de/public/02VKQCTCSG000000VS5489C0VTURPRAI.stamp",
+      "obfuscationKey": "kmezjkwq"
+    },
+    {
+      "id": "01U3V442SO000000VS541L4JVSQ1DEL4",
+      "matchId": "02VMNRI96K000000VS5489BUVUJA8J1O",
+      "side": "home",
+      "name": "Sven Bödiger",
+      "rawName": " ",
+      "number": "11",
+      "img": "https://cdn.fussball.de/public/03002DO234000000VS5489C1VV47TAEJ.stamp",
+      "obfuscationKey": "kmezjkwq"
+    },
+    {
+      "id": "02K2OPH840000000VUM1DNQ2VU54F1S2",
+      "matchId": "02VMNRI96K000000VS5489BUVUJA8J1O",
+      "side": "home",
+      "name": "Fabian Schemme",
+      "rawName": " ",
+      "number": "14",
+      "img": "https://images.media.fussball.de/userfiles/p/B/a/5PqJFFh0ub3iajakNf7zi1_p3.jpg",
+      "obfuscationKey": "kmezjkwq"
+    },
+    {
+      "id": "029NHTUMIS000000VUM1DNQ2VVO20UOL",
+      "matchId": "02VMNRI96K000000VS5489BUVUJA8J1O",
+      "side": "home",
+      "name": "Emilio Zogaj",
+      "rawName": " ",
+      "number": "18",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "kmezjkwq"
+    },
+    {
+      "id": "02J9HELPEC000000VUM1DNOOVUNNS1VK",
+      "matchId": "02VMNRI96K000000VS5489BUVUJA8J1O",
+      "side": "home",
+      "name": "Dean Krämer",
+      "rawName": " ",
+      "number": "19",
+      "img": "https://cdn.fussball.de/public/02VKINO8J0000000VS5489C2VU4VO0A5.stamp",
+      "obfuscationKey": "kmezjkwq"
+    },
+    {
+      "id": "023V09UDO4000000VS541L4IVTPV41CE",
+      "matchId": "02VMNRI96K000000VS5489BUVUJA8J1O",
+      "side": "home",
+      "name": "Tom Altehage",
+      "rawName": " ",
+      "number": "20",
+      "img": "https://images.media.fussball.de/userfiles/6/8/a/9WukZ3zHylEOVQahYjL0Ya_p3.jpg",
+      "obfuscationKey": "kmezjkwq"
+    },
+    {
+      "id": "016DLCHK30000000VV0AG80NVU5A0EBU",
+      "matchId": "02VMNRI96K000000VS5489BUVUJA8J1O",
+      "side": "home",
+      "name": "Burak Günes",
+      "rawName": " ",
+      "number": "22",
+      "img": "https://cdn.fussball.de/public/02VKQDH1SO000000VS5489C0VTURPRAI.stamp",
+      "obfuscationKey": "kmezjkwq"
+    },
+    {
+      "id": "00P1KHBNQS000000VV0AG83KVSA2TTUM",
+      "matchId": "02VMNRI96K000000VS5489BUVUJA8J1O",
+      "side": "home",
+      "name": "Burak Aydin",
+      "rawName": " ",
+      "number": "23",
+      "img": "https://cdn.fussball.de/public/02S7PFG8GS000000VS5489B1VVVAF4P8.stamp",
+      "obfuscationKey": "kmezjkwq"
+    },
+    {
+      "id": "00VPQ95DH0000000VV0AG811VUFQ2882",
+      "matchId": "02VMNRI96K000000VS5489BUVUJA8J1O",
+      "side": "home",
+      "name": "Mario Scharf",
+      "rawName": " ",
+      "number": "25",
+      "img": "https://cdn.fussball.de/public/02VKQDCNH4000000VS5489C0VTURPRAI.stamp",
+      "obfuscationKey": "kmezjkwq"
+    },
+    {
+      "id": "0266QS31K8000000VS541L4FVTTFAE2C",
+      "matchId": "02VMNRI96K000000VS5489BUVUJA8J1O",
+      "side": "home",
+      "name": "Ergün Yalcin",
+      "rawName": " ",
+      "number": "01",
+      "img": "//images.media.fussball.de/userfiles/D/a/7/wtgU0FWaSDzHgGCLF84zSa_p3.jpg",
+      "obfuscationKey": "kmezjkwq"
+    },
+    {
+      "id": "00MC7A6KQC000000VV0AG85VVSMHI0R7",
+      "matchId": "02VMNRI96K000000VS5489BUVUJA8J1O",
+      "side": "home",
+      "name": "Mirac Öntürk",
+      "rawName": " ",
+      "number": "02",
+      "img": "https://cdn.fussball.de/public/02VKIO006S000000VS5489C2VU4VO0A5.stamp",
+      "obfuscationKey": "kmezjkwq"
+    },
+    {
+      "id": "013RSUNB14000000VV0AG811VSE0VU3I",
+      "matchId": "02VMNRI96K000000VS5489BUVUJA8J1O",
+      "side": "home",
+      "name": "Lukas Bergmann",
+      "rawName": " ",
+      "number": "07",
+      "img": "https://cdn.fussball.de/public/02VKIMPRSC000000VS5489C2VU4VO0A5.stamp",
+      "obfuscationKey": "kmezjkwq"
+    },
+    {
+      "id": "02HJIBCS2G000000VUM1DNPPVT82S1QT",
+      "matchId": "02VMNRI96K000000VS5489BUVUJA8J1O",
+      "side": "home",
+      "name": "Taha Hidayet Keklik",
+      "rawName": "  ",
+      "number": "13",
+      "img": "https://cdn.fussball.de/public/02S7PGIK68000000VS5489B1VVVAF4P8.stamp",
+      "obfuscationKey": "kmezjkwq"
+    },
+    {
+      "id": "02FR5R43BC000000VUM1DNOIVU191IJO",
+      "matchId": "02VMNRI96K000000VS5489BUVUJA8J1O",
+      "side": "home",
+      "name": "Noah Simon Werth",
+      "rawName": "  ",
+      "number": "21",
+      "img": "https://cdn.fussball.de/public/02VKRTTBJO000000VS5489C1VT9JO46S.stamp",
+      "obfuscationKey": "kmezjkwq"
+    },
+    {
+      "id": "00MC724DEO000000VV0AG85VVSMHI0R7",
+      "matchId": "02VMNRI96K000000VS5489BUVUJA8J1O",
+      "side": "home",
+      "name": "Baris Aydin",
+      "rawName": " ",
+      "number": "27",
+      "img": "https://cdn.fussball.de/public/02VKIMLT4S000000VS5489C2VU4VO0A5.stamp",
+      "obfuscationKey": "kmezjkwq"
+    },
+    {
+      "id": "home___",
+      "matchId": "02VMNRI96K000000VS5489BUVUJA8J1O",
+      "side": "home",
+      "name": "Seldin Malkoc",
+      "rawName": " ",
+      "number": "",
+      "img": "",
+      "obfuscationKey": "kmezjkwq"
+    }
+  ],
+  "stableId": "02VMNRI96K000000VS5489BUVUJA8J1O",
+  "generatedAt": "2026-04-07T02:33:32.559Z",
+  "game": {
+    "home": "SC Hassel",
+    "away": "SSV Buer 07/​28",
+    "date": "22.01.2026",
+    "time": "19:30",
+    "competition": "Kreisfreundschaftsspiele",
+    "ageGroup": "",
+    "spielId": "02VMNRI96K000000VS5489BUVUJA8J1O"
+  }
+}

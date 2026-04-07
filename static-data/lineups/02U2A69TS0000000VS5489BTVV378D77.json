@@ -1,0 +1,32 @@
+{
+  "ok": true,
+  "matchId": "02U2A69TS0000000VS5489BTVV378D77",
+  "url": "https://www.fussball.de/spiel/sc-hassel-ii-sg-preu-en-gladbeck-1910-29-iii/-/spiel/02U2A69TS0000000VS5489BTVV378D77",
+  "home": "SC Hassel II",
+  "away": "SG PREUßEN GLADBECK 1910/​29 III",
+  "ownSide": "home",
+  "count": 10,
+  "players": [
+    {
+      "id": "02C9599BMC000000VS5489B5VS7I4E0D",
+      "matchId": "02U2A69TS0000000VS5489BTVV378D77",
+      "side": "home",
+      "name": "Muhammed Efe Akcaalan",
+      "rawName": "  ",
+      "number": "02",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "0xuhnr6n"
+    }
+  ],
+  "stableId": "02U2A69TS0000000VS5489BTVV378D77",
+  "generatedAt": "2026-04-07T02:33:32.559Z",
+  "game": {
+    "home": "SC Hassel II",
+    "away": "SG PREUßEN GLADBECK 1910/​29 III",
+    "date": "13.12.2025",
+    "time": "10:00",
+    "competition": "Kreisliga A",
+    "ageGroup": "",
+    "spielId": "02U2A69TS0000000VS5489BTVV378D77"
+  }
+}

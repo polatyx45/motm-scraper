@@ -1,0 +1,172 @@
+{
+  "ok": true,
+  "matchId": "02TS7PMC94000000VS5489BUVVJ8R9DS",
+  "url": "https://www.fussball.de/spiel/spvg-westfalia-buer-sc-hassel-ii/-/spiel/02TS7PMC94000000VS5489BUVVJ8R9DS",
+  "home": "SpVg. Westfalia Buer",
+  "away": "SC Hassel II",
+  "ownSide": "away",
+  "count": 15,
+  "players": [
+    {
+      "id": "02K2OPH840000000VUM1DNQ2VU54F1S2",
+      "matchId": "02TS7PMC94000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Fabian Schemme",
+      "rawName": " ",
+      "number": "14",
+      "img": "https://images.media.fussball.de/userfiles/p/B/a/5PqJFFh0ub3iajakNf7zi1_p3.jpg",
+      "obfuscationKey": "qtsr1797"
+    },
+    {
+      "id": "02K2D36PH8000000VUM1DNQAVUFP28UO",
+      "matchId": "02TS7PMC94000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Fabius Pakula",
+      "rawName": " ",
+      "number": "15",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "qtsr1797"
+    },
+    {
+      "id": "0250HO92O8000000VS541L4JVV3SM5SM",
+      "matchId": "02TS7PMC94000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Louis Beyer",
+      "rawName": " ",
+      "number": "19",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "qtsr1797"
+    },
+    {
+      "id": "02UTMGNR74000000VUM1D535VTI1E54I",
+      "matchId": "02TS7PMC94000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "John Bannuscher",
+      "rawName": " ",
+      "number": "20",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "qtsr1797"
+    },
+    {
+      "id": "02F7AB1JU0000000VUM1DNOKVU1MPAAC",
+      "matchId": "02TS7PMC94000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Björn Weichert",
+      "rawName": " ",
+      "number": "89",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "qtsr1797"
+    },
+    {
+      "id": "01H5OCSTMC000000VV0AG811VT4ABG6C",
+      "matchId": "02TS7PMC94000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Tim Miksraitis",
+      "rawName": " ",
+      "number": "01",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "qtsr1797"
+    },
+    {
+      "id": "02HJIBCS2G000000VUM1DNPPVT82S1QT",
+      "matchId": "02TS7PMC94000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Taha Hidayet Keklik",
+      "rawName": "  ",
+      "number": "05",
+      "img": "https://cdn.fussball.de/public/02S7PGIK68000000VS5489B1VVVAF4P8.stamp",
+      "obfuscationKey": "qtsr1797"
+    },
+    {
+      "id": "02FMM6OEF8000000VUM1DNQOVTISKNRO",
+      "matchId": "02TS7PMC94000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Marc Niklas Laukamp",
+      "rawName": "  ",
+      "number": "06",
+      "img": "https://images.media.fussball.de/userfiles/O/p/E/kOwhZwqymfmU16G11UXPaz_p3.jpg",
+      "obfuscationKey": "qtsr1797"
+    },
+    {
+      "id": "029ABHT260000000VS541L4HVSSCT54E",
+      "matchId": "02TS7PMC94000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Yves Mekoula",
+      "rawName": " ",
+      "number": "09",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "qtsr1797"
+    },
+    {
+      "id": "026S5K34FK000000VS541L4FVU6BU3ED",
+      "matchId": "02TS7PMC94000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Hidoyet Yilmaz",
+      "rawName": " ",
+      "number": "10",
+      "img": "https://images.media.fussball.de/userfiles/c/N/M/v3FlbHcyUevjq9AZlkywpz_p3.jpg",
+      "obfuscationKey": "qtsr1797"
+    },
+    {
+      "id": "02FMUC583O000000VUM1DNPKVVGBK61D",
+      "matchId": "02TS7PMC94000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Luca Faltin",
+      "rawName": " ",
+      "number": "11",
+      "img": "https://images.media.fussball.de/userfiles/A/D/t/bkquvtN6EBl6BqjvjW8K71_p3.jpg",
+      "obfuscationKey": "qtsr1797"
+    },
+    {
+      "id": "02JQCSFSN4000000VUM1DNOOVURNBV95",
+      "matchId": "02TS7PMC94000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Moritz Breuer",
+      "rawName": " ",
+      "number": "08",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "qtsr1797"
+    },
+    {
+      "id": "01CLSGHV30000000VV0AG80NVV3VDBGT",
+      "matchId": "02TS7PMC94000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Nils Döring",
+      "rawName": " ",
+      "number": "18",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "qtsr1797"
+    },
+    {
+      "id": "013HUNBCOS000000VV0AG811VVF2J2HV",
+      "matchId": "02TS7PMC94000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Tim Gerrit Kruse",
+      "rawName": "  ",
+      "number": "67",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "qtsr1797"
+    },
+    {
+      "id": "away___",
+      "matchId": "02TS7PMC94000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Michael Breuer",
+      "rawName": " ",
+      "number": "",
+      "img": "",
+      "obfuscationKey": "qtsr1797"
+    }
+  ],
+  "stableId": "02TS7PMC94000000VS5489BUVVJ8R9DS",
+  "generatedAt": "2026-04-07T02:33:32.559Z",
+  "game": {
+    "home": "SpVg. Westfalia Buer",
+    "away": "SC Hassel II",
+    "date": "01.03.2026",
+    "time": "15:00",
+    "competition": "Kreisliga B",
+    "ageGroup": "",
+    "spielId": "02TS7PMC94000000VS5489BUVVJ8R9DS"
+  }
+}

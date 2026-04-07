@@ -1,0 +1,182 @@
+{
+  "ok": true,
+  "matchId": "02TM4SEG54000000VS5489BTVT4H6CF2",
+  "url": "https://www.fussball.de/spiel/sus-gw-barkenberg-sc-hassel/-/spiel/02TM4SEG54000000VS5489BTVT4H6CF2",
+  "home": "SuS GW Barkenberg",
+  "away": "SC Hassel",
+  "ownSide": "away",
+  "count": 18,
+  "players": [
+    {
+      "id": "02FNCAJJJ0000000VUM1DNOMVV3IHK8V",
+      "matchId": "02TM4SEG54000000VS5489BTVT4H6CF2",
+      "side": "away",
+      "name": "Taha Mehdi Demirel",
+      "rawName": "  ",
+      "number": "08",
+      "img": "https://cdn.fussball.de/public/02S5PQETDO000000VS5489BAVVMDJ9M6.stamp",
+      "obfuscationKey": "ui7sg7qg"
+    },
+    {
+      "id": "02MJHOSL2O000000VUM1DNOIVS7F3QJB",
+      "matchId": "02TM4SEG54000000VS5489BTVT4H6CF2",
+      "side": "away",
+      "name": "Jonas Marcel Schumacher",
+      "rawName": "  ",
+      "number": "09",
+      "img": "https://images.media.fussball.de/userfiles/J/o/i/UPtaewaR5xZX6ctjYyp0iz_p3.jpg",
+      "obfuscationKey": "ui7sg7qg"
+    },
+    {
+      "id": "020V152B6C000000VS54898GVU1GBO7U",
+      "matchId": "02TM4SEG54000000VS5489BTVT4H6CF2",
+      "side": "away",
+      "name": "Ozan Sadik Yildirim",
+      "rawName": "  ",
+      "number": "11",
+      "img": "https://cdn.fussball.de/public/02T31S1Q34000000VS5489BVVUOLKE87.stamp",
+      "obfuscationKey": "ui7sg7qg"
+    },
+    {
+      "id": "021SMGDK9O000000VS54898GVV6458GV",
+      "matchId": "02TM4SEG54000000VS5489BTVT4H6CF2",
+      "side": "away",
+      "name": "Ramazan Er Samed Sari",
+      "rawName": "   ",
+      "number": "14",
+      "img": "https://cdn.fussball.de/public/02UDK07FO8000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "ui7sg7qg"
+    },
+    {
+      "id": "02QN5J0RR0000000VUM1D53HVTL9MO41",
+      "matchId": "02TM4SEG54000000VS5489BTVT4H6CF2",
+      "side": "away",
+      "name": "Bekir Veselji",
+      "rawName": " ",
+      "number": "17",
+      "img": "https://cdn.fussball.de/public/02UDK1M3NK000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "ui7sg7qg"
+    },
+    {
+      "id": "01LVIDO7B8000000VV0AG80NVTMPTR0P",
+      "matchId": "02TM4SEG54000000VS5489BTVT4H6CF2",
+      "side": "away",
+      "name": "Mohamed Reda Ajbilou",
+      "rawName": "  ",
+      "number": "01",
+      "img": "https://cdn.fussball.de/public/02R33F15GG000000VS5489B5VS3GI0J0.stamp",
+      "obfuscationKey": "ui7sg7qg"
+    },
+    {
+      "id": "01GFH3DUIG000000VV0AG80NVVVJNO1A",
+      "matchId": "02TM4SEG54000000VS5489BTVT4H6CF2",
+      "side": "away",
+      "name": "Jeremy Komossa",
+      "rawName": " ",
+      "number": "02",
+      "img": "https://cdn.fussball.de/public/02UDJVA1D4000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "ui7sg7qg"
+    },
+    {
+      "id": "02OGC8UAQ8000000VUM1DNO6VSU8RSKC",
+      "matchId": "02TM4SEG54000000VS5489BTVT4H6CF2",
+      "side": "away",
+      "name": "Marvin Buchmann",
+      "rawName": " ",
+      "number": "04",
+      "img": "https://cdn.fussball.de/public/02UDJTH13O000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "ui7sg7qg"
+    },
+    {
+      "id": "02QMD0JI58000000VUM1D570VSFEAFHL",
+      "matchId": "02TM4SEG54000000VS5489BTVT4H6CF2",
+      "side": "away",
+      "name": "Adem Akkus",
+      "rawName": " ",
+      "number": "05",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "ui7sg7qg"
+    },
+    {
+      "id": "01RU3BQI38000000VS548985VVU1KLMG",
+      "matchId": "02TM4SEG54000000VS5489BTVT4H6CF2",
+      "side": "away",
+      "name": "Mertcan Aydin",
+      "rawName": " ",
+      "number": "06",
+      "img": "https://cdn.fussball.de/public/02UDJSQAMS000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "ui7sg7qg"
+    },
+    {
+      "id": "01GQQ24JQS000000VV0AG80NVVDQRLBA",
+      "matchId": "02TM4SEG54000000VS5489BTVT4H6CF2",
+      "side": "away",
+      "name": "Walid El Harras",
+      "rawName": "  ",
+      "number": "07",
+      "img": "https://cdn.fussball.de/public/02UDJUEKO4000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "ui7sg7qg"
+    },
+    {
+      "id": "02IOE26G8S000000VS5489B5VT8KI14O",
+      "matchId": "02TM4SEG54000000VS5489BTVT4H6CF2",
+      "side": "away",
+      "name": "Denizhan Fahri Yaman",
+      "rawName": "  ",
+      "number": "31",
+      "img": "https://cdn.fussball.de/public/02UDK1V6A8000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "ui7sg7qg"
+    },
+    {
+      "id": "02MVJ3VTV0000000VS5489B6VSLKS2T4",
+      "matchId": "02TM4SEG54000000VS5489BTVT4H6CF2",
+      "side": "away",
+      "name": "Ahmad Al Masri",
+      "rawName": "  ",
+      "number": "03",
+      "img": "https://cdn.fussball.de/public/02UDJS9KFS000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "ui7sg7qg"
+    },
+    {
+      "id": "02S427FA18000000VS5489B7VV1RMA4H",
+      "matchId": "02TM4SEG54000000VS5489BTVT4H6CF2",
+      "side": "away",
+      "name": "Naser Almoussaalanezi",
+      "rawName": " ",
+      "number": "10",
+      "img": "https://cdn.fussball.de/public/02UDJSI208000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "ui7sg7qg"
+    },
+    {
+      "id": "026HCDFQVO000000VS5489B6VU1J6RLI",
+      "matchId": "02TM4SEG54000000VS5489BTVT4H6CF2",
+      "side": "away",
+      "name": "Mikail Zinxhiria",
+      "rawName": " ",
+      "number": "13",
+      "img": "https://cdn.fussball.de/public/02UDK28C8S000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "ui7sg7qg"
+    },
+    {
+      "id": "02A0O4I97O000000VS5489B5VU9R61K2",
+      "matchId": "02TM4SEG54000000VS5489BTVT4H6CF2",
+      "side": "away",
+      "name": "Antonio Margina",
+      "rawName": " ",
+      "number": "16",
+      "img": "https://cdn.fussball.de/public/02UDJVK29C000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "ui7sg7qg"
+    }
+  ],
+  "stableId": "02TM4SEG54000000VS5489BTVT4H6CF2",
+  "generatedAt": "2026-04-07T02:33:32.559Z",
+  "game": {
+    "home": "SuS GW Barkenberg",
+    "away": "SC Hassel",
+    "date": "09.08.2025",
+    "time": "16:30",
+    "competition": "Kreisfreundschaftsspiele",
+    "ageGroup": "",
+    "spielId": "02TM4SEG54000000VS5489BTVT4H6CF2"
+  }
+}

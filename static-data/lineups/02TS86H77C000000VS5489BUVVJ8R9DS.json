@@ -1,0 +1,142 @@
+{
+  "ok": true,
+  "matchId": "02TS86H77C000000VS5489BUVVJ8R9DS",
+  "url": "https://www.fussball.de/spiel/sc-hassel-iii-fc-horst-59-e-v/-/spiel/02TS86H77C000000VS5489BUVVJ8R9DS",
+  "home": "SC Hassel III",
+  "away": "FC Horst 59 e.V",
+  "ownSide": "home",
+  "count": 13,
+  "players": [
+    {
+      "id": "02PFDHBRA8000000VS5489B8VVHQI6RK",
+      "matchId": "02TS86H77C000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Luca Joshua Schmidt",
+      "rawName": "  ",
+      "number": "24",
+      "img": "https://cdn.fussball.de/public/02PFJPU3PO000000VS5489B1VUEKQ1B7.stamp",
+      "obfuscationKey": "nvqdghfh"
+    },
+    {
+      "id": "00UEDDSR18000000VV0AG811VT16I3CR",
+      "matchId": "02TS86H77C000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Fatih Karagöz",
+      "rawName": " ",
+      "number": "03",
+      "img": "https://cdn.fussball.de/public/02UOFET21O000000VS5489C0VU5BRBVL.stamp",
+      "obfuscationKey": "nvqdghfh"
+    },
+    {
+      "id": "02S7PJQUNS000000VUM1D597VV8AJ6VI",
+      "matchId": "02TS86H77C000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Ahmad Taan",
+      "rawName": " ",
+      "number": "11",
+      "img": "https://cdn.fussball.de/public/02T2NBNQT8000000VS5489C0VUU5TGQ9.stamp",
+      "obfuscationKey": "nvqdghfh"
+    },
+    {
+      "id": "02SC944QVO000000VUM1D5A0VURGFM1G",
+      "matchId": "02TS86H77C000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Ben Louis Momma",
+      "rawName": "  ",
+      "number": "14",
+      "img": "https://cdn.fussball.de/public/02TTH2A5I8000000VS5489C1VSPL3397.stamp",
+      "obfuscationKey": "nvqdghfh"
+    },
+    {
+      "id": "02SHDTS3T4000000VUM1D50QVSUREU2L",
+      "matchId": "02TS86H77C000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Yusif Mahir Oglu Bayramov",
+      "rawName": "   ",
+      "number": "31",
+      "img": "https://cdn.fussball.de/public/02T2NBEUC8000000VS5489C2VURGIJAT.stamp",
+      "obfuscationKey": "nvqdghfh"
+    },
+    {
+      "id": "02UG46VIQG000000VUM1D57SVVRL01TE",
+      "matchId": "02TS86H77C000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Leon Drinkuth",
+      "rawName": " ",
+      "number": "42",
+      "img": "https://cdn.fussball.de/public/02UIAMDM2C000000VS5489BVVV05DNLE.stamp",
+      "obfuscationKey": "nvqdghfh"
+    },
+    {
+      "id": "02FCERNQU8000000VUM1DNOTVSIG8NIT",
+      "matchId": "02TS86H77C000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Jan Lucas Engwer",
+      "rawName": "  ",
+      "number": "45",
+      "img": "https://cdn.fussball.de/public/02OJTT9EMC000000VS5489B6VVPB8G6Q.stamp",
+      "obfuscationKey": "nvqdghfh"
+    },
+    {
+      "id": "029SSTF328000000VS5489B5VVEC1CNQ",
+      "matchId": "02TS86H77C000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Fabian Neuschl",
+      "rawName": " ",
+      "number": "69",
+      "img": "https://cdn.fussball.de/public/02UMQQ1600000000VS5489BTVSE04V5I.stamp",
+      "obfuscationKey": "nvqdghfh"
+    },
+    {
+      "id": "02UCGGV9OO000000VUM1D5AAVTLBSBD5",
+      "matchId": "02TS86H77C000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Tim Sokolowski",
+      "rawName": " ",
+      "number": "82",
+      "img": "https://cdn.fussball.de/public/02UIAM8INC000000VS5489BTVT5EO5B1.stamp",
+      "obfuscationKey": "nvqdghfh"
+    },
+    {
+      "id": "00MC77BNH0000000VV0AG85VVSMHI0R7",
+      "matchId": "02TS86H77C000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Elvir Jeseti",
+      "rawName": " ",
+      "number": "93",
+      "img": "https://cdn.fussball.de/public/02UMQMN1A4000000VS5489BSVS0H23B8.stamp",
+      "obfuscationKey": "nvqdghfh"
+    },
+    {
+      "id": "00OVIVRNK8000000VV0AG83KVT283J6L",
+      "matchId": "02TS86H77C000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Burak Ünal",
+      "rawName": " ",
+      "number": "99",
+      "img": "https://cdn.fussball.de/public/02URL42G2K000000VS5489C4VT4B9A51.stamp",
+      "obfuscationKey": "nvqdghfh"
+    },
+    {
+      "id": "01V6HD2OJ8000000VS541L4GVTBC5RB5",
+      "matchId": "02TS86H77C000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Jerome Przystav",
+      "rawName": " ",
+      "number": "08",
+      "img": "https://cdn.fussball.de/public/029L96540O000000VS5489B5VVG2UF8C.stamp",
+      "obfuscationKey": "nvqdghfh"
+    }
+  ],
+  "stableId": "02TS86H77C000000VS5489BUVVJ8R9DS",
+  "generatedAt": "2026-04-07T02:33:32.559Z",
+  "game": {
+    "home": "SC Hassel III",
+    "away": "FC Horst 59 e.V",
+    "date": "26.10.2025",
+    "time": "17:00",
+    "competition": "Kreisliga C",
+    "ageGroup": "",
+    "spielId": "02TS86H77C000000VS5489BUVVJ8R9DS"
+  }
+}

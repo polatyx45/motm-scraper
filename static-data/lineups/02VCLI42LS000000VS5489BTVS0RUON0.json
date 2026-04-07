@@ -1,0 +1,102 @@
+{
+  "ok": true,
+  "matchId": "02VCLI42LS000000VS5489BTVS0RUON0",
+  "url": "https://www.fussball.de/spiel/sc-hassel-vatanspor-hemer/-/spiel/02VCLI42LS000000VS5489BTVS0RUON0",
+  "home": "SC Hassel",
+  "away": "Vatanspor Hemer",
+  "ownSide": "home",
+  "count": 8,
+  "players": [
+    {
+      "id": "01R5NDKCQC000000VS541L4JVSBD073C",
+      "matchId": "02VCLI42LS000000VS5489BTVS0RUON0",
+      "side": "home",
+      "name": "Justin Jerome Wrobel",
+      "rawName": "  ",
+      "number": "44",
+      "img": "https://cdn.fussball.de/public/02VKIO3NOO000000VS5489C2VU4VO0A5.stamp",
+      "obfuscationKey": "eekkrhkt"
+    },
+    {
+      "id": "024NE5U1KK000000VS541L4KVVQMCS8E",
+      "matchId": "02VCLI42LS000000VS5489BTVS0RUON0",
+      "side": "home",
+      "name": "Justin Hennemann",
+      "rawName": " ",
+      "number": "06",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "eekkrhkt"
+    },
+    {
+      "id": "013RSUNB14000000VV0AG811VSE0VU3I",
+      "matchId": "02VCLI42LS000000VS5489BTVS0RUON0",
+      "side": "home",
+      "name": "Lukas Bergmann",
+      "rawName": " ",
+      "number": "07",
+      "img": "https://cdn.fussball.de/public/02VKIMPRSC000000VS5489C2VU4VO0A5.stamp",
+      "obfuscationKey": "eekkrhkt"
+    },
+    {
+      "id": "01CLSGHV30000000VV0AG80NVV3VDBGT",
+      "matchId": "02VCLI42LS000000VS5489BTVS0RUON0",
+      "side": "home",
+      "name": "Nils Döring",
+      "rawName": " ",
+      "number": "08",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "eekkrhkt"
+    },
+    {
+      "id": "02J9HELPEC000000VUM1DNOOVUNNS1VK",
+      "matchId": "02VCLI42LS000000VS5489BTVS0RUON0",
+      "side": "home",
+      "name": "Dean Krämer",
+      "rawName": " ",
+      "number": "19",
+      "img": "https://cdn.fussball.de/public/02VKINO8J0000000VS5489C2VU4VO0A5.stamp",
+      "obfuscationKey": "eekkrhkt"
+    },
+    {
+      "id": "023V09UDO4000000VS541L4IVTPV41CE",
+      "matchId": "02VCLI42LS000000VS5489BTVS0RUON0",
+      "side": "home",
+      "name": "Tom Altehage",
+      "rawName": " ",
+      "number": "20",
+      "img": "https://images.media.fussball.de/userfiles/6/8/a/9WukZ3zHylEOVQahYjL0Ya_p3.jpg",
+      "obfuscationKey": "eekkrhkt"
+    },
+    {
+      "id": "02J7KRNHE8000000VUM1DNORVTH5RBQH",
+      "matchId": "02VCLI42LS000000VS5489BTVS0RUON0",
+      "side": "home",
+      "name": "Phil Kückelmann",
+      "rawName": " ",
+      "number": "30",
+      "img": "https://cdn.fussball.de/public/02VKINRUKO000000VS5489C2VU4VO0A5.stamp",
+      "obfuscationKey": "eekkrhkt"
+    },
+    {
+      "id": "home___",
+      "matchId": "02VCLI42LS000000VS5489BTVS0RUON0",
+      "side": "home",
+      "name": "Seldin Malkoc",
+      "rawName": " ",
+      "number": "",
+      "img": "",
+      "obfuscationKey": "eekkrhkt"
+    }
+  ],
+  "stableId": "02VCLI42LS000000VS5489BTVS0RUON0",
+  "generatedAt": "2026-04-07T02:33:32.559Z",
+  "game": {
+    "home": "SC Hassel",
+    "away": "Vatanspor Hemer",
+    "date": "04.01.2026",
+    "time": "14:20",
+    "competition": "Vereinsturnier",
+    "ageGroup": "",
+    "spielId": "02VCLI42LS000000VS5489BTVS0RUON0"
+  }
+}

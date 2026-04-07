@@ -1,0 +1,20 @@
+{
+  "ok": false,
+  "error": "lineup_not_available",
+  "message": "Waiting for selector `.player-wrapper.home, .player-wrapper.away` failed",
+  "matchId": "02VKBRIB40000000VS5489BTVUS4P6QU",
+  "home": "SC Hassel",
+  "away": "SW Röllinghausen U19",
+  "players": [],
+  "stableId": "02VKBRIB40000000VS5489BTVUS4P6QU",
+  "generatedAt": "2026-04-07T02:33:32.559Z",
+  "game": {
+    "home": "SC Hassel",
+    "away": "SW Röllinghausen U19",
+    "date": "07.02.2026",
+    "time": "17:00",
+    "competition": "Kreisfreundschaftsspiele",
+    "ageGroup": "",
+    "spielId": "02VKBRIB40000000VS5489BTVUS4P6QU"
+  }
+}

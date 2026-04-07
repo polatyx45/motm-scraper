@@ -1,0 +1,32 @@
+{
+  "ok": true,
+  "matchId": "02VTUBEEK4000000VS5489BTVUKESBFG",
+  "url": "https://www.fussball.de/spiel/yeg-hassel-ii-sc-hassel-ii/-/spiel/02VTUBEEK4000000VS5489BTVUKESBFG",
+  "home": "YEG HASSEL II",
+  "away": "SC Hassel II",
+  "ownSide": "away",
+  "count": 14,
+  "players": [
+    {
+      "id": "02R14QSOL8000000VUM1D550VSCHIF9D",
+      "matchId": "02VTUBEEK4000000VS5489BTVUKESBFG",
+      "side": "away",
+      "name": "Joel David Gudzik",
+      "rawName": "  ",
+      "number": "52",
+      "img": "https://cdn.fussball.de/public/02KT31N57K000000VS5489BCVTEGAR3G.stamp",
+      "obfuscationKey": "g68gb189"
+    }
+  ],
+  "stableId": "02VTUBEEK4000000VS5489BTVUKESBFG",
+  "generatedAt": "2026-04-07T02:33:32.559Z",
+  "game": {
+    "home": "YEG HASSEL II",
+    "away": "SC Hassel II",
+    "date": "15.02.2026",
+    "time": "11:00",
+    "competition": "Kreisfreundschaftsspiele",
+    "ageGroup": "",
+    "spielId": "02VTUBEEK4000000VS5489BTVUKESBFG"
+  }
+}

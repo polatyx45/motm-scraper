@@ -1,0 +1,20 @@
+{
+  "ok": false,
+  "error": "lineup_not_available",
+  "message": "Waiting for selector `.player-wrapper.home, .player-wrapper.away` failed",
+  "matchId": "02UON4286C000000VS5489BTVTCS6VNN",
+  "home": "SC Hassel",
+  "away": "SF Merfeld",
+  "players": [],
+  "stableId": "02UON4286C000000VS5489BTVTCS6VNN",
+  "generatedAt": "2026-04-07T02:33:32.559Z",
+  "game": {
+    "home": "SC Hassel",
+    "away": "SF Merfeld",
+    "date": "15.02.2026",
+    "time": "15:00",
+    "competition": "Kreisfreundschaftsspiele",
+    "ageGroup": "",
+    "spielId": "02UON4286C000000VS5489BTVTCS6VNN"
+  }
+}

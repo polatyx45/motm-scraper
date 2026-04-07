@@ -1,0 +1,21 @@
+{
+  "ok": true,
+  "matchId": "02U2A69TTG000000VS5489BTVV378D77",
+  "url": "https://www.fussball.de/spiel/sv-zweckel-iii-sc-hassel-ii/-/spiel/02U2A69TTG000000VS5489BTVV378D77",
+  "home": "SV Zweckel III",
+  "away": "SC Hassel II",
+  "ownSide": "away",
+  "count": 9,
+  "players": [],
+  "stableId": "02U2A69TTG000000VS5489BTVV378D77",
+  "generatedAt": "2026-04-07T02:33:32.559Z",
+  "game": {
+    "home": "SV Zweckel III",
+    "away": "SC Hassel II",
+    "date": "06.12.2025",
+    "time": "13:30",
+    "competition": "Kreisliga A",
+    "ageGroup": "",
+    "spielId": "02U2A69TTG000000VS5489BTVV378D77"
+  }
+}

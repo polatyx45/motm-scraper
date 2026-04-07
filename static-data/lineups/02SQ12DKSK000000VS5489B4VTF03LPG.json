@@ -1,0 +1,21 @@
+{
+  "ok": true,
+  "matchId": "02SQ12DKSK000000VS5489B4VTF03LPG",
+  "url": "https://www.fussball.de/spiel/sc-hassel-ii-spvgg-erle-1919/-/spiel/02SQ12DKSK000000VS5489B4VTF03LPG",
+  "home": "SC Hassel II",
+  "away": "SpVgg Erle 1919",
+  "ownSide": "home",
+  "count": 9,
+  "players": [],
+  "stableId": "02SQ12DKSK000000VS5489B4VTF03LPG",
+  "generatedAt": "2026-04-07T02:33:32.559Z",
+  "game": {
+    "home": "SC Hassel II",
+    "away": "SpVgg Erle 1919",
+    "date": "05.07.2025",
+    "time": "12:36",
+    "competition": "Vereinsturnier",
+    "ageGroup": "",
+    "spielId": "02SQ12DKSK000000VS5489B4VTF03LPG"
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "ok": true,
+  "matchId": "02U2A45N1K000000VS5489BTVV378D77",
+  "url": "https://www.fussball.de/spiel/sus-beckhausen-05-sc-hassel/-/spiel/02U2A45N1K000000VS5489BTVV378D77",
+  "home": "SuS Beckhausen 05",
+  "away": "SC Hassel",
+  "ownSide": "away",
+  "count": 15,
+  "players": [
+    {
+      "id": "02MJHOSL2O000000VUM1DNOIVS7F3QJB",
+      "matchId": "02U2A45N1K000000VS5489BTVV378D77",
+      "side": "away",
+      "name": "Jonas Marcel Schumacher",
+      "rawName": "  ",
+      "number": "09",
+      "img": "https://images.media.fussball.de/userfiles/J/o/i/UPtaewaR5xZX6ctjYyp0iz_p3.jpg",
+      "obfuscationKey": "766i4jyu"
+    },
+    {
+      "id": "02MOVD3C50000000VUM1DNO8VUS6Q1B8",
+      "matchId": "02U2A45N1K000000VS5489BTVV378D77",
+      "side": "away",
+      "name": "Ibrahim Furkan Kuru",
+      "rawName": "  ",
+      "number": "10",
+      "img": "https://cdn.fussball.de/public/02UIBB442K000000VS5489C1VSAG571E.stamp",
+      "obfuscationKey": "766i4jyu"
+    },
+    {
+      "id": "02NID6MO00000000VUM1DNP7VU6DA5CP",
+      "matchId": "02U2A45N1K000000VS5489BTVV378D77",
+      "side": "away",
+      "name": "Mhd Nour Rabah",
+      "rawName": "  ",
+      "number": "11",
+      "img": "https://cdn.fussball.de/public/02UDJVTPQ8000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "766i4jyu"
+    },
+    {
+      "id": "02QN5J0RR0000000VUM1D53HVTL9MO41",
+      "matchId": "02U2A45N1K000000VS5489BTVV378D77",
+      "side": "away",
+      "name": "Bekir Veselji",
+      "rawName": " ",
+      "number": "17",
+      "img": "https://cdn.fussball.de/public/02UDK1M3NK000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "766i4jyu"
+    },
+    {
+      "id": "02S427FA18000000VS5489B7VV1RMA4H",
+      "matchId": "02U2A45N1K000000VS5489BTVV378D77",
+      "side": "away",
+      "name": "Naser Almoussaalanezi",
+      "rawName": " ",
+      "number": "20",
+      "img": "https://cdn.fussball.de/public/02UDJSI208000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "766i4jyu"
+    },
+    {
+      "id": "02IOE26G8S000000VS5489B5VT8KI14O",
+      "matchId": "02U2A45N1K000000VS5489BTVV378D77",
+      "side": "away",
+      "name": "Denizhan Fahri Yaman",
+      "rawName": "  ",
+      "number": "01",
+      "img": "https://cdn.fussball.de/public/02UDK1V6A8000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "766i4jyu"
+    },
+    {
+      "id": "01GFH3DUIG000000VV0AG80NVVVJNO1A",
+      "matchId": "02U2A45N1K000000VS5489BTVV378D77",
+      "side": "away",
+      "name": "Jeremy Komossa",
+      "rawName": " ",
+      "number": "03",
+      "img": "https://cdn.fussball.de/public/02UDJVA1D4000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "766i4jyu"
+    },
+    {
+      "id": "02N79Q3QSS000000VUM1DNO8VU1CNQ4J",
+      "matchId": "02U2A45N1K000000VS5489BTVV378D77",
+      "side": "away",
+      "name": "Hamza Yusuf Caliskan",
+      "rawName": "  ",
+      "number": "05",
+      "img": "https://cdn.fussball.de/public/02UDJTOS9O000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "766i4jyu"
+    },
+    {
+      "id": "01RU3BQI38000000VS548985VVU1KLMG",
+      "matchId": "02U2A45N1K000000VS5489BTVV378D77",
+      "side": "away",
+      "name": "Mertcan Aydin",
+      "rawName": " ",
+      "number": "06",
+      "img": "https://cdn.fussball.de/public/02UDJSQAMS000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "766i4jyu"
+    },
+    {
+      "id": "01GQQ24JQS000000VV0AG80NVVDQRLBA",
+      "matchId": "02U2A45N1K000000VS5489BTVV378D77",
+      "side": "away",
+      "name": "Walid El Harras",
+      "rawName": "  ",
+      "number": "07",
+      "img": "https://cdn.fussball.de/public/02UDJUEKO4000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "766i4jyu"
+    },
+    {
+      "id": "026HCDFQVO000000VS5489B6VU1J6RLI",
+      "matchId": "02U2A45N1K000000VS5489BTVV378D77",
+      "side": "away",
+      "name": "Mikail Zinxhiria",
+      "rawName": " ",
+      "number": "02",
+      "img": "https://cdn.fussball.de/public/02UDK28C8S000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "766i4jyu"
+    },
+    {
+      "id": "02OGC8UAQ8000000VUM1DNO6VSU8RSKC",
+      "matchId": "02U2A45N1K000000VS5489BTVV378D77",
+      "side": "away",
+      "name": "Marvin Buchmann",
+      "rawName": " ",
+      "number": "18",
+      "img": "https://cdn.fussball.de/public/02UDJTH13O000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "766i4jyu"
+    },
+    {
+      "id": "away___",
+      "matchId": "02U2A45N1K000000VS5489BTVV378D77",
+      "side": "away",
+      "name": "Holger Fabricius",
+      "rawName": " ",
+      "number": "",
+      "img": "",
+      "obfuscationKey": "766i4jyu"
+    }
+  ],
+  "stableId": "02U2A45N1K000000VS5489BTVV378D77",
+  "generatedAt": "2026-04-07T02:33:32.559Z",
+  "game": {
+    "home": "SuS Beckhausen 05",
+    "away": "SC Hassel",
+    "date": "02.11.2025",
+    "time": "10:15",
+    "competition": "Kreisliga A",
+    "ageGroup": "",
+    "spielId": "02U2A45N1K000000VS5489BTVV378D77"
+  }
+}

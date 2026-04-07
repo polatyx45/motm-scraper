@@ -1,0 +1,132 @@
+{
+  "ok": true,
+  "matchId": "02U2UD5DC8000000VS5489BUVS8CK5KT",
+  "url": "https://www.fussball.de/spiel/sv-horst-emscher-08-ii-sc-hassel/-/spiel/02U2UD5DC8000000VS5489BUVS8CK5KT",
+  "home": "SV HORST-EMSCHER 08 II",
+  "away": "SC Hassel",
+  "ownSide": "away",
+  "count": 15,
+  "players": [
+    {
+      "id": "02J2DNU9GG000000VS5489B6VV6DVKTN",
+      "matchId": "02U2UD5DC8000000VS5489BUVS8CK5KT",
+      "side": "away",
+      "name": "Kerem Yükel",
+      "rawName": " ",
+      "number": "11",
+      "img": "https://cdn.fussball.de/public/02S9KRP97G000000VS5489BAVS6CUPS2.stamp",
+      "obfuscationKey": "m7qdsfko"
+    },
+    {
+      "id": "02J909TK48000000VUM1DNOOVUNNS1VK",
+      "matchId": "02U2UD5DC8000000VS5489BUVS8CK5KT",
+      "side": "away",
+      "name": "Musab Cetinkaya",
+      "rawName": " ",
+      "number": "15",
+      "img": "https://images.media.fussball.de/userfiles/h/d/E/rY4erzajS6sezR678S3rD0_p3.jpg",
+      "obfuscationKey": "m7qdsfko"
+    },
+    {
+      "id": "02391OBJB0000000VS54898GVU72CGVN",
+      "matchId": "02U2UD5DC8000000VS5489BUVS8CK5KT",
+      "side": "away",
+      "name": "Devincan Bach",
+      "rawName": " ",
+      "number": "01",
+      "img": "https://cdn.fussball.de/public/02S6G6NME0000000VS5489B1VVVAF4P8.stamp",
+      "obfuscationKey": "m7qdsfko"
+    },
+    {
+      "id": "02TTE3LRTG000000VUM1D52BVT71KTSR",
+      "matchId": "02U2UD5DC8000000VS5489BUVS8CK5KT",
+      "side": "away",
+      "name": "Halil Yüksel",
+      "rawName": " ",
+      "number": "03",
+      "img": "https://cdn.fussball.de/public/02S9KSGP30000000VS5489BAVS6CUPS2.stamp",
+      "obfuscationKey": "m7qdsfko"
+    },
+    {
+      "id": "02KTD2JMH8000000VUM1DNR3VSVM7DLD",
+      "matchId": "02U2UD5DC8000000VS5489BUVS8CK5KT",
+      "side": "away",
+      "name": "Ceyhun Alp Badur",
+      "rawName": "  ",
+      "number": "06",
+      "img": "https://cdn.fussball.de/public/02UDJT13A8000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "m7qdsfko"
+    },
+    {
+      "id": "02G6DS6SEO000000VUM1DNQVVSOUBCL2",
+      "matchId": "02U2UD5DC8000000VS5489BUVS8CK5KT",
+      "side": "away",
+      "name": "Arda Saracoglu",
+      "rawName": " ",
+      "number": "07",
+      "img": "https://cdn.fussball.de/public/02VQLLBKG0000000VS5489C1VU8CK9NF.stamp",
+      "obfuscationKey": "m7qdsfko"
+    },
+    {
+      "id": "02JDLIICDG000000VS5489B6VUDBER6I",
+      "matchId": "02U2UD5DC8000000VS5489BUVS8CK5KT",
+      "side": "away",
+      "name": "Umut Aydogan",
+      "rawName": " ",
+      "number": "09",
+      "img": "https://cdn.fussball.de/public/02S9KRER7C000000VS5489BAVS6CUPS2.stamp",
+      "obfuscationKey": "m7qdsfko"
+    },
+    {
+      "id": "02FJMM9UHO000000VS5489B6VVVEC9F9",
+      "matchId": "02U2UD5DC8000000VS5489BUVS8CK5KT",
+      "side": "away",
+      "name": "Mete Cihangir",
+      "rawName": " ",
+      "number": "05",
+      "img": "https://cdn.fussball.de/public/02S6G55LNK000000VS5489B1VVVAF4P8.stamp",
+      "obfuscationKey": "m7qdsfko"
+    },
+    {
+      "id": "02TB0C8VDO000000VUM1D561VT2AA10I",
+      "matchId": "02U2UD5DC8000000VS5489BUVS8CK5KT",
+      "side": "away",
+      "name": "Amin Al Abbozi",
+      "rawName": "  ",
+      "number": "17",
+      "img": "https://cdn.fussball.de/public/02UB81ENLC000000VS5489C1VUDJB9US.stamp",
+      "obfuscationKey": "m7qdsfko"
+    },
+    {
+      "id": "01U2M48FNS000000VS54898GVTK5AKMA",
+      "matchId": "02U2UD5DC8000000VS5489BUVS8CK5KT",
+      "side": "away",
+      "name": "Emir Tomruk",
+      "rawName": " ",
+      "number": "20",
+      "img": "https://cdn.fussball.de/public/02S6G4V5HS000000VS5489B1VVVAF4P8.stamp",
+      "obfuscationKey": "m7qdsfko"
+    },
+    {
+      "id": "away___",
+      "matchId": "02U2UD5DC8000000VS5489BUVS8CK5KT",
+      "side": "away",
+      "name": "Melih Ayyildiz",
+      "rawName": " ",
+      "number": "",
+      "img": "",
+      "obfuscationKey": "m7qdsfko"
+    }
+  ],
+  "stableId": "02U2UD5DC8000000VS5489BUVS8CK5KT",
+  "generatedAt": "2026-04-07T02:33:32.559Z",
+  "game": {
+    "home": "SV HORST-EMSCHER 08 II",
+    "away": "SC Hassel",
+    "date": "17.08.2025",
+    "time": "09:15",
+    "competition": "Kreisfreundschaftsspiele",
+    "ageGroup": "",
+    "spielId": "02U2UD5DC8000000VS5489BUVS8CK5KT"
+  }
+}

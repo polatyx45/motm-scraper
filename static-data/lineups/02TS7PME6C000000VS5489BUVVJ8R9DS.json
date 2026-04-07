@@ -1,0 +1,182 @@
+{
+  "ok": true,
+  "matchId": "02TS7PME6C000000VS5489BUVVJ8R9DS",
+  "url": "https://www.fussball.de/spiel/sv-horst-emscher-08-iii-sc-hassel-ii/-/spiel/02TS7PME6C000000VS5489BUVVJ8R9DS",
+  "home": "SV HORST-EMSCHER 08 III",
+  "away": "SC Hassel II",
+  "ownSide": "away",
+  "count": 17,
+  "players": [
+    {
+      "id": "023V09UDO4000000VS541L4IVTPV41CE",
+      "matchId": "02TS7PME6C000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Tom Altehage",
+      "rawName": " ",
+      "number": "24",
+      "img": "https://images.media.fussball.de/userfiles/6/8/a/9WukZ3zHylEOVQahYjL0Ya_p3.jpg",
+      "obfuscationKey": "k4wy8npy"
+    },
+    {
+      "id": "02FVTI2EUO000000VUM1DNP7VU4DVJ6N",
+      "matchId": "02TS7PME6C000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Ahmet Saracoglu",
+      "rawName": " ",
+      "number": "42",
+      "img": "https://images.media.fussball.de/userfiles/y/r/n/dStyZO5XrUqMjgHHyisozz_p3.jpg",
+      "obfuscationKey": "k4wy8npy"
+    },
+    {
+      "id": "013HUNBCOS000000VV0AG811VVF2J2HV",
+      "matchId": "02TS7PME6C000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Tim Gerrit Kruse",
+      "rawName": "  ",
+      "number": "67",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "k4wy8npy"
+    },
+    {
+      "id": "0266QS31K8000000VS541L4FVTTFAE2C",
+      "matchId": "02TS7PME6C000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Ergün Yalcin",
+      "rawName": " ",
+      "number": "74",
+      "img": "//images.media.fussball.de/userfiles/D/a/7/wtgU0FWaSDzHgGCLF84zSa_p3.jpg",
+      "obfuscationKey": "k4wy8npy"
+    },
+    {
+      "id": "02F7AB1JU0000000VUM1DNOKVU1MPAAC",
+      "matchId": "02TS7PME6C000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Björn Weichert",
+      "rawName": " ",
+      "number": "89",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "k4wy8npy"
+    },
+    {
+      "id": "02G7KG4BV4000000VUM1DNPEVVG00SEM",
+      "matchId": "02TS7PME6C000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Fynn Becker",
+      "rawName": " ",
+      "number": "33",
+      "img": "https://images.media.fussball.de/userfiles/a/a/b/y81WJIKYc63E9zveK7ARS0_p3.jpg",
+      "obfuscationKey": "k4wy8npy"
+    },
+    {
+      "id": "02JU54VUP0000000VUM1DNQ5VUP6DJ3S",
+      "matchId": "02TS7PME6C000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Nils Kuhnert",
+      "rawName": " ",
+      "number": "04",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "k4wy8npy"
+    },
+    {
+      "id": "02JQCSFSN4000000VUM1DNOOVURNBV95",
+      "matchId": "02TS7PME6C000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Moritz Breuer",
+      "rawName": " ",
+      "number": "08",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "k4wy8npy"
+    },
+    {
+      "id": "01OG3IAP74000000VS541L4GVTLBV8RF",
+      "matchId": "02TS7PME6C000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Felix Altehage",
+      "rawName": " ",
+      "number": "09",
+      "img": "https://cdn.fussball.de/public/02VA56IRCS000000VS5489C1VUQPT9H2.stamp",
+      "obfuscationKey": "k4wy8npy"
+    },
+    {
+      "id": "0189SV0L6S000000VV0AG811VTD2DA4K",
+      "matchId": "02TS7PME6C000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Henry Ben Wallbaum",
+      "rawName": "  ",
+      "number": "22",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "k4wy8npy"
+    },
+    {
+      "id": "02J7KRNHE8000000VUM1DNORVTH5RBQH",
+      "matchId": "02TS7PME6C000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Phil Kückelmann",
+      "rawName": " ",
+      "number": "23",
+      "img": "https://cdn.fussball.de/public/02VKINRUKO000000VS5489C2VU4VO0A5.stamp",
+      "obfuscationKey": "k4wy8npy"
+    },
+    {
+      "id": "01H5OCSTMC000000VV0AG811VT4ABG6C",
+      "matchId": "02TS7PME6C000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Tim Miksraitis",
+      "rawName": " ",
+      "number": "01",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "k4wy8npy"
+    },
+    {
+      "id": "029H4RIQG8000000VS541L4FVT877CAB",
+      "matchId": "02TS7PME6C000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Enrico Fromm",
+      "rawName": " ",
+      "number": "03",
+      "img": "https://images.media.fussball.de/userfiles/U/1/O/1ymUOPn311ULnJlcvynAxz_p3.jpg",
+      "obfuscationKey": "k4wy8npy"
+    },
+    {
+      "id": "02FMM6OEF8000000VUM1DNQOVTISKNRO",
+      "matchId": "02TS7PME6C000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Marc Niklas Laukamp",
+      "rawName": "  ",
+      "number": "06",
+      "img": "https://images.media.fussball.de/userfiles/O/p/E/kOwhZwqymfmU16G11UXPaz_p3.jpg",
+      "obfuscationKey": "k4wy8npy"
+    },
+    {
+      "id": "02JU553LPK000000VUM1DNQGVUQ7AF0M",
+      "matchId": "02TS7PME6C000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Jan Niklas Harnau",
+      "rawName": "  ",
+      "number": "12",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "k4wy8npy"
+    },
+    {
+      "id": "02FUVJI09O000000VUM1DNOSVU169VS9",
+      "matchId": "02TS7PME6C000000VS5489BUVVJ8R9DS",
+      "side": "away",
+      "name": "Lenny Paul Wallbaum",
+      "rawName": "  ",
+      "number": "17",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "k4wy8npy"
+    }
+  ],
+  "stableId": "02TS7PME6C000000VS5489BUVVJ8R9DS",
+  "generatedAt": "2026-04-07T02:33:32.559Z",
+  "game": {
+    "home": "SV HORST-EMSCHER 08 III",
+    "away": "SC Hassel II",
+    "date": "14.12.2025",
+    "time": "15:00",
+    "competition": "Kreisliga B",
+    "ageGroup": "",
+    "spielId": "02TS7PME6C000000VS5489BUVVJ8R9DS"
+  }
+}

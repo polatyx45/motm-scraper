@@ -1,0 +1,192 @@
+{
+  "ok": true,
+  "matchId": "02U2A4BV5S000000VS5489BTVV378D77",
+  "url": "https://www.fussball.de/spiel/sv-ge-hessler-sc-hassel/-/spiel/02U2A4BV5S000000VS5489BTVV378D77",
+  "home": "SV GE-Hessler",
+  "away": "SC Hassel",
+  "ownSide": "away",
+  "count": 17,
+  "players": [
+    {
+      "id": "02J909TK48000000VUM1DNOOVUNNS1VK",
+      "matchId": "02U2A4BV5S000000VS5489BTVV378D77",
+      "side": "away",
+      "name": "Musab Cetinkaya",
+      "rawName": " ",
+      "number": "16",
+      "img": "https://images.media.fussball.de/userfiles/h/d/E/rY4erzajS6sezR678S3rD0_p3.jpg",
+      "obfuscationKey": "ju6icww8"
+    },
+    {
+      "id": "02MMVN4IKS000000VUM1DNORVU3OHSTF",
+      "matchId": "02U2A4BV5S000000VS5489BTVV378D77",
+      "side": "away",
+      "name": "Umeyr Yildiz",
+      "rawName": " ",
+      "number": "17",
+      "img": "https://cdn.fussball.de/public/02S80GUHQ0000000VS5489B2VSKOF6OB.stamp",
+      "obfuscationKey": "ju6icww8"
+    },
+    {
+      "id": "02FO0CTR70000000VUM1DNPGVVD57QHV",
+      "matchId": "02U2A4BV5S000000VS5489BTVV378D77",
+      "side": "away",
+      "name": "Egemen Tekin",
+      "rawName": " ",
+      "number": "20",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "ju6icww8"
+    },
+    {
+      "id": "02QHNS4TFK000000VUM1D56AVSRS6QTA",
+      "matchId": "02U2A4BV5S000000VS5489BTVV378D77",
+      "side": "away",
+      "name": "Fabio Gaetano Mirto",
+      "rawName": "  ",
+      "number": "25",
+      "img": "https://images.media.fussball.de/userfiles/e/5/Z/2aUEKeGF9OAANkmcsGmzG1_p3.jpg",
+      "obfuscationKey": "ju6icww8"
+    },
+    {
+      "id": "02OCQUGU6C000000VUM1DNP8VS6I5J85",
+      "matchId": "02U2A4BV5S000000VS5489BTVV378D77",
+      "side": "away",
+      "name": "Ender Öcal",
+      "rawName": " ",
+      "number": "27",
+      "img": "https://cdn.fussball.de/public/02UI90BNS4000000VS5489C0VSQRN5KI.stamp",
+      "obfuscationKey": "ju6icww8"
+    },
+    {
+      "id": "02391OBJB0000000VS54898GVU72CGVN",
+      "matchId": "02U2A4BV5S000000VS5489BTVV378D77",
+      "side": "away",
+      "name": "Devincan Bach",
+      "rawName": " ",
+      "number": "01",
+      "img": "https://cdn.fussball.de/public/02S6G6NME0000000VS5489B1VVVAF4P8.stamp",
+      "obfuscationKey": "ju6icww8"
+    },
+    {
+      "id": "02KTD2JMH8000000VUM1DNR3VSVM7DLD",
+      "matchId": "02U2A4BV5S000000VS5489BTVV378D77",
+      "side": "away",
+      "name": "Ceyhun Alp Badur",
+      "rawName": "  ",
+      "number": "06",
+      "img": "https://cdn.fussball.de/public/02UDJT13A8000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "ju6icww8"
+    },
+    {
+      "id": "02C5M1AIVS000000VS5489B5VVQASLMA",
+      "matchId": "02U2A4BV5S000000VS5489BTVV378D77",
+      "side": "away",
+      "name": "Mert Cihangir",
+      "rawName": " ",
+      "number": "07",
+      "img": "https://cdn.fussball.de/public/02U99F0NJG000000VS5489C4VTI8BDHE.stamp",
+      "obfuscationKey": "ju6icww8"
+    },
+    {
+      "id": "02FNCAJJJ0000000VUM1DNOMVV3IHK8V",
+      "matchId": "02U2A4BV5S000000VS5489BTVV378D77",
+      "side": "away",
+      "name": "Taha Mehdi Demirel",
+      "rawName": "  ",
+      "number": "08",
+      "img": "https://cdn.fussball.de/public/02S5PQETDO000000VS5489BAVVMDJ9M6.stamp",
+      "obfuscationKey": "ju6icww8"
+    },
+    {
+      "id": "02G6D9K328000000VUM1DNQEVUU9RNE9",
+      "matchId": "02U2A4BV5S000000VS5489BTVV378D77",
+      "side": "away",
+      "name": "Mustafa Enhar Coban",
+      "rawName": "  ",
+      "number": "10",
+      "img": "https://images.media.fussball.de/userfiles/z/A/G/c0Eh9qloxjlOyUSdAzfSXz_p3.jpg",
+      "obfuscationKey": "ju6icww8"
+    },
+    {
+      "id": "02N0KOC0M0000000VUM1DNOVVV24E9BO",
+      "matchId": "02U2A4BV5S000000VS5489BTVV378D77",
+      "side": "away",
+      "name": "Necdet Efe Develi",
+      "rawName": "  ",
+      "number": "11",
+      "img": "https://images.media.fussball.de/userfiles/1/G/B/cvyAP0VAVd9Up2NWUfhHmz_p3.jpg",
+      "obfuscationKey": "ju6icww8"
+    },
+    {
+      "id": "023O7P4234000000VS54898FVSRFR5IV",
+      "matchId": "02U2A4BV5S000000VS5489BTVV378D77",
+      "side": "away",
+      "name": "Enes Malik Alan",
+      "rawName": "  ",
+      "number": "12",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "ju6icww8"
+    },
+    {
+      "id": "02SL922RM8000000VUM1D57FVSS0UOGB",
+      "matchId": "02U2A4BV5S000000VS5489BTVV378D77",
+      "side": "away",
+      "name": "Yunus Ensar Yigit",
+      "rawName": "  ",
+      "number": "04",
+      "img": "https://cdn.fussball.de/public/02U9AF1GFC000000VS5489C4VTI8BDHE.stamp",
+      "obfuscationKey": "ju6icww8"
+    },
+    {
+      "id": "02TB0C8VDO000000VUM1D561VT2AA10I",
+      "matchId": "02U2A4BV5S000000VS5489BTVV378D77",
+      "side": "away",
+      "name": "Amin Al Abbozi",
+      "rawName": "  ",
+      "number": "09",
+      "img": "https://cdn.fussball.de/public/02UB81ENLC000000VS5489C1VUDJB9US.stamp",
+      "obfuscationKey": "ju6icww8"
+    },
+    {
+      "id": "02FJMM9UHO000000VS5489B6VVVEC9F9",
+      "matchId": "02U2A4BV5S000000VS5489BTVV378D77",
+      "side": "away",
+      "name": "Mete Cihangir",
+      "rawName": " ",
+      "number": "18",
+      "img": "https://cdn.fussball.de/public/02S6G55LNK000000VS5489B1VVVAF4P8.stamp",
+      "obfuscationKey": "ju6icww8"
+    },
+    {
+      "id": "024PMJH85G000000VS541L4HVVHTAJEP",
+      "matchId": "02U2A4BV5S000000VS5489BTVV378D77",
+      "side": "away",
+      "name": "Mustafa Kurt",
+      "rawName": " ",
+      "number": "23",
+      "img": "https://cdn.fussball.de/public/02UI8UJSV8000000VS5489BTVT5EO5B1.stamp",
+      "obfuscationKey": "ju6icww8"
+    },
+    {
+      "id": "away___",
+      "matchId": "02U2A4BV5S000000VS5489BTVV378D77",
+      "side": "away",
+      "name": "Melih Ayyildiz",
+      "rawName": " ",
+      "number": "",
+      "img": "",
+      "obfuscationKey": "ju6icww8"
+    }
+  ],
+  "stableId": "02U2A4BV5S000000VS5489BTVV378D77",
+  "generatedAt": "2026-04-07T02:33:32.559Z",
+  "game": {
+    "home": "SV GE-Hessler",
+    "away": "SC Hassel",
+    "date": "12.10.2025",
+    "time": "11:00",
+    "competition": "Kreisliga A",
+    "ageGroup": "",
+    "spielId": "02U2A4BV5S000000VS5489BTVV378D77"
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "ok": true,
+  "matchId": "02TJ4JP4V0000000VS5489BTVV9SFN07",
+  "url": "https://www.fussball.de/spiel/sv-vestia-disteln-iii-sc-hassel-iii/-/spiel/02TJ4JP4V0000000VS5489BTVV9SFN07",
+  "home": "SV Vestia Disteln III",
+  "away": "SC Hassel III",
+  "ownSide": "away",
+  "count": 15,
+  "players": [
+    {
+      "id": "00MC79Q7AC000000VV0AG85VVSMHI0R7",
+      "matchId": "02TJ4JP4V0000000VS5489BTVV9SFN07",
+      "side": "away",
+      "name": "Uwe Langhans",
+      "rawName": " ",
+      "number": "20",
+      "img": "https://cdn.fussball.de/public/02TTGQ6OO4000000VS5489C1VSPL3397.stamp",
+      "obfuscationKey": "b8k27t1k"
+    },
+    {
+      "id": "017M8VHQ18000000VV0AG80NVTCBOR0A",
+      "matchId": "02TJ4JP4V0000000VS5489BTVV9SFN07",
+      "side": "away",
+      "name": "Oliver Paul Kmiecik",
+      "rawName": "  ",
+      "number": "29",
+      "img": "https://cdn.fussball.de/public/02TN9H0P6S000000VS5489C1VSTUJ3K2.stamp",
+      "obfuscationKey": "b8k27t1k"
+    },
+    {
+      "id": "02OLMMRVFO000000VUM1DNOHVU3AT64P",
+      "matchId": "02TJ4JP4V0000000VS5489BTVV9SFN07",
+      "side": "away",
+      "name": "Raphael Stang",
+      "rawName": " ",
+      "number": "32",
+      "img": "https://images.media.fussball.de/userfiles/R/7/J/bZ3VgdnM965H1FptOlXDp1_p3.jpg",
+      "obfuscationKey": "b8k27t1k"
+    },
+    {
+      "id": "02FCERNQU8000000VUM1DNOTVSIG8NIT",
+      "matchId": "02TJ4JP4V0000000VS5489BTVV9SFN07",
+      "side": "away",
+      "name": "Jan Lucas Engwer",
+      "rawName": "  ",
+      "number": "45",
+      "img": "https://cdn.fussball.de/public/02OJTT9EMC000000VS5489B6VVPB8G6Q.stamp",
+      "obfuscationKey": "b8k27t1k"
+    },
+    {
+      "id": "010HNIQ6MO000000VV0AG80NVSV2TEGB",
+      "matchId": "02TJ4JP4V0000000VS5489BTVV9SFN07",
+      "side": "away",
+      "name": "Fynn Peterek",
+      "rawName": " ",
+      "number": "50",
+      "img": "https://cdn.fussball.de/public/02TTH2H0HO000000VS5489C1VSPL3397.stamp",
+      "obfuscationKey": "b8k27t1k"
+    },
+    {
+      "id": "01Q909N5FO000000VV0AG80NVVSKMM61",
+      "matchId": "02TJ4JP4V0000000VS5489BTVV9SFN07",
+      "side": "away",
+      "name": "Fabrice Makulla",
+      "rawName": " ",
+      "number": "12",
+      "img": "https://cdn.fussball.de/public/02TTH20JR4000000VS5489C1VSPL3397.stamp",
+      "obfuscationKey": "b8k27t1k"
+    },
+    {
+      "id": "01V6HD2OJ8000000VS541L4GVTBC5RB5",
+      "matchId": "02TJ4JP4V0000000VS5489BTVV9SFN07",
+      "side": "away",
+      "name": "Jerome Przystav",
+      "rawName": " ",
+      "number": "08",
+      "img": "https://cdn.fussball.de/public/029L96540O000000VS5489B5VVG2UF8C.stamp",
+      "obfuscationKey": "b8k27t1k"
+    },
+    {
+      "id": "02SC944QVO000000VUM1D5A0VURGFM1G",
+      "matchId": "02TJ4JP4V0000000VS5489BTVV9SFN07",
+      "side": "away",
+      "name": "Ben Louis Momma",
+      "rawName": "  ",
+      "number": "14",
+      "img": "https://cdn.fussball.de/public/02TTH2A5I8000000VS5489C1VSPL3397.stamp",
+      "obfuscationKey": "b8k27t1k"
+    },
+    {
+      "id": "02SHDTS3T4000000VUM1D50QVSUREU2L",
+      "matchId": "02TJ4JP4V0000000VS5489BTVV9SFN07",
+      "side": "away",
+      "name": "Yusif Mahir Oglu Bayramov",
+      "rawName": "   ",
+      "number": "15",
+      "img": "https://cdn.fussball.de/public/02T2NBEUC8000000VS5489C2VURGIJAT.stamp",
+      "obfuscationKey": "b8k27t1k"
+    },
+    {
+      "id": "02QEN3TJNO000000VUM1D53UVTP5654J",
+      "matchId": "02TJ4JP4V0000000VS5489BTVV9SFN07",
+      "side": "away",
+      "name": "Miguel Marvin Gutowski",
+      "rawName": "  ",
+      "number": "16",
+      "img": "https://images.media.fussball.de/userfiles/4/s/M/fFT1S2cYukIeY6L9MTsUez_p3.jpg",
+      "obfuscationKey": "b8k27t1k"
+    },
+    {
+      "id": "00OVIVRNK8000000VV0AG83KVT283J6L",
+      "matchId": "02TJ4JP4V0000000VS5489BTVV9SFN07",
+      "side": "away",
+      "name": "Burak Ünal",
+      "rawName": " ",
+      "number": "18",
+      "img": "https://cdn.fussball.de/public/02URL42G2K000000VS5489C4VT4B9A51.stamp",
+      "obfuscationKey": "b8k27t1k"
+    },
+    {
+      "id": "02STRVURH8000000VUM1D59MVSJE50KM",
+      "matchId": "02TJ4JP4V0000000VS5489BTVV9SFN07",
+      "side": "away",
+      "name": "Nick Andre Klink",
+      "rawName": "  ",
+      "number": "26",
+      "img": "https://images.media.fussball.de/userfiles/a/v/x/tT6uMaeYcPbQRDz5UtODW1_p3.jpg",
+      "obfuscationKey": "b8k27t1k"
+    },
+    {
+      "id": "028CLTQR5K000000VS541L4KVT4E998U",
+      "matchId": "02TJ4JP4V0000000VS5489BTVV9SFN07",
+      "side": "away",
+      "name": "Sinan Bice",
+      "rawName": " ",
+      "number": "35",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "b8k27t1k"
+    },
+    {
+      "id": "01P895T43C000000VS541L4FVUE0IEIK",
+      "matchId": "02TJ4JP4V0000000VS5489BTVV9SFN07",
+      "side": "away",
+      "name": "Nico Mühlpfordt",
+      "rawName": " ",
+      "number": "95",
+      "img": "https://cdn.fussball.de/public/02OJTUVI84000000VS5489B6VVPB8G6Q.stamp",
+      "obfuscationKey": "b8k27t1k"
+    }
+  ],
+  "stableId": "02TJ4JP4V0000000VS5489BTVV9SFN07",
+  "generatedAt": "2026-04-07T02:33:32.559Z",
+  "game": {
+    "home": "SV Vestia Disteln III",
+    "away": "SC Hassel III",
+    "date": "20.07.2025",
+    "time": "13:00",
+    "competition": "Kreisfreundschaftsspiele",
+    "ageGroup": "",
+    "spielId": "02TJ4JP4V0000000VS5489BTVV9SFN07"
+  }
+}

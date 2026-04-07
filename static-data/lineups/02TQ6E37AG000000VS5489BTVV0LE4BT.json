@@ -1,0 +1,20 @@
+{
+  "ok": false,
+  "error": "lineup_not_available",
+  "message": "Waiting for selector `.player-wrapper.home, .player-wrapper.away` failed",
+  "matchId": "02TQ6E37AG000000VS5489BTVV0LE4BT",
+  "home": "FC Marokko Herne",
+  "away": "SC Hassel",
+  "players": [],
+  "stableId": "02TQ6E37AG000000VS5489BTVV0LE4BT",
+  "generatedAt": "2026-04-07T02:33:32.559Z",
+  "game": {
+    "home": "FC Marokko Herne",
+    "away": "SC Hassel",
+    "date": "25.05.2026",
+    "time": "15:00",
+    "competition": "Bezirksliga",
+    "ageGroup": "",
+    "spielId": "02TQ6E37AG000000VS5489BTVV0LE4BT"
+  }
+}

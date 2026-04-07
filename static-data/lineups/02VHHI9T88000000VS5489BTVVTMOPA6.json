@@ -1,0 +1,62 @@
+{
+  "ok": true,
+  "matchId": "02VHHI9T88000000VS5489BTVVTMOPA6",
+  "url": "https://www.fussball.de/spiel/sc-hassel-sv-bommern/-/spiel/02VHHI9T88000000VS5489BTVVTMOPA6",
+  "home": "SC Hassel",
+  "away": "SV Bommern",
+  "ownSide": "home",
+  "count": 19,
+  "players": [
+    {
+      "id": "00P377IHD4000000VV0AG83KVSA2TTUM",
+      "matchId": "02VHHI9T88000000VS5489BTVVTMOPA6",
+      "side": "home",
+      "name": "Maurice Hövel",
+      "rawName": " ",
+      "number": "15",
+      "img": "https://cdn.fussball.de/public/02VKIN5H5O000000VS5489C2VU4VO0A5.stamp",
+      "obfuscationKey": "j38tc76g"
+    },
+    {
+      "id": "00P1KHBNQS000000VV0AG83KVSA2TTUM",
+      "matchId": "02VHHI9T88000000VS5489BTVVTMOPA6",
+      "side": "home",
+      "name": "Burak Aydin",
+      "rawName": " ",
+      "number": "23",
+      "img": "https://cdn.fussball.de/public/02S7PFG8GS000000VS5489B1VVVAF4P8.stamp",
+      "obfuscationKey": "j38tc76g"
+    },
+    {
+      "id": "02J7KRNHE8000000VUM1DNORVTH5RBQH",
+      "matchId": "02VHHI9T88000000VS5489BTVVTMOPA6",
+      "side": "home",
+      "name": "Phil Kückelmann",
+      "rawName": " ",
+      "number": "07",
+      "img": "https://cdn.fussball.de/public/02VKINRUKO000000VS5489C2VU4VO0A5.stamp",
+      "obfuscationKey": "j38tc76g"
+    },
+    {
+      "id": "home___",
+      "matchId": "02VHHI9T88000000VS5489BTVVTMOPA6",
+      "side": "home",
+      "name": "Seldin Malkoc",
+      "rawName": " ",
+      "number": "",
+      "img": "",
+      "obfuscationKey": "j38tc76g"
+    }
+  ],
+  "stableId": "02VHHI9T88000000VS5489BTVVTMOPA6",
+  "generatedAt": "2026-04-07T02:33:32.559Z",
+  "game": {
+    "home": "SC Hassel",
+    "away": "SV Bommern",
+    "date": "15.02.2026",
+    "time": "15:00",
+    "competition": "Kreisfreundschaftsspiele",
+    "ageGroup": "",
+    "spielId": "02VHHI9T88000000VS5489BTVVTMOPA6"
+  }
+}

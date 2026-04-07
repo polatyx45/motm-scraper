@@ -1,0 +1,20 @@
+{
+  "ok": false,
+  "error": "lineup_not_available",
+  "message": "Waiting for selector `.player-wrapper.home, .player-wrapper.away` failed",
+  "matchId": "02THS42FB8000000VS5489BUVVSMDEIN",
+  "home": "SC Hassel II",
+  "away": "Rot-Weiß Wacker Bismarck",
+  "players": [],
+  "stableId": "02THS42FB8000000VS5489BUVVSMDEIN",
+  "generatedAt": "2026-04-07T02:33:32.559Z",
+  "game": {
+    "home": "SC Hassel II",
+    "away": "Rot-Weiß Wacker Bismarck",
+    "date": "27.07.2025",
+    "time": "13:00",
+    "competition": "Kreisfreundschaftsspiele",
+    "ageGroup": "",
+    "spielId": "02THS42FB8000000VS5489BUVVSMDEIN"
+  }
+}

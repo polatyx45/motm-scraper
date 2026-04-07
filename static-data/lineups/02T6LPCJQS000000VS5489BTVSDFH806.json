@@ -1,0 +1,21 @@
+{
+  "ok": true,
+  "matchId": "02T6LPCJQS000000VS5489BTVSDFH806",
+  "url": "https://www.fussball.de/spiel/sc-hassel-ii-sv-wanne-1911-ii/-/spiel/02T6LPCJQS000000VS5489BTVSDFH806",
+  "home": "SC Hassel II",
+  "away": "SV Wanne 1911 II",
+  "ownSide": "home",
+  "count": 0,
+  "players": [],
+  "stableId": "02T6LPCJQS000000VS5489BTVSDFH806",
+  "generatedAt": "2026-04-07T02:33:32.559Z",
+  "game": {
+    "home": "SC Hassel II",
+    "away": "SV Wanne 1911 II",
+    "date": "06.07.2025",
+    "time": "13:12",
+    "competition": "Vereinsturnier",
+    "ageGroup": "",
+    "spielId": "02T6LPCJQS000000VS5489BTVSDFH806"
+  }
+}

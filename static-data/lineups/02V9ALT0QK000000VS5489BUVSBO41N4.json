@@ -1,0 +1,212 @@
+{
+  "ok": true,
+  "matchId": "02V9ALT0QK000000VS5489BUVSBO41N4",
+  "url": "https://www.fussball.de/spiel/sc-hassel-genclerbirligi-resse/-/spiel/02V9ALT0QK000000VS5489BUVSBO41N4",
+  "home": "SC Hassel",
+  "away": "Genclerbirligi Resse",
+  "ownSide": "home",
+  "count": 19,
+  "players": [
+    {
+      "id": "02IOE26G8S000000VS5489B5VT8KI14O",
+      "matchId": "02V9ALT0QK000000VS5489BUVSBO41N4",
+      "side": "home",
+      "name": "Denizhan Fahri Yaman",
+      "rawName": "  ",
+      "number": "31",
+      "img": "https://cdn.fussball.de/public/02UDK1V6A8000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "2sv15tzf"
+    },
+    {
+      "id": "01GFH3DUIG000000VV0AG80NVVVJNO1A",
+      "matchId": "02V9ALT0QK000000VS5489BUVSBO41N4",
+      "side": "home",
+      "name": "Jeremy Komossa",
+      "rawName": " ",
+      "number": "03",
+      "img": "https://cdn.fussball.de/public/02UDJVA1D4000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "2sv15tzf"
+    },
+    {
+      "id": "01LVKGSK48000000VV0AG80NVTMPTR0P",
+      "matchId": "02V9ALT0QK000000VS5489BUVSBO41N4",
+      "side": "home",
+      "name": "Marcin Szydlowski",
+      "rawName": " ",
+      "number": "05",
+      "img": "https://cdn.fussball.de/public/02UDK0P084000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "2sv15tzf"
+    },
+    {
+      "id": "01RU3BQI38000000VS548985VVU1KLMG",
+      "matchId": "02V9ALT0QK000000VS5489BUVSBO41N4",
+      "side": "home",
+      "name": "Mertcan Aydin",
+      "rawName": " ",
+      "number": "06",
+      "img": "https://cdn.fussball.de/public/02UDJSQAMS000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "2sv15tzf"
+    },
+    {
+      "id": "02R7PUG0FO000000VUM1D55MVV2P8RIT",
+      "matchId": "02V9ALT0QK000000VS5489BUVSBO41N4",
+      "side": "home",
+      "name": "Eymen Günes",
+      "rawName": " ",
+      "number": "07",
+      "img": "https://cdn.fussball.de/public/02UDJUP3H4000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "2sv15tzf"
+    },
+    {
+      "id": "020C1K9L7C000000VS54898GVTHALE2V",
+      "matchId": "02V9ALT0QK000000VS5489BUVSBO41N4",
+      "side": "home",
+      "name": "Niklas Paul Brzoza",
+      "rawName": "  ",
+      "number": "08",
+      "img": "https://cdn.fussball.de/public/030F4V7I1G000000VS5489C2VTG56FE8.stamp",
+      "obfuscationKey": "2sv15tzf"
+    },
+    {
+      "id": "02MJHOSL2O000000VUM1DNOIVS7F3QJB",
+      "matchId": "02V9ALT0QK000000VS5489BUVSBO41N4",
+      "side": "home",
+      "name": "Jonas Marcel Schumacher",
+      "rawName": "  ",
+      "number": "09",
+      "img": "https://images.media.fussball.de/userfiles/J/o/i/UPtaewaR5xZX6ctjYyp0iz_p3.jpg",
+      "obfuscationKey": "2sv15tzf"
+    },
+    {
+      "id": "02MOVD3C50000000VUM1DNO8VUS6Q1B8",
+      "matchId": "02V9ALT0QK000000VS5489BUVSBO41N4",
+      "side": "home",
+      "name": "Ibrahim Furkan Kuru",
+      "rawName": "  ",
+      "number": "10",
+      "img": "https://cdn.fussball.de/public/02UIBB442K000000VS5489C1VSAG571E.stamp",
+      "obfuscationKey": "2sv15tzf"
+    },
+    {
+      "id": "024UQ74RBG000000VS54898GVUHV18I1",
+      "matchId": "02V9ALT0QK000000VS5489BUVSBO41N4",
+      "side": "home",
+      "name": "Selame Hamsa",
+      "rawName": " ",
+      "number": "11",
+      "img": "https://cdn.fussball.de/public/02VD1NJDSC000000VS5489BVVSF4J3TK.stamp",
+      "obfuscationKey": "2sv15tzf"
+    },
+    {
+      "id": "02QN5J0RR0000000VUM1D53HVTL9MO41",
+      "matchId": "02V9ALT0QK000000VS5489BUVSBO41N4",
+      "side": "home",
+      "name": "Bekir Veselji",
+      "rawName": " ",
+      "number": "17",
+      "img": "https://cdn.fussball.de/public/02UDK1M3NK000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "2sv15tzf"
+    },
+    {
+      "id": "02S427FA18000000VS5489B7VV1RMA4H",
+      "matchId": "02V9ALT0QK000000VS5489BUVSBO41N4",
+      "side": "home",
+      "name": "Naser Almoussaalanezi",
+      "rawName": " ",
+      "number": "20",
+      "img": "https://cdn.fussball.de/public/02UDJSI208000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "2sv15tzf"
+    },
+    {
+      "id": "023K0TP7KG000000VS54898FVVR4HGAN",
+      "matchId": "02V9ALT0QK000000VS5489BUVSBO41N4",
+      "side": "home",
+      "name": "Zaid Helal",
+      "rawName": " ",
+      "number": "04",
+      "img": "https://cdn.fussball.de/public/02UVADN92S000000VS5489C1VUAE8UCV.stamp",
+      "obfuscationKey": "2sv15tzf"
+    },
+    {
+      "id": "02S0H4G2FS000000VS5489B8VUQBPEFO",
+      "matchId": "02V9ALT0QK000000VS5489BUVSBO41N4",
+      "side": "home",
+      "name": "Veli Arda Gülhan",
+      "rawName": "  ",
+      "number": "12",
+      "img": "https://cdn.fussball.de/public/0301DMQ8U4000000VS5489C4VT4777LR.stamp",
+      "obfuscationKey": "2sv15tzf"
+    },
+    {
+      "id": "026HCDFQVO000000VS5489B6VU1J6RLI",
+      "matchId": "02V9ALT0QK000000VS5489BUVSBO41N4",
+      "side": "home",
+      "name": "Mikail Zinxhiria",
+      "rawName": " ",
+      "number": "13",
+      "img": "https://cdn.fussball.de/public/02UDK28C8S000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "2sv15tzf"
+    },
+    {
+      "id": "02A0O4I97O000000VS5489B5VU9R61K2",
+      "matchId": "02V9ALT0QK000000VS5489BUVSBO41N4",
+      "side": "home",
+      "name": "Antonio Margina",
+      "rawName": " ",
+      "number": "15",
+      "img": "https://cdn.fussball.de/public/02UDJVK29C000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "2sv15tzf"
+    },
+    {
+      "id": "02QMD0JI58000000VUM1D570VSFEAFHL",
+      "matchId": "02V9ALT0QK000000VS5489BUVSBO41N4",
+      "side": "home",
+      "name": "Adem Akkus",
+      "rawName": " ",
+      "number": "16",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "2sv15tzf"
+    },
+    {
+      "id": "02OGC8UAQ8000000VUM1DNO6VSU8RSKC",
+      "matchId": "02V9ALT0QK000000VS5489BUVSBO41N4",
+      "side": "home",
+      "name": "Marvin Buchmann",
+      "rawName": " ",
+      "number": "18",
+      "img": "https://cdn.fussball.de/public/02UDJTH13O000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "2sv15tzf"
+    },
+    {
+      "id": "02NID6MO00000000VUM1DNP7VU6DA5CP",
+      "matchId": "02V9ALT0QK000000VS5489BUVSBO41N4",
+      "side": "home",
+      "name": "Mhd Nour Rabah",
+      "rawName": "  ",
+      "number": "19",
+      "img": "https://cdn.fussball.de/public/02UDJVTPQ8000000VS5489BVVTFDUQ0U.stamp",
+      "obfuscationKey": "2sv15tzf"
+    },
+    {
+      "id": "home___",
+      "matchId": "02V9ALT0QK000000VS5489BUVSBO41N4",
+      "side": "home",
+      "name": "Holger Fabricius",
+      "rawName": " ",
+      "number": "",
+      "img": "",
+      "obfuscationKey": "2sv15tzf"
+    }
+  ],
+  "stableId": "02V9ALT0QK000000VS5489BUVSBO41N4",
+  "generatedAt": "2026-04-07T02:33:32.559Z",
+  "game": {
+    "home": "SC Hassel",
+    "away": "Genclerbirligi Resse",
+    "date": "17.01.2026",
+    "time": "13:30",
+    "competition": "Kreisfreundschaftsspiele",
+    "ageGroup": "",
+    "spielId": "02V9ALT0QK000000VS5489BUVSBO41N4"
+  }
+}
