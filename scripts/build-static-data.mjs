@@ -11,6 +11,7 @@ const lineupsDir = path.join(outputDir, "lineups");
 const historyFile = path.join(outputDir, "history.json");
 const serverPort = process.env.PORT || "3000";
 const serverOrigin = process.env.SCRAPER_BASE_URL || `http://127.0.0.1:${serverPort}`;
+const FETCH_TIMEOUT_MS = 15 * 60 * 1000;
 
 function log(message) {
   console.log(`[build-static] ${message}`);
@@ -64,15 +65,53 @@ function getTeamKey(game) {
   return String(game?.teamId || game?.sourceLabel || "").trim();
 }
 
+function collectTeamRequests(...gameLists) {
+  const map = new Map();
+
+  for (const gameList of gameLists) {
+    for (const game of gameList || []) {
+      const teamId = String(game?.teamId || "").trim();
+      if (!teamId) continue;
+
+      const existing = map.get(teamId) || { teamId, label: "" };
+      if (!existing.label && String(game?.sourceLabel || "").trim()) {
+        existing.label = String(game.sourceLabel).trim();
+      }
+      map.set(teamId, existing);
+    }
+  }
+
+  return [...map.values()];
+}
+
+function buildTeamScheduleUrl({ teamId, label = "", includePast = false, force = true }) {
+  const params = new URLSearchParams({
+    teamId: String(teamId || ""),
+    label: String(label || ""),
+    includePast: includePast ? "1" : "0",
+    force: force ? "1" : "0"
+  });
+
+  return `${serverOrigin}/team-schedule?${params.toString()}`;
+}
+
 function summarizeMatch(game) {
   return {
     home: game.home || "",
     away: game.away || "",
+    homeLogo: game.homeLogo || "",
+    awayLogo: game.awayLogo || "",
     competition: game.competition || "",
     date: game.date || "",
     time: game.time || "",
     ageGroup: game.ageGroup || "",
     spielId: game.spielId || game.matchId || "",
+    status: game.status || "",
+    result: game.result || "",
+    resultDisplay: game.resultDisplay || "",
+    resultType: game.resultType || "",
+    resultVerified: Boolean(game.resultVerified),
+    venueType: game.venueType || "",
     stableId: getStableGameId(game),
     resolvedBy: game.resolvedBy || "",
     sourceLabel: game.sourceLabel || "",
@@ -207,9 +246,21 @@ function buildHistoryGames(...gameLists) {
     const stableId = getStableGameId(game);
     if (!stableId) return;
 
-    if (!byId.has(stableId)) {
-      byId.set(stableId, summarizeMatch(game));
+    const summary = summarizeMatch(game);
+    const existing = byId.get(stableId);
+    if (!existing) {
+      byId.set(stableId, summary);
+      return;
     }
+
+    const merged = { ...existing };
+    for (const [key, value] of Object.entries(summary)) {
+      if (!String(merged[key] || "").trim() && String(value || "").trim()) {
+        merged[key] = value;
+      }
+    }
+
+    byId.set(stableId, merged);
   }
 
   for (const gameList of gameLists) {
@@ -238,7 +289,8 @@ function buildLineupUrl(game) {
 async function fetchJson(url) {
   const response = await fetch(url, {
     cache: "no-store",
-    headers: { accept: "application/json" }
+    headers: { accept: "application/json" },
+    signal: AbortSignal.timeout(FETCH_TIMEOUT_MS)
   });
   const text = await response.text();
 
@@ -264,7 +316,7 @@ async function waitForServer(timeoutMs = 120000) {
 
   while (Date.now() - startedAt < timeoutMs) {
     try {
-      const data = await fetchJson(`${serverOrigin}/matches`);
+      const data = await fetchJson(`${serverOrigin}/health`);
       if (data?.ok) {
         return;
       }
@@ -307,7 +359,20 @@ async function collectStaticData() {
   const committedExportGames = await readCommittedExportGames();
   const previousExportGames = await readPreviousExportGames();
   const historicalGames = await readHistoricalGames();
+  const teamRequests = collectTeamRequests(committedExportGames, historicalGames, previousExportGames, games);
+  const enrichedTeamScheduleGames = [];
+
+  for (const teamRequest of teamRequests) {
+    try {
+      const payload = await fetchJson(buildTeamScheduleUrl({ ...teamRequest, includePast: true, force: true }));
+      enrichedTeamScheduleGames.push(...(Array.isArray(payload?.matches) ? payload.matches : []));
+    } catch (error) {
+      log(`Skipping schedule enrichment for ${teamRequest.teamId}: ${error instanceof Error ? error.message : String(error)}`);
+    }
+  }
+
   const previousGamesByTeam = buildPreviousGamesByTeam([
+    ...enrichedTeamScheduleGames,
     ...committedExportGames,
     ...historicalGames,
     ...previousExportGames
@@ -419,8 +484,8 @@ async function collectStaticData() {
 
   const historyPayload = {
     generatedAt,
-    count: buildHistoryGames(committedExportGames, historicalGames, previousExportGames, staticGames).length,
-    games: buildHistoryGames(committedExportGames, historicalGames, previousExportGames, staticGames)
+    count: buildHistoryGames(enrichedTeamScheduleGames, committedExportGames, historicalGames, previousExportGames, staticGames).length,
+    games: buildHistoryGames(enrichedTeamScheduleGames, committedExportGames, historicalGames, previousExportGames, staticGames)
   };
 
   await fs.writeFile(path.join(outputDir, "matches.json"), JSON.stringify(matchesPayload, null, 2), "utf8");
