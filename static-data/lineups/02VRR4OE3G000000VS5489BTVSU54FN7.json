@@ -6,9 +6,20 @@
   "away": "YEG HASSEL III",
   "ownSide": "home",
   "count": 13,
-  "players": [],
+  "players": [
+    {
+      "id": "home___",
+      "matchId": "02VRR4OE3G000000VS5489BTVSU54FN7",
+      "side": "home",
+      "name": "Aykan Yildiz",
+      "rawName": " ",
+      "number": "",
+      "img": "",
+      "obfuscationKey": "9dsetytu"
+    }
+  ],
   "stableId": "02VRR4OE3G000000VS5489BTVSU54FN7",
-  "generatedAt": "2026-04-07T02:33:32.559Z",
+  "generatedAt": "2026-04-07T06:14:04.890Z",
   "game": {
     "home": "SC Hassel II",
     "away": "YEG HASSEL III",

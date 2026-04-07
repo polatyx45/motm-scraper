@@ -6,9 +6,20 @@
   "away": "SpVgg Erle 1919",
   "ownSide": "home",
   "count": 9,
-  "players": [],
+  "players": [
+    {
+      "id": "home___",
+      "matchId": "02SQ12DKSK000000VS5489B4VTF03LPG",
+      "side": "home",
+      "name": "Mahmut Aydin",
+      "rawName": " ",
+      "number": "",
+      "img": "",
+      "obfuscationKey": "1ogtpd47"
+    }
+  ],
   "stableId": "02SQ12DKSK000000VS5489B4VTF03LPG",
-  "generatedAt": "2026-04-07T02:33:32.559Z",
+  "generatedAt": "2026-04-07T06:14:04.890Z",
   "game": {
     "home": "SC Hassel II",
     "away": "SpVgg Erle 1919",

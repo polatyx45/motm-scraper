@@ -12,14 +12,24 @@
       "matchId": "02U2A69VB4000000VS5489BTVV378D77",
       "side": "home",
       "name": "Ahmad Khalil",
-      "rawName": " ",
+      "rawName": " ",
       "number": "07",
       "img": "https://cdn.fussball.de/public/02HE8VRTO0000000VS5489B5VSOKIG1V.stamp",
-      "obfuscationKey": "3opwr2gi"
+      "obfuscationKey": "tb3kfjqs"
+    },
+    {
+      "id": "home___",
+      "matchId": "02U2A69VB4000000VS5489BTVV378D77",
+      "side": "home",
+      "name": "Mahmut Aydin",
+      "rawName": " ",
+      "number": "",
+      "img": "",
+      "obfuscationKey": "tb3kfjqs"
     }
   ],
   "stableId": "02U2A69VB4000000VS5489BTVV378D77",
-  "generatedAt": "2026-04-07T02:33:32.559Z",
+  "generatedAt": "2026-04-07T06:14:04.890Z",
   "game": {
     "home": "SC Hassel II",
     "away": "BV Rentfort II",
