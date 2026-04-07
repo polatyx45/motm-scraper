@@ -1592,7 +1592,7 @@ async function resolveNameFromProfile(browser, href) {
   }
 }
 
-async function loadWeekGamesData({ includeUnresolved = false } = {}) {
+async function loadWeekGamesData({ includeUnresolved = false, includePreviousMatches = true } = {}) {
   const votingWindow = getActiveVotingWindow();
   const response = await fetch(TICKER_API, {
     cache: "no-store",
@@ -1613,10 +1613,13 @@ async function loadWeekGamesData({ includeUnresolved = false } = {}) {
   const mergedGames = mergeGames([...teamGames, ...resolvedFeedGames]).filter((game) =>
     includeUnresolved ? game.home && game.away : game.spielId && game.home && game.away
   );
+  const games = includePreviousMatches
+    ? attachPreviousMatches(mergedGames, teamIndex.matches)
+    : mergedGames;
 
   return {
     votingWindow,
-    games: attachPreviousMatches(mergedGames, teamIndex.matches)
+    games
   };
 }
 
@@ -1836,6 +1839,28 @@ app.get("/matches", async (_req, res) => {
       loadHistoryWeekGamesData().catch(() => ({ games: [] }))
     ]);
     const games = mergeGames([...historyWeekGames, ...currentGames]);
+    res.json({
+      ok: true,
+      generatedAt: new Date().toISOString(),
+      votingWindow,
+      count: games.length,
+      games
+    });
+  } catch (error) {
+    res.status(500).json({
+      ok: false,
+      error: error instanceof Error ? error.message : String(error),
+      games: []
+    });
+  }
+});
+
+app.get("/matches-lite", async (_req, res) => {
+  try {
+    const { games, votingWindow } = await loadWeekGamesData({
+      includeUnresolved: true,
+      includePreviousMatches: false
+    });
     res.json({
       ok: true,
       generatedAt: new Date().toISOString(),
