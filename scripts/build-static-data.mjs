@@ -86,6 +86,23 @@ function collectTeamRequests(...gameLists) {
   return [...map.values()];
 }
 
+function mapWithConcurrency(items, limit, iteratee) {
+  const values = Array.isArray(items) ? items : [];
+  const concurrency = Math.max(1, Math.min(limit || 1, values.length || 1));
+  const results = new Array(values.length);
+  let nextIndex = 0;
+
+  async function worker() {
+    while (nextIndex < values.length) {
+      const currentIndex = nextIndex;
+      nextIndex += 1;
+      results[currentIndex] = await iteratee(values[currentIndex], currentIndex);
+    }
+  }
+
+  return Promise.all(Array.from({ length: concurrency }, () => worker())).then(() => results);
+}
+
 function buildTeamScheduleUrl({ teamId, label = "", includePast = false, force = true }) {
   const params = new URLSearchParams({
     teamId: String(teamId || ""),
@@ -388,15 +405,21 @@ async function collectStaticData() {
   const committedExportGames = await readCommittedExportGames();
   const previousExportGames = await readPreviousExportGames();
   const historicalGames = await readHistoricalGames();
-  const teamRequests = collectTeamRequests(committedExportGames, historicalGames, previousExportGames, games);
+  const teamRequests = collectTeamRequests(games);
   const enrichedTeamScheduleGames = [];
 
-  for (const teamRequest of teamRequests) {
+  const teamSchedulePayloads = await mapWithConcurrency(teamRequests, 4, async (teamRequest) => {
     try {
-      const payload = await fetchJson(buildTeamScheduleUrl({ ...teamRequest, includePast: true, force: true }));
-      enrichedTeamScheduleGames.push(...(Array.isArray(payload?.matches) ? payload.matches : []));
+      return await fetchJson(buildTeamScheduleUrl({ ...teamRequest, includePast: true, force: true }));
     } catch (error) {
       log(`Skipping schedule enrichment for ${teamRequest.teamId}: ${error instanceof Error ? error.message : String(error)}`);
+      return null;
+    }
+  });
+
+  for (const payload of teamSchedulePayloads) {
+    if (Array.isArray(payload?.matches)) {
+      enrichedTeamScheduleGames.push(...payload.matches);
     }
   }
 
@@ -423,16 +446,12 @@ async function collectStaticData() {
     }
   }
 
-  for (const teamGames of previousGamesByTeam.values()) {
-    teamGames.forEach((game) => registerExportTarget(game));
-  }
-
   for (const game of games) {
     registerExportTarget(game);
     registerExportTarget(game.previousMatch);
   }
 
-  for (const target of exportTargets.values()) {
+  await mapWithConcurrency([...exportTargets.values()], 4, async (target) => {
     log(`Loading lineup for ${target.stableId} (${target.home} - ${target.away})`);
 
     let lineupData;
@@ -468,7 +487,7 @@ async function collectStaticData() {
     );
 
     lineupSnapshots.set(target.stableId, lineupPayload);
-  }
+  });
 
   for (const game of games) {
     const stableId = getStableGameId(game);
@@ -511,10 +530,17 @@ async function collectStaticData() {
     }))
   };
 
+  const historyGames = buildHistoryGames(
+    enrichedTeamScheduleGames,
+    committedExportGames,
+    historicalGames,
+    previousExportGames,
+    staticGames
+  );
   const historyPayload = {
     generatedAt,
-    count: buildHistoryGames(enrichedTeamScheduleGames, committedExportGames, historicalGames, previousExportGames, staticGames).length,
-    games: buildHistoryGames(enrichedTeamScheduleGames, committedExportGames, historicalGames, previousExportGames, staticGames)
+    count: historyGames.length,
+    games: historyGames
   };
 
   await fs.writeFile(path.join(outputDir, "matches.json"), JSON.stringify(matchesPayload, null, 2), "utf8");
