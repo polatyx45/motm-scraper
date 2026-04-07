@@ -6,9 +6,20 @@
   "away": "SC Hassel",
   "ownSide": "away",
   "count": 21,
-  "players": [],
+  "players": [
+    {
+      "id": "away___",
+      "matchId": "02VUD8CORG000000VS5489BUVUB1P7A6",
+      "side": "away",
+      "name": "Seldin Malkoc",
+      "rawName": " ",
+      "number": "",
+      "img": "",
+      "obfuscationKey": "ju6icww8"
+    }
+  ],
   "stableId": "02VUD8CORG000000VS5489BUVUB1P7A6",
-  "generatedAt": "2026-04-07T06:14:04.890Z",
+  "generatedAt": "2026-04-07T10:16:28.905Z",
   "game": {
     "home": "SuS GW Barkenberg",
     "away": "SC Hassel",
