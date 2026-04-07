@@ -12,24 +12,14 @@
       "matchId": "02VTHUAQGO000000VS5489BTVUKESBFG",
       "side": "away",
       "name": "Joel David Gudzik",
-      "rawName": "  ",
+      "rawName": "  ",
       "number": "52",
       "img": "https://cdn.fussball.de/public/02KT31N57K000000VS5489BCVTEGAR3G.stamp",
-      "obfuscationKey": "jwuko8c8"
-    },
-    {
-      "id": "away___",
-      "matchId": "02VTHUAQGO000000VS5489BTVUKESBFG",
-      "side": "away",
-      "name": "Almin Kapic",
-      "rawName": " ",
-      "number": "",
-      "img": "",
-      "obfuscationKey": "jwuko8c8"
+      "obfuscationKey": "651fhlo5"
     }
   ],
   "stableId": "02VTHUAQGO000000VS5489BTVUKESBFG",
-  "generatedAt": "2026-04-07T10:16:28.905Z",
+  "generatedAt": "2026-04-07T12:32:18.227Z",
   "game": {
     "home": "SSV/​FCA Rotthausen",
     "away": "SC Hassel II",

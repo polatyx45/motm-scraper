@@ -12,24 +12,14 @@
       "matchId": "02VTUBEEK4000000VS5489BTVUKESBFG",
       "side": "away",
       "name": "Joel David Gudzik",
-      "rawName": "  ",
+      "rawName": "  ",
       "number": "52",
       "img": "https://cdn.fussball.de/public/02KT31N57K000000VS5489BCVTEGAR3G.stamp",
-      "obfuscationKey": "qtsr1797"
-    },
-    {
-      "id": "away___",
-      "matchId": "02VTUBEEK4000000VS5489BTVUKESBFG",
-      "side": "away",
-      "name": "Almin Kapic",
-      "rawName": " ",
-      "number": "",
-      "img": "",
-      "obfuscationKey": "qtsr1797"
+      "obfuscationKey": "g5wbfs75"
     }
   ],
   "stableId": "02VTUBEEK4000000VS5489BTVUKESBFG",
-  "generatedAt": "2026-04-07T10:16:28.905Z",
+  "generatedAt": "2026-04-07T12:32:18.227Z",
   "game": {
     "home": "YEG HASSEL II",
     "away": "SC Hassel II",
