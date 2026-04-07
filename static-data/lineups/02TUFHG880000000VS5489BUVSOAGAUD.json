@@ -12,94 +12,94 @@
       "matchId": "02TUFHG880000000VS5489BUVSOAGAUD",
       "side": "home",
       "name": "Devincan Bach",
-      "rawName": " ",
+      "rawName": " ",
       "number": "01",
       "img": "https://cdn.fussball.de/public/02S6G6NME0000000VS5489B1VVVAF4P8.stamp",
-      "obfuscationKey": "zoymxbcu"
+      "obfuscationKey": "1fs0xqtr"
     },
     {
       "id": "02TTE3LRTG000000VUM1D52BVT71KTSR",
       "matchId": "02TUFHG880000000VS5489BUVSOAGAUD",
       "side": "home",
       "name": "Halil Yüksel",
-      "rawName": " ",
+      "rawName": " ",
       "number": "03",
       "img": "https://cdn.fussball.de/public/02S9KSGP30000000VS5489BAVS6CUPS2.stamp",
-      "obfuscationKey": "zoymxbcu"
+      "obfuscationKey": "1fs0xqtr"
     },
     {
       "id": "02FJMM9UHO000000VS5489B6VVVEC9F9",
       "matchId": "02TUFHG880000000VS5489BUVSOAGAUD",
       "side": "home",
       "name": "Mete Cihangir",
-      "rawName": " ",
+      "rawName": " ",
       "number": "06",
       "img": "https://cdn.fussball.de/public/02S6G55LNK000000VS5489B1VVVAF4P8.stamp",
-      "obfuscationKey": "zoymxbcu"
+      "obfuscationKey": "1fs0xqtr"
     },
     {
       "id": "02G6DS6SEO000000VUM1DNQVVSOUBCL2",
       "matchId": "02TUFHG880000000VS5489BUVSOAGAUD",
       "side": "home",
       "name": "Arda Saracoglu",
-      "rawName": " ",
+      "rawName": " ",
       "number": "07",
       "img": "https://cdn.fussball.de/public/02VQLLBKG0000000VS5489C1VU8CK9NF.stamp",
-      "obfuscationKey": "zoymxbcu"
+      "obfuscationKey": "1fs0xqtr"
     },
     {
       "id": "02J909TK48000000VUM1DNOOVUNNS1VK",
       "matchId": "02TUFHG880000000VS5489BUVSOAGAUD",
       "side": "home",
       "name": "Musab Cetinkaya",
-      "rawName": " ",
+      "rawName": " ",
       "number": "10",
       "img": "https://images.media.fussball.de/userfiles/h/d/E/rY4erzajS6sezR678S3rD0_p3.jpg",
-      "obfuscationKey": "zoymxbcu"
+      "obfuscationKey": "1fs0xqtr"
     },
     {
       "id": "02JDLIICDG000000VS5489B6VUDBER6I",
       "matchId": "02TUFHG880000000VS5489BUVSOAGAUD",
       "side": "home",
       "name": "Umut Aydogan",
-      "rawName": " ",
+      "rawName": " ",
       "number": "11",
       "img": "https://cdn.fussball.de/public/02S9KRER7C000000VS5489BAVS6CUPS2.stamp",
-      "obfuscationKey": "zoymxbcu"
+      "obfuscationKey": "1fs0xqtr"
     },
     {
       "id": "02TB0C8VDO000000VUM1D561VT2AA10I",
       "matchId": "02TUFHG880000000VS5489BUVSOAGAUD",
       "side": "home",
       "name": "Amin Al Abbozi",
-      "rawName": "  ",
+      "rawName": "  ",
       "number": "14",
       "img": "https://cdn.fussball.de/public/02UB81ENLC000000VS5489C1VUDJB9US.stamp",
-      "obfuscationKey": "zoymxbcu"
+      "obfuscationKey": "1fs0xqtr"
     },
     {
       "id": "02G6PE6C94000000VUM1DNPOVVLDSVQ8",
       "matchId": "02TUFHG880000000VS5489BUVSOAGAUD",
       "side": "home",
       "name": "Saner Erkan Erdem",
-      "rawName": "  ",
+      "rawName": "  ",
       "number": "15",
       "img": "https://images.media.fussball.de/userfiles/c/a/b/ONzQhWDIeADlOibW8MDgFz_p3.jpg",
-      "obfuscationKey": "zoymxbcu"
+      "obfuscationKey": "1fs0xqtr"
     },
     {
       "id": "home___",
       "matchId": "02TUFHG880000000VS5489BUVSOAGAUD",
       "side": "home",
       "name": "Holger Fabricius",
-      "rawName": " ",
+      "rawName": " ",
       "number": "",
       "img": "",
-      "obfuscationKey": "zoymxbcu"
+      "obfuscationKey": "1fs0xqtr"
     }
   ],
   "stableId": "02TUFHG880000000VS5489BUVSOAGAUD",
-  "generatedAt": "2026-04-07T12:32:18.227Z",
+  "generatedAt": "2026-04-07T16:43:20.521Z",
   "game": {
     "home": "SC Hassel",
     "away": "VfB Hüls",

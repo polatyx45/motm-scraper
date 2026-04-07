@@ -12,44 +12,44 @@
       "matchId": "02VHHI9T88000000VS5489BTVVTMOPA6",
       "side": "home",
       "name": "Maurice Hövel",
-      "rawName": " ",
+      "rawName": " ",
       "number": "15",
       "img": "https://cdn.fussball.de/public/02VKIN5H5O000000VS5489C2VU4VO0A5.stamp",
-      "obfuscationKey": "b8k27t1k"
+      "obfuscationKey": "g68gb189"
     },
     {
       "id": "00P1KHBNQS000000VV0AG83KVSA2TTUM",
       "matchId": "02VHHI9T88000000VS5489BTVVTMOPA6",
       "side": "home",
       "name": "Burak Aydin",
-      "rawName": " ",
+      "rawName": " ",
       "number": "23",
       "img": "https://cdn.fussball.de/public/02S7PFG8GS000000VS5489B1VVVAF4P8.stamp",
-      "obfuscationKey": "b8k27t1k"
+      "obfuscationKey": "g68gb189"
     },
     {
       "id": "02J7KRNHE8000000VUM1DNORVTH5RBQH",
       "matchId": "02VHHI9T88000000VS5489BTVVTMOPA6",
       "side": "home",
       "name": "Phil Kückelmann",
-      "rawName": " ",
+      "rawName": " ",
       "number": "07",
       "img": "https://cdn.fussball.de/public/02VKINRUKO000000VS5489C2VU4VO0A5.stamp",
-      "obfuscationKey": "b8k27t1k"
+      "obfuscationKey": "g68gb189"
     },
     {
       "id": "home___",
       "matchId": "02VHHI9T88000000VS5489BTVVTMOPA6",
       "side": "home",
       "name": "Seldin Malkoc",
-      "rawName": " ",
+      "rawName": " ",
       "number": "",
       "img": "",
-      "obfuscationKey": "b8k27t1k"
+      "obfuscationKey": "g68gb189"
     }
   ],
   "stableId": "02VHHI9T88000000VS5489BTVVTMOPA6",
-  "generatedAt": "2026-04-07T12:32:18.227Z",
+  "generatedAt": "2026-04-07T16:43:20.521Z",
   "game": {
     "home": "SC Hassel",
     "away": "SV Bommern",

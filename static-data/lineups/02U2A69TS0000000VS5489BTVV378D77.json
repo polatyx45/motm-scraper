@@ -12,24 +12,24 @@
       "matchId": "02U2A69TS0000000VS5489BTVV378D77",
       "side": "home",
       "name": "Muhammed Efe Akcaalan",
-      "rawName": "  ",
+      "rawName": "  ",
       "number": "02",
       "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
-      "obfuscationKey": "s73d3b5t"
+      "obfuscationKey": "5z3kcv0e"
     },
     {
       "id": "home___",
       "matchId": "02U2A69TS0000000VS5489BTVV378D77",
       "side": "home",
       "name": "Mahmut Aydin",
-      "rawName": " ",
+      "rawName": " ",
       "number": "",
       "img": "",
-      "obfuscationKey": "s73d3b5t"
+      "obfuscationKey": "5z3kcv0e"
     }
   ],
   "stableId": "02U2A69TS0000000VS5489BTVV378D77",
-  "generatedAt": "2026-04-07T12:32:18.227Z",
+  "generatedAt": "2026-04-07T16:43:20.521Z",
   "game": {
     "home": "SC Hassel II",
     "away": "SG PREUßEN GLADBECK 1910/​29 III",

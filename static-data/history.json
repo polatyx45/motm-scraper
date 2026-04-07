@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-07T12:32:18.227Z",
+  "generatedAt": "2026-04-07T16:43:20.521Z",
   "count": 300,
   "games": [
     {
@@ -5316,27 +5316,6 @@
       "teamId": "011MIF7RS8000000VTVG0001VTR8C1K7"
     },
     {
-      "home": "SV Zweckel III",
-      "away": "SC Hassel II",
-      "homeLogo": "https://www.fussball.de/export.media/-/action/getLogo/format/0/id/00ES8GN8OC00001OVV0AG08LVUPGND5I",
-      "awayLogo": "https://www.fussball.de/export.media/-/action/getLogo/format/0/id/00ES8GN8OC00000OVV0AG08LVUPGND5I",
-      "competition": "Kreisliga A",
-      "date": "18.04.2026",
-      "time": "13:30",
-      "ageGroup": "",
-      "spielId": "02VN5AS4T0000000VS5489BTVTG66ASV",
-      "status": "upcoming",
-      "result": "",
-      "resultDisplay": "",
-      "resultType": "",
-      "resultVerified": false,
-      "venueType": "away",
-      "stableId": "02VN5AS4T0000000VS5489BTVTG66ASV",
-      "resolvedBy": "",
-      "sourceLabel": "D-Jugend II – SC Buer-Hassel 1919 e.V.",
-      "teamId": "02R20U2DD8000000VS5489B2VVGRHBSC"
-    },
-    {
       "home": "SC Hassel",
       "away": "VfB Kirchhellen",
       "homeLogo": "https://www.fussball.de/export.media/-/action/getLogo/format/0/id/00ES8GN8OC00000OVV0AG08LVUPGND5I",
@@ -5356,6 +5335,27 @@
       "resolvedBy": "",
       "sourceLabel": "1. Mannschaft – SC Buer-Hassel 1919 e.V.",
       "teamId": "011MIF7RS8000000VTVG0001VTR8C1K7"
+    },
+    {
+      "home": "SV Zweckel III",
+      "away": "SC Hassel II",
+      "homeLogo": "https://www.fussball.de/export.media/-/action/getLogo/format/0/id/00ES8GN8OC00001OVV0AG08LVUPGND5I",
+      "awayLogo": "https://www.fussball.de/export.media/-/action/getLogo/format/0/id/00ES8GN8OC00000OVV0AG08LVUPGND5I",
+      "competition": "Kreisliga A",
+      "date": "18.04.2026",
+      "time": "16:00",
+      "ageGroup": "",
+      "spielId": "02VN5AS4T0000000VS5489BTVTG66ASV",
+      "status": "upcoming",
+      "result": "",
+      "resultDisplay": "",
+      "resultType": "",
+      "resultVerified": false,
+      "venueType": "away",
+      "stableId": "02VN5AS4T0000000VS5489BTVTG66ASV",
+      "resolvedBy": "",
+      "sourceLabel": "D-Jugend II – SC Buer-Hassel 1919 e.V.",
+      "teamId": "02R20U2DD8000000VS5489B2VVGRHBSC"
     },
     {
       "home": "DJK Falke Gelsenkirchen 1919 e.V.",
