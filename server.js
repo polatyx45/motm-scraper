@@ -941,6 +941,79 @@ function normalizeRenderedScore(value) {
   return scoreMatch || "";
 }
 
+async function extractRenderedMatchScorePayload(page) {
+  return page.evaluate(() => {
+    function buildPayload(leftNode, rightNode, textSource) {
+      if (!leftNode || !rightNode) return null;
+
+      const leftValue = (leftNode.textContent || "").trim();
+      const rightValue = (rightNode.textContent || "").trim();
+      const obfuscationKey =
+        leftNode.getAttribute("data-obfuscation") ||
+        rightNode.getAttribute("data-obfuscation") ||
+        "";
+      const text = (textSource?.textContent || "").trim();
+
+      if (!leftValue && !rightValue && !text) return null;
+
+      return {
+        obfuscationKey,
+        leftValue,
+        rightValue,
+        text
+      };
+    }
+
+    const selectorPairs = [
+      [
+        ".stage-body .result .end-result .score-left",
+        ".stage-body .result .end-result .score-right",
+        ".stage-body .result .end-result"
+      ],
+      [
+        "#course-quick-view .result .home-goals",
+        "#course-quick-view .result .away-goals",
+        "#course-quick-view .result"
+      ],
+      [
+        ".match-course-quick-view .result .home-goals",
+        ".match-course-quick-view .result .away-goals",
+        ".match-course-quick-view .result"
+      ]
+    ];
+
+    for (const [leftSelector, rightSelector, textSelector] of selectorPairs) {
+      const payload = buildPayload(
+        document.querySelector(leftSelector),
+        document.querySelector(rightSelector),
+        document.querySelector(textSelector)
+      );
+      if (payload) return payload;
+    }
+
+    const scoreTextSelectors = [
+      ".stage-body .result .end-result",
+      "#course-quick-view .result",
+      ".match-course-quick-view .result"
+    ];
+
+    for (const selector of scoreTextSelectors) {
+      const node = document.querySelector(selector);
+      const text = (node?.textContent || "").trim();
+      if (text) {
+        return {
+          obfuscationKey: "",
+          leftValue: "",
+          rightValue: "",
+          text
+        };
+      }
+    }
+
+    return null;
+  });
+}
+
 async function extractRenderedMatchScore(match) {
   const matchId = String(match?.matchId || match?.spielId || "").trim();
   const home = String(match?.home || "").trim();
@@ -958,12 +1031,30 @@ async function extractRenderedMatchScore(match) {
     await page.setViewport({ width: 1440, height: 1400 });
     await page.goto(url, { waitUntil: "domcontentloaded", timeout: 60000 });
     await page.waitForFunction(() => {
-      const text = document.body?.innerText || "";
-      return /\[\d{1,2}\s*:\s*\d{1,2}\]/.test(text) || /\d{1,2}\s*:\s*\d{1,2}/.test(text);
+      return Boolean(
+        document.querySelector(".stage-body .result .end-result .score-left") ||
+        document.querySelector("#course-quick-view .result .home-goals") ||
+        document.querySelector(".match-course-quick-view .result .home-goals") ||
+        document.querySelector(".stage-body .result .end-result")
+      );
     }, { timeout: 15000 });
 
-    const bodyText = await page.evaluate(() => document.body?.innerText || "");
-    return normalizeRenderedScore(bodyText);
+    const scorePayload = await extractRenderedMatchScorePayload(page);
+    if (!scorePayload) return "";
+
+    if (
+      scorePayload.obfuscationKey &&
+      (scorePayload.leftValue || scorePayload.rightValue)
+    ) {
+      const decodedScore = await decodeObfuscatedScore(
+        scorePayload.obfuscationKey,
+        scorePayload.leftValue,
+        scorePayload.rightValue
+      );
+      if (decodedScore) return decodedScore;
+    }
+
+    return normalizeRenderedScore(scorePayload.text);
   } catch (_error) {
     return "";
   } finally {
