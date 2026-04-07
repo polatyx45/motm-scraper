@@ -2,6 +2,8 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { spawn } from "node:child_process";
 import { fileURLToPath } from "node:url";
+import http from "node:http";
+import https from "node:https";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -287,28 +289,55 @@ function buildLineupUrl(game) {
 }
 
 async function fetchJson(url) {
-  const response = await fetch(url, {
-    cache: "no-store",
-    headers: { accept: "application/json" },
-    signal: AbortSignal.timeout(FETCH_TIMEOUT_MS)
+  return new Promise((resolve, reject) => {
+    const parsedUrl = new URL(url);
+    const transport = parsedUrl.protocol === "https:" ? https : http;
+    const request = transport.request(
+      parsedUrl,
+      {
+        method: "GET",
+        headers: { accept: "application/json" }
+      },
+      (response) => {
+        let text = "";
+        response.setEncoding("utf8");
+        response.on("data", (chunk) => {
+          text += chunk;
+        });
+        response.on("end", () => {
+          let data = null;
+          if (text) {
+            try {
+              data = JSON.parse(text);
+            } catch (error) {
+              reject(
+                new Error(`Invalid JSON from ${url}: ${error instanceof Error ? error.message : String(error)}`)
+              );
+              return;
+            }
+          }
+
+          if (Number(response.statusCode || 0) < 200 || Number(response.statusCode || 0) >= 300) {
+            const details = data ? JSON.stringify(data).slice(0, 400) : text.slice(0, 400);
+            reject(new Error(`HTTP ${response.statusCode} from ${url}: ${details}`));
+            return;
+          }
+
+          resolve(data);
+        });
+      }
+    );
+
+    request.setTimeout(FETCH_TIMEOUT_MS, () => {
+      request.destroy(new Error(`Request timeout after ${FETCH_TIMEOUT_MS}ms for ${url}`));
+    });
+
+    request.on("error", (error) => {
+      reject(error);
+    });
+
+    request.end();
   });
-  const text = await response.text();
-
-  let data = null;
-  if (text) {
-    try {
-      data = JSON.parse(text);
-    } catch (error) {
-      throw new Error(`Invalid JSON from ${url}: ${error instanceof Error ? error.message : String(error)}`);
-    }
-  }
-
-  if (!response.ok) {
-    const details = data ? JSON.stringify(data).slice(0, 400) : text.slice(0, 400);
-    throw new Error(`HTTP ${response.status} from ${url}: ${details}`);
-  }
-
-  return data;
 }
 
 async function waitForServer(timeoutMs = 120000) {
