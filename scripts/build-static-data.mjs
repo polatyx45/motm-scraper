@@ -15,6 +15,15 @@ const serverPort = process.env.PORT || "3000";
 const serverOrigin = process.env.SCRAPER_BASE_URL || `http://127.0.0.1:${serverPort}`;
 const FETCH_TIMEOUT_MS = 15 * 60 * 1000;
 
+function isUsableLineupPayload(lineup) {
+  return Boolean(
+    lineup &&
+      lineup.ok &&
+      Array.isArray(lineup.players) &&
+      lineup.players.length
+  );
+}
+
 function log(message) {
   console.log(`[build-static] ${message}`);
 }
@@ -357,6 +366,65 @@ async function fetchJson(url) {
   });
 }
 
+function collectLineupSnapshotsFromGames(games) {
+  const map = new Map();
+
+  function register(game) {
+    if (!game) return;
+
+    const stableId = getStableGameId(game);
+    if (!stableId) return;
+
+    if (isUsableLineupPayload(game.lineup) && !map.has(stableId)) {
+      map.set(stableId, {
+        ...game.lineup,
+        stableId
+      });
+    }
+  }
+
+  for (const game of games || []) {
+    register(game);
+    register(game?.previousMatch);
+  }
+
+  return map;
+}
+
+async function readPreviousMotmGames() {
+  try {
+    const text = await fs.readFile(path.join(outputDir, "motm-data.json"), "utf8");
+    const data = JSON.parse(text);
+    return Array.isArray(data?.games) ? data.games : [];
+  } catch (_error) {
+    return [];
+  }
+}
+
+async function readCommittedMotmGames() {
+  return new Promise((resolve) => {
+    let output = "";
+    const child = spawn("git", ["show", "HEAD:static-data/motm-data.json"], {
+      cwd: projectRoot,
+      stdio: ["ignore", "pipe", "ignore"]
+    });
+
+    child.stdout.on("data", (chunk) => {
+      output += String(chunk);
+    });
+
+    child.on("error", () => resolve([]));
+    child.on("close", () => {
+      try {
+        const data = JSON.parse(output);
+        resolve(Array.isArray(data?.games) ? data.games : []);
+      } catch (_error) {
+        resolve([]);
+      }
+    });
+  });
+}
+
 async function waitForServer(timeoutMs = 120000) {
   const startedAt = Date.now();
 
@@ -404,9 +472,15 @@ async function collectStaticData() {
   const games = Array.isArray(matchesData?.games) ? matchesData.games : [];
   const committedExportGames = await readCommittedExportGames();
   const previousExportGames = await readPreviousExportGames();
+  const previousMotmGames = await readPreviousMotmGames();
+  const committedMotmGames = await readCommittedMotmGames();
   const historicalGames = await readHistoricalGames();
   const teamRequests = collectTeamRequests(games);
   const enrichedTeamScheduleGames = [];
+  const existingLineupSnapshots = new Map([
+    ...collectLineupSnapshotsFromGames(committedMotmGames),
+    ...collectLineupSnapshotsFromGames(previousMotmGames)
+  ]);
 
   const teamSchedulePayloads = await mapWithConcurrency(teamRequests, 4, async (teamRequest) => {
     try {
@@ -463,6 +537,13 @@ async function collectStaticData() {
         error: error instanceof Error ? error.message : String(error),
         players: []
       };
+    }
+
+    if (!isUsableLineupPayload(lineupData)) {
+      const previousSnapshot = existingLineupSnapshots.get(target.stableId);
+      if (isUsableLineupPayload(previousSnapshot)) {
+        lineupData = previousSnapshot;
+      }
     }
 
     const lineupPayload = {

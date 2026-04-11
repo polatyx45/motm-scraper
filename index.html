@@ -869,12 +869,21 @@
       return inferSection(game) === "Jugend" ? getYouthLabel(game) : inferSeniorTeamName(game);
     }
 
+    function isMotmExcluded(game) {
+      const statusText = normalizeComparableText(
+        `${game?.status || ""} ${game?.result || ""} ${game?.resultDisplay || ""}`
+      );
+
+      return /nichtantritt|nicht antritt|kampflos|spielfrei|abgesagt|abgesetzt|ausgefallen|verlegt|verschoben|annulliert|wertung/.test(statusText);
+    }
+
     function dedupeGames(games) {
       const seen = new Set();
       const unique = [];
 
       for (const game of games) {
         if (!game || !game.home || !game.away) continue;
+        if (isMotmExcluded(game)) continue;
         const stableId = getStableGameId(game);
         if (!stableId || seen.has(stableId)) continue;
         seen.add(stableId);
