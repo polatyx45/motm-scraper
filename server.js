@@ -911,47 +911,57 @@ async function decodeObfuscatedScore(obfuscationKey, leftValue, rightValue) {
   const page = await browser.newPage();
 
   try {
-    await page.setViewport({ width: 900, height: 340, deviceScaleFactor: 2 });
+    await page.setViewport({ width: 1200, height: 420, deviceScaleFactor: 3 });
     await page.setContent(
       `<!doctype html>
-      <html lang="de">
-        <head>
-          <meta charset="utf-8" />
+        <html lang="de">
+          <head>
+            <meta charset="utf-8" />
           <style>
             ${css}
-            html, body {
-              margin: 0;
-              background: #ffffff;
-            }
-            #score {
-              display: inline-flex;
-              align-items: center;
-              justify-content: center;
-              gap: 18px;
-              padding: 36px 48px;
-              color: #000000;
-              font-family: font-${obfuscationKey}, Arial, sans-serif;
-              font-size: 180px;
-              font-weight: 700;
-              line-height: 1;
-            }
-          </style>
-        </head>
-        <body>
-          <div id="score">${encodeCharsForHtml(leftValue)}:${encodeCharsForHtml(rightValue)}</div>
-        </body>
-      </html>`,
-      { waitUntil: "networkidle0" }
-    );
+              html, body {
+                margin: 0;
+                background: #ffffff;
+              }
+              .score-side {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                padding: 48px 64px;
+                color: #000000;
+                font-family: font-${obfuscationKey}, Arial, sans-serif;
+                font-size: 220px;
+                font-weight: 700;
+                line-height: 1;
+                background: #ffffff;
+              }
+            </style>
+          </head>
+          <body>
+            <div id="left" class="score-side">${encodeCharsForHtml(leftValue)}</div>
+            <div id="right" class="score-side">${encodeCharsForHtml(rightValue)}</div>
+          </body>
+        </html>`,
+        { waitUntil: "networkidle0" }
+      );
     await page.evaluate(() => document.fonts.ready);
 
-    const scoreHandle = await page.$("#score");
-    if (!scoreHandle) return "";
+    const leftHandle = await page.$("#left");
+    const rightHandle = await page.$("#right");
+    if (!leftHandle || !rightHandle) return "";
 
-    const image = await scoreHandle.screenshot({ type: "png" });
     const worker = await getScoreOcrWorker();
-    const result = await worker.recognize(image);
-    const decoded = normalizeScoreOcrText(result?.data?.text || "");
+    const [leftImage, rightImage] = await Promise.all([
+      leftHandle.screenshot({ type: "png" }),
+      rightHandle.screenshot({ type: "png" })
+    ]);
+    const [leftResult, rightResult] = await Promise.all([
+      worker.recognize(leftImage),
+      worker.recognize(rightImage)
+    ]);
+    const leftDigits = String(leftResult?.data?.text || "").replace(/\D+/g, "").trim();
+    const rightDigits = String(rightResult?.data?.text || "").replace(/\D+/g, "").trim();
+    const decoded = leftDigits && rightDigits ? `${leftDigits}:${rightDigits}` : "";
 
     if (decoded) {
       SCORE_TEXT_CACHE.set(cacheKey, decoded);
