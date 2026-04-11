@@ -973,6 +973,43 @@ function normalizeRenderedScore(value) {
   return scoreMatch || "";
 }
 
+function extractRenderedScoreFromHtml(html) {
+  const source = String(html || "");
+  if (!source) return null;
+
+  const endResultMatch = source.match(
+    /<span class="end-result">[\s\S]*?<span([^>]*)class="score-left"[^>]*>([\s\S]*?)<\/span>[\s\S]*?<span([^>]*)class="score-right"[^>]*>([\s\S]*?)<\/span>/i
+  );
+
+  if (endResultMatch) {
+    const leftAttrs = endResultMatch[1] || "";
+    const leftValue = decodeHtmlEntities(stripTags(endResultMatch[2] || ""));
+    const rightAttrs = endResultMatch[3] || "";
+    const rightValue = decodeHtmlEntities(stripTags(endResultMatch[4] || ""));
+    const obfuscationKey =
+      leftAttrs.match(/data-obfuscation="([^"]+)"/i)?.[1] ||
+      rightAttrs.match(/data-obfuscation="([^"]+)"/i)?.[1] ||
+      "";
+
+    return {
+      obfuscationKey,
+      leftValue,
+      rightValue,
+      text: stripTags(endResultMatch[0] || "")
+    };
+  }
+
+  const resultBlockMatch = source.match(/<div class="result">([\s\S]*?)<\/div>/i);
+  if (!resultBlockMatch) return null;
+
+  return {
+    obfuscationKey: "",
+    leftValue: "",
+    rightValue: "",
+    text: stripTags(resultBlockMatch[1] || "")
+  };
+}
+
 async function extractRenderedMatchScorePayload(page) {
   return page.evaluate(() => {
     function buildPayload(leftNode, rightNode, textSource) {
@@ -1052,9 +1089,33 @@ async function extractRenderedMatchScore(match) {
   const away = String(match?.away || "").trim();
   if (!matchId || !home || !away) return "";
 
+  const url = buildMatchUrl(matchId, home, away);
+
+  try {
+    const html = await fetchText(url);
+    const htmlScorePayload = extractRenderedScoreFromHtml(html);
+    if (htmlScorePayload) {
+      if (
+        htmlScorePayload.obfuscationKey &&
+        (htmlScorePayload.leftValue || htmlScorePayload.rightValue)
+      ) {
+        const decodedScore = await decodeObfuscatedScore(
+          htmlScorePayload.obfuscationKey,
+          htmlScorePayload.leftValue,
+          htmlScorePayload.rightValue
+        );
+        if (decodedScore) return decodedScore;
+      }
+
+      const normalizedHtmlScore = normalizeRenderedScore(htmlScorePayload.text);
+      if (normalizedHtmlScore) return normalizedHtmlScore;
+    }
+  } catch (_error) {
+    // Fall back to a browser-rendered extraction when direct HTML parsing fails.
+  }
+
   const browser = await getBrowser();
   const page = await browser.newPage();
-  const url = buildMatchUrl(matchId, home, away);
 
   try {
     await page.setUserAgent(
