@@ -66,6 +66,7 @@ const TEAM_SCHEDULE_CACHE = new Map();
 const SCORE_TEXT_CACHE = new Map();
 const TEAM_MATCH_INDEX_TTL_MS = 15 * 60 * 1000;
 const TEAM_SCHEDULE_TTL_MS = 5 * 60 * 1000;
+const MATCHES_LITE_TTL_MS = 2 * 60 * 1000;
 const REMOTE_FETCH_TIMEOUT_MS = 15 * 60 * 1000;
 
 let browserPromise = null;
@@ -74,6 +75,9 @@ let scoreOcrWorkerPromise = null;
 let teamMatchIndexCache = null;
 let teamMatchIndexLoadedAt = 0;
 let teamMatchIndexPromise = null;
+let matchesLiteCache = null;
+let matchesLiteLoadedAt = 0;
+let matchesLitePromise = null;
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -1651,6 +1655,33 @@ async function loadWeekGames(options) {
   return data.games;
 }
 
+async function loadCachedMatchesLiteData() {
+  const isFresh = matchesLiteCache && Date.now() - matchesLiteLoadedAt < MATCHES_LITE_TTL_MS;
+  if (isFresh) {
+    return matchesLiteCache;
+  }
+
+  if (matchesLitePromise) {
+    return matchesLitePromise;
+  }
+
+  matchesLitePromise = (async () => {
+    try {
+      const data = await loadWeekGamesData({
+        includeUnresolved: true,
+        includePreviousMatches: false
+      });
+      matchesLiteCache = data;
+      matchesLiteLoadedAt = Date.now();
+      return data;
+    } finally {
+      matchesLitePromise = null;
+    }
+  })();
+
+  return matchesLitePromise;
+}
+
 async function scrapeLineup({ matchId, home, away }) {
   const browser = await getBrowser();
   const page = await browser.newPage();
@@ -1857,10 +1888,7 @@ app.get("/matches", async (_req, res) => {
 
 app.get("/matches-lite", async (_req, res) => {
   try {
-    const { games, votingWindow } = await loadWeekGamesData({
-      includeUnresolved: true,
-      includePreviousMatches: false
-    });
+    const { games, votingWindow } = await loadCachedMatchesLiteData();
     res.json({
       ok: true,
       generatedAt: new Date().toISOString(),
