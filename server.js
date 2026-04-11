@@ -1115,6 +1115,21 @@ function extractRenderedScoreFromHtml(html) {
   };
 }
 
+function extractScoreFromMatchEventsHtml(html) {
+  const source = String(html || "");
+  if (!source) return "";
+
+  const match = source.match(/data-match-events="([^"]+)"/i);
+  if (!match?.[1]) return "";
+
+  const raw = decodeHtmlEntities(match[1]);
+  const homeGoals = (raw.match(/'type':'goal','team':'home'/g) || []).length;
+  const awayGoals = (raw.match(/'type':'goal','team':'away'/g) || []).length;
+
+  if (homeGoals === 0 && awayGoals === 0) return "";
+  return `${homeGoals}:${awayGoals}`;
+}
+
 async function extractRenderedMatchScorePayload(page) {
   return page.evaluate(() => {
     function buildPayload(leftNode, rightNode, textSource) {
@@ -1237,6 +1252,7 @@ async function inspectRenderedMatchScore(match) {
     const html = await fetchText(url);
     const htmlScorePayload = extractRenderedScoreFromHtml(html);
     details.html.payload = htmlScorePayload;
+    details.html.eventsScore = extractScoreFromMatchEventsHtml(html);
 
     if (
       htmlScorePayload?.obfuscationKey &&
@@ -1318,6 +1334,7 @@ async function inspectRenderedMatchScore(match) {
   }
 
   details.finalScore =
+    details.html.eventsScore ||
     details.html.decodedScore ||
     details.html.normalizedScore ||
     details.rendered.decodedScore ||
@@ -1336,6 +1353,7 @@ async function extractRenderedMatchScore(match) {
 
   try {
     const details = await inspectRenderedMatchScore(match);
+    if (details.html.eventsScore) return details.html.eventsScore;
     if (details.rendered.ocrScore) return details.rendered.ocrScore;
     if (details.html.decodedScore) return details.html.decodedScore;
     if (details.rendered.decodedScore) return details.rendered.decodedScore;
