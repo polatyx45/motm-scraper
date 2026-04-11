@@ -76,9 +76,8 @@ let scoreOcrWorkerPromise = null;
 let teamMatchIndexCache = null;
 let teamMatchIndexLoadedAt = 0;
 let teamMatchIndexPromise = null;
-let matchesLiteCache = null;
-let matchesLiteLoadedAt = 0;
-let matchesLitePromise = null;
+const MATCHES_LITE_CACHE = new Map();
+const MATCHES_LITE_PROMISES = new Map();
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -1115,6 +1114,35 @@ function extractRenderedScoreFromHtml(html) {
   };
 }
 
+function getVotingWindowByOffset(weekOffset = 0, date = new Date()) {
+  const activeWindow = getActiveVotingWindow(date);
+  const dayOffset = Number(weekOffset || 0) * 7;
+  const startDate = shiftDateKey(activeWindow.startDate, dayOffset);
+  const endDate = shiftDateKey(activeWindow.endDate, dayOffset);
+
+  return {
+    ...activeWindow,
+    startDate,
+    endDate,
+    switchesAtLocal: `${shiftDateKey(endDate, 1)} 00:00:00`
+  };
+}
+
+function parseMatchesLiteWeekMode(value) {
+  const raw = String(value || "").trim().toLowerCase();
+  if (raw === "previous" || raw === "prev" || raw === "-1") {
+    return {
+      key: "previous",
+      weekOffset: -1
+    };
+  }
+
+  return {
+    key: "current",
+    weekOffset: 0
+  };
+}
+
 function extractScoreFromMatchEventsHtml(html) {
   const source = String(html || "");
   if (!source) return "";
@@ -1419,8 +1447,8 @@ async function fetchJsonWithHeaders(url) {
   return response.json();
 }
 
-async function loadStaticLiveTickerBaseData() {
-  const votingWindow = getActiveVotingWindow();
+async function loadStaticLiveTickerBaseData({ weekOffset = 0 } = {}) {
+  const votingWindow = getVotingWindowByOffset(weekOffset);
   const [matchesData, historyData] = await Promise.all([
     fetchJsonWithHeaders(MATCHES_STATIC_API),
     fetchJsonWithHeaders(HISTORY_STATIC_API).catch(() => ({ games: [] }))
@@ -1987,19 +2015,21 @@ async function loadWeekGames(options) {
   return data.games;
 }
 
-async function loadCachedMatchesLiteData() {
-  const isFresh = matchesLiteCache && Date.now() - matchesLiteLoadedAt < MATCHES_LITE_TTL_MS;
+async function loadCachedMatchesLiteData({ weekMode = "current", weekOffset = 0 } = {}) {
+  const cacheKey = String(weekMode || "current");
+  const cacheEntry = MATCHES_LITE_CACHE.get(cacheKey);
+  const isFresh = cacheEntry && Date.now() - cacheEntry.loadedAt < MATCHES_LITE_TTL_MS;
   if (isFresh) {
-    return matchesLiteCache;
+    return cacheEntry.payload;
   }
 
-  if (matchesLitePromise) {
-    return matchesLitePromise;
+  if (MATCHES_LITE_PROMISES.has(cacheKey)) {
+    return MATCHES_LITE_PROMISES.get(cacheKey);
   }
 
-  matchesLitePromise = (async () => {
+  const promise = (async () => {
     try {
-      const baseData = await loadStaticLiveTickerBaseData();
+      const baseData = await loadStaticLiveTickerBaseData({ weekOffset });
       const hydratedGames = await hydratePastMatchResults(
         baseData.games.map((game) => ({
           ...game,
@@ -2011,15 +2041,18 @@ async function loadCachedMatchesLiteData() {
         votingWindow: baseData.votingWindow,
         games: hydratedGames
       };
-      matchesLiteCache = data;
-      matchesLiteLoadedAt = Date.now();
+      MATCHES_LITE_CACHE.set(cacheKey, {
+        loadedAt: Date.now(),
+        payload: data
+      });
       return data;
     } finally {
-      matchesLitePromise = null;
+      MATCHES_LITE_PROMISES.delete(cacheKey);
     }
   })();
 
-  return matchesLitePromise;
+  MATCHES_LITE_PROMISES.set(cacheKey, promise);
+  return promise;
 }
 
 async function scrapeLineup({ matchId, home, away }) {
@@ -2226,12 +2259,14 @@ app.get("/matches", async (_req, res) => {
   }
 });
 
-app.get("/matches-lite", async (_req, res) => {
+app.get("/matches-lite", async (req, res) => {
   try {
-    const { games, votingWindow } = await loadCachedMatchesLiteData();
+    const weekMode = parseMatchesLiteWeekMode(req.query.week);
+    const { games, votingWindow } = await loadCachedMatchesLiteData(weekMode);
     res.json({
       ok: true,
       generatedAt: new Date().toISOString(),
+      week: weekMode.key,
       votingWindow,
       count: games.length,
       games
