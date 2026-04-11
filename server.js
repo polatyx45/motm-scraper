@@ -11,6 +11,7 @@ const CLUB_NAME = "sc hassel";
 const CLUB_SITE_ORIGIN = "https://www.sc-hassel1919.de";
 const LOCAL_TIME_ZONE = "Europe/Berlin";
 const TICKER_API = "https://script.google.com/macros/s/AKfycbxPvHMRhLyOD1kwz5J2yr7KB9uubapD5QAMMB8bgUDblJaPpEUbI7E_z86YlkL9XmPLSA/exec?mode=week";
+const MATCHES_STATIC_API = "https://polatyx45.github.io/motm-scraper/static-data/matches.json";
 const HISTORY_STATIC_API = "https://polatyx45.github.io/motm-scraper/static-data/history.json";
 const PROFILE_CACHE = new Map();
 const OBFUSCATION_MAPS = new Map();
@@ -182,6 +183,33 @@ function isDateWithinVotingWindow(value, votingWindow) {
   const dateKey = normalizeDateKey(value);
   if (!dateKey) return false;
   return dateKey >= votingWindow.startDate && dateKey <= votingWindow.endDate;
+}
+
+function getMatchDurationMinutes(ageGroup) {
+  const text = normalizeComparableText(ageGroup);
+  if (text.includes("a junior")) return 95;
+  if (text.includes("b junior")) return 90;
+  if (text.includes("c junior")) return 75;
+  if (text.includes("d junior")) return 70;
+  if (text.includes("e junior")) return 60;
+  if (text.includes("f junior")) return 55;
+  if (text.includes("g junior")) return 50;
+  return 95;
+}
+
+function parseScheduledDateTime(game) {
+  const dateKey = normalizeDateKey(game?.date);
+  const timeKey = normalizeTimeKey(game?.time) || "00:00";
+  if (!dateKey) return null;
+  const date = new Date(`${dateKey}T${timeKey}:00`);
+  return Number.isNaN(date.getTime()) ? null : date;
+}
+
+function hasMatchEnded(game) {
+  const kickoff = parseScheduledDateTime(game);
+  if (!kickoff) return false;
+  const endedAt = new Date(kickoff.getTime() + getMatchDurationMinutes(game?.ageGroup) * 60000);
+  return endedAt <= new Date();
 }
 
 function isDateWithinNextDays(value, days = 7) {
@@ -1066,7 +1094,7 @@ async function extractRenderedMatchScore(match) {
   }
 }
 
-async function hydratePastMatchResults(matches) {
+async function hydratePastMatchResults(matches, { force = false } = {}) {
   const hydrated = [];
 
   for (const match of matches) {
@@ -1075,7 +1103,7 @@ async function hydratePastMatchResults(matches) {
       continue;
     }
 
-    if (match.resultDisplay && !/ergebnis\s+offen/i.test(String(match.resultDisplay))) {
+    if (!force && match.resultDisplay && !/ergebnis\s+offen/i.test(String(match.resultDisplay))) {
       hydrated.push(match);
       continue;
     }
@@ -1106,6 +1134,39 @@ async function hydratePastMatchResults(matches) {
   }
 
   return hydrated;
+}
+
+async function fetchJsonWithHeaders(url) {
+  const response = await fetch(url, {
+    cache: "no-store",
+    headers: REMOTE_HEADERS,
+    signal: AbortSignal.timeout(REMOTE_FETCH_TIMEOUT_MS)
+  });
+  if (!response.ok) {
+    throw new Error(`json_http_${response.status}`);
+  }
+  return response.json();
+}
+
+async function loadStaticLiveTickerBaseData() {
+  const votingWindow = getActiveVotingWindow();
+  const [matchesData, historyData] = await Promise.all([
+    fetchJsonWithHeaders(MATCHES_STATIC_API),
+    fetchJsonWithHeaders(HISTORY_STATIC_API).catch(() => ({ games: [] }))
+  ]);
+
+  const games = mergeGames([
+    ...(Array.isArray(historyData?.games) ? historyData.games : []),
+    ...(Array.isArray(matchesData?.games) ? matchesData.games : [])
+  ])
+    .filter(isRelevantGame)
+    .filter((game) => isDateWithinVotingWindow(game.date, votingWindow))
+    .sort(compareScheduledGames);
+
+  return {
+    votingWindow,
+    games
+  };
 }
 
 function extractWidgetEntries(html) {
@@ -1667,10 +1728,18 @@ async function loadCachedMatchesLiteData() {
 
   matchesLitePromise = (async () => {
     try {
-      const data = await loadWeekGamesData({
-        includeUnresolved: true,
-        includePreviousMatches: false
-      });
+      const baseData = await loadStaticLiveTickerBaseData();
+      const hydratedGames = await hydratePastMatchResults(
+        baseData.games.map((game) => ({
+          ...game,
+          isPast: hasMatchEnded(game)
+        })),
+        { force: true }
+      );
+      const data = {
+        votingWindow: baseData.votingWindow,
+        games: hydratedGames
+      };
       matchesLiteCache = data;
       matchesLiteLoadedAt = Date.now();
       return data;
