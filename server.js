@@ -1197,6 +1197,9 @@ async function extractScoreFromRenderedElement(page) {
   if (!scoreHandle) return "";
 
   try {
+    await scoreHandle.evaluate((node) => {
+      node.scrollIntoView({ block: "center", inline: "center" });
+    });
     const image = await scoreHandle.screenshot({ type: "png" });
     const worker = await getScoreOcrWorker();
     const result = await worker.recognize(image);
@@ -1260,7 +1263,7 @@ async function inspectRenderedMatchScore(match) {
     await page.setUserAgent(
       "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36"
     );
-    await page.setViewport({ width: 1440, height: 1400 });
+    await page.setViewport({ width: 1800, height: 1800, deviceScaleFactor: 2 });
     await page.goto(url, { waitUntil: "domcontentloaded", timeout: 60000 });
     await page.waitForFunction(() => {
       return Boolean(
@@ -1270,6 +1273,26 @@ async function inspectRenderedMatchScore(match) {
         document.querySelector(".stage-body .result .end-result")
       );
     }, { timeout: 15000 });
+
+    await page.addStyleTag({
+      content: `
+        .stage-body .result .end-result,
+        #course-quick-view .result,
+        .match-course-quick-view .result {
+          color: #000 !important;
+          background: #fff !important;
+          text-shadow: none !important;
+          filter: contrast(2);
+          transform: scale(1.8);
+          transform-origin: center center;
+          display: inline-flex !important;
+          align-items: center;
+          justify-content: center;
+          padding: 12px 16px;
+          border-radius: 8px;
+        }
+      `
+    });
 
     details.rendered.payload = await extractRenderedMatchScorePayload(page);
 
@@ -1313,6 +1336,11 @@ async function extractRenderedMatchScore(match) {
 
   try {
     const details = await inspectRenderedMatchScore(match);
+    if (details.rendered.ocrScore) return details.rendered.ocrScore;
+    if (details.html.decodedScore) return details.html.decodedScore;
+    if (details.rendered.decodedScore) return details.rendered.decodedScore;
+    if (details.html.normalizedScore) return details.html.normalizedScore;
+    if (details.rendered.normalizedScore) return details.rendered.normalizedScore;
     return details.finalScore || "";
   } catch (_error) {
     return "";
