@@ -1101,35 +1101,49 @@ async function extractScoreFromRenderedElement(page) {
   }
 }
 
-async function extractRenderedMatchScore(match) {
+async function inspectRenderedMatchScore(match) {
   const matchId = String(match?.matchId || match?.spielId || "").trim();
   const home = String(match?.home || "").trim();
   const away = String(match?.away || "").trim();
-  if (!matchId || !home || !away) return "";
-
   const url = buildMatchUrl(matchId, home, away);
+  const details = {
+    matchId,
+    home,
+    away,
+    url,
+    html: {
+      payload: null,
+      decodedScore: "",
+      normalizedScore: ""
+    },
+    rendered: {
+      payload: null,
+      decodedScore: "",
+      normalizedScore: "",
+      ocrScore: ""
+    },
+    finalScore: ""
+  };
 
   try {
     const html = await fetchText(url);
     const htmlScorePayload = extractRenderedScoreFromHtml(html);
-    if (htmlScorePayload) {
-      if (
-        htmlScorePayload.obfuscationKey &&
-        (htmlScorePayload.leftValue || htmlScorePayload.rightValue)
-      ) {
-        const decodedScore = await decodeObfuscatedScore(
-          htmlScorePayload.obfuscationKey,
-          htmlScorePayload.leftValue,
-          htmlScorePayload.rightValue
-        );
-        if (decodedScore) return decodedScore;
-      }
+    details.html.payload = htmlScorePayload;
 
-      const normalizedHtmlScore = normalizeRenderedScore(htmlScorePayload.text);
-      if (normalizedHtmlScore) return normalizedHtmlScore;
+    if (
+      htmlScorePayload?.obfuscationKey &&
+      (htmlScorePayload.leftValue || htmlScorePayload.rightValue)
+    ) {
+      details.html.decodedScore = await decodeObfuscatedScore(
+        htmlScorePayload.obfuscationKey,
+        htmlScorePayload.leftValue,
+        htmlScorePayload.rightValue
+      );
     }
-  } catch (_error) {
-    // Fall back to a browser-rendered extraction when direct HTML parsing fails.
+
+    details.html.normalizedScore = normalizeRenderedScore(htmlScorePayload?.text || "");
+  } catch (error) {
+    details.html.error = error instanceof Error ? error.message : String(error);
   }
 
   const browser = await getBrowser();
@@ -1150,29 +1164,49 @@ async function extractRenderedMatchScore(match) {
       );
     }, { timeout: 15000 });
 
-    const scorePayload = await extractRenderedMatchScorePayload(page);
-    if (!scorePayload) return "";
+    details.rendered.payload = await extractRenderedMatchScorePayload(page);
 
     if (
-      scorePayload.obfuscationKey &&
-      (scorePayload.leftValue || scorePayload.rightValue)
+      details.rendered.payload?.obfuscationKey &&
+      (details.rendered.payload.leftValue || details.rendered.payload.rightValue)
     ) {
-      const decodedScore = await decodeObfuscatedScore(
-        scorePayload.obfuscationKey,
-        scorePayload.leftValue,
-        scorePayload.rightValue
+      details.rendered.decodedScore = await decodeObfuscatedScore(
+        details.rendered.payload.obfuscationKey,
+        details.rendered.payload.leftValue,
+        details.rendered.payload.rightValue
       );
-      if (decodedScore) return decodedScore;
     }
 
-    const normalizedScore = normalizeRenderedScore(scorePayload.text);
-    if (normalizedScore) return normalizedScore;
-
-    return await extractScoreFromRenderedElement(page);
-  } catch (_error) {
-    return "";
+    details.rendered.normalizedScore = normalizeRenderedScore(details.rendered.payload?.text || "");
+    details.rendered.ocrScore = await extractScoreFromRenderedElement(page);
+  } catch (error) {
+    details.rendered.error = error instanceof Error ? error.message : String(error);
   } finally {
     await page.close();
+  }
+
+  details.finalScore =
+    details.html.decodedScore ||
+    details.html.normalizedScore ||
+    details.rendered.decodedScore ||
+    details.rendered.normalizedScore ||
+    details.rendered.ocrScore ||
+    "";
+
+  return details;
+}
+
+async function extractRenderedMatchScore(match) {
+  const matchId = String(match?.matchId || match?.spielId || "").trim();
+  const home = String(match?.home || "").trim();
+  const away = String(match?.away || "").trim();
+  if (!matchId || !home || !away) return "";
+
+  try {
+    const details = await inspectRenderedMatchScore(match);
+    return details.finalScore || "";
+  } catch (_error) {
+    return "";
   }
 }
 
@@ -2052,6 +2086,37 @@ app.get("/matches-lite", async (_req, res) => {
       ok: false,
       error: error instanceof Error ? error.message : String(error),
       games: []
+    });
+  }
+});
+
+app.get("/debug-score", async (req, res) => {
+  const matchId = String(req.query.matchId || req.query.spielId || "").trim();
+  const home = String(req.query.home || "").trim();
+  const away = String(req.query.away || "").trim();
+
+  if (!matchId || !home || !away) {
+    res.status(400).json({
+      ok: false,
+      error: "missing_match_parameters",
+      required: ["matchId", "home", "away"]
+    });
+    return;
+  }
+
+  try {
+    const details = await inspectRenderedMatchScore({ matchId, home, away });
+    res.json({
+      ok: true,
+      ...details
+    });
+  } catch (error) {
+    res.status(500).json({
+      ok: false,
+      error: error instanceof Error ? error.message : String(error),
+      matchId,
+      home,
+      away
     });
   }
 });
