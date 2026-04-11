@@ -973,6 +973,105 @@ async function decodeObfuscatedScore(obfuscationKey, leftValue, rightValue) {
   }
 }
 
+async function inspectObfuscatedScoreDecoding(obfuscationKey, leftValue, rightValue) {
+  const css = await fetchObfuscationStylesheet(obfuscationKey);
+  if (!css) {
+    return {
+      ok: false,
+      error: "missing_css",
+      obfuscationKey,
+      leftValue,
+      rightValue,
+      leftRawText: "",
+      rightRawText: "",
+      decoded: ""
+    };
+  }
+
+  const browser = await getBrowser();
+  const page = await browser.newPage();
+
+  try {
+    await page.setViewport({ width: 1200, height: 420, deviceScaleFactor: 3 });
+    await page.setContent(
+      `<!doctype html>
+        <html lang="de">
+          <head>
+            <meta charset="utf-8" />
+            <style>
+              ${css}
+              html, body {
+                margin: 0;
+                background: #ffffff;
+              }
+              .score-side {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                padding: 48px 64px;
+                color: #000000;
+                font-family: font-${obfuscationKey}, Arial, sans-serif;
+                font-size: 220px;
+                font-weight: 700;
+                line-height: 1;
+                background: #ffffff;
+              }
+            </style>
+          </head>
+          <body>
+            <div id="left" class="score-side">${encodeCharsForHtml(leftValue)}</div>
+            <div id="right" class="score-side">${encodeCharsForHtml(rightValue)}</div>
+          </body>
+        </html>`,
+      { waitUntil: "networkidle0" }
+    );
+    await page.evaluate(() => document.fonts.ready);
+
+    const leftHandle = await page.$("#left");
+    const rightHandle = await page.$("#right");
+    if (!leftHandle || !rightHandle) {
+      return {
+        ok: false,
+        error: "missing_rendered_score_handles",
+        obfuscationKey,
+        leftValue,
+        rightValue,
+        leftRawText: "",
+        rightRawText: "",
+        decoded: ""
+      };
+    }
+
+    const worker = await getScoreOcrWorker();
+    const [leftImage, rightImage] = await Promise.all([
+      leftHandle.screenshot({ type: "png" }),
+      rightHandle.screenshot({ type: "png" })
+    ]);
+    const [leftResult, rightResult] = await Promise.all([
+      worker.recognize(leftImage),
+      worker.recognize(rightImage)
+    ]);
+    const leftRawText = String(leftResult?.data?.text || "");
+    const rightRawText = String(rightResult?.data?.text || "");
+    const leftDigits = leftRawText.replace(/\D+/g, "").trim();
+    const rightDigits = rightRawText.replace(/\D+/g, "").trim();
+
+    return {
+      ok: true,
+      obfuscationKey,
+      leftValue,
+      rightValue,
+      leftRawText,
+      rightRawText,
+      leftDigits,
+      rightDigits,
+      decoded: leftDigits && rightDigits ? `${leftDigits}:${rightDigits}` : ""
+    };
+  } finally {
+    await page.close();
+  }
+}
+
 function normalizeRenderedScore(value) {
   const withoutHalfTime = String(value || "").replace(/\[\d{1,2}\s*:\s*\d{1,2}\]/g, " ");
   const scoreMatch = normalizeScoreOcrText(withoutHalfTime);
@@ -1140,11 +1239,13 @@ async function inspectRenderedMatchScore(match) {
       htmlScorePayload?.obfuscationKey &&
       (htmlScorePayload.leftValue || htmlScorePayload.rightValue)
     ) {
-      details.html.decodedScore = await decodeObfuscatedScore(
+      const decodeDetails = await inspectObfuscatedScoreDecoding(
         htmlScorePayload.obfuscationKey,
         htmlScorePayload.leftValue,
         htmlScorePayload.rightValue
       );
+      details.html.decodeDetails = decodeDetails;
+      details.html.decodedScore = decodeDetails.decoded || "";
     }
 
     details.html.normalizedScore = normalizeRenderedScore(htmlScorePayload?.text || "");
@@ -1176,11 +1277,13 @@ async function inspectRenderedMatchScore(match) {
       details.rendered.payload?.obfuscationKey &&
       (details.rendered.payload.leftValue || details.rendered.payload.rightValue)
     ) {
-      details.rendered.decodedScore = await decodeObfuscatedScore(
+      const decodeDetails = await inspectObfuscatedScoreDecoding(
         details.rendered.payload.obfuscationKey,
         details.rendered.payload.leftValue,
         details.rendered.payload.rightValue
       );
+      details.rendered.decodeDetails = decodeDetails;
+      details.rendered.decodedScore = decodeDetails.decoded || "";
     }
 
     details.rendered.normalizedScore = normalizeRenderedScore(details.rendered.payload?.text || "");
