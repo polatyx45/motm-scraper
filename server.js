@@ -2262,7 +2262,10 @@ app.get("/matches", async (_req, res) => {
 app.get("/matches-lite", async (req, res) => {
   try {
     const weekMode = parseMatchesLiteWeekMode(req.query.week);
-    const { games, votingWindow } = await loadCachedMatchesLiteData(weekMode);
+    const { games, votingWindow } = await loadCachedMatchesLiteData({
+      weekMode: weekMode.key,
+      weekOffset: weekMode.weekOffset
+    });
     res.json({
       ok: true,
       generatedAt: new Date().toISOString(),
