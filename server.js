@@ -1083,6 +1083,24 @@ async function extractRenderedMatchScorePayload(page) {
   });
 }
 
+async function extractScoreFromRenderedElement(page) {
+  const scoreHandle =
+    (await page.$(".stage-body .result .end-result")) ||
+    (await page.$("#course-quick-view .result")) ||
+    (await page.$(".match-course-quick-view .result"));
+
+  if (!scoreHandle) return "";
+
+  try {
+    const image = await scoreHandle.screenshot({ type: "png" });
+    const worker = await getScoreOcrWorker();
+    const result = await worker.recognize(image);
+    return normalizeScoreOcrText(result?.data?.text || "");
+  } catch (_error) {
+    return "";
+  }
+}
+
 async function extractRenderedMatchScore(match) {
   const matchId = String(match?.matchId || match?.spielId || "").trim();
   const home = String(match?.home || "").trim();
@@ -1147,7 +1165,10 @@ async function extractRenderedMatchScore(match) {
       if (decodedScore) return decodedScore;
     }
 
-    return normalizeRenderedScore(scorePayload.text);
+    const normalizedScore = normalizeRenderedScore(scorePayload.text);
+    if (normalizedScore) return normalizedScore;
+
+    return await extractScoreFromRenderedElement(page);
   } catch (_error) {
     return "";
   } finally {
