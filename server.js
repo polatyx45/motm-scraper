@@ -974,12 +974,8 @@ async function decodeObfuscatedScore(obfuscationKey, leftValue, rightValue) {
 }
 
 function normalizeRenderedScore(value) {
-  const bracketMatch = String(value || "").match(/\[(\d{1,2})\s*:\s*(\d{1,2})\]/);
-  if (bracketMatch) {
-    return `${bracketMatch[1]}:${bracketMatch[2]}`;
-  }
-
-  const scoreMatch = normalizeScoreOcrText(value);
+  const withoutHalfTime = String(value || "").replace(/\[\d{1,2}\s*:\s*\d{1,2}\]/g, " ");
+  const scoreMatch = normalizeScoreOcrText(withoutHalfTime);
   return scoreMatch || "";
 }
 
