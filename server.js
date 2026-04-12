@@ -211,6 +211,24 @@ function hasMatchEnded(game) {
   return endedAt <= new Date();
 }
 
+function getSpecialResultText(game) {
+  const candidates = [game?.resultDisplay, game?.result, game?.status]
+    .map((value) => String(value || "").trim())
+    .filter(Boolean);
+
+  for (const text of candidates) {
+    if (
+      /nicht\s*antritt|nichtantritt|kampflos|spielfrei|abgesagt|abgesetzt|ausgefallen|verlegt|verschoben|abgebrochen|annulliert|wertung/i.test(
+        text
+      )
+    ) {
+      return text;
+    }
+  }
+
+  return "";
+}
+
 function isDateWithinNextDays(value, days = 7) {
   const dateKey = normalizeDateKey(value);
   const matchDate = parseDateKeyToUtc(dateKey);
@@ -1407,11 +1425,21 @@ async function hydratePastMatchResults(matches, { force = false } = {}) {
       continue;
     }
 
+    const specialResultText = getSpecialResultText(match);
+    if (specialResultText) {
+      hydrated.push({
+        ...match,
+        resultDisplay: specialResultText,
+        resultType: "info"
+      });
+      continue;
+    }
+
     if (!match.resultObfuscationKey || (!match.resultLeftValue && !match.resultRightValue)) {
       const renderedScore = await extractRenderedMatchScore(match);
       hydrated.push({
         ...match,
-        resultDisplay: renderedScore || "Ergebnis offen",
+        resultDisplay: renderedScore || specialResultText || "Ergebnis offen",
         resultType: renderedScore ? "score" : "info"
       });
       continue;
@@ -1427,7 +1455,7 @@ async function hydratePastMatchResults(matches, { force = false } = {}) {
 
     hydrated.push({
       ...match,
-      resultDisplay: finalScore || "Ergebnis offen",
+      resultDisplay: finalScore || specialResultText || "Ergebnis offen",
       resultType: finalScore ? "score" : "info"
     });
   }
