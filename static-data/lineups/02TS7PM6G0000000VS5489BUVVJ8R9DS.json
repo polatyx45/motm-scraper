@@ -1,20 +1,182 @@
-{
-  "ok": false,
-  "error": "lineup_not_available",
-  "message": "lineup_not_available: SC Hassel II - SuS Beckhausen 05 Ergebnis: Kreisliga B - Herren - 06.04.2026 | Visuelle Assistenzsoftware und Vorlesefunktion Eye-Able öffnen. Mit der Tastatur erreichbar über ALT + 1\nVisuelle Assistenzsoftware und Vorlesefunktion Eye-Able öffnen. Mit der Tastatur erreichbar über ALT + 1\nPROMATEUR |\ndfb.de |\nFUSSBALLLIEBE |\ndfb-efootball.de |\nFan Club Nationalmannschaft |\nPartner |\nFAQ & Kontakt |\nNewsletter\nLink\nVermarktungspartner: \n FUSSBALL.DE\nNEWS\nLIGEN\nVEREINE & VERBÄNDE\nTRAINING & SERVICE\nSHOPS\nKREISLIGA B 1 HERREN\n   \nKunstrasenplatz, Lütt",
+﻿{
+  "ok": true,
   "matchId": "02TS7PM6G0000000VS5489BUVVJ8R9DS",
+  "url": "https://www.fussball.de/spiel/sc-hassel-ii-sus-beckhausen-05/-/spiel/02TS7PM6G0000000VS5489BUVVJ8R9DS",
   "home": "SC Hassel II",
   "away": "SuS Beckhausen 05",
-  "players": [],
+  "ownSide": "home",
+  "count": 16,
+  "players": [
+    {
+      "id": "02G7KG4BV4000000VUM1DNPEVVG00SEM",
+      "matchId": "02TS7PM6G0000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Fynn Becker",
+      "rawName": " ",
+      "number": "33",
+      "img": "https://images.media.fussball.de/userfiles/a/a/b/y81WJIKYc63E9zveK7ARS0_p3.jpg",
+      "obfuscationKey": "mc5kztnu"
+    },
+    {
+      "id": "029H4RIQG8000000VS541L4FVT877CAB",
+      "matchId": "02TS7PM6G0000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Enrico Fromm",
+      "rawName": " ",
+      "number": "03",
+      "img": "https://images.media.fussball.de/userfiles/U/1/O/1ymUOPn311ULnJlcvynAxz_p3.jpg",
+      "obfuscationKey": "mc5kztnu"
+    },
+    {
+      "id": "02HJIBCS2G000000VUM1DNPPVT82S1QT",
+      "matchId": "02TS7PM6G0000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Taha Hidayet Keklik",
+      "rawName": "  ",
+      "number": "05",
+      "img": "https://cdn.fussball.de/public/02S7PGIK68000000VS5489B1VVVAF4P8.stamp",
+      "obfuscationKey": "mc5kztnu"
+    },
+    {
+      "id": "026S5K34FK000000VS541L4FVU6BU3ED",
+      "matchId": "02TS7PM6G0000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Hidoyet Yilmaz",
+      "rawName": " ",
+      "number": "10",
+      "img": "https://images.media.fussball.de/userfiles/c/N/M/v3FlbHcyUevjq9AZlkywpz_p3.jpg",
+      "obfuscationKey": "mc5kztnu"
+    },
+    {
+      "id": "02FMUC583O000000VUM1DNPKVVGBK61D",
+      "matchId": "02TS7PM6G0000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Luca Faltin",
+      "rawName": " ",
+      "number": "11",
+      "img": "https://images.media.fussball.de/userfiles/A/D/t/bkquvtN6EBl6BqjvjW8K71_p3.jpg",
+      "obfuscationKey": "mc5kztnu"
+    },
+    {
+      "id": "02K2OPH840000000VUM1DNQ2VU54F1S2",
+      "matchId": "02TS7PM6G0000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Fabian Schemme",
+      "rawName": " ",
+      "number": "14",
+      "img": "https://images.media.fussball.de/userfiles/p/B/a/5PqJFFh0ub3iajakNf7zi1_p3.jpg",
+      "obfuscationKey": "mc5kztnu"
+    },
+    {
+      "id": "01CLSGHV30000000VV0AG80NVV3VDBGT",
+      "matchId": "02TS7PM6G0000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Nils Döring",
+      "rawName": " ",
+      "number": "18",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "mc5kztnu"
+    },
+    {
+      "id": "024NE5U1KK000000VS541L4KVVQMCS8E",
+      "matchId": "02TS7PM6G0000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Justin Hennemann",
+      "rawName": " ",
+      "number": "24",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "mc5kztnu"
+    },
+    {
+      "id": "02MD22OJG4000000VUM1DNQ5VT55M53P",
+      "matchId": "02TS7PM6G0000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Kaan Türkmen",
+      "rawName": " ",
+      "number": "28",
+      "img": "https://images.media.fussball.de/userfiles/n/f/f/FcVKAiFKaQ8EvKOASXxBcz_p3.jpg",
+      "obfuscationKey": "mc5kztnu"
+    },
+    {
+      "id": "013HUNBCOS000000VV0AG811VVF2J2HV",
+      "matchId": "02TS7PM6G0000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Tim Gerrit Kruse",
+      "rawName": "  ",
+      "number": "67",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "mc5kztnu"
+    },
+    {
+      "id": "02F7AB1JU0000000VUM1DNOKVU1MPAAC",
+      "matchId": "02TS7PM6G0000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Björn Weichert",
+      "rawName": " ",
+      "number": "89",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "mc5kztnu"
+    },
+    {
+      "id": "02FMM6OEF8000000VUM1DNQOVTISKNRO",
+      "matchId": "02TS7PM6G0000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Marc Niklas Laukamp",
+      "rawName": "  ",
+      "number": "06",
+      "img": "https://images.media.fussball.de/userfiles/O/p/E/kOwhZwqymfmU16G11UXPaz_p3.jpg",
+      "obfuscationKey": "mc5kztnu"
+    },
+    {
+      "id": "02JQCSFSN4000000VUM1DNOOVURNBV95",
+      "matchId": "02TS7PM6G0000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Moritz Breuer",
+      "rawName": " ",
+      "number": "08",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "mc5kztnu"
+    },
+    {
+      "id": "02K2D36PH8000000VUM1DNQAVUFP28UO",
+      "matchId": "02TS7PM6G0000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Fabius Pakula",
+      "rawName": " ",
+      "number": "15",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "mc5kztnu"
+    },
+    {
+      "id": "027L367G0C000000VS5489B5VU9EHTFE",
+      "matchId": "02TS7PM6G0000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Azzam Diab",
+      "rawName": " ",
+      "number": "74",
+      "img": "//www.fussball.de/export.media/-/action/getPlayerImage/format/15/image-id/NPI_1234567890123456789012345678",
+      "obfuscationKey": "mc5kztnu"
+    },
+    {
+      "id": "home___",
+      "matchId": "02TS7PM6G0000000VS5489BUVVJ8R9DS",
+      "side": "home",
+      "name": "Michael Breuer",
+      "rawName": " ",
+      "number": "",
+      "img": "",
+      "obfuscationKey": "mc5kztnu"
+    }
+  ],
   "stableId": "02TS7PM6G0000000VS5489BUVVJ8R9DS",
-  "generatedAt": "2026-04-11T19:41:19.436Z",
+  "generatedAt": "2026-04-07T16:43:20.521Z",
   "game": {
     "home": "SC Hassel II",
     "away": "SuS Beckhausen 05",
     "date": "06.04.2026",
     "time": "13:00",
     "competition": "Kreisliga B",
-    "ageGroup": "Herren",
+    "ageGroup": "",
     "spielId": "02TS7PM6G0000000VS5489BUVVJ8R9DS"
   }
 }

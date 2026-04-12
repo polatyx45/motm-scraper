@@ -632,6 +632,13 @@ async function collectStaticData() {
 async function main() {
   await fs.mkdir(outputDir, { recursive: true });
 
+  if (process.env.SCRAPER_BASE_URL) {
+    await waitForServer();
+    await collectStaticData();
+    log(`Static MOTM data written to static-data/ via ${serverOrigin}.`);
+    return;
+  }
+
   const child = spawn(process.execPath, ["server.js"], {
     cwd: projectRoot,
     env: {
